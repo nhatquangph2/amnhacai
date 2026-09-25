@@ -21,7 +21,7 @@
 | Ngày | Việc | Xong |
 |---|---|---|
 | Ngay tuần này | Tải **WAV** từ Suno → gửi Claude master (hoặc `python3 scripts/master.py`) | ☐ |
-| trước **02/10/2026** | Ảnh bìa 3000×3000 + đăng ký distributor + **upload bài** (chọn ngày phát hành 23/10) | ☐ |
+| trước **02/10/2026** | Ảnh bìa 3000×3000 + đăng ký DistroKid + **upload bài** (chọn ngày phát hành 23/10) — bảng điền sẵn: `docs/setup/thiet-lap-nen-tang.md` mục A6 | ☐ |
 | 02/10 | Khai credits (mục 1), gửi lời, **tắt Content ID** | ☐ |
 | ~09/10 | Bài hiện ở Spotify for Artists → claim hồ sơ nghệ sĩ Senore | ☐ |
 | trước **16/10** | **Pitch editorial** (mục 4) · làm lyric video + 6 Shorts | ☐ |

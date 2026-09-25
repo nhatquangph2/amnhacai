@@ -1,5 +1,8 @@
 # Ngày 1 — Tên kênh & tài khoản
 
+> Đây là bước A1. Toàn bộ nền tảng còn lại (TikTok, Instagram, Facebook, DistroKid, Spotify, Apple Music…)
+> nằm trong [`thiet-lap-nen-tang.md`](thiet-lap-nen-tang.md).
+
 > Chỗ nào có `✍️` là **bạn điền**. Mọi thứ khác đã soạn sẵn — copy/paste.
 > 🔒 **Không** ghi mật khẩu, mã khôi phục vào file này hay gửi vào chat. Dùng trình quản lý mật khẩu
 > (Google Password Manager, Bitwarden) và in mã dự phòng 2FA ra giấy.

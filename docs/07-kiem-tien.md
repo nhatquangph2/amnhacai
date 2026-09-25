@@ -4,7 +4,7 @@
 
 | # | Nguồn | Khi nào | Ghi chú |
 |---|---|---|---|
-| 1 | **Streaming royalty** (Spotify, Apple, YouTube Music, TikTok, Zing...) | Từ bài đầu tiên | **Nguồn chính** với nhạc có lời. Spotify có ngưỡng lượt nghe tối thiểu/bài/năm |
+| 1 | **Streaming royalty** (Spotify, Apple, YouTube Music, TikTok, Amazon, Deezer...) | Từ bài đầu tiên | **Nguồn chính** với nhạc có lời. Spotify có ngưỡng lượt nghe tối thiểu/bài/năm |
 | 2 | **TikTok / CapCut** | Khi sound được dùng | Trả qua distributor, theo lượt dùng/nghe |
 | 3 | **YouTube AdSense** | Sau YPP | Lyric video ngắn → ít giờ xem; tuyển tập dài bù lại |
 | 4 | **Sync / License** | Tháng 6+ | Nhạc cho video thương hiệu, phim ngắn, sự kiện, chiến dịch xã hội — bài động lực rất hợp. Lời của bạn là tài sản chính |

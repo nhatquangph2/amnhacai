@@ -4,11 +4,26 @@
 
 ```
                      ┌──► Distributor ──► Spotify, Apple Music, YouTube Music, TikTok/CapCut library,
-Bài hoàn thiện ──────┤                    Amazon, Deezer, Zing MP3*, NhacCuaTui*...
+Bài hoàn thiện ──────┤                    Amazon, Deezer, Tidal...
                      ├──► YouTube: lyric video (chính) + Shorts + tuyển tập
                      └──► TikTok / Reels / Threads / Facebook: trích lời, câu chuyện bài hát
 ```
-\* Tùy distributor có hỗ trợ store Việt Nam hay không.
+
+## 1b. Ma trận nền tảng
+
+| Nền tảng | Cách lên | Vai trò | Hồ sơ nghệ sĩ |
+|---|---|---|---|
+| **Spotify** | Distributor | Nghe chính, playlist, save rate | Spotify for Artists |
+| **Apple Music / iTunes** | Distributor | Nghe, Shazam | Apple Music for Artists |
+| **YouTube Music** | Distributor | Nghe, kênh Topic | Official Artist Channel |
+| **YouTube** | Tự đăng | Lyric video, Shorts, tuyển tập, câu chuyện | `@senoremusic` |
+| **TikTok / CapCut** | Distributor (âm thanh) + tự đăng (video) | Lan truyền, sound | TikTok Artist account |
+| **Instagram / Facebook** | Distributor (âm thanh) + tự đăng | Reels, trích lời | Tài khoản Creator / Trang Musician |
+| **Threads** | Tự đăng | Trích lời, hậu trường | theo Instagram |
+| **Amazon, Deezer, Tidal…** | Distributor | Phủ sóng | for Artists |
+| **Musixmatch / Genius** | Tự claim | Lời bài hát hiển thị | Musixmatch for Artists / Genius Verified |
+
+👉 **Hướng dẫn thiết lập từng tài khoản theo thứ tự:** [`setup/thiet-lap-nen-tang.md`](setup/thiet-lap-nen-tang.md) · theo dõi tại `catalog/platforms.csv`
 
 ## 2. Chiến lược "single-first"
 
@@ -26,7 +41,6 @@ Với nhạc có lời, **mỗi bài là một sự kiện**:
 | Có trường **Lyricist / Songwriter** | Ghi tên bạn là người viết lời |
 | Gửi được **lời bài hát** (lyrics) lên Spotify/Apple | Lời hiện trong app — rất quan trọng với dự án này |
 | Phí theo năm vs theo bài | Ra đều → gói năm thường rẻ hơn |
-| Store Việt Nam | Zing MP3, NhacCuaTui |
 | Tắt được YouTube Content ID | Tránh claim nhầm (mục 6) |
 
 > Lời bài hát trên Spotify thường được cung cấp qua Musixmatch — tạo tài khoản Musixmatch for Artists để gửi/đồng bộ lời

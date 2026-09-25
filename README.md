@@ -54,11 +54,13 @@ amnhacai/
 │   ├── 07-kiem-tien.md               Các nguồn doanh thu & dự phóng
 │   ├── 08-kpi-bao-cao.md             Chỉ số, nhịp báo cáo tuần/tháng
 │   ├── 09-cong-cu-ngan-sach.md       Bộ công cụ & ngân sách
-│   └── setup/ngay-1-tai-khoan.md     Hướng dẫn Ngày 1 (điền vào chỗ ✍️)
+│   └── setup/
+│       ├── ngay-1-tai-khoan.md       Gmail + kênh YouTube (điền vào chỗ ✍️)
+│       └── thiet-lap-nen-tang.md     TikTok, Instagram, Facebook, DistroKid, Spotify, Apple Music… theo thứ tự
 ├── brand/                        ← Logo, font, hình ảnh, template
 ├── prompts/                      ← "Bible" từng chủ đề: phong cách nhạc, prompt, prompt ảnh
 ├── templates/                    ← Brief bài hát, metadata, checklist, báo cáo
-├── catalog/                      ← Danh mục bài hát & lịch nội dung (CSV)
+├── catalog/                      ← Bài hát, lịch nội dung, tiến độ thiết lập nền tảng (CSV)
 ├── releases/                     ← Mỗi bài một thư mục: metadata, lời, nhận xét
 ├── reports/                      ← Báo cáo tuần/tháng
 └── scripts/                      ← Tạo bài mới, master âm thanh, dựng tuyển tập

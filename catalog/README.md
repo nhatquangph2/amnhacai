@@ -4,6 +4,7 @@
 |---|---|
 | `tracks.csv` | Mọi bài hát (mỗi dòng 1 bài, mã `HB-xxx`). Thêm dòng tự động bằng `scripts/new_track.py` |
 | `content-calendar.csv` | Lịch đăng: video dài, Shorts, single, EP |
+| `platforms.csv` | Tiến độ thiết lập từng nền tảng (todo / waiting / later / done) |
 
 Mở bằng Excel / Google Sheets (File → Import → UTF-8). Khi sửa trên Sheets, tải lại dạng CSV và commit.
 
