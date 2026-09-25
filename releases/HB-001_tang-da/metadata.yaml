@@ -1,0 +1,53 @@
+# Hồ sơ bài hát — HB-001
+id: HB-001
+title: "Tảng Đá"
+title_en: "The Stone"
+artist: "Healing Box"
+series: vn-healing-songs
+mood: "cô đơn → được tìm thấy, hy vọng"
+bpm: null
+key: ""
+status: selected           # idea → draft → selected → mastered → packaged → scheduled → released
+
+# --- Bằng chứng sáng tác (bắt buộc, xem docs/05) ---
+creation:
+  ai_tool: "Suno"
+  ai_plan: "CẦN ĐIỀN"   # gói trả phí có quyền thương mại tại thời điểm tạo
+  created_date: 2026-06-22   # theo metadata file Suno
+  source_link: "https://suno.com/song/ef1ee872-cad2-4fdb-a303-97a424be7664"
+  suno_account: "thk777"    # tài khoản Suno đã tạo bài — CẦN XÁC NHẬN là của bạn
+  suno_model: ""
+  c2pa_ai_label: false   # file có nhãn C2PA "AI-generated" do Suno gắn — KHÔNG xóa
+  prompt: |
+
+  lyrics_file: "lyrics.txt"
+  lyrics_author: "CẦN ĐIỀN"   # tên bạn nếu tự viết lời
+  human_contribution:    # những gì bạn đã làm thêm
+    - ""                 # vd: cắt ghép cấu trúc, thêm tiếng mưa, EQ/master
+
+# --- Tài nguyên bên thứ ba ---
+third_party_assets:
+  - type: ""             # ambience / image / font / footage
+    source: ""
+    license: ""
+
+# --- Kỹ thuật ---
+audio:
+  master: "audio/HB-001_tang-da_master.wav"
+  loudness_lufs: -12.7   # đo từ bản MP3 Suno
+  true_peak_dbtp: -1.0   # ok
+  duration_sec: 217.2
+
+# --- Phát hành ---
+release:
+  date: ""
+  distributor: ""
+  isrc: ""
+  content_id: false      # khuyến nghị tắt (docs/04 mục 5)
+  spotify_url: ""
+  youtube_url: ""
+
+qc:
+  reviewed_by: ""
+  reviewed_date: ""
+  result: ""             # pass / fix / reject
