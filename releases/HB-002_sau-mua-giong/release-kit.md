@@ -157,9 +157,9 @@ a lone tree standing on a bare hill after a storm, broken branches on the ground
 Chữ (Canva): **SAU MÙA GIÔNG** — Lora/Playfair, góc dưới · `senore` nhỏ phía trên. Không URL, không logo mạng xã hội.
 
 ## 8. Checklist cuối
-- [ ] WAV → master (-14 LUFS, -1 dBTP) — bản MP3 gốc đang clip +0.14 dBFS
+- [x] Master (-14.1 LUFS, -1.0 dBTP, WAV 44.1kHz/24-bit) từ MP3 184 kbps (không có WAV gốc) → `audio/Senore_Sau-Mua-Giong_master.wav` (không commit, lưu Drive `03-Master`)
 - [ ] Nghe đối chiếu từng chữ với lời (QC)
-- [ ] Ảnh bìa · lyric video · 6 Shorts · Canvas
+- [x] Ảnh bìa (`cover.jpg`, `scripts/make_cover.py`) · [ ] lyric video · [ ] 6 Shorts · [ ] Canvas
 - [ ] Credits + lời + tắt Content ID
 - [ ] Pitch Spotify trước 16/10
 - [ ] Lưu hóa đơn Suno 09/2026 + nháp lời gốc vào Drive
