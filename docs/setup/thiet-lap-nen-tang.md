@@ -2,7 +2,7 @@
 
 > Làm **một lần từ đầu**, theo đúng thứ tự: có những tài khoản **chỉ tạo được sau khi** bài đầu tiên đã lên distributor.
 > Chỗ có `✍️` là bạn điền. Theo dõi tiến độ ở `catalog/platforms.csv`.
-> 🔒 Mọi tài khoản đăng ký bằng **Gmail của kênh** (`senoremusic@gmail.com` hoặc email bạn đã tạo), bật 2FA nếu có.
+> 🔒 Mọi tài khoản đăng ký bằng **Gmail của kênh** (`senoremusic7@gmail.com`), bật 2FA nếu có.
 
 ## Bức tranh tổng thể
 
@@ -139,7 +139,7 @@ Claim hồ sơ "Senore" — ít quan trọng hơn, làm cho đủ bộ.
 | Bio ngắn (≤ 80 ký tự) | `Senore — những bài hát về cuộc sống ✍️ Bài mới mỗi Thứ 6` |
 | Bio dài | Xem `docs/02` mục 8 |
 | Link chung | ✍️ HyperFollow / Linktree |
-| Email liên hệ | ✍️ |
+| Email liên hệ | `senoremusic7@gmail.com` |
 
 ## Thứ tự làm tóm tắt
 

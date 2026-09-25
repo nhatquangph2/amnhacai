@@ -1,6 +1,6 @@
 platform,phase,handle_or_name,url,account_email,status,done_date,notes
-Gmail,A1,senoremusic,,,todo,,Bật 2FA + in mã dự phòng
-YouTube,A1,@senoremusic,https://youtube.com/@senoremusic,,todo,,Kênh thương hiệu; xác minh SĐT
+Gmail,A1,senoremusic7@gmail.com,,senoremusic7@gmail.com,done,2026-09-25,Bật 2FA + in mã dự phòng
+YouTube,A1,@senoremusic,https://www.youtube.com/@Senoremusic,senoremusic7@gmail.com,done,2026-09-25,"Tên kênh ""Senore Music"" (YouTube từ chối ""Senore""); còn: xác minh SĐT, thêm chủ sở hữu dự phòng"
 TikTok,A2,@senoremusic,https://www.tiktok.com/@senoremusic,,todo,,Để Personal/Creator; Artist account ở B4
 Facebook Page,A3,Senore (/senoremusic),,,todo,,Hạng mục Musician/Band
 Instagram,A4,@senoremusic,https://instagram.com/senoremusic,,todo,,Tài khoản chuyên nghiệp Creator - Musician
