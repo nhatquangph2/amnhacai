@@ -1,6 +1,6 @@
 # Ngày 1 — Tên kênh & tài khoản
 
-> Đây là bước A1. Toàn bộ nền tảng còn lại (TikTok, Instagram, Facebook, DistroKid, Spotify, Apple Music…)
+> Đây là bước A1. Toàn bộ nền tảng còn lại (TikTok, Instagram, Facebook, RouteNote, Spotify, Apple Music…)
 > nằm trong [`thiet-lap-nen-tang.md`](thiet-lap-nen-tang.md).
 
 > Chỗ nào có `✍️` là **bạn điền**. Mọi thứ khác đã soạn sẵn — copy/paste.

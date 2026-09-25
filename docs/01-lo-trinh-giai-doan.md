@@ -26,7 +26,7 @@ GĐ0 Nền tảng ──► GĐ1 Bản sắc & kho bài ──► GĐ2 Ra mắt 
 **Tài khoản**
 - [ ] Email riêng + 2FA · Kênh YouTube thương hiệu · giữ tên TikTok / Instagram / Facebook / Threads
 - [ ] Suno gói trả phí (đang có) — **tải WAV mọi bài đã chọn**
-- [ ] Distributor (DistroKid / TuneCore / CD Baby...) — đọc chính sách nhạc AI
+- [ ] Distributor (RouteNote gói Free — xem `setup/thiet-lap-nen-tang.md` A5) — đọc chính sách nhạc AI
 - [ ] Google Drive: `01-Loi-goc`, `02-Audio-goc`, `03-Master`, `04-Artwork`, `05-Video`, `06-Phap-ly`
 
 **Pháp lý (xem `05`)**

@@ -19,7 +19,7 @@
 | Thumbnail | Canva Pro | Photoshop, Figma | |
 | Dựng video | CapCut, DaVinci Resolve (miễn phí) | Premiere | `scripts/build_mix.py` cho mix dài |
 | SEO YouTube | vidIQ / TubeBuddy (bản free) | | |
-| Phân phối | DistroKid | TuneCore, CD Baby, Amuse, RouteNote | Đọc chính sách AI |
+| Phân phối | RouteNote (Free, giữ 85%) | RouteNote Premium, DistroKid, TuneCore, CD Baby | Đọc chính sách AI |
 | Quản lý | Repo này + Google Sheets/Notion | Trello | `catalog/*.csv` mở được bằng Excel/Sheets |
 | Lưu trữ | Google Drive 100GB–2TB | Ổ cứng ngoài + cloud | Quy tắc 3-2-1: 3 bản, 2 thiết bị, 1 ngoài site |
 

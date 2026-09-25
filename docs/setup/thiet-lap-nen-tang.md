@@ -10,7 +10,7 @@
                                ┌── Spotify ──────────── Spotify for Artists (claim sau khi upload)
                                ├── Apple Music/iTunes ─ Apple Music for Artists (+ Shazam)
  File WAV + ảnh bìa + lời ──►  │   DISTRIBUTOR          ├── YouTube Music ─────── Kênh "Topic" → gộp thành Official Artist Channel
- (Senore, 1 lần upload)        │   (DistroKid)          ├── TikTok / CapCut ───── TikTok Artist account
+ (Senore, 1 lần upload)        │   (RouteNote)          ├── TikTok / CapCut ───── TikTok Artist account
                                ├── Instagram/Facebook ─ thư viện nhạc Reels/Story
                                └── Amazon, Deezer, Tidal ...
 
@@ -42,26 +42,29 @@
 3. Liên kết với Trang Facebook "Senore" (Cài đặt → Trung tâm tài khoản).
 4. Bật **Threads** bằng chính tài khoản Instagram này.
 
-### A5. Distributor — DistroKid (khuyến nghị) (30 phút)
-**Vì sao DistroKid:** gói năm không giới hạn bài · chấp nhận nhạc tạo bằng AI **nếu khai báo và có quyền thương mại** ·
-có trang pre-save (HyperFollow) · hỗ trợ lời bài hát · cấp quyền Spotify for Artists nhanh.
-*(Thay thế: TuneCore, CD Baby, Amuse, RouteNote — nhưng hãy đọc chính sách AI trước khi chọn.)*
+### A5. Distributor — RouteNote gói Miễn phí (30 phút)
+**Vì sao RouteNote (quyết định 25/09/2026):** gói **Miễn phí** — không phí đăng ký, không giới hạn bài, bạn giữ **85%** doanh thu
+(RouteNote giữ 15%) · **chấp nhận nhạc tạo bằng AI** (Suno, Udio…) theo chính sách 06/01/2026 nếu có quyền thương mại và khai báo.
+Khi có thu nhập ổn định → cân nhắc **RouteNote Premium** ($10/single + $9.99/năm/bài, giữ 100%) hoặc DistroKid.
+*(Amuse, TuneCore, UnitedMasters đã bỏ gói miễn phí năm 2026.)*
 
-1. Vào `distrokid.com` → Đăng ký bằng **email kênh**.
-2. Gói: **Musician** (1 tên nghệ sĩ, không giới hạn bài) là đủ.
-3. **Tên nghệ sĩ:** `Senore` — gõ đúng từng chữ, sau này mọi bài đều chọn đúng tên này.
-4. Khi upload bài đầu (mục A6): ở câu hỏi về Spotify/Apple, chọn **"Đây là bài đầu tiên của tôi / tạo hồ sơ nghệ sĩ mới"**
-   → **không** chọn nhầm hồ sơ của ai trùng tên.
-5. **Thanh toán & thuế:** Bank → điền thông tin thuế **W-8BEN** (cá nhân ngoài Mỹ) → phương thức nhận tiền (PayPal / chuyển khoản).
-6. **Cài đặt quan trọng:**
-   - [ ] **YouTube Content ID: TẮT** (không chọn "YouTube Content ID" / "Shorts monetization" — xem `docs/04` mục 6)
-   - [ ] Store: chọn đủ các nền tảng lớn — Spotify, Apple Music/iTunes, YouTube Music, TikTok/CapCut, Instagram/Facebook, Amazon, Deezer, Tidal
-   - [ ] Mỗi lần upload: trả lời **trung thực câu hỏi về việc dùng công cụ AI**
-7. Lưu hóa đơn gói DistroKid vào Drive `06-Phap-ly`.
+1. Vào `routenote.com` → **Get started** → đăng ký bằng **email kênh** (`senoremusic7@gmail.com`).
+   Dùng trình duyệt thường (Chrome/Safari) nếu trang bắt xác minh chống bot.
+2. Tài khoản: chọn gói **Free** khi upload.
+3. **Tên nghệ sĩ:** `Senore` — gõ đúng từng chữ, mọi bài sau đều dùng đúng tên này.
+4. Khi upload bài đầu: ở phần hồ sơ nghệ sĩ Spotify/Apple, chọn **tạo hồ sơ nghệ sĩ mới** → **không** chọn nhầm hồ sơ của ai trùng tên.
+5. **Thuế & nhận tiền:** khai thông tin thuế khi RouteNote yêu cầu (cá nhân ngoài Mỹ thường là **W-8BEN**) → phương thức nhận tiền (PayPal / chuyển khoản).
+6. **Điều kiện nhạc AI của RouteNote:**
+   - [ ] Có **quyền thương mại**: bài tạo khi đang dùng gói **Suno trả phí** (lưu hóa đơn Suno vào Drive `06-Phap-ly`)
+   - [ ] **Khai báo có dùng AI** và dán **link công cụ** (vd `https://suno.com`) khi upload
+   - [ ] Không bắt chước giọng/phong cách nghệ sĩ có thật
+   - [ ] Nhạc AI **không** được đăng ký Content ID / nhận dạng nội dung — đúng với kế hoạch (xem `docs/04` mục 6)
+7. **Store:** chọn đủ các nền tảng lớn — Spotify, Apple Music/iTunes, YouTube Music, TikTok/CapCut, Instagram/Facebook, Amazon, Deezer, Tidal.
+8. ⏱️ **Xét duyệt** thường 1–3 ngày làm việc nhưng có lúc lâu hơn nhiều → **upload càng sớm càng tốt**, không đợi sát hạn.
 
-✍️ Distributor: ________ · Gói: ________ · Ngày đăng ký: ________
+✍️ Distributor: RouteNote · Gói: Free (85/15) · Ngày đăng ký: ________
 
-### A6. Upload "Sau Mùa Giông" lên DistroKid (trước 02/10/2026)
+### A6. Upload "Sau Mùa Giông" lên RouteNote (trước 02/10/2026)
 Dùng thông tin trong `releases/HB-002_sau-mua-giong/release-kit.md`:
 | Trường | Điền |
 |---|---|
@@ -83,8 +86,8 @@ Dùng thông tin trong `releases/HB-002_sau-mua-giong/release-kit.md`:
 ## GIAI ĐOẠN B — Sau khi upload (khoảng 3–10 ngày sau, trước ngày phát hành)
 
 ### B1. Spotify for Artists
-1. Đợi bài được giao tới Spotify (DistroKid báo trong mục "Spotify for Artists access" / email).
-2. `artists.spotify.com` → **Claim profile** → tìm "Senore" (hoặc dùng link DistroKid gửi) → đăng nhập bằng tài khoản Spotify của **email kênh**.
+1. Đợi bài được giao tới Spotify (RouteNote báo khi bài đã được giao / bài xuất hiện trên Spotify).
+2. `artists.spotify.com` → **Claim profile** → tìm "Senore" (hoặc dán link bài/nghệ sĩ trên Spotify) → đăng nhập bằng tài khoản Spotify của **email kênh**.
 3. Hồ sơ: ảnh đại diện (≥ 750×750), ảnh header (2660×1140), **Bio** (từ `docs/02`), liên kết Instagram/TikTok/YouTube.
 4. **Pitch** "Sau Mùa Giông" trước **16/10** (nội dung soạn sẵn trong release kit).
 5. Thêm **Canvas** (video 3–8s dọc) cho bài.
@@ -98,7 +101,7 @@ Dùng thông tin trong `releases/HB-002_sau-mua-giong/release-kit.md`:
 - Sau khi bài lên, YouTube tự tạo kênh **"Senore - Topic"**.
 - Mục tiêu: gộp "Topic" + kênh `@senoremusic` thành **Official Artist Channel** (có nốt nhạc ♪ cạnh tên, gom subscribers).
 - Điều kiện thường gặp: kênh có ≥ **3 bản phát hành chính thức** qua distributor, không vi phạm chính sách.
-  → Gửi yêu cầu qua distributor (DistroKid có mục yêu cầu OAC) khi đủ 3 bài (dự kiến sau single #3).
+  → Gửi yêu cầu qua distributor hoặc qua YouTube (nếu distributor không có mục yêu cầu OAC) khi đủ 3 bài (dự kiến sau single #3).
 
 ### B4. TikTok Artist account
 - Sau khi bài có trên TikTok: TikTok → Cài đặt → Tài khoản → **Đăng ký tài khoản nghệ sĩ** (hoặc qua TikTok for Artists)
@@ -109,7 +112,7 @@ Dùng thông tin trong `releases/HB-002_sau-mua-giong/release-kit.md`:
 - Bài có trong thư viện nhạc Reels/Story sau khi Meta nhận từ distributor → dùng âm thanh chính thức khi đăng Reels.
 
 ### B6. Trang liên kết (smart link / pre-save)
-- DistroKid **HyperFollow**: trang pre-save trước phát hành → sau phát hành thành link "nghe ở mọi nền tảng".
+- RouteNote gói Free **không có** trang pre-save kiểu HyperFollow → dùng smart link miễn phí (vd Linktree gom link từng nền tảng) sau khi bài lên.
 - Đặt link này vào bio TikTok/Instagram/YouTube/Facebook.
 - (Tùy chọn) Linktree/Beacons: `linktr.ee/senoremusic` gom mọi link.
 
@@ -138,15 +141,15 @@ Claim hồ sơ "Senore" — ít quan trọng hơn, làm cho đủ bộ.
 | Ảnh đại diện | ✍️ (một ảnh duy nhất, dùng mọi nơi) |
 | Bio ngắn (≤ 80 ký tự) | `Senore — những bài hát về cuộc sống ✍️ Bài mới mỗi Thứ 6` |
 | Bio dài | Xem `docs/02` mục 8 |
-| Link chung | ✍️ HyperFollow / Linktree |
+| Link chung | ✍️ Linktree / smart link |
 | Email liên hệ | `senoremusic7@gmail.com` |
 
 ## Thứ tự làm tóm tắt
 
 ```
-TUẦN NÀY    A1 Gmail+YouTube → A2 TikTok → A3 Facebook → A4 Instagram/Threads → A5 DistroKid
+TUẦN NÀY    A1 Gmail+YouTube → A2 TikTok → A3 Facebook → A4 Instagram/Threads → A5 RouteNote
             → (có WAV + ảnh bìa) → A6 upload "Sau Mùa Giông" (hạn 02/10)
-~09/10      B1 Spotify for Artists → B2 Apple → B4 TikTok Artist → B6 HyperFollow → B7 Amazon/Deezer
+~09/10      B1 Spotify for Artists → B2 Apple → B4 TikTok Artist → B6 smart link → B7 Amazon/Deezer
 trước 16/10 Pitch Spotify
 23/10       🚀 Phát hành → C: Musixmatch, Genius
 Sau 3 bài   B3 Official Artist Channel

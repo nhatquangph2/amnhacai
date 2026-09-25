@@ -56,7 +56,7 @@ amnhacai/
 │   ├── 09-cong-cu-ngan-sach.md       Bộ công cụ & ngân sách
 │   └── setup/
 │       ├── ngay-1-tai-khoan.md       Gmail + kênh YouTube (điền vào chỗ ✍️)
-│       └── thiet-lap-nen-tang.md     TikTok, Instagram, Facebook, DistroKid, Spotify, Apple Music… theo thứ tự
+│       └── thiet-lap-nen-tang.md     TikTok, Instagram, Facebook, RouteNote, Spotify, Apple Music… theo thứ tự
 ├── brand/                        ← Logo, font, hình ảnh, template
 ├── prompts/                      ← "Bible" từng chủ đề: phong cách nhạc, prompt, prompt ảnh
 ├── templates/                    ← Brief bài hát, metadata, checklist, báo cáo
