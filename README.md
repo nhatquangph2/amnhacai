@@ -1,14 +1,13 @@
-# ✍️ [Tên kênh] — Dự án âm nhạc về cuộc sống, ý nghĩa & động lực
+# ✍️ Senore — những bài hát về cuộc sống
 
 > *"Lời do người viết. Nhạc do người và máy cùng dựng. Ý nghĩa do người nghe mang theo."*
 
-**[Tên kênh]** là dự án âm nhạc **có lời tiếng Việt, lời do chính tác giả viết**, nói về
+**Senore** là dự án âm nhạc **có lời tiếng Việt, lời do chính tác giả viết**, nói về
 **cuộc sống, nghệ thuật, ý nghĩa, động lực và những điều sâu sắc**. Phần phối khí và giọng hát
 được tạo với sự hỗ trợ của AI, sau đó tuyển chọn và hoàn thiện thủ công.
 Nhạc phát hành trên **YouTube, Spotify, Apple Music, TikTok** và các nền tảng số.
 
-> 🏷️ **Tên kênh chưa chốt** (tên cũ "Healing Box" không còn hợp với hướng đi mới và đã bị trùng) —
-> xem `docs/setup/ngay-1-tai-khoan.md`. Chốt xong, thay `[Tên kênh]` trong toàn bộ repo.
+> 🏷️ **Tên nghệ sĩ: Senore** · handle thống nhất **`@senoremusic`** · dòng nhận diện: *"Senore — những bài hát về cuộc sống"*
 
 Repo này là **"bộ não vận hành"** của dự án: kế hoạch, quy trình chuẩn (SOP), template, kho prompt,
 danh mục bài hát và script tự động hóa.

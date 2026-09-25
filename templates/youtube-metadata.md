@@ -1,9 +1,9 @@
 # Metadata YouTube — `HB-___`
 
 ## Tiêu đề
-- **Lyric video:** `[Tên bài] - [Tên kênh] (Lyric Video)`
-- **Câu chuyện bài hát:** `Vì sao tôi viết "[Tên bài]" | [Tên kênh]`
-- **Tuyển tập:** `[Tâm trạng/Chủ đề] 🌿 Những bài hát [cho ai / khi nào] | [Tên kênh]`
+- **Lyric video:** `[Tên bài] - Senore (Lyric Video)`
+- **Câu chuyện bài hát:** `Vì sao tôi viết "[Tên bài]" | Senore`
+- **Tuyển tập:** `[Tâm trạng/Chủ đề] 🌿 Những bài hát [cho ai / khi nào] | Senore`
 - **Shorts:** câu hook trong ngoặc kép, vd: `"Bão không quật ngã — bão lay… rễ sâu" #SauMuaGiong`
 
 ## Mô tả (lyric video)
@@ -17,16 +17,16 @@
 
 ────────────────────────────
 ✍️ Lời: [Họ tên tác giả]
-🎼 Nhạc & giọng hát: tạo với sự hỗ trợ của công cụ AI, chọn lọc & hoàn thiện bởi [Tên kênh]
+🎼 Nhạc & giọng hát: tạo với sự hỗ trợ của công cụ AI, chọn lọc & hoàn thiện bởi Senore
 🎨 Hình ảnh: [nguồn]
 📩 Hợp tác / đặt bài hát: [email]
 
-#[TenBai] #[TenKenh] #nhaccoloi
+#[TenBai] #Senore #nhaccoloi
 ```
 > Bài chạm chủ đề nhạy cảm: thêm dòng hỗ trợ (xem `docs/05` mục 6).
 
 ## Tags
-[tên bài], [tên bài] lyrics, lời bài hát [tên bài], [tên kênh], nhạc ý nghĩa, nhạc động lực, nhạc về cuộc sống, [chủ đề]...
+[tên bài], [tên bài] lyrics, lời bài hát [tên bài], senore, nhạc ý nghĩa, nhạc động lực, nhạc về cuộc sống, [chủ đề]...
 
 ## Cài đặt
 - [ ] Danh mục: Music · Không dành cho trẻ em

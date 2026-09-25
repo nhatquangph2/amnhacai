@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Tạo hồ sơ cho một bài hát mới của dự án [Tên kênh].
+"""Tạo hồ sơ cho một bài hát mới của dự án Senore.
 
 - Sinh mã bài tiếp theo (HB-001, HB-002, ...) dựa trên catalog/tracks.csv
 - Tạo thư mục releases/HB-xxx_<slug>/ với cấu trúc chuẩn + metadata.yaml
@@ -39,7 +39,7 @@ METADATA_TEMPLATE = """\
 id: {id}
 title: "{title}"
 title_en: "{title_en}"
-artist: "[Tên kênh]"
+artist: "Senore"
 series: {series}
 mood: "{mood}"
 bpm: {bpm}

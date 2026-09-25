@@ -10,7 +10,7 @@
 
 ## 2. Định vị
 
-| Tiêu chí | [Tên kênh] |
+| Tiêu chí | Senore |
 |---|---|
 | Loại hình | **Dự án nghệ sĩ – nhạc sĩ (singer-songwriter)**, không phải kênh nhạc nền |
 | Cốt lõi | **Lời tiếng Việt do tác giả tự viết**: giàu hình ảnh, có chiều sâu, có thể là thơ (lục bát, tự do) hoặc rap/spoken word |

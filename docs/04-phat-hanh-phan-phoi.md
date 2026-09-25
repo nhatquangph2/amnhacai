@@ -36,7 +36,7 @@ Với nhạc có lời, **mỗi bài là một sự kiện**:
 
 | Trường | Điền |
 |---|---|
-| Primary Artist | `[Tên kênh]` — **giống hệt** ở mọi bài |
+| Primary Artist | `Senore` — **giống hệt** ở mọi bài |
 | Lyricist / Songwriter | **Họ tên thật của bạn** |
 | Composer / Producer | Theo hướng dẫn của distributor về nhạc AI (một số yêu cầu ghi rõ) |
 | Khai báo AI | Có trường thì khai trung thực |
@@ -46,7 +46,7 @@ Với nhạc có lời, **mỗi bài là một sự kiện**:
 ## 5. YouTube
 
 1. **Lyric video** đăng cùng ngày phát hành (lên lịch trước).
-2. Tiêu đề: `[Tên bài] - [Tên kênh] (Lyric Video)` · ví dụ: `Sau Mùa Giông - [Tên kênh] (Lyric Video)`
+2. Tiêu đề: `[Tên bài] - Senore (Lyric Video)` · ví dụ: `Sau Mùa Giông - Senore (Lyric Video)`
    - Kèm câu hook ở tuyển tập/Shorts: `"Bão không quật ngã — bão lay… rễ sâu" | Sau Mùa Giông`
 3. Mô tả: câu chuyện bài hát → **lời đầy đủ** (Google index lời → người tìm lời sẽ tìm thấy bạn) → link nghe → credits → khai báo AI.
 4. Playlist theo 4 chủ đề + playlist "Tất cả bài hát".

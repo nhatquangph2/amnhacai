@@ -8,13 +8,13 @@ Mọi thứ (tên, hình ảnh, cách viết mô tả) phải khiến người n
 **Biểu tượng xuyên suốt** (rút ra từ chính lời bài hát của bạn): *rễ cây, tảng đá, dòng sông, giông bão, trang giấy, ngọn lửa nhỏ* —
 những thứ **bền bỉ, lặng lẽ, được thời gian mài giũa**.
 
-## 2. Tên
+## 2. Tên: **Senore**
 
-Xem kết quả kiểm tra và phương án trong `setup/ngay-1-tai-khoan.md`. Tiêu chí:
-1. **Độc nhất:** không trùng nghệ sĩ trên Spotify, không trùng kênh YouTube cùng ngành.
-2. **Có nghĩa với hướng đi:** gợi chiều sâu, sự bền bỉ, lời ca.
-3. **Dễ nhớ, dễ gõ:** người nghe nghe một lần là tìm được.
-4. Tên nghệ sĩ Spotify = tên kênh YouTube = handle mạng xã hội.
+- Viết: **Senore** (không dấu, chữ S hoa) — logo có thể viết thường `senore` cho mềm.
+- Handle: **`@senoremusic`** ở mọi nền tảng.
+- Dòng nhận diện: *Senore — những bài hát về cuộc sống* (luôn đi kèm ở bio, banner, mô tả).
+- Tên nghệ sĩ Spotify = tên kênh YouTube = **Senore**, giống hệt ở mọi bài.
+- Logo gợi ý: wordmark serif `senore` + một biểu tượng nhỏ (rễ cây / viên đá / nét bút) — tối giản, đọc rõ ở 98×98px.
 
 ## 3. Bảng màu — "Giấy cũ & Mực"
 

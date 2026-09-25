@@ -49,7 +49,7 @@
 | Kênh "vô danh", không tương tác | Video "câu chuyện bài hát", hậu trường viết lời, trả lời bình luận |
 
 - **Khai báo AI:** YouTube yêu cầu khai báo nội dung tổng hợp "trông như thật" (altered/synthetic). Nhạc nền AI thường không thuộc nhóm bắt buộc,
-  nhưng dự án **luôn ghi chú trong mô tả**: *"Lời: [tác giả]. Nhạc & giọng hát tạo với sự hỗ trợ của AI, chọn lọc và hoàn thiện bởi [Tên kênh]."*
+  nhưng dự án **luôn ghi chú trong mô tả**: *"Lời: [tác giả]. Nhạc & giọng hát tạo với sự hỗ trợ của AI, chọn lọc và hoàn thiện bởi Senore."*
 - **Không** tạo giọng hát mô phỏng ca sĩ thật (deepfake giọng) — vi phạm chính sách và có thể bị kiện.
 
 ## 4. Spotify & các nền tảng streaming

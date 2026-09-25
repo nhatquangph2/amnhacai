@@ -6,48 +6,44 @@
 
 ---
 
-## Bước 0 — Chốt tên (LÀM TRƯỚC) ⚠️
+## Bước 0 — Tên: ✅ ĐÃ CHỐT **Senore**
 
-Tên này sẽ là **tên nghệ sĩ trên Spotify/Apple Music** — gần như không đổi được về sau. Tiêu chí:
-**độc nhất · hợp hướng đi (cuộc sống, ý nghĩa, động lực, chiều sâu) · dễ nhớ · giống nhau trên mọi nền tảng**.
+| | |
+|---|---|
+| Tên nghệ sĩ / kênh | **Senore** (viết đúng hoa/thường như vậy ở mọi nơi) |
+| Handle thống nhất | **`@senoremusic`** (`@senore` trên TikTok đã có người dùng → dùng `@senoremusic` ở **mọi** nền tảng cho đồng bộ) |
+| Dòng nhận diện (luôn đi kèm tên) | *Senore — những bài hát về cuộc sống* |
+| Cách đọc | ✍️ ______ (vd: "Xê-nô-rê") — ghi vào About kênh và nói trong video đầu tiên |
+| Ý nghĩa tên | ✍️ ______ (nếu có câu chuyện, kể trong About — biến điểm yếu "khó hiểu" thành điểm mạnh) |
 
-### Các tên đã loại (kiểm tra ngày 25/09/2026)
+**Kết quả kiểm tra (25/09/2026):** YouTube `@senore`, `@senoremusic`, `@senore.music`, `@senoreofficial` còn trống ·
+TikTok `@senoremusic` có vẻ còn trống (`@senore` đã có chủ) · không có kênh nhạc lớn nào tên Senore.
+
+### ✍️ Còn phải tự kiểm tra
+- [ ] **Spotify:** tìm "Senore" → mục Nghệ sĩ: không ai trùng?
+- [ ] **Instagram:** mở `instagram.com/senoremusic` → "Trang này không có sẵn" = còn trống
+- [ ] **TikTok:** giữ `@senoremusic` ngay hôm nay
+
+> ⚠️ Vì người nghe dễ gõ nhầm thành "Señor/Señorita": luôn viết kèm dòng nhận diện, tên bài và từ khóa
+> ("Senore – Sau Mùa Giông") trong tiêu đề, bio, mô tả để người tìm kiếm tìm đúng bạn.
+
+<details><summary>Các tên đã cân nhắc và loại</summary>
 
 | Tên | Lý do loại |
 |---|---|
-| **Healing Box** | Không hợp hướng đi mới (không làm nhạc chữa lành) · `@healingboxmusic` là kênh Hàn cùng ngành từ 2017 · đã có nghệ sĩ "Healing Box" trên các nền tảng nghe nhạc |
-| **Music House** | `@musichouse` (YouTube) và `@musichouse` (TikTok) đã có chủ · hàng chục kênh "… Music House" · dễ nhầm với **house music** (nhạc điện tử) · quá chung, không nói gì về lời ca và chiều sâu |
-| Mạch Ngầm, Sống Sâu | Đã có nhiều kênh cùng tên |
+| Healing Box | Không hợp hướng đi · trùng kênh Hàn cùng ngành · đã có nghệ sĩ cùng tên |
+| Music House | `@musichouse` đã có chủ · quá chung · dễ nhầm với house music |
+| Rễ Sâu, Người Gieo Chữ, Lời Của Đá | Còn trống — có thể dùng làm **tên EP/album** (vd: EP #1 "Rễ Sâu") |
 
-### Phương án đề xuất (handle YouTube đã kiểm tra còn trống)
-
-| Tên | Handle | Ý nghĩa | Ghi chú |
-|---|---|---|---|
-| **Rễ Sâu** | `@resaumusic` | Lấy từ chính lời bạn viết: *"rễ đã âm thầm sâu hơn"*, *"bão lay… rễ sâu"*. Sâu sắc + bền bỉ | Không có kênh nhạc cùng tên (chỉ có kênh làm vườn). `@resau` đã có chủ |
-| **Người Gieo Chữ** | `@nguoigieochu` | Nhấn vào bạn là **người viết lời** — đúng giá trị cốt lõi | Không có kênh cùng tên |
-| **Lời Của Đá** | `@loicuada` | Từ "Tảng Đá": lặng im, được thời gian mài giũa, có tiếng nói | Không có kênh cùng tên |
-| ✍️ Tên của bạn | | | Gửi Claude kiểm tra |
-
-> 💡 Nếu muốn một tên tiếng Anh/quốc tế, có thể thêm phụ đề cố định: *Rễ Sâu · Deep Roots*.
-> Mẹo: tên nghệ sĩ nên là thứ người nghe có thể nói "mình đang nghe **Rễ Sâu**" — tự nhiên như tên người.
-
-### Kiểm tra thủ công (10 phút) — với tên bạn thích nhất
-- [ ] **Spotify:** tìm tên → mục "Nghệ sĩ": có ai trùng không?
-- [ ] **Instagram:** mở `instagram.com/<handle>` → "Trang này không có sẵn" = còn trống
-- [ ] **TikTok:** Sửa hồ sơ → gõ username → app báo còn trống hay không
-- [ ] (Tùy chọn) Tra nhãn hiệu: `wipopublish.ipvietnam.gov.vn`
-
-**✍️ Tên chốt:** `______________________`  **✍️ Handle chung:** `@______________________`
-
-→ Báo tên cho Claude để thay `[Tên kênh]` trong toàn bộ repo.
+</details>
 
 ---
 
 ## Bước 1 — Gmail riêng (15 phút)
 
 1. Chế độ ẩn danh → `accounts.google.com/signup`
-2. Họ + tên: theo tên kênh (vd: `Rễ` `Sâu`)
-3. Địa chỉ: `<handle>.music@gmail.com` (vd: `resau.music`)
+2. Họ: `Senore` · Tên: `Music`
+3. Địa chỉ (thử lần lượt): `senoremusic@gmail.com` → `senore.music@gmail.com` → `senoremusic.vn@gmail.com`
 4. SĐT + email khôi phục: **của bạn**
 5. Bật **xác minh 2 bước**: `myaccount.google.com/security` → thêm Google Authenticator + in mã dự phòng
 6. Google Drive → thư mục dự án: `01-Loi-goc` · `02-Audio-goc` · `03-Master` · `04-Artwork` · `05-Video` · `06-Phap-ly`
@@ -70,7 +66,7 @@ Tên này sẽ là **tên nghệ sĩ trên Spotify/Apple Music** — gần như 
    - Quyền → thêm email cá nhân làm **Chủ sở hữu** dự phòng
 4. `youtube.com/verify` → xác minh SĐT (mở khóa thumbnail tùy chỉnh, video > 15 phút)
 
-✍️ Link kênh: `https://youtube.com/@______________` · Đã xác minh ☐
+✍️ Link kênh: `https://youtube.com/@senoremusic` · Đã xác minh ☐
 
 ---
 
@@ -78,9 +74,9 @@ Tên này sẽ là **tên nghệ sĩ trên Spotify/Apple Music** — gần như 
 
 | Nền tảng | Bio (copy) | ✍️ Xong |
 |---|---|---|
-| TikTok | `✍️ Tôi viết những bài hát về cuộc sống · bài mới mỗi Thứ 6` | ☐ |
-| Instagram (+ Threads) | như trên | ☐ |
-| Facebook Page | Mô tả kênh ngắn | ☐ |
+| TikTok `@senoremusic` | `Senore — những bài hát về cuộc sống ✍️ Lời tự viết · bài mới mỗi Thứ 6` | ☐ |
+| Instagram `@senoremusic` (+ Threads) | như trên | ☐ |
+| Facebook Page "Senore" (`/senoremusic`) | Mô tả kênh ngắn | ☐ |
 
 > Spotify for Artists: claim được **sau** khi bài đầu tiên được distributor phát hành.
 
@@ -90,6 +86,8 @@ Tên này sẽ là **tên nghệ sĩ trên Spotify/Apple Music** — gần như 
 
 ### Mô tả kênh
 ```
+Senore — những bài hát về cuộc sống.
+
 Tôi viết những bài hát về cuộc sống — về giông bão, về những tảng đá lặng im,
 về câu hỏi "mình sống để làm gì".
 
@@ -106,7 +104,7 @@ with AI tools, then curated and finished by hand. New song every Friday.
 
 ### Từ khóa kênh
 ```
-"[Tên kênh]" "nhạc có lời" "nhạc ý nghĩa" "nhạc động lực" "nhạc về cuộc sống" "bài hát ý nghĩa" "nhạc suy ngẫm" "ballad" "indie việt" "rap ý nghĩa" "lời bài hát" "vietnamese songs" "motivational songs"
+"Senore" "Senore music" "nhạc có lời" "nhạc ý nghĩa" "nhạc động lực" "nhạc về cuộc sống" "bài hát ý nghĩa" "nhạc suy ngẫm" "ballad" "indie việt" "rap ý nghĩa" "lời bài hát" "vietnamese songs" "motivational songs"
 ```
 
 ### Mô tả mặc định khi tải lên
@@ -120,14 +118,15 @@ with AI tools, then curated and finished by hand. New song every Friday.
 
 ────────────────────────────
 ✍️ Lời: [Họ tên]
-🎼 Nhạc & giọng hát: tạo với sự hỗ trợ của công cụ AI, chọn lọc & hoàn thiện bởi [Tên kênh]
+🎼 Nhạc & giọng hát: tạo với sự hỗ trợ của công cụ AI, chọn lọc & hoàn thiện bởi Senore
 📩 Hợp tác: [email]
 ```
 
 ---
 
 ## ✅ Tổng kết Ngày 1
-- [ ] Tên + handle đã chốt và kiểm tra Spotify/Instagram/TikTok
+- [x] Tên đã chốt: Senore · `@senoremusic`
+- [ ] Kiểm tra Spotify/Instagram, giữ handle TikTok
 - [ ] Gmail + 2FA · Drive đã có WAV, hóa đơn Suno, nháp lời
 - [ ] Kênh YouTube: mô tả, từ khóa, cài đặt mặc định, xác minh SĐT
 - [ ] Giữ tên TikTok / Instagram / Facebook
