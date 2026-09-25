@@ -62,7 +62,7 @@ Khi có thu nhập ổn định → cân nhắc **RouteNote Premium** ($10/singl
 7. **Store:** chọn đủ các nền tảng lớn — Spotify, Apple Music/iTunes, YouTube Music, TikTok/CapCut, Instagram/Facebook, Amazon, Deezer, Tidal.
 8. ⏱️ **Xét duyệt** thường 1–3 ngày làm việc nhưng có lúc lâu hơn nhiều → **upload càng sớm càng tốt**, không đợi sát hạn.
 
-✍️ Distributor: RouteNote · Gói: Free (85/15) · Ngày đăng ký: ________
+✍️ Distributor: RouteNote · Gói: Free (85/15) · Ngày đăng ký: 25/09/2026 · Tài khoản: `senoremusic`
 
 ### A6. Upload "Sau Mùa Giông" lên RouteNote (trước 02/10/2026)
 Dùng thông tin trong `releases/HB-002_sau-mua-giong/release-kit.md`:
