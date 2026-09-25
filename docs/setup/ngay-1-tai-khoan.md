@@ -52,7 +52,7 @@ TikTok `@senoremusic` có vẻ còn trống (`@senore` đã có chủ) · không
 6. Google Drive → thư mục dự án: `01-Loi-goc` · `02-Audio-goc` · `03-Master` · `04-Artwork` · `05-Video` · `06-Phap-ly`
    → Tải ngay 2 file WAV của Suno vào `02-Audio-goc`, hóa đơn Suno vào `06-Phap-ly`, nháp lời vào `01-Loi-goc`.
 
-✍️ Email: `______________________@gmail.com` · 2FA ☐ · Mã dự phòng đã cất ☐
+✍️ Email: `senoremusic7@gmail.com` · 2FA ☑ · Mã dự phòng đã cất ☐
 
 ---
 
@@ -69,7 +69,7 @@ TikTok `@senoremusic` có vẻ còn trống (`@senore` đã có chủ) · không
    - Quyền → thêm email cá nhân làm **Chủ sở hữu** dự phòng
 4. `youtube.com/verify` → xác minh SĐT (mở khóa thumbnail tùy chỉnh, video > 15 phút)
 
-✍️ Link kênh: `https://youtube.com/@senoremusic` · Đã xác minh ☐
+✍️ Link kênh: `https://youtube.com/@senoremusic` (tên kênh: **Senore Music** — YouTube từ chối tên "Senore") · Đã xác minh ☐
 
 ---
 
@@ -130,6 +130,6 @@ with AI tools, then curated and finished by hand. New song every Friday.
 ## ✅ Tổng kết Ngày 1
 - [x] Tên đã chốt: Senore · `@senoremusic`
 - [ ] Kiểm tra Spotify/Instagram, giữ handle TikTok
-- [ ] Gmail + 2FA · Drive đã có WAV, hóa đơn Suno, nháp lời
-- [ ] Kênh YouTube: mô tả, từ khóa, cài đặt mặc định, xác minh SĐT
+- [x] Gmail + 2FA · [ ] Drive đã có WAV, hóa đơn Suno, nháp lời
+- [x] Kênh YouTube: mô tả, từ khóa, cài đặt mặc định · [ ] xác minh SĐT · [ ] thêm chủ sở hữu dự phòng
 - [ ] Giữ tên TikTok / Instagram / Facebook
