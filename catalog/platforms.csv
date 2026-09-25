@@ -2,7 +2,7 @@ platform,phase,handle_or_name,url,account_email,status,done_date,notes
 Gmail,A1,senoremusic7@gmail.com,,senoremusic7@gmail.com,done,2026-09-25,Bật 2FA + in mã dự phòng
 YouTube,A1,@senoremusic,https://www.youtube.com/@Senoremusic,senoremusic7@gmail.com,done,2026-09-25,"Tên kênh ""Senore Music"" (YouTube từ chối ""Senore""); còn: xác minh SĐT, thêm chủ sở hữu dự phòng"
 TikTok,A2,@senoremusic,https://www.tiktok.com/@senoremusic,senoremusic7@gmail.com,done,2026-09-25,"Tên ""Senore"" + bio đã đặt; tài khoản cá nhân (không Business); còn: ảnh đại diện, 1–2 video giữ chỗ; Artist account ở B4"
-Facebook Page,A3,Senore (/senoremusic),,,todo,,Hạng mục Musician/Band
+Facebook Page,A3,Senore (/senoremusic),https://www.facebook.com/senoremusic,senoremusic7@gmail.com (liên hệ),done,2026-09-25,"Trang ""Senore"", hạng mục Nhạc sĩ; bio + web YouTube + email; quản lý bằng Facebook cá nhân; còn: ảnh đại diện/bìa, liên kết Instagram"
 Instagram,A4,@senoremusic,https://instagram.com/senoremusic,senoremusic7@gmail.com,done,2026-09-25,"Tên ""Senore"" + bio; tài khoản Người sáng tạo, hạng mục Nhạc sĩ/Ban nhạc (hiển thị); còn: ảnh đại diện, link web (chỉ sửa trên app), liên kết Trang Facebook"
 Threads,A4,@senoremusic,,,todo,,Theo Instagram
 DistroKid,A5,Senore,https://distrokid.com,,todo,,Gói Musician; W-8BEN; TẮT Content ID; khai báo AI
