@@ -5,7 +5,7 @@
 |---|---|---|
 | T-28 ngày | Hoàn tất master + cover 3000×3000 + metadata | ☐ |
 | T-21 ngày | Upload lên distributor (ngày phát hành: Thứ 6) | ☐ |
-| T-21 ngày | Khai credits: Artist `Healing Box`, lyricist (nếu có), khai báo AI (nếu có trường) | ☐ |
+| T-21 ngày | Khai credits: Artist `[Tên kênh]`, **Lyricist: họ tên bạn**, gửi lời bài hát, khai báo AI (nếu có trường) | ☐ |
 | T-21 ngày | Content ID / YouTube monetization của distributor: **TẮT** | ☐ |
 | T-14 ngày | Bài xuất hiện trong Spotify for Artists "Upcoming" | ☐ |
 | T-7 ngày | **Pitch editorial** trên Spotify for Artists | ☐ |

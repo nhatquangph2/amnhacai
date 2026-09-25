@@ -1,12 +1,12 @@
 #!/usr/bin/env python3
-"""Tạo hồ sơ cho một bài hát mới của Healing Box.
+"""Tạo hồ sơ cho một bài hát mới của dự án [Tên kênh].
 
 - Sinh mã bài tiếp theo (HB-001, HB-002, ...) dựa trên catalog/tracks.csv
 - Tạo thư mục releases/HB-xxx_<slug>/ với cấu trúc chuẩn + metadata.yaml
 - Thêm một dòng vào catalog/tracks.csv (status = draft)
 
 Ví dụ:
-    python3 scripts/new_track.py --title "Mưa Trên Hiên Nhà" --series rain-piano --mood calm --bpm 70
+    python3 scripts/new_track.py --title "Người Gieo Hạt" --series dung-day --mood "bền bỉ"
 """
 
 import argparse
@@ -22,12 +22,10 @@ CATALOG = ROOT / "catalog" / "tracks.csv"
 RELEASES = ROOT / "releases"
 
 SERIES = [
-    "rain-piano",
-    "lofi-study",
-    "deep-sleep",
-    "morning-calm",
-    "zen-meditation",
-    "vn-healing-songs",
+    "dung-day",     # Đứng Dậy — động lực & kiên cường
+    "doi-nguoi",    # Đời Người — bài học cuộc sống
+    "y-nghia",      # Câu Hỏi Lớn — ý nghĩa & triết lý
+    "nghe-thuat",   # Người Sáng Tạo — nghệ thuật
 ]
 
 FIELDS = [
@@ -41,12 +39,12 @@ METADATA_TEMPLATE = """\
 id: {id}
 title: "{title}"
 title_en: "{title_en}"
-artist: "Healing Box"
+artist: "[Tên kênh]"
 series: {series}
 mood: "{mood}"
 bpm: {bpm}
 key: "{key}"
-status: draft            # idea → draft → selected → mastered → packaged → scheduled → released
+status: lyrics           # idea → lyrics → generating → selected → mastered → packaged → scheduled → released
 
 # --- Bằng chứng sáng tác (bắt buộc, xem docs/05) ---
 creation:
@@ -56,7 +54,9 @@ creation:
   source_link: ""        # link/ID bản gốc trên công cụ AI
   prompt: |
 
-  lyrics_file: ""        # lyrics.txt nếu có lời (do con người viết)
+  lyrics_file: "lyrics.txt"
+  lyrics_author: ""      # họ tên thật của bạn
+  lyrics_draft_proof: "" # link Google Docs/ảnh nháp có ngày tạo
   human_contribution:    # những gì bạn đã làm thêm
     - ""                 # vd: cắt ghép cấu trúc, thêm tiếng mưa, EQ/master
 
@@ -139,7 +139,7 @@ def main() -> int:
     row = {k: "" for k in FIELDS}
     row.update(
         id=track_id, title=args.title, title_en=args.title_en, series=args.series,
-        mood=args.mood, bpm=args.bpm or "", key=args.key, status="draft",
+        mood=args.mood, bpm=args.bpm or "", key=args.key, status="lyrics",
         ai_tool=args.ai_tool, ai_plan=args.ai_plan, created_date=today,
     )
 
@@ -163,11 +163,10 @@ def main() -> int:
     for sub in ("audio/stems", "artwork", "video"):
         (folder / sub).mkdir(parents=True, exist_ok=True)
     (folder / "metadata.yaml").write_text(metadata, encoding="utf-8")
-    if args.series == "vn-healing-songs":
-        (folder / "lyrics.txt").write_text(
-            "[Verse 1]\n\n[Pre-Chorus]\n\n[Chorus]\n\n[Verse 2]\n\n[Chorus]\n\n[Bridge]\n\n[Final Chorus]\n",
-            encoding="utf-8",
-        )
+    (folder / "lyrics.txt").write_text(
+        "[Verse 1]\n\n[Pre-Chorus]\n\n[Chorus]\n\n[Verse 2]\n\n[Chorus]\n\n[Bridge]\n\n[Final Chorus]\n",
+        encoding="utf-8",
+    )
 
     write_header = not CATALOG.exists() or CATALOG.stat().st_size == 0
     CATALOG.parent.mkdir(parents=True, exist_ok=True)

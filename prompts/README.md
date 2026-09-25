@@ -1,25 +1,18 @@
-# Kho prompt Healing Box
+# Kho prompt
 
-Mỗi series có một **Series Bible** (file riêng) gồm: thông số âm nhạc, prompt nhạc, prompt ảnh, và "cấm kỵ".
-Khi một prompt cho kết quả tốt → ghi lại ở mục **"Prompt đã kiểm chứng"** của file series kèm mã bài `HB-xxx`.
+Mọi prompt phong cách = **[Âm thanh chung]** + **[phần riêng của chủ đề]** + **[phần riêng của bài]**.
+Lời bài hát luôn là của bạn — prompt chỉ mô tả *nhạc và giọng*.
 
-| File | Series |
+| File | Nội dung |
 |---|---|
-| [`rain-piano.md`](rain-piano.md) | 🌧️ Mưa & Piano |
-| [`lofi-study.md`](lofi-study.md) | 📚 Lofi Học Bài |
-| [`deep-sleep.md`](deep-sleep.md) | 🌙 Ngủ Sâu |
-| [`morning-calm.md`](morning-calm.md) | ☀️ Sáng Bình Yên |
-| [`zen-meditation.md`](zen-meditation.md) | 🧘 Thiền Tĩnh Tâm |
-| [`vn-healing-songs.md`](vn-healing-songs.md) | 🎤 Ca khúc chữa lành có lời |
+| [`_am-thanh-chung.md`](_am-thanh-chung.md) | Bản sắc âm thanh chung của dự án — **đọc trước** |
+| [`dung-day.md`](dung-day.md) | 🔥 Đứng Dậy — động lực & kiên cường |
+| [`doi-nguoi.md`](doi-nguoi.md) | 🌊 Đời Người — bài học cuộc sống |
+| [`y-nghia.md`](y-nghia.md) | 🌌 Câu Hỏi Lớn — ý nghĩa & triết lý |
+| [`nghe-thuat.md`](nghe-thuat.md) | 🎨 Người Sáng Tạo — nghệ thuật |
 
-## Công thức chung
-
-**Nhạc:** `[genre] + [mood] + [instruments] + [tempo] + [texture/ambience] + [structure] + [exclusions]`
-
-**Ảnh:** `[scene] + [time of day/weather] + [character (optional)] + [lighting] + [art style] + [color palette] + [aspect ratio]`
-
-## Quy tắc chung
-- ❌ Không dùng tên nghệ sĩ, tên bài hát, tên phim/nhân vật có bản quyền, tên studio (vd: "Ghibli", "Yiruma", "Lofi Girl").
-- ✅ Mô tả bằng tính từ, nhạc cụ, cảm xúc, bối cảnh.
-- ✅ Mỗi lần chỉ đổi 1 yếu tố để học được yếu tố nào tạo khác biệt.
-- ✅ Tiếng Anh thường cho kết quả ổn định hơn với công cụ AI; bối cảnh Việt Nam mô tả cụ thể (Hoi An lanterns, Hanoi old quarter, Da Lat pine hills).
+## Quy tắc
+- ❌ Không dùng tên ca sĩ, nhạc sĩ, ban nhạc, bài hát thật trong prompt (rủi ro bản quyền + vi phạm điều khoản Suno).
+- ✅ Mô tả bằng thể loại, nhạc cụ, cảm xúc, kiểu giọng, cấu trúc.
+- ✅ Mỗi lần chỉ đổi 1 yếu tố. Prompt ra bản hay → ghi vào mục "Đã kiểm chứng" kèm mã bài.
+- ✅ Prompt tiếng Anh cho phong cách thường ổn định hơn; lời vẫn là tiếng Việt.

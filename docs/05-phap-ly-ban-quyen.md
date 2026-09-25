@@ -16,33 +16,40 @@
 | Một số nền tảng không còn cho tải file về hoặc chỉ cho nghe trong ứng dụng | Chỉ dùng công cụ cho phép **tải xuống + phân phối thương mại** |
 | Bài giống bài hát có bản quyền | Không dùng tên nghệ sĩ/bài hát trong prompt; loại bài "nghe quen"; có thể kiểm tra nhanh bằng app nhận diện nhạc (Shazam) |
 
-## 2. Quyền tác giả với nhạc AI
+## 2. Quyền tác giả: lời của bạn vs nhạc AI
 
-- Tại nhiều quốc gia (Mỹ, Việt Nam...) **tác giả phải là con người**; phần do AI tạo ra hoàn toàn thường **không được bảo hộ quyền tác giả**.
-- Hệ quả: người khác có thể dùng lại mà bạn khó khiếu nại; bạn cũng khó đăng ký bản quyền.
-- **Tăng phần đóng góp của con người** để vừa có giá trị bảo hộ vừa có nội dung khác biệt:
-  - Tự viết lời bài hát (ca khúc có lời)
-  - Chỉnh sửa, cắt ghép, sắp xếp lại cấu trúc; thêm lớp âm thanh, nhạc cụ tự chơi (nếu có thể)
-  - Mix/master, tuyển chọn và biên tập thành mix có chủ đề
-- **Lưu bằng chứng**: prompt, lời, file project DAW, ảnh chụp timeline → mỗi bài một thư mục trong `releases/`.
+| Phần | Ai là tác giả | Được bảo hộ? |
+|---|---|---|
+| **Lời bài hát** (bạn tự viết) | **Bạn** | ✅ Có — là tác phẩm của con người |
+| Giai điệu, phối khí, giọng hát do AI tạo | Không có tác giả là người | ⚠️ Thường **không** được bảo hộ quyền tác giả (Mỹ, Việt Nam... yêu cầu tác giả là con người) |
+| Phần bạn chỉnh sửa, cắt ghép, sắp xếp | Bạn (mức độ tùy đóng góp) | 🔶 Có thể, tùy mức độ sáng tạo |
+
+**Việc nên làm:**
+- **Đăng ký quyền tác giả cho lời bài hát** tại **Cục Bản quyền tác giả** (Bộ VHTTDL) — hồ sơ đơn giản, lệ phí thấp,
+  là bằng chứng mạnh nhất nếu có người lấy lời của bạn. Có thể đăng ký theo bộ (nhiều bài một lần).
+- Lưu bản nháp lời có ngày tạo, lịch sử phiên bản (Google Docs).
+- Khi người khác dùng lời của bạn (TikTok, trang trích dẫn): yêu cầu ghi nguồn; vi phạm nghiêm trọng → báo cáo bản quyền.
+- **VCPMC** (Trung tâm Bảo vệ Quyền tác giả Âm nhạc Việt Nam) thu tiền bản quyền cho tác giả khi bài được sử dụng công cộng.
+  Với bài có nhạc AI, hãy hỏi trực tiếp VCPMC về việc đăng ký phần lời trước khi làm hồ sơ.
+- Giai đoạn 5: thuê nhạc sĩ/ca sĩ thật phối và thu lại bài hit → phần nhạc cũng có tác giả là người.
 
 ## 3. YouTube — điều kiện kiếm tiền (YPP)
 
 - Điều kiện cơ bản: **1.000 subscribers + 4.000 giờ xem công khai (12 tháng)** hoặc 10 triệu lượt xem Shorts/90 ngày (có thể thay đổi — kiểm tra YouTube Help).
 - Từ **07/2025**, YouTube đổi tên chính sách "repetitious content" thành **"inauthentic content"** (nội dung không chân thực):
   nội dung **sản xuất hàng loạt, lặp lại, theo khuôn mẫu, ít khác biệt giữa các video** có thể bị **từ chối/mất quyền kiếm tiền**.
-- Kênh nhạc AI là nhóm dễ bị ảnh hưởng. Healing Box phòng tránh bằng:
+- Kênh nhạc AI là nhóm dễ bị ảnh hưởng. Dự án phòng tránh bằng:
 
 | ❌ Tránh | ✅ Làm |
 |---|---|
 | Cùng 1 ảnh nền, đổi nhạc, đăng 5 video/ngày | Mỗi video có concept, hình ảnh, câu chuyện riêng |
-| Tiêu đề/mô tả copy-paste | Mô tả viết riêng: câu chuyện về khoảnh khắc, gợi ý cách nghe |
-| Ghép bài thô từ AI | Hậu kỳ, thêm âm thanh môi trường, sắp xếp mix có mạch cảm xúc |
+| Tiêu đề/mô tả copy-paste | Mô tả viết riêng: câu chuyện bài hát, lời đầy đủ |
+| Ghép bài thô từ AI | Lời do bạn viết, chọn bản kỹ, hậu kỳ, lyric video riêng từng bài |
 | Đăng lại cùng một bài ở nhiều video | Giới hạn tái sử dụng; video "Best of" ghi rõ là tổng hợp |
-| Kênh "vô danh", không tương tác | Mascot, tab Cộng đồng, trả lời bình luận, poll |
+| Kênh "vô danh", không tương tác | Video "câu chuyện bài hát", hậu trường viết lời, trả lời bình luận |
 
 - **Khai báo AI:** YouTube yêu cầu khai báo nội dung tổng hợp "trông như thật" (altered/synthetic). Nhạc nền AI thường không thuộc nhóm bắt buộc,
-  nhưng Healing Box **luôn ghi chú trong mô tả**: *"Âm nhạc được sáng tác với sự hỗ trợ của AI, tuyển chọn và hoàn thiện bởi Healing Box."*
+  nhưng dự án **luôn ghi chú trong mô tả**: *"Lời: [tác giả]. Nhạc & giọng hát tạo với sự hỗ trợ của AI, chọn lọc và hoàn thiện bởi [Tên kênh]."*
 - **Không** tạo giọng hát mô phỏng ca sĩ thật (deepfake giọng) — vi phạm chính sách và có thể bị kiện.
 
 ## 4. Spotify & các nền tảng streaming
@@ -62,10 +69,14 @@
 | Font | Google Fonts (OFL) | Font "free for personal use" **không** dùng cho kênh kiếm tiền |
 | Footage | Tự quay, Pexels, Pixabay, thư viện trả phí | |
 
-## 6. Tuyên bố sức khỏe
+## 6. Chủ đề nhạy cảm
 
-Không viết "chữa bệnh", "chữa trầm cảm", "chữa mất ngủ", "sửa DNA 528Hz"... Nền tảng có thể hạn chế nội dung gây hiểu lầm về y tế
-và điều này làm giảm uy tín thương hiệu. Dùng: *thư giãn, giúp dễ ngủ hơn, giảm căng thẳng, tập trung*.
+Nhạc về ý nghĩa sống và vượt khó sẽ chạm tới trầm cảm, mất mát, cái chết.
+- Viết **với sự tôn trọng**, hướng tới hy vọng; không mô tả chi tiết hành vi tự hại.
+- Bài chạm chủ đề tự tử/tự hại: thêm vào mô tả dòng hỗ trợ, vd: *"Nếu bạn đang không ổn, hãy nói chuyện với ai đó.
+  Đường dây nóng Ngày Mai: 096 306 1414"* (kiểm tra số còn hoạt động trước khi đăng).
+- Không đưa ra lời khuyên y tế/tâm lý như chuyên gia.
+- Không dùng giọng AI mô phỏng ca sĩ thật, không dùng tên người thật trong lời khi chưa được phép.
 
 ## 7. Thuế & thu nhập
 
@@ -80,5 +91,6 @@ và điều này làm giảm uy tín thương hiệu. Dùng: *thư giãn, giúp 
 - [ ] Đã nghe kiểm tra "không giống bài nổi tiếng"
 - [ ] Âm thanh/ảnh/font bên thứ ba có license, đã ghi nguồn
 - [ ] Có đóng góp con người (lời/hậu kỳ/sắp xếp) và lưu bằng chứng
-- [ ] Mô tả có dòng khai báo AI; không có tuyên bố y khoa
+- [ ] Lời do bạn viết, đã lưu nháp gốc (và đăng ký bản quyền lời nếu là bài quan trọng)
+- [ ] Mô tả có dòng khai báo AI; chủ đề nhạy cảm có dòng hỗ trợ
 - [ ] Content ID: tắt (hoặc đã whitelist kênh)

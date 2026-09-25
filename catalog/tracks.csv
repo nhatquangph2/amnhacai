@@ -1,3 +1,3 @@
 id,title,title_en,series,mood,bpm,key,duration_sec,status,ai_tool,ai_plan,created_date,release_date,spotify_url,youtube_url,notes
-HB-001,Tảng Đá,The Stone,vn-healing-songs,"cô đơn → được tìm thấy, hy vọng",,,217,selected,Suno,Trả phí,2026-06-22,,,,Có đoạn rap; cần bản WAV; lời cần sửa chính tả
-HB-002,Sau Mùa Giông,After the Storm,vn-healing-songs,"kiên cường, tự chữa lành",,,275,selected,Suno,Trả phí,2026-09-01,,,,Bị clip +0.1dBFS → master lại từ WAV; ứng viên single đầu tiên
+HB-001,Tảng Đá,The Stone,doi-nguoi,"cô đơn → được tìm thấy, hy vọng",,,217,selected,Suno,Trả phí,2026-06-22,,,,Đoạn rap hợp hướng mới; cần WAV; sửa chính tả lời
+HB-002,Sau Mùa Giông,After the Storm,dung-day,"kiên cường, tự chữa lành",,,275,selected,Suno,Trả phí,2026-09-01,,,,Bị clip +0.1dBFS → master lại từ WAV; ứng viên single đầu tiên

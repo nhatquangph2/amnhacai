@@ -8,7 +8,7 @@
 Mở bằng Excel / Google Sheets (File → Import → UTF-8). Khi sửa trên Sheets, tải lại dạng CSV và commit.
 
 ## Vòng đời `status` của một bài
-`idea → draft → selected → mastered → packaged → scheduled → released` (hoặc `rejected`)
+`idea → lyrics → generating → selected → mastered → packaged → scheduled → released` (hoặc `rejected`)
 
 ## Mã series
-`rain-piano` · `lofi-study` · `deep-sleep` · `morning-calm` · `zen-meditation` · `vn-healing-songs`
+`dung-day` (Đứng Dậy) · `doi-nguoi` (Đời Người) · `y-nghia` (Câu Hỏi Lớn) · `nghe-thuat` (Người Sáng Tạo)

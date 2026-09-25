@@ -2,69 +2,76 @@
 
 ## 1. Ý tưởng cốt lõi
 
-**"Chiếc hộp"** là biểu tượng trung tâm: mỗi video/bài hát là một chiếc hộp nhỏ chứa một khoảnh khắc bình yên.
-Mọi hình ảnh nên có dấu ấn "hộp": khung cửa sổ, căn phòng nhỏ, hộp nhạc, hộp quà ánh sáng, chiếc đèn lồng.
+Dự án là **một nghệ sĩ – người viết lời**, không phải một "kênh nhạc".
+Mọi thứ (tên, hình ảnh, cách viết mô tả) phải khiến người nghe cảm thấy **có một con người thật đứng sau những câu hát**.
 
-## 2. Logo
+**Biểu tượng xuyên suốt** (rút ra từ chính lời bài hát của bạn): *rễ cây, tảng đá, dòng sông, giông bão, trang giấy, ngọn lửa nhỏ* —
+những thứ **bền bỉ, lặng lẽ, được thời gian mài giũa**.
 
-- Biểu tượng: chiếc hộp đang hé mở, ánh sáng ấm (hoặc nốt nhạc / chiếc lá) bay ra.
-- Phong cách: tối giản, nét mảnh, bo góc mềm. Đọc rõ ở kích thước avatar 98×98px.
-- Phiên bản cần có: `logo-full` (biểu tượng + chữ), `logo-icon` (chỉ biểu tượng), bản sáng / bản tối, PNG nền trong suốt + SVG.
-- Lưu tại `brand/logo/`.
+## 2. Tên
 
-## 3. Bảng màu
+Xem kết quả kiểm tra và phương án trong `setup/ngay-1-tai-khoan.md`. Tiêu chí:
+1. **Độc nhất:** không trùng nghệ sĩ trên Spotify, không trùng kênh YouTube cùng ngành.
+2. **Có nghĩa với hướng đi:** gợi chiều sâu, sự bền bỉ, lời ca.
+3. **Dễ nhớ, dễ gõ:** người nghe nghe một lần là tìm được.
+4. Tên nghệ sĩ Spotify = tên kênh YouTube = handle mạng xã hội.
+
+## 3. Bảng màu — "Giấy cũ & Mực"
 
 | Vai trò | Màu | HEX | Dùng cho |
 |---|---|---|---|
-| Chủ đạo | Kem ấm (Warm Cream) | `#F5EDE0` | Nền, chữ trên nền tối |
-| Nhấn | Nâu gỗ (Wood Brown) | `#8B6B4F` | Logo, chữ tiêu đề |
-| Dịu | Xanh sương (Mist Sage) | `#A8B5A2` | Series thiền, sáng |
-| Đêm | Xanh đêm (Night Indigo) | `#2B3150` | Series ngủ, mưa đêm |
-| Ánh sáng | Vàng đèn (Lamp Gold) | `#E8B96A` | Điểm nhấn, ánh đèn |
+| Nền sáng | Giấy cũ (Old Paper) | `#EFE8DC` | Nền lyric video, ảnh bìa tối giản |
+| Chữ | Mực (Ink) | `#1E1E1E` | Chữ, logo |
+| Nền tối | Đá (Stone) | `#3A3A3C` | Nền lyric video bài trầm |
+| Ấm | Đất (Earth) | `#7A5C43` | Chủ đề `doi-nguoi` |
+| Nhấn | Lửa (Ember) | `#D9622B` | Điểm nhấn, chủ đề `dung-day` |
+| Sâu | Đêm (Night Blue) | `#23304A` | Chủ đề `y-nghia` |
+| Sáng tạo | Rêu (Moss) | `#6B7A4B` | Chủ đề `nghe-thuat` |
 
-Mỗi series dùng **một màu chủ đạo riêng** trên thumbnail để khán giả nhận ra ngay:
-`rain-piano` → Night Indigo • `lofi-study` → Lamp Gold • `deep-sleep` → Indigo đậm • `morning-calm` → Cream • `zen-meditation` → Mist Sage.
+## 4. Typography — chữ là nhân vật chính
 
-## 4. Typography
+Vì lời là linh hồn, **typography là nhận diện quan trọng nhất** (lyric video, ảnh trích lời).
+- Lời trích / tiêu đề: serif có dấu tiếng Việt đẹp — **Lora**, **Playfair Display**, **Noto Serif**
+- Chữ phụ: **Be Vietnam Pro**
+- Chất "viết tay" (dùng tiết chế): **Dancing Script** hoặc chữ viết tay thật của bạn (scan) → rất riêng
+- Tất cả là Google Fonts (dùng thương mại được). Lưu tại `brand/fonts/`.
 
-- Tiêu đề thumbnail: font có dấu tiếng Việt tốt, mềm mại — gợi ý **Be Vietnam Pro**, **Quicksand**, **Lora** (serif, cho cảm giác thơ).
-- Chữ phụ/mô tả: **Be Vietnam Pro** hoặc **Inter**.
-- Tất cả đều là font miễn phí trên Google Fonts (dùng thương mại được). Lưu tại `brand/fonts/`.
+## 5. Phong cách hình ảnh
 
-## 5. Phong cách hình ảnh (Visual direction)
+- **Điện ảnh, có chất liệu:** ảnh hạt film, giấy, bê tông, gỗ; ánh sáng xiên, bóng đổ dài.
+- **Ẩn dụ thay vì minh họa trực tiếp:** bài về kiên cường → một cái cây đơn độc trên đồi lộng gió, không phải người giơ nắm đấm.
+- **Ít, nhưng mạnh:** một hình ảnh + một câu hát, nhiều khoảng trống.
+- **Không** dùng phong cách anime dễ thương, màu kẹo ngọt, hay hình "motivation" sáo rỗng (người đứng trên đỉnh núi giơ tay).
 
-- Tranh minh họa phong cách anime/Ghibli-inspired **nhưng không sao chép nhân vật/tác phẩm có bản quyền**.
-- Bối cảnh Việt: phố cổ Hội An mưa, gác nhỏ Hà Nội, đồi thông Đà Lạt, ruộng lúa sớm, bàn học cạnh cửa sổ.
-- Ánh sáng ấm, độ bão hòa thấp, nhiều khoảng thở.
-- Video: ảnh tĩnh + chuyển động nhẹ (mưa rơi, khói trà, rèm bay, đèn nhấp nháy) loop 10–30 giây.
-- **Nhân vật mascot (tùy chọn):** một cô/cậu bé + chú mèo — xuất hiện xuyên suốt để tạo nhận diện (giống "lofi girl").
+### Lyric video — 3 kiểu cố định
+| Kiểu | Mô tả | Dùng cho |
+|---|---|---|
+| **Trang giấy** | Nền giấy cũ, chữ mực hiện dần như đang viết | Bài tự sự, thơ |
+| **Khung phim** | Hình ảnh điện ảnh chuyển động chậm + phụ đề serif | Bài cao trào, động lực |
+| **Tối giản đen** | Nền tối, chữ trắng lớn giữa màn hình, nhấn từ khóa màu Ember | Rap/spoken word |
 
-## 6. Thumbnail — quy tắc
+## 6. Ảnh bìa (3000×3000)
 
-1. Hình chiếm ≥ 80%, chữ ≤ 4–5 từ.
-2. Chữ lớn, tương phản cao, không đặt ở góc dưới phải (bị che bởi thời lượng video).
-3. Logo nhỏ cố định ở một góc — nhất quán mọi video.
-4. Mỗi series một layout cố định → mở `brand/visuals/` để lưu template (Canva/Photoshop/Figma).
+- Một hình ảnh ẩn dụ + tên bài + tên nghệ sĩ nhỏ, **cùng vị trí, cùng font** ở mọi bài → nhìn là nhận ra.
+- Series/EP có thể dùng chung một khung, đổi hình.
 
-## 7. Giọng văn (Tone of voice)
+## 7. Giọng văn
 
-- Nhẹ nhàng, ấm áp, như một người bạn thì thầm. Không giật tít, không hứa hẹn quá đà.
-- ✅ "Mưa rơi ngoài hiên, pha một tách trà và để piano ru bạn chậm lại 🌧️"
-- ❌ "NHẠC CHỮA KHỎI MẤT NGỦ 100% NGHE LÀ NGỦ NGAY!!!"
-- **Không** đưa ra tuyên bố y khoa (chữa bệnh, chữa trầm cảm, "tần số chữa lành DNA"...). Dùng từ "thư giãn", "dễ ngủ hơn", "giảm căng thẳng".
+- **Chân thành, tiết chế, có chiều sâu.** Như một người viết nhật ký cho người lạ đọc.
+- ✅ *"Có những mùa giông mình không tránh được. Bài hát này viết cho lúc đứng giữa gió."*
+- ❌ *"BÀI HÁT ĐỘNG LỰC NGHE LÀ THÀNH CÔNG!!! 🔥🔥🔥"*
+- Không lên lớp, không dạy đời — **kể, không giảng**.
+- Emoji: tối đa 1–2, chọn trầm (🌿 🪨 🌊 🕯️ ✍️).
 
-## 8. Mẫu "Giới thiệu kênh" (About)
+## 8. Mẫu giới thiệu (About / Bio)
 
-**Tiếng Việt**
-> Healing Box — chiếc hộp nhỏ chứa những giai điệu bình yên. 🎧
-> Nhạc piano, lofi, ambient giúp bạn thư giãn, học tập, làm việc và ngủ ngon hơn.
-> Video mới mỗi Thứ 3 – Thứ 5 – Chủ nhật.
-> 🎵 Âm nhạc được sáng tác với sự hỗ trợ của công cụ AI, được tuyển chọn và hoàn thiện thủ công bởi Healing Box.
-> 📩 Liên hệ hợp tác / license nhạc: healingbox.music@gmail.com
+**YouTube / Spotify (VN)**
+> Tôi viết những bài hát về cuộc sống — về giông bão, về những tảng đá lặng im, về câu hỏi "mình sống để làm gì".
+> Lời do tôi viết. Nhạc và giọng hát được tạo cùng công cụ AI, rồi được tôi chọn lọc và hoàn thiện.
+> Nếu một câu hát nào đó ở lại với bạn, vậy là đủ.
+> ✍️ Bài mới mỗi Thứ 6 · 📩 Hợp tác: [email]
 
 **English**
-> Healing Box — a little box of peaceful melodies. 🎧
-> Piano, lofi and ambient music to relax, study, work and sleep better.
-> New videos every Tue – Thu – Sun.
-> 🎵 Music created with the help of AI tools, curated and finished by hand at Healing Box.
-> 📩 Business / licensing: healingbox.music@gmail.com
+> Songs about life — storms, silent stones, and the question of what we live for.
+> Lyrics written by me. Music and vocals created with AI tools, then curated and finished by hand.
+> New song every Friday.

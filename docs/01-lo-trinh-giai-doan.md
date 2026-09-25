@@ -1,156 +1,149 @@
 # 01 — Lộ trình & Phân chia giai đoạn
 
 Mỗi giai đoạn có: **Mục tiêu → Đầu việc (checklist) → Sản phẩm bàn giao → Điều kiện chuyển giai đoạn (Exit criteria)**.
-Không chuyển giai đoạn khi chưa đạt exit criteria — đây là cách giữ dự án đi đúng hướng.
+Không chuyển giai đoạn khi chưa đạt exit criteria.
 
 ```
-GĐ0 Nền tảng ──► GĐ1 Kho nhạc ──► GĐ2 Ra mắt ──► GĐ3 Tăng trưởng ──► GĐ4 Kiếm tiền ──► GĐ5 Mở rộng
- Tuần 1–2         Tuần 3–6         Tháng 2–3       Tháng 4–6           Tháng 7–9          Tháng 10–12+
+GĐ0 Nền tảng ──► GĐ1 Bản sắc & kho bài ──► GĐ2 Ra mắt ──► GĐ3 Tăng trưởng ──► GĐ4 Kiếm tiền ──► GĐ5 Mở rộng
+ Tuần 1–2          Tuần 3–8                  Tháng 3–4       Tháng 5–8          Tháng 7–10         Tháng 10–12+
 ```
+
+> **Khác với kênh nhạc nền:** nút thắt của dự án là **viết lời** (việc của con người), không phải số lượng bài AI.
+> Vì vậy kế hoạch đặt nhịp **2 bài/tháng lúc đầu → 1 bài/tuần** khi đã quen tay, và luôn giữ **kho 4 bài chờ phát hành**.
 
 ---
 
 ## 🧱 GIAI ĐOẠN 0 — Nền tảng (Tuần 1–2)
 
-**Mục tiêu:** Mọi thứ "hạ tầng" sẵn sàng để sản xuất và phát hành hợp pháp, chuyên nghiệp.
+**Mục tiêu:** Có tên, có nhà, có giấy tờ.
 
 ### Checklist
-**Thương hiệu**
-- [ ] Chốt tên hiển thị: `Healing Box` (kiểm tra trùng tên trên YouTube/Spotify/TikTok/Instagram)
-- [ ] Chốt handle thống nhất: `@healingbox.music` / `@healingboxmusic` (chọn cái còn trống ở mọi nền tảng)
-- [ ] Logo (hình chiếc hộp mở + nốt nhạc/ánh sáng), bảng màu, font → `brand/`
-- [ ] Banner YouTube, avatar, ảnh bìa Spotify, template thumbnail cho từng series
-- [ ] Viết "About" kênh (VN + EN) — xem mẫu trong `02-nhan-dien-thuong-hieu.md`
+**Tên & thương hiệu**
+- [ ] **Chốt tên nghệ sĩ/kênh** (xem `setup/ngay-1-tai-khoan.md`) — tên này sẽ là tên nghệ sĩ trên Spotify, rất khó đổi
+- [ ] Logo/wordmark, bảng màu, font, avatar, banner (xem `02`)
+- [ ] Viết "tuyên ngôn" 3–5 câu: bạn viết nhạc vì điều gì? (dùng cho About kênh, bio Spotify)
 
-**Tài khoản & hạ tầng**
-- [ ] Email riêng cho dự án (vd: healingbox.music@gmail.com), bật 2FA
-- [ ] Kênh YouTube dạng **Brand Account** (để sau này thêm người quản lý)
-- [ ] Đăng ký gói trả phí công cụ AI nhạc (Suno Pro/Premier hoặc tương đương) — **bắt buộc để có quyền thương mại**
-- [ ] Tài khoản distributor (DistroKid / TuneCore / CD Baby / Amuse...) — đọc kỹ chính sách về nhạc AI
-- [ ] Spotify for Artists, Apple Music for Artists, YouTube Studio (claim khi bài đầu tiên lên sóng)
-- [ ] TikTok, Instagram, Facebook Page (giữ tên, chưa cần đăng nhiều)
-- [ ] Google Drive / ổ cứng lưu trữ: backup audio gốc, stems, project file
-- [ ] Clone repo này, dùng `catalog/tracks.csv` làm nguồn dữ liệu duy nhất
+**Tài khoản**
+- [ ] Email riêng + 2FA · Kênh YouTube thương hiệu · giữ tên TikTok / Instagram / Facebook / Threads
+- [ ] Suno gói trả phí (đang có) — **tải WAV mọi bài đã chọn**
+- [ ] Distributor (DistroKid / TuneCore / CD Baby...) — đọc chính sách nhạc AI
+- [ ] Google Drive: `01-Loi-goc`, `02-Audio-goc`, `03-Master`, `04-Artwork`, `05-Video`, `06-Phap-ly`
 
-**Pháp lý**
-- [ ] Đọc & lưu bản chụp Điều khoản sử dụng (ToS) của công cụ AI tại thời điểm tạo nhạc → `docs/05-...`
-- [ ] Quy ước lưu bằng chứng sáng tác (prompt, lời, file project) cho mọi bài
-- [ ] Quyết định: có đăng ký Content ID qua distributor hay không (khuyến nghị: **KHÔNG** ở giai đoạn đầu)
+**Pháp lý (xem `05`)**
+- [ ] Lưu hóa đơn Suno các tháng đã tạo bài
+- [ ] Lưu bản nháp lời gốc có ngày tạo cho mọi bài
+- [ ] (Khuyến nghị) Đăng ký quyền tác giả **lời bài hát** tại Cục Bản quyền tác giả cho 2 bài đầu
+
+### Exit criteria
+✅ Tên đã chốt và giữ được trên mọi nền tảng • Kênh setup xong • Có WAV + master của "Sau Mùa Giông".
+
+---
+
+## 🎼 GIAI ĐOẠN 1 — Bản sắc & kho bài (Tuần 3–8)
+
+**Mục tiêu:** Tìm ra "chất" riêng — người nghe 3 bài phải nhận ra đó là **cùng một nghệ sĩ**.
+
+### Checklist
+**Bản sắc âm nhạc**
+- [ ] Chọn **1–2 giọng hát chủ đạo** (vd: giọng nam trầm ấm kể chuyện + giọng nữ trong cho điệp khúc) và giữ cố định.
+      Dùng tính năng giữ giọng nhất quán của Suno (Persona) nếu gói có hỗ trợ.
+- [ ] Chọn **"màu âm thanh" chung**: vd *acoustic guitar + piano + dàn dây cinematic, cao trào kiểu rock nhẹ*.
+- [ ] Ghi lại vào `prompts/_am-thanh-chung.md` — mọi prompt đều bắt đầu từ đây.
+
+**Sáng tác**
+- [ ] Sửa lời "Tảng Đá" (xem `releases/HB-001_tang-da/review.md`), làm bản có và không có rap
+- [ ] Viết thêm **6–8 bài** mới, phủ cả 4 chủ đề (`dung-day`, `doi-nguoi`, `y-nghia`, `nghe-thuat`)
+- [ ] Mỗi bài: 20–40 bản tạo → chọn 1 → hậu kỳ → QC (xem `03`)
+- [ ] Viết "câu chuyện đằng sau" cho từng bài (3–5 câu) — dùng cho mô tả, Shorts, bio bài hát
+
+**Hình ảnh**
+- [ ] Template lyric video (1 phong cách chung, đổi hình nền theo bài)
+- [ ] Ảnh bìa 3000×3000 cho từng bài, cùng một ngôn ngữ thiết kế
 
 ### Sản phẩm bàn giao
-Brand kit hoàn chỉnh • Kênh đã setup đẹp • Tài khoản công cụ + distributor • Quy trình lưu trữ.
+8–10 bài hoàn thiện • lyric video cho 4 bài đầu • 20+ Shorts cắt sẵn.
 
 ### Exit criteria
-✅ Có thể tạo 1 bài → hậu kỳ → xuất video → upload thử (private) trọn vẹn một vòng.
+✅ Có **≥ 4 bài hoàn thiện chờ phát hành** (đủ 2 tháng nếu phát hành 2 tuần/bài).
 
 ---
 
-## 🎼 GIAI ĐOẠN 1 — Xây kho nhạc đầu tiên (Tuần 3–6)
+## 🚀 GIAI ĐOẠN 2 — Ra mắt (Tháng 3–4)
 
-**Mục tiêu:** Có "vốn" nội dung đủ để ra mắt và duy trì lịch đăng 6–8 tuần mà không bị đuối.
+**Mục tiêu:** Ra mắt có câu chuyện, không phải "đăng bài".
 
-### Checklist
-- [ ] Viết **Series Bible** cho 3 series ưu tiên (mood, BPM, nhạc cụ, key, hình ảnh) → `prompts/`
-- [ ] Mỗi tuần tạo 60–100 bản nháp AI → tuyển chọn còn 10–15 bài đạt chuẩn (tỉ lệ chọn ~15–20%)
-- [ ] Hậu kỳ mọi bài: cắt đầu/đuôi, sửa lỗi, fade, cân âm lượng về chuẩn (xem `03-quy-trinh-san-xuat.md`)
-- [ ] QC theo checklist `templates/qc-checklist.md` — nghe trọn bài trên loa + tai nghe + điện thoại
-- [ ] Ghi toàn bộ vào `catalog/tracks.csv` (mỗi bài một mã `HB-xxx`)
-- [ ] Dựng **8–10 video mix dài** (1–3h) + 20–30 Shorts/Reels cắt từ các bài hay nhất
-- [ ] Chuẩn bị **EP đầu tiên** cho Spotify (5–8 bài cùng series)
-- [ ] Soạn sẵn metadata (tiêu đề, mô tả, tags, chapters) cho video đầu
+### Kế hoạch ra mắt
+| Tuần | Việc |
+|---|---|
+| T-3 | Nộp "Sau Mùa Giông" lên distributor (phát hành Thứ 6) |
+| T-1 | **Pitch editorial** trên Spotify for Artists · teaser 3 Shorts/TikTok (câu "bão không quật ngã — bão lay… rễ sâu") |
+| T-0 | Single + lyric video + bài viết "Vì sao tôi viết Sau Mùa Giông" |
+| T+2 | Single #2 "Tảng Đá" |
+| T+4, +6 | Single #3, #4 |
+| T+8 | **EP #1** (4 bài, gom single cũ + 1 bài mới — chiến thuật "waterfall") |
 
-### Sản phẩm bàn giao
-40–60 bài hoàn thiện • 8–10 video dài sẵn sàng • 1 EP • 20–30 Shorts.
+### Nhịp nội dung
+| Kênh | Tần suất |
+|---|---|
+| Spotify/Apple | 1 single mỗi 2 tuần (Thứ 6) |
+| YouTube lyric video | Cùng ngày phát hành |
+| YouTube Shorts / TikTok / Reels | 4–5/tuần — mỗi bài 6–10 clip: câu hát đắt nhất, câu chuyện bài hát, "POV" |
+| Threads / Facebook | 2–3/tuần — trích lời, hậu trường viết lời |
 
 ### Exit criteria
-✅ Có tối thiểu **6 tuần nội dung** đã sẵn sàng trong hàng đợi (buffer).
+✅ 4–6 bài đã phát hành • có dữ liệu save rate, lượt dùng sound TikTok • biết chủ đề nào được đón nhận nhất.
 
 ---
 
-## 🚀 GIAI ĐOẠN 2 — Ra mắt (Tháng 2–3)
+## 📈 GIAI ĐOẠN 3 — Tăng trưởng (Tháng 5–8)
 
-**Mục tiêu:** Lên sóng đều đặn, có những dữ liệu người xem thật đầu tiên.
-
-### Lịch đăng đề xuất
-| Kênh | Tần suất | Ghi chú |
-|---|---|---|
-| YouTube video dài | **2–3 video/tuần** | Cố định ngày giờ, vd: T3–T5–CN 19:00 |
-| YouTube Shorts | 1/ngày | Cắt 15–45s đoạn hay nhất + hình đẹp, dẫn về video dài |
-| Spotify / Apple Music | 1 single mỗi 1–2 tuần, 1 EP/tháng | Pitch editorial qua Spotify for Artists **≥ 7 ngày trước** ngày phát hành |
-| TikTok / Reels | 3–5/tuần | Tái sử dụng Shorts |
+**Mục tiêu:** Nhân bản thứ đang "chạm" được người nghe; tăng lên **1 bài/tuần**.
 
 ### Checklist
-- [ ] Tuần launch: đăng 3–4 video cùng lúc để kênh không "trống"
-- [ ] Tạo 3 playlist trên YouTube theo series + 1 playlist "Healing Box – Best of"
-- [ ] Phát hành EP đầu tiên trên Spotify, gửi pitch
-- [ ] Tạo playlist Spotify của chính kênh (trộn bài của mình + bài cùng mood của nghệ sĩ khác để tăng giá trị)
-- [ ] Ghim bình luận, trả lời **mọi** bình luận trong 24h đầu
-- [ ] Báo cáo tuần đầu tiên theo `templates/weekly-report.md`
+- [ ] Phân tích bài có save rate / lượt chia sẻ cao nhất → viết thêm theo chủ đề đó
+- [ ] Series **"Câu chuyện bài hát"**: video 1–3 phút bạn kể (giọng thật hoặc chữ) vì sao viết bài đó — giá trị con người rất cao
+- [ ] Series **"Hộp thư"**: người nghe gửi câu chuyện → bạn viết thành bài hát (gắn kết cộng đồng mạnh nhất)
+- [ ] **Tuyển tập** 30–60 phút theo chủ đề: *"Những bài hát cho người đang cố gắng"* — tăng giờ xem YouTube
+- [ ] Hợp tác với trang trích dẫn/sách/phát triển bản thân trên TikTok & Facebook (cho dùng nhạc kèm credit)
+- [ ] Gửi bài cho curator playlist độc lập (hợp pháp, không mua stream)
+- [ ] Nhắm điều kiện YPP (1.000 subs + 4.000 giờ xem hoặc 10 triệu view Shorts/90 ngày)
 
 ### Exit criteria
-✅ ≥ 20 video dài đã đăng • CTR trung bình ≥ 4% • Có số liệu 4 tuần để phân tích.
+✅ Đủ điều kiện YPP hoặc Spotify ≥ 3.000 monthly listeners.
 
 ---
 
-## 📈 GIAI ĐOẠN 3 — Tăng trưởng & tối ưu (Tháng 4–6)
+## 💰 GIAI ĐOẠN 4 — Kiếm tiền (Tháng 7–10)
 
-**Mục tiêu:** Nhân bản cái đang hiệu quả, cắt bỏ cái không hiệu quả. Tiến tới điều kiện YPP.
-
-### Checklist
-- [ ] Phân tích top 20% video theo **thời lượng xem trung bình** và **CTR** → tìm điểm chung (series, thumbnail, tiêu đề, độ dài)
-- [ ] A/B test thumbnail (YouTube Studio "Test & Compare")
-- [ ] Làm video "theo mùa/sự kiện": mùa thi, mùa mưa, Trung thu, Tết, Giáng sinh
-- [ ] Thử định dạng mới: 8–10h nhạc ngủ, Pomodoro 25/5, "Study with me"
-- [ ] Gửi nhạc tới curator playlist độc lập (SubmitHub, Groover...) — chọn lọc, không mua stream
-- [ ] Hợp tác với kênh/Tiktoker về thiền, yoga, học tập (cho dùng nhạc miễn phí kèm credit)
-- [ ] Xây cộng đồng: tab Cộng đồng, poll chọn mood cho video tiếp theo
-- [ ] Bắt đầu song ngữ tiêu đề/mô tả (VN + EN) cho các series có tiềm năng quốc tế
+- [ ] YouTube Partner Program
+- [ ] Streaming royalty (theo dõi ngưỡng lượt nghe tối thiểu/bài/năm của Spotify)
+- [ ] **Sync/license:** nhạc cho video thương hiệu, phim ngắn, sự kiện, dự án xã hội (bài động lực rất hợp)
+- [ ] **Ấn phẩm:** tập lời bài hát / thơ (ebook, bản in), poster trích lời
+- [ ] Nhận viết lời theo đặt hàng (quà tặng, sự kiện, doanh nghiệp)
 
 ### Exit criteria
-✅ Đạt (hoặc sắp đạt) **1.000 subs + 4.000 giờ xem công khai trong 12 tháng** → nộp YPP.
+✅ Doanh thu tháng ≥ chi phí vận hành • ≥ 2 nguồn thu.
 
 ---
 
-## 💰 GIAI ĐOẠN 4 — Kiếm tiền (Tháng 7–9)
+## 🌐 GIAI ĐOẠN 5 — Mở rộng (Tháng 10–12+)
 
-**Mục tiêu:** Có dòng tiền từ nhiều nguồn, không phụ thuộc một nền tảng.
-
-### Checklist
-- [ ] Nộp & được duyệt **YouTube Partner Program** (chuẩn bị giải thích "giá trị con người" — xem `05`)
-- [ ] Bật membership kênh (khi đủ điều kiện): cấp bậc "Hộp nhỏ / Hộp vàng" — quyền lợi: bản nhạc không quảng cáo, vote mood
-- [ ] Royalty streaming từ Spotify/Apple (theo dõi ngưỡng tối thiểu của Spotify: bài cần đạt đủ lượt nghe/năm mới được trả tiền)
-- [ ] Mở dịch vụ **license nhạc**: cho spa, quán cà phê, studio yoga, creator (bảng giá đơn giản)
-- [ ] Sản phẩm số: bộ "Sleep Pack", "Study Pack" (file MP3 không quảng cáo) bán qua Gumroad/Ko-fi
-- [ ] Nhận tài trợ/brand deal phù hợp (app thiền, tai nghe, trà, nến thơm...)
-
-### Exit criteria
-✅ Doanh thu hàng tháng ≥ tổng chi phí vận hành • Có ≥ 2 nguồn thu.
+- [ ] **Album concept #1** (8–12 bài, một câu chuyện xuyên suốt)
+- [ ] **Thuê ca sĩ/nhạc công thật thu lại 1–2 bài được yêu thích nhất** → tăng mạnh giá trị nghệ thuật, quyền tác giả và khả năng biểu diễn live
+- [ ] Hợp tác (feat.) với rapper/ca sĩ indie
+- [ ] Workshop / nội dung dạy viết lời
+- [ ] Đánh giá năm 1, lập kế hoạch năm 2
 
 ---
 
-## 🌐 GIAI ĐOẠN 5 — Mở rộng & hệ thống hóa (Tháng 10–12+)
-
-**Mục tiêu:** Kênh chạy như một "studio nhỏ", không phụ thuộc hoàn toàn vào sức một người.
-
-### Checklist
-- [ ] **Livestream 24/7** (radio lofi/healing) — nguồn giờ xem và subs rất lớn
-- [ ] Viết SOP chi tiết cho từng vai trò → thuê cộng tác viên (thumbnail, upload)
-- [ ] Mở kênh phụ theo ngôn ngữ/thị trường (vd: Healing Box Japan-style, Healing Box Sleep)
-- [ ] Album tổng hợp năm, video "1 năm Healing Box"
-- [ ] Đánh giá lại toàn bộ chiến lược, lập kế hoạch năm 2
-
----
-
-## 🔁 Nhịp làm việc hàng tuần (áp dụng từ GĐ1)
+## 🔁 Nhịp làm việc hàng tuần (từ GĐ1)
 
 | Ngày | Việc |
 |---|---|
-| **Thứ 2** | Đọc số liệu tuần trước → báo cáo tuần → chọn chủ đề tuần này |
-| **Thứ 3** | Sáng tác: tạo bản nháp AI theo brief (batch) |
-| **Thứ 4** | Tuyển chọn + hậu kỳ |
-| **Thứ 5** | Hình ảnh: ảnh nền, thumbnail, video loop |
-| **Thứ 6** | Dựng mix, metadata, lên lịch đăng (đi trước **2 tuần**) |
-| **Thứ 7** | Shorts/TikTok, tương tác cộng đồng |
-| **Chủ nhật** | Nghỉ / nghe nhạc tham khảo, tìm cảm hứng |
-
-> Quy tắc **"Buffer 2 tuần"**: luôn có sẵn nội dung cho 2 tuần kế tiếp. Ốm, bận vẫn không đứt lịch.
+| **Thứ 2** | Đọc số liệu → báo cáo tuần · chọn đề tài bài tiếp theo |
+| **Thứ 3** | ✍️ **Viết lời** (chỉ viết, không làm gì khác) |
+| **Thứ 4** | Sửa lời → tạo nhạc trên Suno (20–40 bản) |
+| **Thứ 5** | Chọn bản, hậu kỳ, master · ảnh bìa |
+| **Thứ 6** | Lyric video, Shorts, metadata · lên lịch (đi trước 2 tuần) · **ngày phát hành** |
+| **Thứ 7** | Tương tác bình luận, đăng Shorts, đọc tin nhắn người nghe |
+| **Chủ nhật** | Đọc sách, xem phim, sống — **nạp nguyên liệu để viết** |

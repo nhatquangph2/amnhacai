@@ -1,46 +1,37 @@
-# Metadata YouTube — `____`
+# Metadata YouTube — `HB-___`
 
-## Tiêu đề (≤ 70 ký tự hiển thị, từ khóa chính ở đầu)
-**VN:** `[Khoảnh khắc] [emoji] [Loại nhạc] [Lợi ích] | [Thời lượng]`
-**EN:** `[Moment] [emoji] [Music type] for [Benefit] | [Duration]`
+## Tiêu đề
+- **Lyric video:** `[Tên bài] - [Tên kênh] (Lyric Video)`
+- **Câu chuyện bài hát:** `Vì sao tôi viết "[Tên bài]" | [Tên kênh]`
+- **Tuyển tập:** `[Tâm trạng/Chủ đề] 🌿 Những bài hát [cho ai / khi nào] | [Tên kênh]`
+- **Shorts:** câu hook trong ngoặc kép, vd: `"Bão không quật ngã — bão lay… rễ sâu" #SauMuaGiong`
 
-## Mô tả
-
+## Mô tả (lyric video)
 ```
-[Câu 1–2: từ khóa chính + gợi cảm xúc. VD: Nhạc piano nhẹ nhàng cùng tiếng mưa đêm phố cổ 🌧️ giúp bạn thư giãn, dễ ngủ sau một ngày dài.]
+[1–2 câu câu chuyện bài hát — viết riêng cho từng bài]
 
-[Đoạn câu chuyện ngắn 2–4 câu về khoảnh khắc của video — viết riêng cho từng video.]
+🎧 Nghe trên Spotify: [link] · Apple Music: [link]
 
-🎧 Gợi ý nghe: [đọc sách / học bài / trước khi ngủ / thiền...]
+──────── LỜI BÀI HÁT ────────
+[Dán lời đầy đủ — giúp người tìm lời trên Google tìm thấy bạn]
 
-⏱️ Tracklist
-00:00 [Tên bài 1]
-03:42 [Tên bài 2]
-...
-(dán từ file chapters.txt do scripts/build_mix.py sinh ra)
+────────────────────────────
+✍️ Lời: [Họ tên tác giả]
+🎼 Nhạc & giọng hát: tạo với sự hỗ trợ của công cụ AI, chọn lọc & hoàn thiện bởi [Tên kênh]
+🎨 Hình ảnh: [nguồn]
+📩 Hợp tác / đặt bài hát: [email]
 
-🎵 Nghe trên Spotify: [link]
-🍎 Apple Music: [link]
-📌 Playlist [Series]: [link]
-
-──────────
-🎼 Âm nhạc được sáng tác với sự hỗ trợ của công cụ AI, được tuyển chọn, chỉnh sửa và hoàn thiện bởi Healing Box.
-🎨 Hình ảnh: [nguồn / công cụ]
-🌧️ Âm thanh môi trường: [nguồn + license]
-📩 Hợp tác & license nhạc: healingbox.music@gmail.com
-
-#HealingBox #[hashtag2] #[hashtag3]
+#[TenBai] #[TenKenh] #nhaccoloi
 ```
+> Bài chạm chủ đề nhạy cảm: thêm dòng hỗ trợ (xem `docs/05` mục 6).
 
 ## Tags
-healing box, [từ khóa chính], [biến thể 1], [biến thể 2], [tiếng Anh 1], [tiếng Anh 2], ...
+[tên bài], [tên bài] lyrics, lời bài hát [tên bài], [tên kênh], nhạc ý nghĩa, nhạc động lực, nhạc về cuộc sống, [chủ đề]...
 
 ## Cài đặt
-- [ ] Danh mục: Music
-- [ ] Không dành cho trẻ em
-- [ ] Playlist: ______
-- [ ] End screen: video cùng series + nút subscribe
-- [ ] Thumbnail tùy chỉnh
-- [ ] Ngôn ngữ tiêu đề/mô tả + bản dịch EN
-- [ ] Lịch đăng: ______ 19:00
-- [ ] Bình luận ghim: "Hôm nay bạn đang nghe khi làm gì? 🌧️"
+- [ ] Danh mục: Music · Không dành cho trẻ em
+- [ ] Playlist: chủ đề + "Tất cả bài hát"
+- [ ] End screen: bài tiếp theo + subscribe
+- [ ] Phụ đề: tải lời lên dạng phụ đề (.srt) nếu lyric video không có sẵn chữ
+- [ ] Lên lịch: Thứ 6 ___:___ (trùng giờ phát hành Spotify)
+- [ ] Ghim bình luận: "Câu nào trong bài ở lại với bạn?"

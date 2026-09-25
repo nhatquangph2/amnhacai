@@ -1,49 +1,47 @@
 # 07 — Mô hình kiếm tiền
 
-## 1. Các nguồn thu (theo thứ tự thường xuất hiện)
+## 1. Các nguồn thu
 
-| # | Nguồn thu | Khi nào | Mức độ | Ghi chú |
-|---|---|---|---|---|
-| 1 | **Streaming royalty** (Spotify, Apple, YouTube Music...) | Ngay từ bài đầu tiên | Nhỏ, đều | Thanh toán qua distributor; Spotify có ngưỡng lượt nghe tối thiểu/bài/năm |
-| 2 | **YouTube AdSense** | Sau khi vào YPP | Chính | Nhạc thư giãn có RPM thấp–trung bình; video dài cho phép đặt mid-roll (cân nhắc trải nghiệm) |
-| 3 | **Membership / Super Thanks** | Sau YPP | Nhỏ–vừa | Quyền lợi: bản không quảng cáo, vote mood, tên trong credits |
-| 4 | **License nhạc** (quán cà phê, spa, yoga, creator, app) | Tháng 6+ | Vừa | Hợp đồng đơn giản; cần chắc chắn về quyền thương mại của bài (xem `05`) |
-| 5 | **Sản phẩm số** (Sleep Pack, Study Pack, hình nền) | Tháng 6+ | Nhỏ–vừa | Gumroad / Ko-fi / Patreon |
-| 6 | **Tài trợ / Brand deal** | ≥ 10k subs | Vừa–lớn | App thiền, tai nghe, trà, nến thơm, sách — chọn brand hợp giá trị kênh |
-| 7 | **Livestream 24/7** | Tháng 9+ | Vừa | Ads + Super Chat, tăng giờ xem mạnh |
-
-## 2. Dự phóng doanh thu — cách tính (tự điền số thực tế)
-
-```
-Doanh thu YouTube   = Lượt xem kiếm tiền/tháng ÷ 1.000 × RPM
-Doanh thu Spotify   = Lượt stream/tháng × (≈ 0,002 – 0,005 USD/stream, thay đổi theo quốc gia & gói)
-Tổng                = YouTube + Streaming + Membership + License + Sản phẩm số + Tài trợ
-```
-
-**Ví dụ minh họa (không phải cam kết):**
-
-| Kịch bản | Views YT/tháng | RPM (USD) | Streams/tháng | Ước tính/tháng |
-|---|---|---|---|---|
-| Thận trọng | 100.000 | 0,5 | 20.000 | ~50 + ~60 ≈ **110 USD** |
-| Cơ sở | 500.000 | 1,0 | 150.000 | ~500 + ~450 ≈ **950 USD** |
-| Tích cực | 2.000.000 | 1,5 | 800.000 | ~3.000 + ~2.400 ≈ **5.400 USD** |
-
-> RPM phụ thuộc mạnh vào quốc gia người xem. Khán giả Mỹ/Âu/Nhật/Hàn có RPM cao hơn nhiều so với Việt Nam →
-> lý do nên làm **song ngữ tiêu đề/mô tả** cho các series có tiềm năng quốc tế.
-
-## 3. Bảng giá license tham khảo (khởi điểm, điều chỉnh sau)
-
-| Gói | Đối tượng | Quyền | Giá gợi ý |
+| # | Nguồn | Khi nào | Ghi chú |
 |---|---|---|---|
-| Creator | YouTuber/TikToker cá nhân | Dùng 1 bài trong video, có credit | Miễn phí (đổi credit + link) hoặc phí nhỏ |
-| Café / Spa | Cơ sở kinh doanh nhỏ | Phát nền tại 1 địa điểm, 12 tháng | Theo tháng/năm |
-| Commercial | Quảng cáo, app, game | Theo phạm vi | Báo giá riêng |
+| 1 | **Streaming royalty** (Spotify, Apple, YouTube Music, TikTok, Zing...) | Từ bài đầu tiên | **Nguồn chính** với nhạc có lời. Spotify có ngưỡng lượt nghe tối thiểu/bài/năm |
+| 2 | **TikTok / CapCut** | Khi sound được dùng | Trả qua distributor, theo lượt dùng/nghe |
+| 3 | **YouTube AdSense** | Sau YPP | Lyric video ngắn → ít giờ xem; tuyển tập dài bù lại |
+| 4 | **Sync / License** | Tháng 6+ | Nhạc cho video thương hiệu, phim ngắn, sự kiện, chiến dịch xã hội — bài động lực rất hợp. Lời của bạn là tài sản chính |
+| 5 | **Viết lời theo đặt hàng** | Bất kỳ lúc nào | Bài hát tặng sinh nhật/cưới/tri ân, bài hát doanh nghiệp, bài cho sự kiện |
+| 6 | **Ấn phẩm** | Khi có ~20 bài | Tập lời/thơ (ebook, bản in), poster trích lời, lịch để bàn |
+| 7 | **Membership / Ủng hộ** | Sau YPP / có cộng đồng | Nghe bài mới sớm, xem bản nháp lời, đặt đề tài |
+| 8 | **Tác quyền (VCPMC)** | Khi đã đăng ký | Phần lời, khi bài được dùng công cộng (xem `05`) |
+| 9 | **Biểu diễn** | GĐ5+ | Khi có bản thu với ca sĩ thật |
 
-⚠️ Trước khi bán license, xác nhận lại: (1) gói AI khi tạo bài cho phép thương mại; (2) bài không đăng ký Content ID
-(tránh claim khách hàng); (3) hợp đồng ghi rõ **không độc quyền** nếu bạn không thể đảm bảo tính độc quyền của nhạc AI.
+## 2. Công thức dự phóng
+
+```
+Streaming  = Lượt stream/tháng × (≈ 0,002 – 0,005 USD/stream, tùy quốc gia & gói)
+YouTube    = Lượt xem kiếm tiền/tháng ÷ 1.000 × RPM
+Tổng       = Streaming + YouTube + TikTok + Sync + Đặt hàng + Ấn phẩm + Membership
+```
+
+| Kịch bản (tháng 12) | Streams/tháng | YouTube views | Ước tính/tháng |
+|---|---|---|---|
+| Thận trọng | 50.000 | 50.000 | ~150 + ~25 ≈ **175 USD** |
+| Cơ sở | 300.000 | 300.000 | ~900 + ~200 ≈ **1.100 USD** + đặt hàng/sync |
+| Có bài "viral" | 2.000.000 | 1.500.000 | ~6.000 + ~1.000 ≈ **7.000 USD** |
+
+> Không phải cam kết — chỉ để hiểu đòn bẩy: **một bài chạm được người nghe có giá trị hơn 50 bài bình thường**.
+
+## 3. Bảng giá tham khảo (điều chỉnh sau)
+
+| Dịch vụ | Gợi ý |
+|---|---|
+| Viết lời + tạo bài hát tặng (cá nhân) | 500.000 – 2.000.000đ |
+| Bài hát cho sự kiện/doanh nghiệp | Báo giá theo quy mô |
+| License bài có sẵn cho video thương hiệu | Theo thời hạn, lãnh thổ, nền tảng |
+
+⚠️ Khi bán license: hợp đồng ghi rõ **không độc quyền** với phần nhạc AI; quyền với lời thì bạn có toàn quyền quyết định.
 
 ## 4. Nguyên tắc tài chính
 
-- Tách tài khoản ngân hàng/ví cho dự án. Ghi chép thu–chi hàng tháng trong báo cáo tháng.
-- Tái đầu tư 30–50% doanh thu năm đầu vào: công cụ tốt hơn, thuê designer, quảng cáo thử nghiệm.
-- Mục tiêu tài chính mốc 1: **doanh thu ≥ chi phí công cụ** (hòa vốn vận hành).
+- Tách tài khoản cho dự án; ghi thu–chi hàng tháng (`templates/monthly-review.md`).
+- Tái đầu tư 30–50% năm đầu: thuê làm lyric video, thu âm ca sĩ thật cho bài hit.
+- Mốc 1: doanh thu ≥ chi phí công cụ.

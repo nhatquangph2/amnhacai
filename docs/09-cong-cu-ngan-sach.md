@@ -11,16 +11,17 @@
 | Tách stems | Tính năng stems của công cụ AI | Ultimate Vocal Remover (miễn phí) | |
 | DAW / Hậu kỳ | Reaper (rẻ), Audacity (miễn phí) | FL Studio, Ableton, Logic | |
 | Master | Plugin limiter trong DAW, iZotope Ozone | LANDR, BandLab Mastering | |
-| Âm thanh môi trường | Tự thu, Freesound (CC0) | Epidemic Sound, Artlist | Ghi rõ license |
 | Tạo ảnh AI | Midjourney | Ideogram, Leonardo, Flux, Firefly | Firefly thiên về an toàn thương mại |
-| Ảnh → video loop | Runway, Kling | Pika, CapCut, After Effects | |
+| Lyric video | CapCut (auto caption → sửa tay) | After Effects, Canva video, Premiere | Kiểm tra dấu tiếng Việt từng chữ |
+| Ảnh → video loop | Runway, Kling | Pika, CapCut | Spotify Canvas, nền lyric video |
+| Viết lời | Google Docs (lịch sử phiên bản = bằng chứng) | Notes điện thoại | Từ điển vần, từ điển đồng nghĩa tiếng Việt |
+| Lời trên Spotify | Distributor / Musixmatch for Artists | | |
 | Thumbnail | Canva Pro | Photoshop, Figma | |
 | Dựng video | CapCut, DaVinci Resolve (miễn phí) | Premiere | `scripts/build_mix.py` cho mix dài |
 | SEO YouTube | vidIQ / TubeBuddy (bản free) | | |
 | Phân phối | DistroKid | TuneCore, CD Baby, Amuse, RouteNote | Đọc chính sách AI |
 | Quản lý | Repo này + Google Sheets/Notion | Trello | `catalog/*.csv` mở được bằng Excel/Sheets |
 | Lưu trữ | Google Drive 100GB–2TB | Ổ cứng ngoài + cloud | Quy tắc 3-2-1: 3 bản, 2 thiết bị, 1 ngoài site |
-| Livestream 24/7 (GĐ5) | OBS trên VPS | Dịch vụ livestream chuyên dụng | |
 
 ## 2. Ngân sách theo giai đoạn (ước tính, USD/tháng)
 
@@ -32,9 +33,9 @@
 | Canva Pro | 0–13 | 13 | 13 |
 | Distributor | ~2 (≈ 25/năm) | ~2–4 | ~4 |
 | Lưu trữ cloud | 2 | 2–10 | 10 |
-| Âm thanh/stock | 0 | 0–15 | 15 |
-| VPS livestream | — | — | 10–30 |
-| Cộng tác viên | — | — | 100–300 |
+| Đăng ký bản quyền lời | ~ lệ phí nhà nước/lần | | |
+| Cộng tác viên (lyric video) | — | 50–100 | 100–300 |
+| Thu âm ca sĩ thật (theo bài) | — | — | 100–500/bài |
 | **Tổng** | **~25–40** | **~95–150** | **~250–600** |
 
 ## 3. Thiết bị

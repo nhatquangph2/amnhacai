@@ -5,7 +5,7 @@
 - Chính tả: "uớc mong" → **"ước mong"** (2 chỗ)
 - "Và thế mài mòn theo năm tháng" hơi khó hiểu → vd: "Dòng nước mài mòn theo năm tháng"
 - Đoạn gắn nhãn "Bridge" thực chất là **Pre-Chorus** (lặp trước điệp khúc)
-- Đoạn **Rap** đổi hẳn không khí so với phần còn lại → cân nhắc làm bản không rap cho kênh chữa lành (giữ bản rap làm phiên bản riêng)
+- Đoạn **Rap** hợp với hướng đi mới (kể chuyện, chiều sâu) → giữ. Cân nhắc cho đoạn chuyển vào rap mượt hơn (vd: [Instrumental break] ngắn)
 
 ## Cần làm trước khi phát hành
 - [x] Tài khoản Suno `thk777` của bạn, gói trả phí ngày 22/06/2026 (đã xác nhận)

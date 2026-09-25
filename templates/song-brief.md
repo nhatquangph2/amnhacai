@@ -1,39 +1,57 @@
-# Brief sáng tác — Batch: `____`
+# Brief bài hát — `HB-___` · ✍️ Tên tạm: ______
 
 | Mục | Nội dung |
 |---|---|
-| Ngày | |
-| Series | `rain-piano` / `lofi-study` / `deep-sleep` / `morning-calm` / `zen-meditation` / `vn-healing-songs` |
-| Mục đích | Video dài YouTube / Single Spotify / Shorts |
-| Số bài cần đạt chuẩn | |
+| Ngày bắt đầu | |
+| Chủ đề | `dung-day` / `doi-nguoi` / `y-nghia` / `nghe-thuat` |
+| Định dạng | Hát / Hát + rap / Thơ phổ nhạc / Spoken word |
 
-## Khoảnh khắc (viết 1–2 câu như một cảnh phim)
-> vd: 11 giờ đêm ở một gác nhỏ Hà Nội, mưa gõ lên mái tôn, đèn bàn vàng, một cuốn nhật ký đang mở.
+## 1. Hạt giống
+- **Điều gì khiến bạn muốn viết bài này?** (một khoảnh khắc thật, một câu nói, một người)
+  > 
+- **Thông điệp trong 1 câu:**
+  > 
+- **Viết cho ai?** (một người cụ thể trong đầu bạn)
+  > 
 
-## Thông số âm nhạc
-- Mood: 
-- BPM: 
-- Key/scale gợi ý: (vd: C major, A minor, D dorian)
-- Nhạc cụ chính: 
-- Nhạc cụ phụ / chất liệu: 
-- Âm thanh môi trường: 
-- Có lời? Không / Có (dán lời tự viết bên dưới)
-- Tránh: (vd: trống mạnh, synth chói, giọng hát)
+## 2. Ẩn dụ trung tâm
+- Hình ảnh mang cả bài: (vd: cây & giông, tảng đá & dòng sông)
+- Hành trình: **Đầu bài** ______ → **Giữa bài** ______ → **Cuối bài** ______
+- Câu kết lật nghĩa (chữ ký): 
 
-## Prompt chính
-```
-```
-
-## Biến thể prompt (thay 1 yếu tố mỗi biến thể)
+## 3. Câu hook (dùng cho TikTok)
 1. 
 2. 
-3. 
 
-## Lời bài hát (nếu có — do con người viết)
+## 4. Lời (bản nháp — bản gốc lưu Google Docs để có lịch sử)
+```
+[Verse 1]
+
+[Pre-Chorus]
+
+[Chorus]
+
+[Verse 2]
+
+[Chorus]
+
+[Bridge]
+
+[Final Chorus]
+
+[Outro]
+```
+
+## 5. Nhạc
+- Prompt = âm thanh chung + chủ đề + riêng bài:
 ```
 ```
+- Giọng: ______ · BPM: ___ · Cao trào ở: ______
 
-## Kết quả
-| Bản nháp | Giai điệu | Âm sắc | Cảm xúc | Độ sạch | Tổng /20 | Chọn? | Mã HB |
+## 6. Kết quả tạo (chấm 1–5)
+| Bản | Phát âm | Cảm xúc | Cao trào | Độ sạch | Bản sắc | Tổng /25 | Chọn? |
 |---|---|---|---|---|---|---|---|
 | | | | | | | | |
+
+## 7. Câu chuyện đằng sau (3–5 câu — dùng cho mô tả, Shorts, pitch Spotify)
+> 

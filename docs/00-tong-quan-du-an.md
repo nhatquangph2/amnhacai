@@ -1,68 +1,75 @@
-# 00 — Tổng quan dự án Healing Box
+# 00 — Tổng quan dự án
 
 ## 1. Tầm nhìn & Sứ mệnh
 
-- **Tầm nhìn:** Trở thành "chiếc hộp bình yên" quen thuộc của người Việt (và khán giả quốc tế) mỗi khi cần thư giãn, tập trung hay ngủ ngon.
-- **Sứ mệnh:** Mang đến âm nhạc nhẹ nhàng, chất lượng cao, đều đặn mỗi tuần — kết hợp sức mạnh sản xuất của AI với gu thẩm mỹ và sự chăm chút của con người.
-- **Tagline:** *Healing Box — Mở hộp, thả lỏng.* / *Open the box, breathe again.*
+- **Tầm nhìn:** Trở thành một "người kể chuyện bằng âm nhạc" mà người trẻ Việt tìm đến khi cần
+  một câu hát để đứng dậy, để nghĩ sâu hơn, hoặc để thấy mình không cô đơn.
+- **Sứ mệnh:** Viết những bài hát **có lời thật sự đáng nghe** — về cuộc sống, nghệ thuật, ý nghĩa và động lực —
+  và dùng AI như một ban nhạc, một phòng thu, để đưa những lời đó đến người nghe nhanh hơn.
+- **Tuyên ngôn:** *Lời là linh hồn. AI là nhạc cụ.*
 
 ## 2. Định vị
 
-| Tiêu chí | Healing Box |
+| Tiêu chí | [Tên kênh] |
 |---|---|
-| Thể loại chính | Piano chữa lành, lofi chill, ambient, nhạc ngủ, nhạc thiền, acoustic nhẹ |
-| Điểm khác biệt | **Cảm xúc Á Đông / Việt Nam** (mưa phố cổ, đêm Đà Lạt, sáng quê, trà chiều) + hình ảnh "chiếc hộp" nhất quán |
-| Cam kết chất lượng | Mỗi bài đều qua hậu kỳ (mix/master, cắt sửa) và nghe duyệt bởi con người |
-| Minh bạch | Công khai có sử dụng AI hỗ trợ sáng tác (xây lòng tin + tuân thủ chính sách) |
+| Loại hình | **Dự án nghệ sĩ – nhạc sĩ (singer-songwriter)**, không phải kênh nhạc nền |
+| Cốt lõi | **Lời tiếng Việt do tác giả tự viết**: giàu hình ảnh, có chiều sâu, có thể là thơ (lục bát, tự do) hoặc rap/spoken word |
+| Thể loại nhạc | Ballad, indie/folk, pop rock, cinematic, rap/spoken word — linh hoạt theo bài, nhưng giữ **một "chất giọng" nhận diện** |
+| Khác biệt | Hầu hết kênh nhạc AI làm nhạc nền không lời hoặc lời do AI viết. Ở đây **lời là của con người** — đây vừa là giá trị nghệ thuật, vừa là lợi thế pháp lý & chính sách (xem `05`) |
+| Minh bạch | Công khai: "Lời: [tác giả]. Nhạc & giọng hát: tạo với hỗ trợ của AI" |
 
-> **Nguyên tắc vàng:** Kênh nhạc AI thắng nhờ **tuyển chọn (curation) + nhất quán thương hiệu + trải nghiệm nghe**,
-> không phải nhờ số lượng. YouTube từ 2025 siết chặt nội dung "sản xuất hàng loạt, lặp lại" — xem `05-phap-ly-ban-quyen.md`.
+### Chữ ký sáng tác (từ 2 bài đầu)
+Hai bài đầu đã cho thấy một phong cách rõ ràng — hãy giữ nó làm **bản sắc**:
+- **Ẩn dụ thiên nhiên – vật thể** để nói về con người: cây/rễ/giông (Sau Mùa Giông), đá/dòng sông (Tảng Đá).
+- **Hành trình biến đổi:** từ tổn thương → bền bỉ → hiểu ra điều gì đó.
+- **Câu kết lật nghĩa:** *"Bão không quật ngã — bão lay… rễ sâu"*, *"Tôi là tác phẩm mang dáng hình không cần chứng minh"*.
 
-## 3. Khán giả mục tiêu (Persona)
+## 3. Khán giả mục tiêu
 
-| Persona | Mô tả | Nhu cầu | Nội dung phù hợp |
+| Persona | Mô tả | Họ cần gì từ bài hát | Nơi tìm thấy họ |
 |---|---|---|---|
-| **An — Sinh viên ôn thi** (18–24) | Học khuya, cần tập trung | Nhạc không lời, đều, không gây xao nhãng | Lofi study 1–3h, Pomodoro mix |
-| **Linh — Dân văn phòng** (24–35) | Stress, mất ngủ nhẹ | Thư giãn sau giờ làm, dễ ngủ | Piano + mưa, sleep music 8h |
-| **Minh — Người tập thiền/yoga** (25–45) | Sống chậm, chăm sóc tinh thần | Âm thanh thiền, thiên nhiên | Ambient, singing bowl, nature |
-| **Global listener** | Khán giả quốc tế tìm "Asian chill" | Không khí phương Đông độc đáo | "Vietnam rainy night lofi", "Asian zen" |
+| **Khoa — Người trẻ đang vật lộn** (20–28) | Mới đi làm/thất nghiệp, áp lực, hay tự hỏi "mình đang làm gì với đời mình" | Một câu hát để đứng dậy, cảm giác được thấu hiểu | TikTok, YouTube, Spotify |
+| **Vy — Sinh viên nghĩ nhiều** (18–23) | Thích đọc sách, triết lý, viết nhật ký | Lời sâu, có thể trích làm caption, suy ngẫm | TikTok, Threads, Instagram |
+| **Anh Tuấn — Người đi qua giông bão** (28–40) | Từng thất bại, đang làm lại | Sự đồng cảm, động lực trưởng thành, không sáo rỗng | YouTube, Facebook |
+| **Người làm sáng tạo** (20–35) | Họa sĩ, nhà văn, nhạc sĩ, designer | Bài hát về hành trình sáng tạo, sự cô độc của người làm nghệ thuật | Instagram, Spotify |
 
-## 4. Các "Series" nội dung (Content Pillars)
+## 4. Bốn chủ đề chính (Content Pillars)
 
-Mỗi series có concept hình ảnh, prompt và bảng màu riêng → giúp thuật toán và khán giả nhận diện.
+Mỗi chủ đề có "bible" riêng trong `prompts/` (phong cách nhạc, prompt, hình ảnh, gợi ý đề tài).
 
-| Mã series | Tên | Mô tả | Độ dài video YouTube |
+| Mã | Chủ đề | Nội dung | Bài hiện có |
 |---|---|---|---|
-| `rain-piano` | 🌧️ Mưa & Piano | Piano nhẹ + tiếng mưa, phố cổ, hiên nhà | 1h – 3h |
-| `lofi-study` | 📚 Lofi Học Bài | Lofi beat, chill hop, góc học tập | 1h – 2h |
-| `deep-sleep` | 🌙 Ngủ Sâu | Ambient pad, drone, âm lượng thấp, fade dài | 3h – 10h |
-| `morning-calm` | ☀️ Sáng Bình Yên | Acoustic guitar, piano sáng, chim hót | 30' – 1h |
-| `zen-meditation` | 🧘 Thiền Tĩnh Tâm | Chuông xoay, sáo trúc, đàn tranh ambient | 1h – 3h |
-| `vn-healing-songs` | 🎤 Ca khúc chữa lành (có lời) | Ballad/acoustic lời Việt do bạn viết lời | Single 3–4' |
+| `dung-day` | 🔥 **Đứng Dậy** — động lực & kiên cường | Vượt khó, thất bại, bắt đầu lại, bền bỉ | Sau Mùa Giông |
+| `doi-nguoi` | 🌊 **Đời Người** — bài học cuộc sống | Thời gian, trưởng thành, gia đình, cô đơn, được tìm thấy | Tảng Đá |
+| `y-nghia` | 🌌 **Câu Hỏi Lớn** — ý nghĩa & triết lý | Sống để làm gì, hạnh phúc, tự do, cái chết, bản ngã | — |
+| `nghe-thuat` | 🎨 **Người Sáng Tạo** — nghệ thuật | Hành trình sáng tạo, người nghệ sĩ, cái đẹp, sự cô độc của người làm nghề | — |
 
-> Giai đoạn đầu chỉ tập trung **2–3 series** (đề xuất: `rain-piano`, `lofi-study`, `deep-sleep`).
-> Mở thêm series khi đã có dữ liệu cho thấy series nào hiệu quả.
+**Định dạng đặc biệt** (dùng chung cho mọi chủ đề):
+- **Thơ phổ nhạc** — bạn viết thơ trước, rồi phổ nhạc bằng AI.
+- **Rap / Spoken word** — phần lời dài, kể chuyện, như đoạn rap trong "Tảng Đá".
+- **Phiên bản khác** — acoustic / piano của bài đã có (giới hạn, không đăng tràn lan).
 
-## 5. Mục tiêu 12 tháng (SMART)
+## 5. Mục tiêu 12 tháng
 
 | Chỉ số | Tháng 3 | Tháng 6 | Tháng 12 |
 |---|---|---|---|
-| Subscribers YouTube | 500 | 2.000 | 10.000 |
-| Giờ xem (12 tháng gần nhất) | 1.000h | 4.000h ✅ YPP | 30.000h |
-| Monthly listeners Spotify | 300 | 2.000 | 10.000 |
-| Tổng số bài trong catalog | 60 | 150 | 350 |
-| Doanh thu/tháng | 0 | Bắt đầu có | Hòa vốn chi phí công cụ + có lãi |
+| Số bài đã phát hành | 4–6 | 15–20 | 40–50 |
+| Spotify monthly listeners | 300 | 3.000 | 15.000 |
+| Subscribers YouTube | 300 | 2.000 | 10.000 |
+| TikTok: lượt dùng sound của kênh | 50 | 1.000 | 10.000 |
+| Doanh thu/tháng | 0 | Bắt đầu có | ≥ chi phí vận hành + có lãi |
 
-> Đây là mục tiêu tham khảo cho kênh mới, đăng đều đặn. Điều chỉnh sau 90 ngày theo dữ liệu thực tế.
+> Nhạc có lời phát triển **chậm hơn nhưng bền hơn** nhạc nền: một bài "chạm" được người nghe có thể sống nhiều năm.
+> Chỉ số quan trọng nhất không phải view mà là **lưu bài (save), chia sẻ, và bình luận trích lời**.
 
-## 6. Vai trò (khi làm một mình → "đội 1 người")
+## 6. Vai trò (đội 1 người)
 
 | Vai trò | Việc chính | Thời gian/tuần |
 |---|---|---|
-| Music Director | Chọn hướng, viết prompt, duyệt bài | 5–6h |
-| Producer | Hậu kỳ, mix/master, dựng mix dài | 4–5h |
-| Visual Designer | Thumbnail, ảnh nền, video loop | 3–4h |
-| Channel Manager | Upload, SEO, lên lịch, trả lời bình luận | 2–3h |
-| Analyst | Đọc số liệu, báo cáo tuần | 1h |
+| **Người viết lời** ⭐ | Viết, sửa lời — phần giá trị nhất, không giao cho AI | 4–6h |
+| Music Director | Viết prompt, tạo bản nhạc, chọn bản hay nhất | 3–4h |
+| Producer | Hậu kỳ, master | 2h |
+| Visual | Lyric video, ảnh bìa, Shorts | 4–5h |
+| Channel Manager | Upload, SEO, tương tác | 2–3h |
 
-**Tổng: ~15–19h/tuần** ở giai đoạn đầu. Khi có doanh thu, ưu tiên thuê ngoài Visual Designer và Channel Manager trước.
+**Tổng: ~15–20h/tuần.** Khi có doanh thu, thuê ngoài phần Visual (lyric video) trước để bạn dành thời gian cho lời.
