@@ -52,6 +52,8 @@ TikTok `@senoremusic` có vẻ còn trống (`@senore` đã có chủ) · không
 6. Google Drive → thư mục dự án: `01-Loi-goc` · `02-Audio-goc` · `03-Master` · `04-Artwork` · `05-Video` · `06-Phap-ly`
    → Tải ngay 2 file WAV của Suno vào `02-Audio-goc`, hóa đơn Suno vào `06-Phap-ly`, nháp lời vào `01-Loi-goc`.
 
+📁 Drive dự án (Drive cá nhân, tạo 25/09/2026): https://drive.google.com/drive/folders/1p29jMLe3lBAQL68i-EP3WX-yU4yJ2amZ — đủ 6 thư mục trên
+
 ✍️ Email: `senoremusic7@gmail.com` · 2FA ☑ · Mã dự phòng đã cất ☐
 
 ---
