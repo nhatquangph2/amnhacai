@@ -17,3 +17,6 @@ releases/**/audio/stems/
 Thumbs.db
 __pycache__/
 *.pyc
+
+# Ảnh bìa PNG gốc (dựng lại được bằng scripts/make_cover.py) — chỉ commit bản .jpg
+releases/**/cover.png

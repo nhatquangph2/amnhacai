@@ -77,6 +77,9 @@ python3 scripts/new_track.py --title "Người Gieo Hạt" --series dung-day --m
 # Master nhanh: chuẩn -14 LUFS, True Peak -1 dBTP → WAV 44.1kHz/24-bit
 python3 scripts/master.py song.wav            # --measure để chỉ đo
 
+# Vẽ ảnh bìa 3000×3000 theo bộ nhận diện (PNG + JPG); đổi --seed để có dáng cây khác
+python3 scripts/make_cover.py --title "Sau Mùa Giông" --out releases/HB-002_sau-mua-giong/cover.png
+
 # Dựng video tuyển tập dài + sinh timestamps (cần ffmpeg)
 python3 scripts/build_mix.py releases/tuyen-tap-01/audio --image bg.jpg --crossfade 3 \
     --titles titles.txt --out releases/tuyen-tap-01/tuyen-tap-01.mp4
