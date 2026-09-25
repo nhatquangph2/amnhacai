@@ -24,6 +24,8 @@ Luôn đọc lại ToS hiện hành — chính sách các công cụ AI nhạc t
 - Với bài không lời: bật chế độ Instrumental.
 - Tạo theo batch, đặt tên bản nháp theo mã: `HB-012_draft-a`, `HB-012_draft-b`...
 
+**Luôn tải bản WAV** của bài được chọn ngay khi tạo (Suno: nút ⋯ → Download → WAV) và lưu vào Drive `01-Audio-goc`.
+
 **Lưu bằng chứng sáng tác** (bắt buộc cho mọi bài được chọn):
 prompt đầy đủ, lời bài hát, link/ID bản gốc trên công cụ, ngày tạo, gói đăng ký đang dùng → ghi vào `releases/HB-xxx/metadata.yaml`.
 
@@ -48,7 +50,7 @@ Công cụ: DAW miễn phí/giá rẻ (**Audacity**, **Reaper**, **BandLab**, **
 | 3. Thêm lớp âm thanh | Tiếng mưa, lửa, chim, sóng (nguồn có license: Freesound CC0, Pixabay, Epidemic...) | Nền không lấn nhạc |
 | 4. EQ / Reverb nhẹ | Giảm chói 3–6 kHz, bớt bùn 200–400 Hz | Ấm, mềm tai khi nghe lâu |
 | 5. Fade | Fade-in 2–5s, fade-out 5–10s | Ghép mix mượt |
-| 6. Master | Limiter, chuẩn hóa độ lớn | **-14 LUFS** (lofi/piano), **-16 đến -18 LUFS** (sleep/ambient); True Peak ≤ **-1 dBTP** |
+| 6. Master | Limiter, chuẩn hóa độ lớn (nhanh: `scripts/master.py`) | **-14 LUFS** (lofi/piano), **-16 đến -18 LUFS** (sleep/ambient); True Peak ≤ **-1 dBTP** |
 | 7. Xuất file | WAV 44.1kHz/24-bit (master) + MP3 320kbps (preview) | Đặt tên: `HB-012_mua-tren-hien-nha_master.wav` |
 
 > Các bước 2–4 **không chỉ để hay hơn** — chúng còn là bằng chứng "đóng góp sáng tạo của con người",

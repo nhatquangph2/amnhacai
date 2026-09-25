@@ -12,17 +12,19 @@ status: selected           # idea → draft → selected → mastered → packag
 # --- Bằng chứng sáng tác (bắt buộc, xem docs/05) ---
 creation:
   ai_tool: "Suno"
-  ai_plan: "CẦN ĐIỀN"   # gói trả phí có quyền thương mại tại thời điểm tạo
+  ai_plan: "Trả phí (✍️ ghi rõ Pro/Premier)"   # đã xác nhận: gói trả phí tại thời điểm tạo
+  plan_proof: ""         # ✍️ lưu hóa đơn Suno tháng tạo bài (Suno → Account → Billing) vào Drive/05-Hop-dong-Phap-ly
   created_date: 2026-09-01   # theo metadata file Suno
   source_link: "https://suno.com/song/fd6c9c8f-524d-45d7-bd00-fd90189bf615"
-  suno_account: "unifyingrock376"    # tài khoản Suno đã tạo bài — CẦN XÁC NHẬN là của bạn
+  suno_account: "unifyingrock376"    # đã xác nhận: tài khoản của chủ kênh
   suno_model: "chirp-auk-turbo-t2"
   c2pa_ai_label: true   # file có nhãn C2PA "AI-generated" do Suno gắn — KHÔNG xóa
   prompt: |
 
   lyrics_file: "lyrics.txt"
-  lyrics_author: "CẦN ĐIỀN"   # tên bạn nếu tự viết lời
+  lyrics_author: "✍️ Họ tên thật của bạn"   # đã xác nhận: lời do chủ kênh tự viết
   human_contribution:    # những gì bạn đã làm thêm
+    - "Tự viết toàn bộ lời bài hát"
     - ""                 # vd: cắt ghép cấu trúc, thêm tiếng mưa, EQ/master
 
 # --- Tài nguyên bên thứ ba ---

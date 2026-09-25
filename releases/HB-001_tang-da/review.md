@@ -8,7 +8,9 @@
 - Đoạn **Rap** đổi hẳn không khí so với phần còn lại → cân nhắc làm bản không rap cho kênh chữa lành (giữ bản rap làm phiên bản riêng)
 
 ## Cần làm trước khi phát hành
-- [ ] Xác nhận tài khoản Suno `thk777` là của bạn và đang ở **gói trả phí** ngày 22/06/2026
+- [x] Tài khoản Suno `thk777` của bạn, gói trả phí ngày 22/06/2026 (đã xác nhận)
+- [ ] Lưu hóa đơn Suno tháng đó làm bằng chứng
+- [x] Lời do bạn tự viết → lưu bản nháp lời gốc (ghi chú điện thoại, file Word có ngày tạo)
 - [ ] Sửa lời → tạo lại (hoặc giữ bản cũ nếu phát âm không bị ảnh hưởng)
 - [ ] Tải bản **WAV**, master về ~-14 LUFS, True Peak ≤ -1 dBTP
 - [ ] Cover 3000×3000

@@ -58,6 +58,9 @@ amnhacai/
 # 1. Tạo hồ sơ cho một bài hát mới (tự sinh mã HB-xxx + thêm vào catalog)
 python3 scripts/new_track.py --title "Mưa Trên Hiên Nhà" --series rain-piano --mood calm
 
+# 1b. Master nhanh: chuẩn -14 LUFS, True Peak -1 dBTP → WAV 44.1kHz/24-bit
+python3 scripts/master.py song.wav            # thêm --lufs -16 cho nhạc ngủ, --measure để chỉ đo
+
 # 2. Dựng một video mix dài từ nhiều bài (cần ffmpeg)
 python3 scripts/build_mix.py releases/mix-001/audio --image brand/visuals/rain.jpg \
     --out releases/mix-001/healing-box-mix-001.mp4

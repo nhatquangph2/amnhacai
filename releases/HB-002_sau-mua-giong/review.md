@@ -5,7 +5,9 @@
 **Đánh giá:** ⭐ Ứng viên **single đầu tiên**.
 
 ## Cần làm trước khi phát hành
-- [ ] Xác nhận tài khoản Suno `unifyingrock376` là của bạn và đang ở **gói trả phí** ngày 01/09/2026
+- [x] Tài khoản Suno `unifyingrock376` của bạn, gói trả phí ngày 01/09/2026 (đã xác nhận)
+- [ ] Lưu hóa đơn Suno tháng đó làm bằng chứng
+- [x] Lời do bạn tự viết → lưu bản nháp lời gốc (ghi chú điện thoại, file Word có ngày tạo)
 - [ ] Tải lại bản **WAV** từ Suno (không dùng MP3 để phát hành)
 - [ ] Master lại: limiter True Peak ≤ -1 dBTP (hiện đang clip)
 - [ ] Cover 3000×3000 (ảnh cover hiện tại trong file chỉ ~14 KB, quá nhỏ)
