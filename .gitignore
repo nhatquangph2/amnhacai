@@ -1,0 +1,19 @@
+# File media nặng — lưu trên Google Drive / ổ cứng, không đưa lên git
+*.wav
+*.flac
+*.mp3
+*.m4a
+*.aac
+*.ogg
+*.mp4
+*.mov
+*.mkv
+*.psd
+*.aep
+releases/**/audio/stems/
+
+# Hệ thống
+.DS_Store
+Thumbs.db
+__pycache__/
+*.pyc
