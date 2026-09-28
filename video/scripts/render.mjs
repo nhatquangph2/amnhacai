@@ -30,16 +30,22 @@ if (!song.synced) console.warn("⚠️  Lời CHƯA được căn thời gian (n
 const style = opt("style") ?? song.style;
 const short = args.includes("--short");
 const props = { song: { ...song, style } };
-if (opt("from")) props.clipStart = Number(opt("from"));
-if (opt("to")) props.clipEnd = Number(opt("to"));
+for (const [flag, key] of [["from", "clipStart"], ["to", "clipEnd"]]) {
+  if (opt(flag) === undefined) continue;
+  const v = Number(opt(flag));
+  if (!Number.isFinite(v)) throw new Error(`--${flag} phải là số giây, nhận được "${opt(flag)}"`);
+  props[key] = v;
+}
 
 const comp = short ? `${id}-short` : id;
 const still = opt("still");
 const out = path.join(
   "out",
-  still ? `${id}_${style}_${still}s${short ? "_short" : ""}.png` : `${id}_${short ? "short_" : ""}${style}.mp4`,
+  still
+    ? `${id}_${style}_${still}s${short ? "_short" : ""}.png`
+    : `${id}_${short ? `short${opt("from") ? `-${opt("from")}s` : ""}_` : ""}${style}.mp4`,
 );
-const propsFile = path.join(VIDEO, "out", `.props-${id}.json`);
+const propsFile = path.join(VIDEO, "out", `.props-${path.basename(out)}.json`); // riêng từng file → render song song được
 fs.mkdirSync(path.dirname(propsFile), { recursive: true });
 fs.writeFileSync(propsFile, JSON.stringify(props));
 
