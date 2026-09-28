@@ -12,7 +12,9 @@ const songs: Song[] = ctx.keys().map((k) => ctx(k) as Song);
 
 const fullLength: CalculateMetadataFunction<LyricVideoProps> = async ({ props }) => {
   const songDuration = await getAudioDurationInSeconds(staticFile(props.song.audio));
-  return { durationInFrames: Math.ceil(songDuration * FPS), props: { ...props, songDuration } };
+  // --from/--to: xuất một đoạn (vd video mẫu), mặc định cả bài
+  const len = Math.min(props.clipEnd ?? songDuration, songDuration) - (props.clipStart ?? 0);
+  return { durationInFrames: Math.ceil(len * FPS), props: { ...props, songDuration } };
 };
 
 const clipLength: CalculateMetadataFunction<LyricVideoProps> = async ({ props }) => {

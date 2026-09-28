@@ -16,7 +16,7 @@ const ROOT = path.resolve(VIDEO, "..");
 const PUBLIC = path.join(VIDEO, "public");
 
 const ACCENT = { "dung-day": "#D9622B", "doi-nguoi": "#7A5C43", "y-nghia": "#23304A", "nghe-thuat": "#6B7A4B" };
-const STYLES = ["paper", "film", "dark"];
+const STYLES = ["paper", "film", "dark", "anim"];
 
 const args = process.argv.slice(2);
 const id = args[0];

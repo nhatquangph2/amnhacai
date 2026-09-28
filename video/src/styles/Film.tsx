@@ -3,7 +3,7 @@
 // (ảnh/clip cho cả bài), mặc định là ảnh bìa — cảnh nào chưa có file thì lộ nền này.
 import React, { useMemo } from "react";
 import { AbsoluteFill, Img, OffthreadVideo, Sequence, getStaticFiles, interpolate, staticFile, useCurrentFrame } from "remotion";
-import { C, Grain, KaraokeText, SANS, SERIF, TitleCards, Vignette, lineAt, lineOpacity } from "../common";
+import { FilmText } from "./FilmText";
 import type { Scene } from "../types";
 import type { StyleProps } from "./index";
 
@@ -19,8 +19,6 @@ const Media: React.FC<{ src: string; style: React.CSSProperties; rate?: number }
 
 export const Film: React.FC<StyleProps> = ({ song, t, duration, vertical, fps }) => {
   const frame = useCurrentFrame();
-  const { line } = lineAt(song.lines, t);
-  const bar = vertical ? 0 : 138; // tỉ lệ 2.39:1 trên khung 16:9
   const files = useMemo(() => new Set(getStaticFiles().map((f) => f.name)), []);
 
   // --- Nền cả bài: Ken Burns rất chậm + trôi ngang nhẹ
@@ -43,8 +41,6 @@ export const Film: React.FC<StyleProps> = ({ song, t, duration, vertical, fps })
     if (fadeIn < 1 && cur > 0) layers.push({ scene: scenes[cur - 1], end: s.at + FADE, opacity: 1 });
     layers.push({ scene: s, end: scenes[cur + 1]?.at ?? duration, opacity: fadeIn });
   }
-
-  const hook = line?.hook;
 
   return (
     <AbsoluteFill style={{ background: "#000" }}>
@@ -73,75 +69,7 @@ export const Film: React.FC<StyleProps> = ({ song, t, duration, vertical, fps })
         );
       })}
 
-      <AbsoluteFill
-        style={{ background: "linear-gradient(to bottom, rgba(0,0,0,0.15) 40%, rgba(0,0,0,0.65) 100%)" }}
-      />
-      {/* Câu hook: hạ sáng khung hình để chữ lớn nổi lên */}
-      {hook && line && <AbsoluteFill style={{ background: "#000", opacity: 0.45 * lineOpacity(line, t, 0.5) }} />}
-      <Vignette strength={0.55} />
-      <Grain opacity={0.14} />
-
-      <TitleCards song={song} t={t} duration={duration} color={C.paper} accent={song.accent} vertical={vertical} />
-
-      {line && (
-        <AbsoluteFill
-          style={{
-            justifyContent: hook ? "center" : "flex-end",
-            alignItems: "center",
-            paddingBottom: hook ? 0 : vertical ? 520 : bar + 70,
-            paddingLeft: vertical ? 80 : 200,
-            paddingRight: vertical ? 80 : 200,
-            textAlign: "center",
-          }}
-        >
-          <div
-            style={{
-              opacity: lineOpacity(line, t, 0.45),
-              transform: hook
-                ? `scale(${interpolate(t - line.start, [0, 1.2], [0.96, 1], { extrapolateRight: "clamp" })})`
-                : `translateY(${interpolate(t - line.start, [0, 0.6], [14, 0], { extrapolateRight: "clamp" })}px)`,
-              fontFamily: SERIF,
-              fontSize: hook ? (vertical ? 104 : 112) : vertical ? 70 : 58,
-              fontWeight: hook ? 500 : 400,
-              lineHeight: 1.3,
-              color: C.paper,
-              textShadow: "0 2px 18px rgba(0,0,0,0.6)",
-            }}
-          >
-            <KaraokeText
-              line={line}
-              t={t}
-              song={song}
-              base="rgba(239,232,220,0.42)"
-              fill={C.paper}
-              glow="rgba(255,214,170,0.55)"
-              lift={hook ? 7 : 4}
-            />
-          </div>
-        </AbsoluteFill>
-      )}
-
-      {bar > 0 && (
-        <>
-          <div style={{ position: "absolute", top: 0, left: 0, right: 0, height: bar, background: "#000" }} />
-          <div style={{ position: "absolute", bottom: 0, left: 0, right: 0, height: bar, background: "#000" }} />
-          <div
-            style={{
-              position: "absolute",
-              bottom: bar / 2 - 12,
-              left: 90,
-              fontFamily: SANS,
-              fontSize: 20,
-              letterSpacing: 6,
-              color: C.paper,
-              opacity: 0.5,
-              textTransform: "lowercase",
-            }}
-          >
-            {song.artist} — {song.title}
-          </div>
-        </>
-      )}
+      <FilmText song={song} t={t} duration={duration} vertical={vertical} fps={fps} />
     </AbsoluteFill>
   );
 };

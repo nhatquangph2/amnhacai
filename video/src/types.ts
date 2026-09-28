@@ -1,7 +1,19 @@
 // Dữ liệu một bài hát — mỗi bài là một file src/songs/HB-xxx.json
 // (tạo bằng `npm run prep`, căn thời gian bằng tools/tap-sync.html)
 
-export type StyleId = "paper" | "film" | "dark";
+import type { AnimKey } from "./anim/params";
+import type { PoseName } from "./anim/Figure";
+
+// Một cảnh của MV hoạt hình (kiểu "anim"): cây trên đồi hoặc các cảnh của nhân vật
+export type Shot = {
+  at: number; // giây bắt đầu
+  scene: "hill" | "room" | "street" | "desk" | "notebook";
+  cut?: boolean; // cắt thẳng (mặc định mờ chéo 0.8s)
+  // Nhân vật trên đồi: đi từ x0 → x1 trong suốt cảnh
+  figure?: { pose: PoseName; x0: number; x1?: number; H: number; flip?: boolean };
+};
+
+export type StyleId = "paper" | "film" | "dark" | "anim";
 
 export type WordTime = {
   t: string; // chữ (giữ nguyên dấu câu)
@@ -39,6 +51,8 @@ export type Song = {
   background?: string; // ảnh hoặc video nền trong public/ (kiểu "film")
   emphasis?: string[]; // từ khóa tô màu nhấn, vd ["giông", "rễ"]
   scenes?: Scene[]; // phân cảnh MV — thiếu file thì cảnh đó tự dùng nền mặc định
+  shots?: Shot[]; // phân cảnh MV hoạt hình (tuyến người + tuyến cây)
+  anim?: AnimKey[]; // kịch bản chuyển động cho kiểu "anim" (MV hoạt hình) — xem src/anim/params.ts
   synced: boolean; // false = thời gian đang là ước lượng, chưa tap-sync
   lines: LyricLine[];
 };

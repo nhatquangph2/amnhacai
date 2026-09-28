@@ -1,5 +1,6 @@
 import type React from "react";
 import type { Song, StyleId } from "../types";
+import { Anim } from "./Anim";
 import { Dark } from "./Dark";
 import { Film } from "./Film";
 import { Paper } from "./Paper";
@@ -17,4 +18,5 @@ export const STYLES: Record<StyleId, React.FC<StyleProps>> = {
   paper: Paper,
   film: Film,
   dark: Dark,
+  anim: Anim,
 };

@@ -65,6 +65,7 @@ Whisper nghe được (khớp cả khi sai dấu), chỉ mượn **thời điể
 | `paper` | **Trang giấy** — nền giấy cũ, mực thấm đậm dần qua từng chữ được hát | Bài tự sự, thơ |
 | `film` | **Khung phim** — clip/ảnh nền theo phân cảnh, khung 2.39:1, hạt phim, phụ đề serif | Bài cao trào, động lực, **MV** |
 | `dark` | **Tối giản đen** — chữ lớn giữa màn hình, sáng dần theo từng chữ | Rap, spoken word |
+| `anim` | **MV hoạt hình vẽ bằng code** — tuyến cây (đồi, bão, lòng đất, vòng gỗ, chồi non) song song tuyến người (phòng tối, phố mưa, bàn viết, trang sổ) | MV đầy đủ, không cần clip AI |
 
 Cả 3 kiểu đều chạy chữ **karaoke** theo thời gian từng chữ từ Whisper; từ trong `emphasis` chạy màu nhấn.
 
@@ -79,6 +80,23 @@ Cả 3 kiểu đều chạy chữ **karaoke** theo thời gian từng chữ từ
 | `scenes[]` | Phân cảnh MV (kiểu `film`): `{ at, src, cut?, rate?, offset?, flip? }` — clip AI theo mốc giờ, `"black"` để cắt đen. Chép clip: `npm run prep -- HB-002 --scenes <thư-mục>` |
 | `lines[]` | `start`/`end` (giây), `text`, `section`, `words[]` (thời gian từng chữ cho karaoke) — do `whisper`/`align` ghi. `"hook": true` = phóng lớn giữa màn hình |
 | `synced` | `false` = thời gian còn ước lượng, chưa căn |
+
+### MV hoạt hình (`anim`)
+
+Hai danh sách trong JSON bài hát điều khiển toàn bộ MV:
+
+- **`shots`** — cảnh nào lúc nào: `{ "at": 41.8, "scene": "street" }`. Cảnh: `hill` · `room` · `street` · `desk` · `notebook`.
+  Trên đồi có thể đặt nhân vật: `"figure": { "pose": "walkWind", "x0": 230, "x1": 560, "H": 112 }`
+  (dáng: `stand` `walk` `walkWind` `sitKnees` `sitLean` `desk` `window`).
+- **`anim`** — thời tiết, ánh sáng, máy quay theo mốc: `{ "t": 67.07, "cut": true, "wind": 1, "rain": 1, "lightning": 1 }`.
+  Mỗi mốc kế thừa mốc trước; thông số đổi mượt giữa hai mốc liền nhau. Danh sách thông số: `src/anim/params.ts`.
+
+Chớp tự lóe đúng lúc hát chữ trong `emphasis` (vd "giông", "bão"); lá rụng theo `leaves`; cây giống ảnh bìa (cùng thuật toán).
+
+```bash
+npm run render -- HB-002 --style anim --from 19 --to 72   # xuất thử một đoạn
+npm run render -- HB-002 --style anim                     # cả bài
+```
 
 `public/`, `out/`, `.venv/` **không commit** (dựng lại được). JSON bài hát và `transcripts/` **có commit**.
 

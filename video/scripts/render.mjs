@@ -43,7 +43,7 @@ const out = path.join(
   "out",
   still
     ? `${id}_${style}_${still}s${short ? "_short" : ""}.png`
-    : `${id}_${short ? `short${opt("from") ? `-${opt("from")}s` : ""}_` : ""}${style}.mp4`,
+    : `${id}_${short ? "short" : ""}${opt("from") ? `${short ? "-" : "clip-"}${opt("from")}s` : ""}${short || opt("from") ? "_" : ""}${style}.mp4`,
 );
 const propsFile = path.join(VIDEO, "out", `.props-${path.basename(out)}.json`); // riêng từng file → render song song được
 fs.mkdirSync(path.dirname(propsFile), { recursive: true });
