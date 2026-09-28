@@ -1,0 +1,144 @@
+{
+  "note": "Danh sách 26 cảnh đầy đủ theo mv-script.md — chép vào \"scenes\" của video/src/songs/HB-002.json khi đủ clip",
+  "scenes": [
+    {
+      "id": "S01",
+      "at": 0,
+      "src": "HB-002/scenes/S01.mp4"
+    },
+    {
+      "id": "S02",
+      "at": 8,
+      "src": "HB-002/scenes/S02.mp4"
+    },
+    {
+      "id": "S03",
+      "at": 19,
+      "src": "HB-002/scenes/S03.mp4"
+    },
+    {
+      "id": "S04",
+      "at": 30,
+      "src": "HB-002/scenes/S04.mp4"
+    },
+    {
+      "id": "S05",
+      "at": 42,
+      "src": "HB-002/scenes/S05.mp4"
+    },
+    {
+      "id": "S06",
+      "at": 52,
+      "src": "HB-002/scenes/S06.mp4"
+    },
+    {
+      "id": "S07",
+      "at": 57,
+      "src": "HB-002/scenes/S07.mp4"
+    },
+    {
+      "id": "S08",
+      "at": 67.07,
+      "src": "HB-002/scenes/S08.mp4",
+      "cut": true
+    },
+    {
+      "id": "S09",
+      "at": 77,
+      "src": "HB-002/scenes/S09.mp4"
+    },
+    {
+      "id": "S10",
+      "at": 87.3,
+      "src": "HB-002/scenes/S10.mp4"
+    },
+    {
+      "id": "S11",
+      "at": 97.1,
+      "src": "HB-002/scenes/S08.mp4"
+    },
+    {
+      "id": "cắt đen",
+      "at": 107.45,
+      "src": "black",
+      "cut": true
+    },
+    {
+      "id": "S12",
+      "at": 107.9,
+      "src": "HB-002/scenes/S12.mp4",
+      "cut": true
+    },
+    {
+      "id": "S13",
+      "at": 112,
+      "src": "HB-002/scenes/S13.mp4"
+    },
+    {
+      "id": "S14",
+      "at": 132.4,
+      "src": "HB-002/scenes/S14.mp4"
+    },
+    {
+      "id": "S15",
+      "at": 143.4,
+      "src": "HB-002/scenes/S15.mp4"
+    },
+    {
+      "id": "S16",
+      "at": 154.1,
+      "src": "HB-002/scenes/S16.mp4"
+    },
+    {
+      "id": "S17",
+      "at": 165.3,
+      "src": "HB-002/scenes/S17.mp4"
+    },
+    {
+      "id": "S18",
+      "at": 179,
+      "src": "HB-002/scenes/S18.mp4"
+    },
+    {
+      "id": "S19",
+      "at": 188.6,
+      "src": "HB-002/scenes/S19.mp4"
+    },
+    {
+      "id": "S20",
+      "at": 202.7,
+      "src": "HB-002/scenes/S20.mp4"
+    },
+    {
+      "id": "S21",
+      "at": 220.5,
+      "src": "HB-002/scenes/S08.mp4",
+      "cut": true
+    },
+    {
+      "id": "S22",
+      "at": 231,
+      "src": "HB-002/scenes/S22.mp4"
+    },
+    {
+      "id": "S23",
+      "at": 241,
+      "src": "HB-002/scenes/S23.mp4"
+    },
+    {
+      "id": "S24",
+      "at": 251,
+      "src": "HB-002/scenes/S24.mp4"
+    },
+    {
+      "id": "S25",
+      "at": 257,
+      "src": "HB-002/scenes/S25.mp4"
+    },
+    {
+      "id": "S26",
+      "at": 265,
+      "src": "HB-002/cover.jpg"
+    }
+  ]
+}

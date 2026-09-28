@@ -76,7 +76,7 @@ Cả 3 kiểu đều chạy chữ **karaoke** theo thời gian từng chữ từ
 | `accent` | Màu nhấn — tự lấy theo series (`dung-day` = Ember, `doi-nguoi` = Earth…) |
 | `emphasis` | Từ khóa tô màu nhấn, vd `["giông", "bão", "rễ"]` |
 | `background` | Ảnh/clip nền cho kiểu `film` (mặc định = ảnh bìa). Thêm bằng `npm run prep -- HB-002 --background clip.mp4` |
-| `scenes[]` | Phân cảnh MV (kiểu `film`): `{ at, src, cut?, rate? }` — clip AI theo mốc giờ, `"black"` để cắt đen. Chép clip: `npm run prep -- HB-002 --scenes <thư-mục>` |
+| `scenes[]` | Phân cảnh MV (kiểu `film`): `{ at, src, cut?, rate?, offset?, flip? }` — clip AI theo mốc giờ, `"black"` để cắt đen. Chép clip: `npm run prep -- HB-002 --scenes <thư-mục>` |
 | `lines[]` | `start`/`end` (giây), `text`, `section`, `words[]` (thời gian từng chữ cho karaoke) — do `whisper`/`align` ghi. `"hook": true` = phóng lớn giữa màn hình |
 | `synced` | `false` = thời gian còn ước lượng, chưa căn |
 

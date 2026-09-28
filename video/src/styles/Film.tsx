@@ -58,8 +58,15 @@ export const Film: React.FC<StyleProps> = ({ song, t, duration, vertical, fps })
         // Mỗi cảnh phóng nhẹ trong suốt thời lượng của nó; clip chạy từ đầu khi cảnh bắt đầu
         const z = interpolate(t, [scene.at, Math.max(end, scene.at + 1)], [1.02, 1.08], { extrapolateRight: "clamp" });
         return (
-          <AbsoluteFill key={scene.at} style={{ opacity, transform: `scale(${z})`, filter: "saturate(0.85) contrast(1.05)" }}>
-            <Sequence from={frame - Math.round((t - scene.at) * fps)} layout="none">
+          <AbsoluteFill
+            key={scene.at}
+            style={{ opacity, transform: `scale(${scene.flip ? -z : z}, ${z})`, filter: "saturate(0.85) contrast(1.05)" }}
+          >
+            {/* offset: lùi điểm bắt đầu Sequence để clip vào cảnh từ giữa (tính theo thời gian clip, đã nhân rate) */}
+            <Sequence
+              from={frame - Math.round((t - scene.at) * fps) - Math.round(((scene.offset ?? 0) / (scene.rate ?? 1)) * fps)}
+              layout="none"
+            >
               <Media src={scene.src} style={fit} rate={scene.rate} />
             </Sequence>
           </AbsoluteFill>

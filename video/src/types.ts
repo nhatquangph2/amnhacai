@@ -25,6 +25,8 @@ export type Scene = {
   src: string; // "HB-002/scenes/S01.mp4" | ảnh | "black"
   rate?: number; // tốc độ phát clip (0.6 = chậm lại cho đủ dài cảnh)
   cut?: boolean; // true = cắt thẳng, mặc định mờ chéo 0.8s
+  offset?: number; // bắt đầu clip từ giây này (dùng lại một clip ở đoạn khác)
+  flip?: boolean; // lật ngang — dùng lại clip mà không lộ là lặp
 };
 
 export type Song = {

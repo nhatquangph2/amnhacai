@@ -140,3 +140,6 @@ và chỉ khi máy quay đi xuống lòng đất, ta mới thấy điều bài h
 
 Chỉ làm **8 clip "xương sống"**: S02 · S03 · S06 · S07 · S08 · S14 · S19 · S22 (+ ảnh bìa cho kết).
 Mỗi clip trải dài một đoạn nhạc, chạy chậm lại (slow-mo). Vẫn giữ trọn mạch: *đủ lá → bão → trơ trụi → rễ → đông → rễ ôm đá → bình minh.*
+
+👉 **Prompt chi tiết + ảnh tham chiếu + bản đồ dùng lại clip: [`mv-prompts.md`](mv-prompts.md).**
+`video/src/songs/HB-002.json` hiện đang dùng **bản 8 clip này**; danh sách 26 cảnh đầy đủ lưu ở `mv-scenes-full.json`.
