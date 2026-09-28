@@ -63,7 +63,8 @@ amnhacai/
 ├── catalog/                      ← Bài hát, lịch nội dung, tiến độ thiết lập nền tảng (CSV)
 ├── releases/                     ← Mỗi bài một thư mục: metadata, lời, nhận xét
 ├── reports/                      ← Báo cáo tuần/tháng
-└── scripts/                      ← Tạo bài mới, master âm thanh, dựng tuyển tập
+├── scripts/                      ← Tạo bài mới, master âm thanh, dựng tuyển tập
+└── video/                        ← Xưởng lyric video / MV / Shorts (Remotion + Whisper)
 ```
 
 ---
@@ -79,6 +80,9 @@ python3 scripts/master.py song.wav            # --measure để chỉ đo
 
 # Vẽ ảnh bìa 3000×3000 theo bộ nhận diện (PNG + JPG); đổi --seed để có dáng cây khác
 python3 scripts/make_cover.py --title "Sau Mùa Giông" --out releases/HB-002_sau-mua-giong/cover.png
+
+# Lyric video / Shorts theo bộ nhận diện (Remotion + Whisper) — chi tiết: video/README.md
+cd video && npm run prep -- HB-002 --audio master.wav && npm run whisper -- HB-002 && npm run render -- HB-002
 
 # Dựng video tuyển tập dài + sinh timestamps (cần ffmpeg)
 python3 scripts/build_mix.py releases/tuyen-tap-01/audio --image bg.jpg --crossfade 3 \

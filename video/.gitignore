@@ -1,0 +1,8 @@
+node_modules/
+out/
+# public/ được dựng lại bởi `npm run prep` (audio, font, ảnh nền) — bản gốc nằm ở releases/ và Google Drive
+public/
+# Python cho Whisper (npm run whisper) — tạo lại: uv venv .venv --python 3.12 && uv pip install --python .venv/bin/python mlx-whisper soundfile scipy
+.venv/
+# Skill Remotion do `npx skills add` cài (bên thứ ba, cài lại được từ skills-lock.json)
+.agents/

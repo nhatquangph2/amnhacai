@@ -1,0 +1,155 @@
+<!doctype html>
+<html lang="vi">
+<head>
+<meta charset="utf-8" />
+<title>Căn lời · Senore</title>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<style>
+  :root { --paper:#EFE8DC; --ink:#1E1E1E; --stone:#3A3A3C; --ember:#D9622B; --muted:#7d766c; }
+  * { box-sizing: border-box; }
+  body { margin:0; background:var(--paper); color:var(--ink); font:15px/1.5 -apple-system, "Be Vietnam Pro", sans-serif; }
+  header { position:sticky; top:0; background:var(--paper); border-bottom:1px solid #d8cfc0; padding:16px 24px; z-index:2; }
+  h1 { font:500 20px Lora, Georgia, serif; margin:0 0 8px; }
+  #now { font:28px Lora, Georgia, serif; min-height:42px; color:var(--ember); }
+  .bar { display:flex; gap:12px; align-items:center; flex-wrap:wrap; margin-top:8px; }
+  button, select, input { font:inherit; padding:6px 12px; border:1px solid #bdb3a3; background:#fff8ee; border-radius:6px; cursor:pointer; }
+  button.primary { background:var(--ink); color:var(--paper); border-color:var(--ink); }
+  audio { width:100%; margin-top:8px; }
+  .keys { color:var(--muted); font-size:13px; }
+  kbd { background:#fff; border:1px solid #cfc6b6; border-radius:4px; padding:0 5px; font-size:12px; }
+  ol { list-style:none; margin:0; padding:12px 24px 50vh; }
+  li { display:grid; grid-template-columns:130px 1fr; gap:12px; padding:6px 10px; border-radius:6px; cursor:pointer; }
+  li:hover { background:#e6ddcf; }
+  li .t { font-variant-numeric:tabular-nums; color:var(--muted); font-size:13px; }
+  li.done .t { color:var(--ink); }
+  li.target { outline:2px solid var(--ember); }
+  li.live { background:var(--ink); color:var(--paper); }
+  li.live .t { color:#cbbfae; }
+  .sec { grid-column:1 / -1; font-size:11px; letter-spacing:3px; text-transform:uppercase; color:var(--muted); margin-top:10px; }
+  #status { font-size:13px; color:var(--muted); }
+</style>
+</head>
+<body>
+<header>
+  <h1 id="title">Căn lời</h1>
+  <div id="now">&nbsp;</div>
+  <audio id="audio" src="/audio" controls preload="auto"></audio>
+  <div class="bar">
+    <button id="play" class="primary">▶ Phát</button>
+    <label>Tốc độ <select id="rate"><option>1</option><option>0.9</option><option>0.75</option></select></label>
+    <label>Trễ phản xạ <input id="lag" type="number" step="0.05" value="0.15" style="width:70px" /> s</label>
+    <button id="save" class="primary">💾 Lưu</button>
+    <span id="status"></span>
+  </div>
+  <div class="keys">
+    <kbd>Space</kbd> dòng đang viền cam bắt đầu hát ·
+    <kbd>E</kbd> dòng vừa hát kết thúc (dùng khi có đoạn nhạc dạo) ·
+    <kbd>⌫</kbd> lùi 1 dòng ·
+    <kbd>P</kbd> phát/dừng · <kbd>←</kbd><kbd>→</kbd> tua 3s ·
+    bấm vào một dòng để làm lại từ đó
+  </div>
+</header>
+<ol id="list"></ol>
+
+<script>
+const audio = document.getElementById("audio");
+const list = document.getElementById("list");
+const nowEl = document.getElementById("now");
+const statusEl = document.getElementById("status");
+let song, target = 0, dirty = false;
+const endMarked = new Set();
+
+const fmt = (s) => (s == null ? "–" : `${Math.floor(s / 60)}:${(s % 60).toFixed(2).padStart(5, "0")}`);
+const lag = () => Number(document.getElementById("lag").value) || 0;
+
+function render() {
+  list.innerHTML = "";
+  let sec;
+  song.lines.forEach((l, i) => {
+    if (l.section && l.section !== sec) {
+      sec = l.section;
+      const s = document.createElement("li");
+      s.className = "sec"; s.textContent = sec; s.style.cursor = "default";
+      list.appendChild(s);
+    }
+    const li = document.createElement("li");
+    li.dataset.i = i;
+    li.className = (i < target ? "done " : "") + (i === target ? "target" : "");
+    li.innerHTML = `<span class="t">${fmt(l.start)} → ${fmt(l.end)}</span><span></span>`;
+    li.lastChild.textContent = l.text;
+    li.onclick = () => { target = i; audio.currentTime = Math.max(0, (song.lines[i - 1]?.start ?? l.start) - 1); render(); };
+    list.appendChild(li);
+  });
+  list.querySelector(".target")?.scrollIntoView({ block: "center", behavior: "smooth" });
+}
+
+function markStart() {
+  if (target >= song.lines.length) return;
+  const t = +Math.max(0, audio.currentTime - lag()).toFixed(2);
+  const prev = song.lines[target - 1];
+  if (prev && !endMarked.has(target - 1)) prev.end = +(t - 0.05).toFixed(2);
+  song.lines[target].start = t;
+  // Tạm đặt kết thúc; sẽ được ghi đè khi gõ dòng kế tiếp hoặc E
+  song.lines[target].end = +(t + 4).toFixed(2);
+  endMarked.delete(target);
+  target++; dirty = true; render();
+}
+
+function markEnd() {
+  const i = target - 1;
+  if (i < 0) return;
+  song.lines[i].end = +Math.max(song.lines[i].start + 0.3, audio.currentTime - lag()).toFixed(2);
+  endMarked.add(i); dirty = true; render();
+}
+
+function undo() {
+  if (target === 0) return;
+  target--;
+  audio.currentTime = Math.max(0, (song.lines[target - 1]?.start ?? song.lines[target].start) - 0.5);
+  render();
+}
+
+// Xem trước: dòng đang hát theo thời gian đã căn
+function tick() {
+  const t = audio.currentTime;
+  const i = song ? song.lines.findIndex((l) => l.start <= t && t < l.end) : -1;
+  nowEl.textContent = i >= 0 ? song.lines[i].text : " ";
+  list.querySelectorAll("li.live").forEach((e) => e.classList.remove("live"));
+  if (i >= 0) list.querySelector(`li[data-i="${i}"]`)?.classList.add("live");
+  requestAnimationFrame(tick);
+}
+
+document.addEventListener("keydown", (e) => {
+  if (e.target.tagName === "INPUT" || e.target.tagName === "SELECT") return;
+  if (e.code === "Space") { e.preventDefault(); markStart(); }
+  else if (e.key === "e" || e.key === "E") markEnd();
+  else if (e.key === "Backspace") { e.preventDefault(); undo(); }
+  else if (e.key === "p" || e.key === "P") audio.paused ? audio.play() : audio.pause();
+  else if (e.key === "ArrowLeft") audio.currentTime -= 3;
+  else if (e.key === "ArrowRight") audio.currentTime += 3;
+});
+
+document.getElementById("play").onclick = () => (audio.paused ? audio.play() : audio.pause());
+audio.onplay = () => (document.getElementById("play").textContent = "⏸ Dừng");
+audio.onpause = () => (document.getElementById("play").textContent = "▶ Phát");
+document.getElementById("rate").onchange = (e) => (audio.playbackRate = Number(e.target.value));
+audio.onerror = () => (statusEl.textContent = "⚠️ Không tải được audio — chạy npm run prep với --audio");
+
+document.getElementById("save").onclick = async () => {
+  song.synced = song.lines.every((l, i) => i === 0 || l.start >= song.lines[i - 1].start);
+  const r = await fetch("/song", { method: "POST", body: JSON.stringify(song) });
+  statusEl.textContent = r.ok ? `✓ Đã lưu lúc ${new Date().toLocaleTimeString("vi")}` : "⚠️ " + (await r.text());
+  if (r.ok) dirty = false;
+};
+window.onbeforeunload = () => (dirty ? "Chưa lưu" : undefined);
+
+fetch("/song").then((r) => r.json()).then((s) => {
+  song = s;
+  document.getElementById("title").textContent = `Căn lời — ${s.id} · ${s.title}`;
+  // Bài đã căn rồi: bắt đầu ở cuối để chỉnh từng dòng bằng cách bấm vào
+  target = s.synced ? s.lines.length : 0;
+  render(); tick();
+});
+</script>
+</body>
+</html>
