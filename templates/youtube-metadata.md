@@ -13,7 +13,7 @@
 🎧 Nghe trên Spotify: [link] · Apple Music: [link]
 
 ──────── LỜI BÀI HÁT ────────
-[Dán lời đầy đủ — giúp người tìm lời trên Google tìm thấy bạn]
+📜 Xem lời bài hát ở bình luận ghim ⬇️
 
 ────────────────────────────
 ✍️ Lời: [Họ tên tác giả]
@@ -54,6 +54,7 @@
 © Copyright by Senore ☞ Do not reup
 ```
 Mục **Đường liên kết**: TikTok, Instagram, Facebook. **Email liên hệ:** senoremusic7@gmail.com.
+> **Lời bài hát đăng ở bình luận, không dán vào mô tả** (lời dài đẩy khối Follow/bản quyền xuống dưới). Bình luận: `📜 LỜI BÀI HÁT — [Tên bài] (Senore)` + lời đầy đủ theo `[Verse]/[Chorus]…` + `© Lời bài hát thuộc về Senore`, rồi **ghim** (cần kênh đã xác minh SĐT).
 > Bài chạm chủ đề nhạy cảm: thêm dòng hỗ trợ (xem `docs/05` mục 6).
 
 ## Tags
@@ -65,4 +66,4 @@ Mục **Đường liên kết**: TikTok, Instagram, Facebook. **Email liên hệ
 - [ ] End screen: bài tiếp theo + subscribe
 - [ ] Phụ đề: tải lời lên dạng phụ đề (.srt) nếu lyric video không có sẵn chữ
 - [ ] Lên lịch: Thứ 6 ___:___ (trùng giờ phát hành Spotify)
-- [ ] Ghim bình luận: "Câu nào trong bài ở lại với bạn?"
+- [ ] Ghim bình luận **lời bài hát** (ưu tiên hơn câu hỏi tương tác); câu hỏi "Câu nào trong bài ở lại với bạn?" đăng ngay dưới
