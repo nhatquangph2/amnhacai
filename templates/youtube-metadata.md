@@ -13,7 +13,7 @@
 🎧 Nghe trên Spotify: [link] · Apple Music: [link]
 
 ──────── LỜI BÀI HÁT ────────
-[Dán lời đầy đủ — giúp người tìm lời trên Google tìm thấy bạn]
+📜 Xem lời bài hát ở bình luận ghim ⬇️
 
 ────────────────────────────
 ✍️ Lời: [Họ tên tác giả]
@@ -21,8 +21,40 @@
 🎨 Hình ảnh: [nguồn]
 📩 Hợp tác / đặt bài hát: [email]
 
+────────────────────────────
+➥ Follow Senore:
+● YouTube: @Senoremusic
+● TikTok: @senoremusic
+● Instagram: @senoremusic
+● Facebook: facebook.com/senoremusic
+● Spotify: [link]
+● Apple Music: [link]
+────────────────────────────
+© Lời bài hát và ý tưởng âm nhạc thuộc về Senore
+© Copyright by Senore ☞ Do not reup
+
 #[TenBai] #Senore #nhaccoloi
 ```
+> Khối "Follow Senore" + bản quyền giống nhau cho mọi video; chỉ thay link Spotify/Apple Music khi bài đã lên (chưa có thì ghi "Sắp ra mắt").
+
+## Mô tả kênh (About)
+Đặt ở YouTube Studio → Tùy chỉnh → Hồ sơ. Giữ phần giới thiệu, thêm cuối:
+```
+➥ Follow Senore:
+● YouTube: @Senoremusic
+● TikTok: @senoremusic
+● Instagram: @senoremusic
+● Facebook: facebook.com/senoremusic
+● Spotify: Sắp ra mắt
+● Apple Music: Sắp ra mắt
+
+➥ Liên hệ hợp tác: senoremusic7@gmail.com
+────────────────────────────
+© Lời bài hát và ý tưởng âm nhạc thuộc về Senore
+© Copyright by Senore ☞ Do not reup
+```
+Mục **Đường liên kết**: TikTok, Instagram, Facebook. **Email liên hệ:** senoremusic7@gmail.com.
+> **Lời bài hát đăng ở bình luận, không dán vào mô tả** (lời dài đẩy khối Follow/bản quyền xuống dưới). Bình luận: `📜 LỜI BÀI HÁT — [Tên bài] (Senore)` + lời đầy đủ theo `[Verse]/[Chorus]…` + `© Lời bài hát thuộc về Senore`, rồi **ghim** (cần kênh đã xác minh SĐT).
 > Bài chạm chủ đề nhạy cảm: thêm dòng hỗ trợ (xem `docs/05` mục 6).
 
 ## Tags
@@ -34,4 +66,4 @@
 - [ ] End screen: bài tiếp theo + subscribe
 - [ ] Phụ đề: tải lời lên dạng phụ đề (.srt) nếu lyric video không có sẵn chữ
 - [ ] Lên lịch: Thứ 6 ___:___ (trùng giờ phát hành Spotify)
-- [ ] Ghim bình luận: "Câu nào trong bài ở lại với bạn?"
+- [ ] Ghim bình luận **lời bài hát** (ưu tiên hơn câu hỏi tương tác); câu hỏi "Câu nào trong bài ở lại với bạn?" đăng ngay dưới
