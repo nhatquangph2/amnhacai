@@ -25,9 +25,10 @@ export const FilmText: React.FC<StyleProps & { hideLyrics?: boolean }> = ({ song
       {line && (
         <AbsoluteFill
           style={{
-            justifyContent: hook ? "center" : "flex-end",
+            justifyContent: hook ? "center" : song.lyricsTop ? "flex-start" : "flex-end",
             alignItems: "center",
-            paddingBottom: hook ? 0 : vertical ? 520 : bar + 70,
+            paddingBottom: hook || song.lyricsTop ? 0 : vertical ? 520 : bar + 70,
+            paddingTop: song.lyricsTop && !hook ? (vertical ? 260 : bar + 60) : 0,
             paddingLeft: vertical ? 80 : 200,
             paddingRight: vertical ? 80 : 200,
             textAlign: "center",

@@ -85,7 +85,10 @@ Cả 3 kiểu đều chạy chữ **karaoke** theo thời gian từng chữ từ
 
 Hai danh sách trong JSON bài hát điều khiển toàn bộ MV:
 
-- **`shots`** — cảnh nào lúc nào: `{ "at": 41.8, "scene": "street" }`. Cảnh: `hill` · `room` · `street` · `desk` · `notebook`.
+- **`shots`** — cảnh nào lúc nào: `{ "at": 41.8, "scene": "street" }`. Cảnh: `hill` · `room` · `street` · `desk` · `notebook` · `bank`.
+  `bank` = bờ sông làng quê, **một khung hình cố định** cả bài (MV Tảng Đá): thời gian điều khiển bằng `era` (hoang → làng → dời đi → thị trấn → phố),
+  `cycle`/`yearRate` (tua ngày–đêm, mùa), `crowd`, `wedding`, `leave`, `boat`, nhân vật `girl`/`age`/`gx`/`gpose`/`kid`, đá `erode`/`polish`/`glint`.
+  Bài có hành động ở nửa dưới khung: đặt `"lyricsTop": true` để lời hiện phía trên.
   Trên đồi có thể đặt nhân vật: `"figure": { "pose": "walkWind", "x0": 230, "x1": 560, "H": 112 }`
   (dáng: `stand` `walk` `walkWind` `sitKnees` `sitLean` `desk` `window`).
 - **`anim`** — thời tiết, ánh sáng, máy quay theo mốc: `{ "t": 67.07, "cut": true, "wind": 1, "rain": 1, "lightning": 1 }`.

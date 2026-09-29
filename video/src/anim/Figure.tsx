@@ -2,7 +2,7 @@
 // Khung xương 2D nhìn nghiêng (mặt hướng +x); dáng = các góc khớp (độ), 0° = thõng thẳng xuống.
 import React from "react";
 
-export type PoseName = "stand" | "walk" | "walkWind" | "sitKnees" | "sitLean" | "desk" | "window";
+export type PoseName = "stand" | "walk" | "walkWind" | "sitKnees" | "sitLean" | "desk" | "window" | "reach" | "look" | "crouch" | "sitEdge" | "carry";
 
 type Pose = {
   torso: number; // nghiêng thân về trước (+)
@@ -36,6 +36,20 @@ export const poseAt = (name: PoseName, t: number): Pose => {
       return { torso: -10, head: -8 + 2 * Math.sin(t * 0.5), hipL: 84, kneeL: 55, hipR: 92, kneeR: 72, shL: 25, elL: 25, shR: 35, elR: 35 };
     case "desk":
       return { torso: 24, head: 30 + 2 * Math.sin(t * 0.7), hipL: 90, kneeL: 90, hipR: 88, kneeR: 86, shL: 55, elL: 45, shR: 72 + 3 * Math.sin(t * 5.5), elR: 22 + 4 * Math.sin(t * 7.3) };
+    case "reach": // đưa tay ra phía trước (mời, gọi)
+      return { torso: 6, head: 2, hipL: 6, kneeL: 4, hipR: -6, kneeR: 2, shL: 8, elL: 10, shR: 82, elR: 6 + 3 * Math.sin(t * 1.5) };
+    case "look": // đứng, ngẩng lên
+      return { torso: -3, head: -12, hipL: 3, kneeL: 1, hipR: -3, kneeR: 1, shL: 6, elL: 8, shR: -4, elR: 8 };
+    case "crouch": // ngồi xổm, tay chạm xuống phía trước
+      return { torso: 38, head: 22, hipL: 105, kneeL: 150, hipR: 100, kneeR: 145, shL: 70, elL: 10, shR: 55, elR: 20 };
+    case "sitEdge": { // ngồi trên mép đá, chân đung đưa
+      const sw = Math.sin(t * 2.2) * 12;
+      return { torso: 2, head: 4 + 2 * Math.sin(t * 0.6), hipL: 88, kneeL: 80 + sw, hipR: 84, kneeR: 72 - sw, shL: 20, elL: 30, shR: 28, elR: 30 };
+    }
+    case "carry": { // gánh đòn gánh, bước nhanh
+      const s = Math.sin(t * 5);
+      return { torso: 8, head: 4, hipL: 20 * s, kneeL: 8 + 26 * Math.max(0, -s), hipR: -20 * s, kneeR: 8 + 26 * Math.max(0, s), shL: 170, elL: 15, shR: -10 + 12 * s, elR: 15, bob: 0.02 * Math.abs(Math.cos(t * 5)) };
+    }
     case "window":
       return { torso: 2, head: 6, hipL: 3, kneeL: 2, hipR: -4, kneeR: 3, shL: 6, elL: 10, shR: 118, elR: -12 };
     default:
@@ -74,8 +88,14 @@ export type FigureProps = {
   rimDir?: [number, number]; // hướng nguồn sáng
   wind?: number; // gió làm vạt áo bay
   flip?: boolean; // quay mặt sang trái
-  scarf?: string; // màu khăn quàng (mặc định Ember)
+  scarf?: string; // màu khăn quàng (mặc định Ember); "none" = không quàng
+  palette?: FigurePalette; // tô màu từng phần (người có màu, không phải hình bóng)
+  hat?: "non" | "hood"; // nón lá / mũ áo mưa
+  stoop?: number; // còng lưng (độ) — người già
+  load?: boolean; // gánh hai thúng hai đầu đòn
 };
+
+export type FigurePalette = { coat: string; pants: string; skin: string; hair: string; shoe?: string };
 
 // Chi thon: hình con nhộng từ khớp a (rộng wa) tới khớp b (rộng wb)
 const limb = (a: Pt, b: Pt, wa: number, wb: number, c: string, key: string) => {
@@ -94,10 +114,11 @@ const limb = (a: Pt, b: Pt, wa: number, wb: number, c: string, key: string) => {
   );
 };
 
-export const Figure: React.FC<FigureProps> = ({ pose, t, x, y, H, color = "#0d0c0c", rim, rimDir = [-1, -1], wind = 0, flip, scarf = "#D9622B" }) => {
-  const p = poseAt(pose, t);
+export const Figure: React.FC<FigureProps> = ({ pose, t, x, y, H, color = "#0d0c0c", rim, rimDir = [-1, -1], wind = 0, flip, scarf = "#D9622B", palette, hat, stoop = 0, load }) => {
+  const p0 = poseAt(pose, t);
+  const p = stoop ? { ...p0, torso: p0.torso + stoop, head: p0.head - stoop * 0.4 } : p0;
   const k = skeleton(p, H);
-  const seated = pose === "sitKnees" || pose === "sitLean" || pose === "desk";
+  const seated = pose === "sitKnees" || pose === "sitLean" || pose === "desk" || pose === "sitEdge";
   const lowest = Math.max(k.footL[1], k.footR[1]);
   const oy = seated ? 0 : -lowest - (p.bob ?? 0) * H;
 
@@ -127,36 +148,65 @@ export const Figure: React.FC<FigureProps> = ({ pose, t, x, y, H, color = "#0d0c
   });
   const scarfPath = `M${tail.map((q) => q.map((v) => v.toFixed(1)).join(",")).join(" L")}`;
 
-  const body = (c: string, withScarf: boolean) => (
+  // Tô màu: mặc định cả người một màu (hình bóng); có palette thì mỗi phần một màu
+  const body = (c: string, withScarf: boolean) => {
+    const pal = withScarf && palette ? palette : { coat: c, pants: c, skin: c, hair: c, shoe: c };
+    const shoe = pal.shoe ?? pal.pants;
+    return (
     <>
-      {limb(k.hip, k.kneeR, H * 0.075, H * 0.06, c, "tR")}
-      {limb(k.kneeR, k.footR, H * 0.06, H * 0.045, c, "sR")}
-      <ellipse cx={k.footR[0] + H * 0.025} cy={k.footR[1] + H * 0.008} rx={H * 0.042} ry={H * 0.018} fill={c} />
-      {limb(k.sh, k.elbR, H * 0.055, H * 0.045, c, "uR")}
-      {limb(k.elbR, k.handR, H * 0.045, H * 0.035, c, "fR")}
-      <circle cx={k.handR[0]} cy={k.handR[1]} r={H * 0.024} fill={c} />
-      {coat(c)}
-      {limb(k.hip, k.kneeL, H * 0.078, H * 0.062, c, "tL")}
-      {limb(k.kneeL, k.footL, H * 0.062, H * 0.046, c, "sL")}
-      <ellipse cx={k.footL[0] + H * 0.025} cy={k.footL[1] + H * 0.008} rx={H * 0.042} ry={H * 0.018} fill={c} />
-      {limb(k.sh, k.head, H * 0.045, H * 0.04, c, "neck")}
-      <ellipse cx={k.head[0]} cy={k.head[1]} rx={H * 0.052} ry={H * 0.062} fill={c} transform={`rotate(${p.torso + p.head} ${k.head[0]} ${k.head[1]})`} />
+      {limb(k.hip, k.kneeR, H * 0.075, H * 0.06, pal.pants, "tR")}
+      {limb(k.kneeR, k.footR, H * 0.06, H * 0.045, pal.pants, "sR")}
+      <ellipse cx={k.footR[0] + H * 0.025} cy={k.footR[1] + H * 0.008} rx={H * 0.042} ry={H * 0.018} fill={shoe} />
+      {limb(k.sh, k.elbR, H * 0.055, H * 0.045, pal.coat, "uR")}
+      {limb(k.elbR, k.handR, H * 0.045, H * 0.035, pal.coat, "fR")}
+      <circle cx={k.handR[0]} cy={k.handR[1]} r={H * 0.024} fill={pal.skin} />
+      {coat(pal.coat)}
+      {limb(k.hip, k.kneeL, H * 0.078, H * 0.062, pal.pants, "tL")}
+      {limb(k.kneeL, k.footL, H * 0.062, H * 0.046, pal.pants, "sL")}
+      <ellipse cx={k.footL[0] + H * 0.025} cy={k.footL[1] + H * 0.008} rx={H * 0.042} ry={H * 0.018} fill={shoe} />
+      {limb(k.sh, k.head, H * 0.045, H * 0.04, pal.skin, "neck")}
+      <ellipse cx={k.head[0]} cy={k.head[1]} rx={H * 0.052} ry={H * 0.062} fill={pal.skin} transform={`rotate(${p.torso + p.head} ${k.head[0]} ${k.head[1]})`} />
       {/* tóc: phủ sau gáy */}
       <path
         d={`M${k.head[0] - H * 0.058},${k.head[1] + H * 0.02} Q${k.head[0] - H * 0.07},${k.head[1] - H * 0.07} ${k.head[0] + H * 0.01},${k.head[1] - H * 0.068} Q${k.head[0] + H * 0.05},${k.head[1] - H * 0.06} ${k.head[0] + H * 0.045},${k.head[1] - H * 0.03} L${k.head[0] - H * 0.02},${k.head[1] - H * 0.02} Z`}
-        fill={c}
+        fill={pal.hair}
       />
-      {withScarf && (
+      {hat === "non" && (
+        <path d={`M${k.head[0] - H * 0.11},${k.head[1] - H * 0.02} L${k.head[0] + H * 0.005},${k.head[1] - H * 0.13} L${k.head[0] + H * 0.12},${k.head[1] - H * 0.02} Z`} fill={withScarf ? "#d8c79a" : c} />
+      )}
+      {hat === "hood" && (
+        <path d={`M${k.head[0] - H * 0.066},${k.head[1] + H * 0.03} Q${k.head[0] - H * 0.075},${k.head[1] - H * 0.085} ${k.head[0] + H * 0.015},${k.head[1] - H * 0.08} Q${k.head[0] + H * 0.07},${k.head[1] - H * 0.06} ${k.head[0] + H * 0.06},${k.head[1] - H * 0.01} L${k.head[0] + H * 0.035},${k.head[1] - H * 0.035} Q${k.head[0] - H * 0.01},${k.head[1] - H * 0.06} ${k.head[0] - H * 0.035},${k.head[1] + H * 0.035} Z`} fill={pal.coat} />
+      )}
+      {load && (() => {
+        // đòn gánh trên vai, hai thúng đung đưa
+        const sw = Math.sin(t * 5) * H * 0.02;
+        const a: Pt = [k.sh[0] - H * 0.3, k.sh[1] - H * 0.01];
+        const b: Pt = [k.sh[0] + H * 0.3, k.sh[1] + H * 0.01];
+        const col = withScarf ? "#7a5c3a" : c;
+        return (
+          <g>
+            <line x1={a[0]} y1={a[1]} x2={b[0]} y2={b[1]} stroke={col} strokeWidth={H * 0.018} strokeLinecap="round" />
+            {[a, b].map((q, i) => (
+              <g key={i}>
+                <line x1={q[0]} y1={q[1]} x2={q[0] + sw} y2={q[1] + H * 0.22} stroke={col} strokeWidth={H * 0.006} />
+                <path d={`M${q[0] + sw - H * 0.08},${q[1] + H * 0.22} L${q[0] + sw + H * 0.08},${q[1] + H * 0.22} L${q[0] + sw + H * 0.06},${q[1] + H * 0.3} L${q[0] + sw - H * 0.06},${q[1] + H * 0.3} Z`} fill={withScarf ? "#a88756" : c} />
+              </g>
+            ))}
+          </g>
+        );
+      })()}
+      {withScarf && scarf !== "none" && (
         <>
           <ellipse cx={neck[0]} cy={neck[1]} rx={H * 0.05} ry={H * 0.028} fill={scarf} />
           <path d={scarfPath} stroke={scarf} strokeWidth={H * 0.03} strokeLinecap="round" strokeLinejoin="round" fill="none" />
         </>
       )}
-      {limb(k.sh, k.elbL, H * 0.058, H * 0.047, c, "uL")}
-      {limb(k.elbL, k.handL, H * 0.047, H * 0.036, c, "fL")}
-      <circle cx={k.handL[0]} cy={k.handL[1]} r={H * 0.025} fill={c} />
+      {limb(k.sh, k.elbL, H * 0.058, H * 0.047, pal.coat, "uL")}
+      {limb(k.elbL, k.handL, H * 0.047, H * 0.036, pal.coat, "fL")}
+      <circle cx={k.handL[0]} cy={k.handL[1]} r={H * 0.025} fill={pal.skin} />
     </>
-  );
+    );
+  };
   const s = H / 300;
   return (
     <g transform={`translate(${x} ${y + oy})${flip ? " scale(-1 1)" : ""}`}>

@@ -6,6 +6,7 @@ import { Grain, Vignette } from "../common";
 import { HillScene, SC } from "../anim/Hill";
 import { Bud, Rings } from "../anim/Overlays";
 import { Desk, Notebook, Room, SceneProps, Street } from "../anim/Scenes";
+import { Riverbank } from "../anim/Riverbank";
 import { worldAt } from "../anim/params";
 import { flashAt, useStorm } from "../anim/storm";
 import type { Shot } from "../types";
@@ -13,7 +14,7 @@ import { FilmText } from "./FilmText";
 import type { StyleProps } from "./index";
 
 const FADE = 0.8;
-const SCENES = { room: Room, street: Street, desk: Desk, notebook: Notebook };
+const SCENES = { room: Room, street: Street, desk: Desk, notebook: Notebook, bank: Riverbank as React.FC<SceneProps> };
 
 export const Anim: React.FC<StyleProps> = (props) => {
   const { song, t, vertical } = props;
@@ -34,12 +35,12 @@ export const Anim: React.FC<StyleProps> = (props) => {
   const render = (shot: Shot, end: number) => {
     const p = Math.min(Math.max((t - shot.at) / Math.max(end - shot.at, 0.01), 0), 1);
     if (shot.scene === "hill") {
-      const f = shot.figure;
-      const fx = f ? f.x0 + ((f.x1 ?? f.x0) - f.x0) * p : undefined;
-      return <HillScene song={song} keys={keys} t={t} vertical={vertical} figure={f ? { pose: f.pose, x: f.x0, H: f.H, flip: f.flip } : undefined} figureX={fx} />;
+      const list = [...(shot.figure ? [shot.figure] : []), ...(shot.figures ?? [])];
+      const figs = list.map((f) => ({ pose: f.pose, x: f.x0 + ((f.x1 ?? f.x0) - f.x0) * p, H: f.H, flip: f.flip, scarf: f.scarf }));
+      return <HillScene song={song} keys={keys} t={t} vertical={vertical} figures={figs} />;
     }
     const Scene = SCENES[shot.scene] as React.FC<SceneProps>;
-    return <Scene t={t} p={p} w={w} flash={flash} vertical={vertical} song={song} />;
+    return <Scene t={t} p={p} w={w} flash={flash} vertical={vertical} song={song} keys={keys} shot={shot} />;
   };
 
   return (
@@ -52,7 +53,7 @@ export const Anim: React.FC<StyleProps> = (props) => {
       {w.rings > 0 && <Rings w={w} t={t} />}
       {w.bud > 0 && <Bud w={w} t={t} />}
       {w.black > 0 && <AbsoluteFill style={{ background: "#000", opacity: w.black }} />}
-      <Vignette strength={0.5} />
+      {s.scene !== "bank" && <Vignette strength={0.5} />}
       <Grain opacity={0.09} />
       <FilmText {...props} hideLyrics={s.scene === "notebook" && fadeIn >= 1} />
     </AbsoluteFill>

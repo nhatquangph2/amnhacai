@@ -4,7 +4,7 @@ import React from "react";
 import { AbsoluteFill } from "remotion";
 import type { Song } from "../types";
 import { Figure, PoseName } from "./Figure";
-import { AnimKey, World, css, mix, rgb, skyColors, worldAt } from "./params";
+import { AnimKey, World, css, mix, nightAt, rgb, skyAt, worldAt } from "./params";
 import { CX, DEEP_STONE, Seg, TOP, W, WORLD_BOTTOM, buildScenery, hillY } from "./scenery";
 import { boltPath, flashAt, useStorm } from "./storm";
 
@@ -17,7 +17,7 @@ const ROOT = rgb("#4e3e32");
 const EMBER = rgb("#D9622B");
 const LEAF_TONES = [rgb("#121a13"), rgb("#1f2c1d"), rgb("#31442a")];
 
-export type HillFigure = { pose: PoseName; x: number; H: number; flip?: boolean };
+export type HillFigure = { pose: PoseName; x: number; H: number; flip?: boolean; scarf?: string };
 
 // Cành thuôn & cong: tứ giác bo từ bề rộng gốc w tới bề rộng ngọn w2
 const branchPath = (s: Seg) => {
@@ -45,6 +45,15 @@ const Branch: React.FC<{ s: Seg; t: number; w: World; color: string; leafCols: s
   const gust = 0.55 * Math.sin(2 * Math.PI * 0.33 * t + s.phase) + 0.45 * Math.sin(1.1 * t) * Math.sin(0.43 * t + 1);
   const amp = (0.12 + w.wind) * (0.5 + s.level * 0.85);
   const deg = amp * gust + w.wind * (s.level + 1) * 0.9;
+  // Cây mọc dần: cành cấp thấp mọc trước, mỗi cành "vươn" từ gốc của nó
+  const g = clamp((w.grow - 0.12) * 9 - s.level);
+  if (g <= 0) return null;
+  if (g < 1)
+    return (
+      <g transform={`rotate(${deg.toFixed(3)} ${s.x1.toFixed(1)} ${s.y1.toFixed(1)}) translate(${s.x1} ${s.y1}) scale(${g.toFixed(3)}) translate(${-s.x1} ${-s.y1})`}>
+        <path d={pathOf(s)} fill={color} />
+      </g>
+    );
   return (
     <g transform={`rotate(${deg.toFixed(3)} ${s.x1.toFixed(1)} ${s.y1.toFixed(1)})`}>
       <path d={pathOf(s)} fill={color} />
@@ -94,19 +103,20 @@ const arc = (cx: number, cy: number, rr: number, a0: number, a1: number) =>
 
 const ridgePath = (pts: number[][], bottom: number) => `M${pts.map((p) => p.join(",")).join(" L")} L${W + 200},${bottom} L-200,${bottom} Z`;
 
-export const HillScene: React.FC<{ song: Song; keys: AnimKey[]; t: number; vertical: boolean; figure?: HillFigure; figureX?: number }> = ({
+export const HillScene: React.FC<{ song: Song; keys: AnimKey[]; t: number; vertical: boolean; figures?: HillFigure[] }> = ({
   song,
   keys,
   t,
   vertical,
-  figure,
-  figureX,
+  figures = [],
 }) => {
-  const w = worldAt(keys, t);
+  const w = { ...worldAt(keys, t) }; // bản sao: bên dưới có chỉnh w.sun theo đêm
   const { detach, bolts } = useStorm(song, keys, SC.leaves);
   const { flash: rawFlash, bolt } = flashAt(bolts, t);
   const flash = rawFlash * w.lightning;
-  const [skyTop, skyMid, skyHor] = skyColors(w.sky);
+  const night = nightAt(keys, t);
+  const [skyTop, skyMid, skyHor] = skyAt(w.sky, night);
+  w.sun *= 1 - night;
   const under = clamp(w.cam);
   const off = w.cam <= 1 ? w.cam * 620 : 620 + (w.cam - 1) * 1000;
   const cam = `translate(${CX} 540) scale(${w.zoom}) translate(${-CX} ${-540 - off})`;
@@ -164,6 +174,10 @@ export const HillScene: React.FC<{ song: Song; keys: AnimKey[]; t: number; verti
             <stop offset="6%" stopColor="#1b1512" />
             <stop offset="100%" stopColor="#0b0907" />
           </linearGradient>
+          <radialGradient id="h-sglow">
+            <stop offset="0%" stopColor="rgba(255,190,120,0.7)" />
+            <stop offset="100%" stopColor="rgba(217,120,60,0)" />
+          </radialGradient>
           <radialGradient id="h-stone" cx="40%" cy="35%" r="70%">
             <stop offset="0%" stopColor="#6a6a6e" />
             <stop offset="100%" stopColor="#2a2a2d" />
@@ -196,6 +210,10 @@ export const HillScene: React.FC<{ song: Song; keys: AnimKey[]; t: number; verti
               })}
             </>
           )}
+          {night > 0.05 &&
+            SC.flakes.slice(0, 120).map((f, i) => (
+              <circle key={`st${i}`} cx={f.x} cy={f.y * 0.6 - 60} r={f.r * 0.5} fill={`rgba(230,235,255,${night * (0.4 + 0.4 * Math.sin(t * 3 + f.ph))})`} />
+            ))}
           {SC.clouds.map((c, i) => {
             const x = ((c.x + t * (8 + w.wind * 70) * c.sp + 700) % (W + 1400)) - 700;
             return <ellipse key={i} cx={x} cy={c.y} rx={c.w / 2} ry={c.h / 2} fill="url(#h-cloud)" opacity={w.clouds} />;
@@ -239,11 +257,16 @@ export const HillScene: React.FC<{ song: Song; keys: AnimKey[]; t: number; verti
           })}
 
           {/* Mặt đất: đá, cành gãy, thân, tán */}
-          <ellipse cx={CX + 58} cy={TOP + 4} rx="26" ry="14" fill="#2c2c2f" />
-          <ellipse cx={CX + 52} cy={TOP} rx="18" ry="7" fill={css(mix(rgb("#3d3d41"), lightCol, light * 0.3))} />
+          <g transform={`translate(${CX + 58} ${TOP + 6}) scale(${w.stone}) translate(${-(CX + 58)} ${-(TOP + 6)})`}>
+            {w.stoneGlow > 0 && <circle cx={CX + 56} cy={TOP} r="60" fill="url(#h-sglow)" opacity={w.stoneGlow * (0.8 + 0.2 * Math.sin(t * 2))} />}
+            <path d={`M${CX + 30},${TOP + 10} Q${CX + 32},${TOP - 12} ${CX + 55},${TOP - 14} Q${CX + 82},${TOP - 12} ${CX + 86},${TOP + 10} Z`} fill={css(mix(rgb("#2c2c2f"), rgb("#8a6a4a"), w.stoneGlow * 0.5))} />
+            <path d={`M${CX + 38},${TOP - 4} Q${CX + 48},${TOP - 13} ${CX + 62},${TOP - 12}`} stroke={css(mix(mix(rgb("#4a4a4e"), lightCol, light * 0.4), rgb("#ffcf98"), w.stoneGlow * 0.6))} strokeWidth="3" fill="none" strokeLinecap="round" />
+          </g>
           {SC.debris.map((d, i) => (
             <line key={i} x1={d.x} y1={d.y} x2={d.x2} y2={d.y2} stroke={branchColor} strokeWidth="6" strokeLinecap="round" />
           ))}
+          {w.grow > 0.01 && (
+          <g transform={w.grow < 1 ? `translate(${CX} ${TOP}) scale(${(0.08 + 0.92 * Math.pow(w.grow, 0.8)).toFixed(3)}) translate(${-CX} ${-TOP})` : undefined}>
           <path
             d={(() => {
               const h = TOP - SC.trunkTop;
@@ -258,6 +281,8 @@ export const HillScene: React.FC<{ song: Song; keys: AnimKey[]; t: number; verti
           {SC.limbs.map((s, i) => (
             <Branch key={i} s={s} t={t} w={w} color={branchColor} leafCols={leafCols} hidden={hidden} />
           ))}
+          </g>
+          )}
 
           {/* Cỏ cong theo gió */}
           {SC.grass.map((g, i) => {
@@ -268,20 +293,22 @@ export const HillScene: React.FC<{ song: Song; keys: AnimKey[]; t: number; verti
             return <path key={i} d={`M${g.x - 1.5},${g.y} Q${g.x + sway * g.h * 0.3},${g.y - g.h * 0.6} ${tx},${ty} Q${g.x + sway * g.h * 0.3 + 1},${g.y - g.h * 0.55} ${g.x + 1.5},${g.y} Z`} fill={col} />;
           })}
 
-          {figure && (
+          {figures.map((f, i) => (
             <Figure
-              pose={figure.pose}
-              t={t}
-              x={figureX ?? figure.x}
-              y={hillY(figureX ?? figure.x) + (figure.pose === "sitLean" ? -figure.H * 0.02 : 2)}
-              H={figure.H}
-              flip={figure.flip}
+              key={i}
+              pose={f.pose}
+              t={t + i * 0.37}
+              x={f.x}
+              y={hillY(f.x) + (f.pose === "sitLean" || f.pose === "sitKnees" ? -f.H * 0.02 : 2)}
+              H={f.H}
+              flip={f.flip}
               wind={w.wind}
               color="#0b0a0a"
               rim={css(lightCol, 0.25 + light * 0.6)}
               rimDir={[1, -1]}
+              scarf={f.scarf}
             />
-          )}
+          ))}
 
           {/* Lá đang bay */}
           {flying.map(({ l, dt, wind }) => {

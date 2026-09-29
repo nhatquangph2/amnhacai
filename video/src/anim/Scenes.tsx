@@ -4,14 +4,14 @@
 import React from "react";
 import { AbsoluteFill } from "remotion";
 import { KaraokeText, SERIF, lineAt } from "../common";
-import type { Song } from "../types";
+import type { Shot, Song } from "../types";
 import { Figure } from "./Figure";
 import { SC } from "./Hill";
-import { World, css, mix, rgb, rng, skyColors } from "./params";
+import { AnimKey, World, css, mix, rgb, rng, skyColors } from "./params";
 import type { Seg } from "./scenery";
 
 const clamp = (x: number, a = 0, b = 1) => Math.min(Math.max(x, a), b);
-export type SceneProps = { t: number; p: number; w: World; flash: number; vertical: boolean; song: Song };
+export type SceneProps = { t: number; p: number; w: World; flash: number; vertical: boolean; song: Song; keys: AnimKey[]; shot?: Shot };
 const VB = (vertical: boolean, cx = 960) => (vertical ? `${cx - 303} 0 607 1080` : "0 0 1920 1080");
 
 // ---- Cây nhỏ nhìn qua cửa sổ (cùng dáng cây trên đồi, rụng lá theo cùng thông số)
@@ -28,7 +28,7 @@ const MiniBranch: React.FC<{ s: Seg; w: World; t: number }> = ({ s, w, t }) => {
   );
 };
 const MiniTree: React.FC<{ w: World; t: number }> = ({ w, t }) => (
-  <g>
+  <g transform={w.grow < 1 ? `translate(960 780) scale(${(0.08 + 0.92 * Math.pow(Math.max(w.grow, 0), 0.8)).toFixed(3)}) translate(-960 -780)` : undefined} opacity={w.grow > 0.01 ? 1 : 0}>
     <path d={`M${960 - 36},${780} L${957},${SC.trunkTop} L${967},${SC.trunkTop} L${960 + 38},${780} Z`} fill="#07080b" />
     {SC.limbs.map((s, i) => (
       <MiniBranch key={i} s={s} w={w} t={t} />

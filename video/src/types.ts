@@ -4,13 +4,16 @@
 import type { AnimKey } from "./anim/params";
 import type { PoseName } from "./anim/Figure";
 
+export type FigureSpec = { pose: PoseName; x0: number; x1?: number; H: number; flip?: boolean; scarf?: string };
+
 // Một cảnh của MV hoạt hình (kiểu "anim"): cây trên đồi hoặc các cảnh của nhân vật
 export type Shot = {
   at: number; // giây bắt đầu
-  scene: "hill" | "room" | "street" | "desk" | "notebook";
+  scene: "hill" | "room" | "street" | "desk" | "notebook" | "bank";
   cut?: boolean; // cắt thẳng (mặc định mờ chéo 0.8s)
   // Nhân vật trên đồi: đi từ x0 → x1 trong suốt cảnh
-  figure?: { pose: PoseName; x0: number; x1?: number; H: number; flip?: boolean };
+  figure?: FigureSpec;
+  figures?: FigureSpec[]; // nhiều người trên đồi
 };
 
 export type StyleId = "paper" | "film" | "dark" | "anim";
@@ -54,6 +57,7 @@ export type Song = {
   shots?: Shot[]; // phân cảnh MV hoạt hình (tuyến người + tuyến cây)
   anim?: AnimKey[]; // kịch bản chuyển động cho kiểu "anim" (MV hoạt hình) — xem src/anim/params.ts
   synced: boolean; // false = thời gian đang là ước lượng, chưa tap-sync
+  lyricsTop?: boolean; // phụ đề ở phía trên khung (khi hành động diễn ra ở nửa dưới)
   lines: LyricLine[];
 };
 
