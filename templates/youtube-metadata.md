@@ -21,8 +21,39 @@
 🎨 Hình ảnh: [nguồn]
 📩 Hợp tác / đặt bài hát: [email]
 
+────────────────────────────
+➥ Follow Senore:
+● YouTube: @Senoremusic
+● TikTok: @senoremusic
+● Instagram: @senoremusic
+● Facebook: facebook.com/senoremusic
+● Spotify: [link]
+● Apple Music: [link]
+────────────────────────────
+© Lời bài hát và ý tưởng âm nhạc thuộc về Senore
+© Copyright by Senore ☞ Do not reup
+
 #[TenBai] #Senore #nhaccoloi
 ```
+> Khối "Follow Senore" + bản quyền giống nhau cho mọi video; chỉ thay link Spotify/Apple Music khi bài đã lên (chưa có thì ghi "Sắp ra mắt").
+
+## Mô tả kênh (About)
+Đặt ở YouTube Studio → Tùy chỉnh → Hồ sơ. Giữ phần giới thiệu, thêm cuối:
+```
+➥ Follow Senore:
+● YouTube: @Senoremusic
+● TikTok: @senoremusic
+● Instagram: @senoremusic
+● Facebook: facebook.com/senoremusic
+● Spotify: Sắp ra mắt
+● Apple Music: Sắp ra mắt
+
+➥ Liên hệ hợp tác: senoremusic7@gmail.com
+────────────────────────────
+© Lời bài hát và ý tưởng âm nhạc thuộc về Senore
+© Copyright by Senore ☞ Do not reup
+```
+Mục **Đường liên kết**: TikTok, Instagram, Facebook. **Email liên hệ:** senoremusic7@gmail.com.
 > Bài chạm chủ đề nhạy cảm: thêm dòng hỗ trợ (xem `docs/05` mục 6).
 
 ## Tags
