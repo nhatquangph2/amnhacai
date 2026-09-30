@@ -7,13 +7,18 @@ import type { StyleProps } from "./index";
 
 export const FilmText: React.FC<StyleProps & { hideLyrics?: boolean }> = ({ song, t, duration, vertical, hideLyrics }) => {
   const found = lineAt(song.lines, t).line;
-  const line = hideLyrics ? null : found;
-  const bar = vertical ? 0 : 138; // tỉ lệ 2.39:1 trên khung 16:9
+  const line = hideLyrics || song.noLyrics ? null : found;
+  const bar = vertical || song.noBars ? 0 : 138; // tỉ lệ 2.39:1 trên khung 16:9
   const hook = line?.hook;
   return (
     <>
       <AbsoluteFill
-        style={{ background: "linear-gradient(to bottom, rgba(0,0,0,0.15) 40%, rgba(0,0,0,0.65) 100%)" }}
+        style={{
+          // làm tối phía có phụ đề: chữ ở trên (lyricsTop) → tối ở trên, phần dưới khung giữ sáng
+          background: song.lyricsTop
+            ? "linear-gradient(to top, rgba(0,0,0,0) 55%, rgba(0,0,0,0.5) 100%)"
+            : "linear-gradient(to bottom, rgba(0,0,0,0.15) 40%, rgba(0,0,0,0.65) 100%)",
+        }}
       />
       {/* Câu hook: hạ sáng khung hình để chữ lớn nổi lên */}
       {hook && line && <AbsoluteFill style={{ background: "#000", opacity: 0.45 * lineOpacity(line, t, 0.5) }} />}

@@ -262,7 +262,44 @@ export const HillScene: React.FC<{ song: Song; keys: AnimKey[]; t: number; verti
             <path d={`M${CX + 30},${TOP + 10} Q${CX + 32},${TOP - 12} ${CX + 55},${TOP - 14} Q${CX + 82},${TOP - 12} ${CX + 86},${TOP + 10} Z`} fill={css(mix(rgb("#2c2c2f"), rgb("#8a6a4a"), w.stoneGlow * 0.5))} />
             <path d={`M${CX + 38},${TOP - 4} Q${CX + 48},${TOP - 13} ${CX + 62},${TOP - 12}`} stroke={css(mix(mix(rgb("#4a4a4e"), lightCol, light * 0.4), rgb("#ffcf98"), w.stoneGlow * 0.6))} strokeWidth="3" fill="none" strokeLinecap="round" />
           </g>
-          {SC.debris.map((d, i) => (
+          {/* Tảng đá lớn (Câu chuyện tảng đá): bóng đen, viền sáng theo nắng/chớp, vết sáng = stoneGlow */}
+          {w.boulder > 0 && (() => {
+            const k = w.boulder, bx = CX, by = TOP + 20, rw = 290 * k, rh = 250 * k;
+            // khối đá tròn, lệch trái (đỉnh cao về bên trái, sườn phải thoải), mép hơi gồ ghề theo độ mài (erode)
+            const pts = Array.from({ length: 40 }, (_, i) => {
+              const u = i / 39, a = Math.PI + u * Math.PI, s = Math.sin(a), c = Math.cos(a);
+              const lump = 1 + 0.07 * Math.sin(u * 9 + 0.5) + 0.04 * Math.sin(u * 23 + 2) + (1 - w.erode) * 0.05 * Math.sin(u * 41);
+              const h = Math.pow(Math.max(0, -s), 1.25) * (1 + 0.32 * (1 - u) - 0.12 * u) * (1 - 0.1 * Math.pow(Math.max(0, -s), 6));
+              return [bx + c * rw * (1 + 0.06 * Math.sin(u * 5)) - rw * 0.1 * (-s), by - rh * h * lump];
+            });
+            // đường cong mượt qua các điểm (trung điểm + điểm điều khiển)
+            const f1 = (v: number) => v.toFixed(1);
+            let d = `M${f1(pts[0][0])},${f1(by)} L${f1(pts[0][0])},${f1(pts[0][1])}`;
+            for (let i = 1; i < pts.length - 1; i++) d += ` Q${f1(pts[i][0])},${f1(pts[i][1])} ${f1((pts[i][0] + pts[i + 1][0]) / 2)},${f1((pts[i][1] + pts[i + 1][1]) / 2)}`;
+            d += ` L${f1(pts[pts.length - 1][0])},${f1(by)} Z`;
+            let rimD = `M${f1(pts[4][0])},${f1(pts[4][1])}`;
+            for (let i = 5; i < 22; i++) rimD += ` Q${f1(pts[i][0])},${f1(pts[i][1])} ${f1((pts[i][0] + pts[i + 1][0]) / 2)},${f1((pts[i][1] + pts[i + 1][1]) / 2)}`;
+            const fx = bx - 30 * k, fy = by - rh * 0.92;
+            return (
+              <g>
+                <ellipse cx={bx + 20} cy={by + 4} rx={rw * 1.15} ry={18 * k} fill="rgba(0,0,0,0.55)" />
+                <path d={d} fill={css(mix(mix(rgb("#141416"), rgb("#3a3a3e"), light * 0.5), rgb("#6a4a32"), w.stoneGlow * 0.35))} />
+                {/* vân đá: các lớp trầm tích */}
+                {[0.3, 0.52, 0.72].map((q, i) => {
+                  const hw = rw * Math.sqrt(1 - q * q) * 0.8;
+                  return <path key={i} d={`M${f1(bx - hw)},${f1(by - rh * q)} Q${f1(bx - 20)},${f1(by - rh * (q + 0.07))} ${f1(bx + hw)},${f1(by - rh * q + 6)}`} stroke="rgba(0,0,0,0.22)" strokeWidth="2" fill="none" />;
+                })}
+                <path d={rimD} fill="none" stroke={css(mix(lightCol, rgb("#ffcf98"), w.stoneGlow * 0.7), 0.25 + light * 0.6 + w.stoneGlow * 0.4)} strokeWidth={3 + light * 3} strokeLinecap="round" />
+                {w.stoneGlow > 0 && (
+                  <g opacity={w.stoneGlow}>
+                    <circle cx={fx} cy={fy} r={70 + 140 * w.stoneGlow} fill="url(#h-sglow)" opacity={0.8 + 0.2 * Math.sin(t * 2)} />
+                    <path d={`M${fx},${fy - 26 * w.stoneGlow} L${fx + 5},${fy - 5} L${fx + 26 * w.stoneGlow},${fy} L${fx + 5},${fy + 5} L${fx},${fy + 26 * w.stoneGlow} L${fx - 5},${fy + 5} L${fx - 26 * w.stoneGlow},${fy} L${fx - 5},${fy - 5} Z`} fill="rgba(255,244,215,0.95)" />
+                  </g>
+                )}
+              </g>
+            );
+          })()}
+          {w.boulder <= 0 && SC.debris.map((d, i) => (
             <line key={i} x1={d.x} y1={d.y} x2={d.x2} y2={d.y2} stroke={branchColor} strokeWidth="6" strokeLinecap="round" />
           ))}
           {w.grow > 0.01 && (

@@ -6,3 +6,10 @@ public/
 .venv/
 # Skill Remotion do `npx skills add` cài (bên thứ ba, cài lại được từ skills-lock.json)
 .agents/
+
+# Key API cá nhân (Pollinations…) — không commit
+.env
+# Công cụ bên thứ ba tải về (AnimatedDrawings…) và Python cho DepthFlow / AnimatedDrawings — cài lại theo README
+.tools/
+.venv-fx/
+.venv-ad/

@@ -28,6 +28,7 @@ export const PARAMS = {
   stone: 1, // cỡ hòn đá trên đỉnh đồi
   stoneGlow: 0, // đá tự sáng 0–1
   erode: 0, // tảng đá được mài tròn 0 (sắc cạnh) → 1 (nhẵn)
+  boulder: 0, // tảng đá lớn trên đỉnh đồi (Câu chuyện tảng đá) 0 = không có → 1 cỡ đầy đủ; vết sáng dùng stoneGlow
   // --- cảnh "bờ sông một khung hình" (Tảng Đá)
   era: 0, // 0 hoang · 1 nhà tranh đầu tiên · 2 làng · 3 làng dời đi · 4 thị trấn · 5 phố
   flood: 0, // nước dâng 0–1

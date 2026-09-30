@@ -1,11 +1,11 @@
 // "Một khung hình, vạn năm" — MV Tảng Đá.
 // Máy quay KHÔNG di chuyển: một bờ sông làng quê Việt Nam và một tảng đá. Chỉ thời gian thay đổi:
-// ngày–đêm, mùa, lũ, làng mọc lên (nhà tranh, lũy tre) → dời đi → thị trấn (mái ngói, cầu, cột điện) → phố (kè, lan can).
+// mùa (xuân hoa đào · hạ · thu lá vàng · đông sương mù, mưa phùn), lũ, làng mọc lên (nhà tranh, lũy tre) → dời đi → thị trấn (mái ngói, cầu, cột điện) → phố (kè, lan can).
 // Người là hình phẳng CÓ MÀU; nhân vật chính: bé gái áo mưa Ember, lớn lên thành bà.
 import React from "react";
 import { AbsoluteFill } from "remotion";
 import { Figure, FigurePalette, PoseName } from "./Figure";
-import { AnimKey, RGB, World, css, integralOf, mix, nightAt, rgb, rng } from "./params";
+import { AnimKey, RGB, World, css, integralOf, mix, rgb, rng } from "./params";
 
 const clamp = (x: number, a = 0, b = 1) => Math.min(Math.max(x, a), b);
 const band = (x: number, a: number, b: number, fade = 0.15) => clamp((x - a) / fade + 1) * clamp((b - x) / fade + 1); // 1 trong [a,b], mờ ở mép
@@ -21,6 +21,7 @@ const STONE = { x: 1340, y: 772, rx: 118, ry: 62 };
 const SKY_DAY: [RGB, RGB, RGB] = [rgb("#9fbccb"), rgb("#cfd9d2"), rgb("#efe2c6")];
 const SKY_GOLD: [RGB, RGB, RGB] = [rgb("#6a7b9c"), rgb("#d69a6a"), rgb("#f3b67c")];
 const SKY_NIGHT: [RGB, RGB, RGB] = [rgb("#0b1222"), rgb("#16213a"), rgb("#27324a")];
+const SKY_WINTER: [RGB, RGB, RGB] = [rgb("#aab4ba"), rgb("#c8cdcc"), rgb("#d9dad3")]; // trời đông xám nồm
 const SEASON_GREEN = [rgb("#93b56d"), rgb("#6f9a52"), rgb("#c69a4c"), rgb("#aeb4ab")]; // xuân hạ thu đông
 const seasonColor = (s: number) => {
   const i = Math.floor(((s % 4) + 4) % 4);
@@ -48,6 +49,7 @@ const W0 = (() => {
   const tufts = Array.from({ length: 160 }, () => ({ x: U(-20, 1940), y: U(EDGE + 20, 1080), h: U(8, 22), ph: r() * 6 }));
   const reeds = Array.from({ length: 40 }, () => ({ x: U(0, 1200), h: U(30, 70), ph: r() * 6 }));
   const ripples = Array.from({ length: 60 }, () => ({ x: U(0, 1920), y: U(FAR + 10, EDGE - 8), w: U(20, 70), sp: U(10, 30) }));
+  const petals = Array.from({ length: 70 }, () => ({ x: U(0, 2000), y: U(0, 1100), sp: U(50, 110), sw: U(20, 60), ph: r() * 6, s: U(6, 11) }));
   const drops = Array.from({ length: 260 }, () => ({ x: U(0, 2200), y: U(0, 1080), len: U(14, 30), sp: U(0.9, 1.3) }));
   const stars = Array.from({ length: 90 }, () => ({ x: U(0, 1920), y: U(130, HORIZON - 60), r: U(0.8, 2) }));
   const birds = Array.from({ length: 5 }, () => ({ y: U(170, 330), sp: U(40, 90), off: U(0, 3000), s: U(6, 10) }));
@@ -86,7 +88,7 @@ const W0 = (() => {
     };
   });
   const jag = Array.from({ length: 16 }, (_, i) => (i === 3 || i === 9 ? 0.25 : 0) + U(-0.14, 0.14));
-  return { houses, bamboo, wildTrees, poles, mountains, tufts, reeds, ripples, drops, stars, birds, walkers, jag };
+  return { houses, bamboo, wildTrees, poles, mountains, tufts, reeds, ripples, petals, drops, stars, birds, walkers, jag };
 })();
 
 const stonePath = (erode: number, flood: number) => {
@@ -149,30 +151,33 @@ const House: React.FC<{ h: (typeof W0.houses)[number]; era: number; shade: (c: R
 type BankProps = { t: number; w: World; keys: AnimKey[]; vertical: boolean };
 
 export const Riverbank: React.FC<BankProps> = ({ t, w, keys, vertical }) => {
-  // Thời gian: tua ngày–đêm (cycle) và tua năm (yearRate)
-  const cyc = nightAt(keys, t); // 0 ngày · 1 đêm (chỉ khi đang tua)
-  const phase = integralOf(keys, "cycle", t);
-  const years = integralOf(keys, "yearRate", t);
-  const season = w.season + years * 4;
+  // Thời gian trôi bằng MÙA (season đặt theo kịch bản: 0 xuân · 1 hạ · 2 thu · 3 đông · 4 xuân năm sau…),
+  // không còn ngày–đêm khi tua; đêm chỉ khi đặt "dark"
+  const season = w.season;
+  const sp4 = ((season % 4) + 4) % 4;
+  const near = (c: number) => clamp(1 - Math.min(Math.abs(sp4 - c), 4 - Math.abs(sp4 - c)) * 1.25); // gần mùa c
+  const spring = near(0);
+  const autumn = near(2);
   const lapse = 1 + w.cycle * 28; // người đi nhanh lên khi tua
   const sceneT = t + integralOf(keys, "cycle", t) * 28; // "thời gian cảnh" cho người đi lại
-  const dark = clamp(Math.max(w.dark, cyc));
+  const dark = clamp(w.dark);
   const dusk = w.dusk * (1 - dark);
-  const sky = [0, 1, 2].map((i) => mix(mix(SKY_DAY[i], SKY_GOLD[i], dusk), SKY_NIGHT[i], dark)) as [RGB, RGB, RGB];
+  const winter = near(3);
+  const skyDay = [0, 1, 2].map((i) => mix(SKY_DAY[i], SKY_WINTER[i], winter * 0.8)) as [RGB, RGB, RGB];
+  const sky = [0, 1, 2].map((i) => mix(mix(skyDay[i], SKY_GOLD[i], dusk), SKY_NIGHT[i], dark)) as [RGB, RGB, RGB];
   const light = 1 - dark * 0.75;
   // Màu cảnh vật theo ánh sáng: tối về đêm, ấm lên lúc hoàng hôn
   const tint = mix(mix(rgb("#ffffff"), rgb("#ffcf9e"), dusk * 0.6), rgb("#3a4868"), dark * 0.85);
   const shade = (c: RGB) => css([c[0] * tint[0] / 255, c[1] * tint[1] / 255, c[2] * tint[2] / 255] as RGB);
   const green = seasonColor(season);
-  const winter = clamp(1 - Math.abs((((season % 4) + 4) % 4) - 3) * 1.6); // gần mùa đông
   const lit = clamp(dark * 1.3 - 0.1); // đèn nhà bật khi tối
   const era = w.era;
   const water = w.flood * 120;
   const edge = EDGE + water;
 
   // Mặt trời / mặt trăng: khi tua thì chạy ngang trời theo ngày
-  const pm = (((phase + 0.5) % 1) + 1) % 1 - 0.5; // -0.5..0.5, 0 = trưa
-  const lapsing = w.cycle > 0.02;
+  const pm = 0;
+  const lapsing = false; // không còn ngày–đêm khi tua
   const sunX = lapsing ? 960 + pm * 3200 : 1500 - dusk * 250;
   const sunY = lapsing ? 210 + pm * pm * 1500 : 230 + dusk * 210;
   const moonPm = pm >= 0 ? pm - 0.5 : pm + 0.5;
@@ -218,6 +223,12 @@ export const Riverbank: React.FC<BankProps> = ({ t, w, keys, vertical }) => {
             <stop offset="40%" stopColor={dusk > 0.3 ? "rgba(255,170,100,0.5)" : "rgba(255,240,210,0.35)"} />
             <stop offset="100%" stopColor="rgba(255,230,200,0)" />
           </radialGradient>
+          <linearGradient id="rb-mist" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0%" stopColor="#dfe3e2" stopOpacity="0" />
+            <stop offset="45%" stopColor="#dfe3e2" stopOpacity="0.55" />
+            <stop offset="75%" stopColor="#dfe3e2" stopOpacity="0.35" />
+            <stop offset="100%" stopColor="#dfe3e2" stopOpacity="0" />
+          </linearGradient>
           <radialGradient id="rb-lamp">
             <stop offset="0%" stopColor="rgba(255,210,140,0.7)" />
             <stop offset="100%" stopColor="rgba(255,190,120,0)" />
@@ -259,7 +270,10 @@ export const Riverbank: React.FC<BankProps> = ({ t, w, keys, vertical }) => {
             <g key={i} opacity={vis}>
               <rect x={tr.x - 3} y={FAR - 12 - tr.h * 0.6} width="6" height={tr.h * 0.6} fill={shade(rgb("#4a3d30"))} />
               <ellipse cx={tr.x} cy={FAR - 12 - tr.h * 0.6} rx={tr.r} ry={tr.r * 0.75} fill={shade(mix(green, rgb("#4e6a3e"), 0.35))} />
-              {winter > 0 && <ellipse cx={tr.x} cy={FAR - 12 - tr.h * 0.6 - tr.r * 0.4} rx={tr.r * 0.8} ry={tr.r * 0.3} fill={`rgba(245,247,250,${winter * 0.8})`} />}
+              {spring > 0.05 &&
+                [0, 1, 2, 3, 4, 5].map((k) => (
+                  <circle key={k} cx={tr.x + Math.cos(k * 2.1 + i) * tr.r * 0.6} cy={FAR - 12 - tr.h * 0.6 + Math.sin(k * 1.7 + i) * tr.r * 0.45} r={tr.r * 0.18} fill={`rgba(244,176,196,${spring * 0.9})`} />
+                ))}
             </g>
           );
         })}
@@ -350,7 +364,6 @@ export const Riverbank: React.FC<BankProps> = ({ t, w, keys, vertical }) => {
         {/* Tảng đá */}
         <path d={stonePath(w.erode, w.flood)} fill="url(#rb-stone)" />
         <path d={`M${STONE.x - 70},${STONE.y - 38} Q${STONE.x - 10},${STONE.y - 64} ${STONE.x + 60},${STONE.y - 44}`} stroke={css(mix(rgb("#ffffff"), rgb("#ffd9a8"), dusk), 0.2 + w.polish * 0.55)} strokeWidth={3 + w.polish * 7} fill="none" strokeLinecap="round" />
-        {winter > 0.3 && <path d={`M${STONE.x - 90},${STONE.y - 40} Q${STONE.x},${STONE.y - 72} ${STONE.x + 90},${STONE.y - 40} Q${STONE.x},${STONE.y - 56} ${STONE.x - 90},${STONE.y - 40} Z`} fill={`rgba(245,247,250,${winter * 0.85})`} />}
         {w.glint > 0 && (
           <g transform={`translate(${STONE.x + 30} ${STONE.y - 52}) scale(${w.glint * (0.7 + 0.3 * Math.sin(t * 6))})`}>
             <path d="M0,-26 L4,-4 L26,0 L4,4 L0,26 L-4,4 L-26,0 L-4,-4 Z" fill="rgba(255,244,215,0.95)" />
@@ -416,11 +429,25 @@ export const Riverbank: React.FC<BankProps> = ({ t, w, keys, vertical }) => {
             const x = ((d.x + t * 200) % 2200) - 140;
             return <line key={i} x1={x} y1={y} x2={x - 6} y2={y - d.len} stroke={css(mix(sky[2], rgb("#ffffff"), 0.5), 0.45)} strokeWidth="1.2" />;
           })}
-        {winter > 0.2 &&
-          W0.drops.slice(0, Math.round(160 * winter)).map((d, i) => {
-            const y = ((d.y + t * 50 * d.sp) % 1100) - 10;
-            const x = (d.x + Math.sin(t + i) * 20) % 1920;
-            return <circle key={i} cx={x} cy={y} r={1.6} fill="rgba(245,247,250,0.8)" />;
+        {/* Đông: sương mù trên sông + mưa phùn */}
+        {winter > 0.05 && (
+          <>
+            <rect x="0" y={HORIZON - 160} width="1920" height={EDGE - HORIZON + 200} fill="url(#rb-mist)" opacity={winter * (1 - dark * 0.6)} />
+            {W0.drops.slice(0, Math.round(90 * winter)).map((d, i) => {
+              const y = ((d.y + t * 520 * d.sp) % 1140) - 40;
+              const x = ((d.x + t * 60) % 2200) - 140;
+              return <line key={i} x1={x} y1={y} x2={x - 2} y2={y - d.len * 0.5} stroke={css(rgb("#eef1f2"), 0.35 * winter)} strokeWidth="1" />;
+            })}
+          </>
+        )}
+        {/* Xuân: cánh hoa đào rơi · Thu: lá vàng rơi */}
+        {Math.max(spring, autumn) > 0.05 &&
+          W0.petals.map((p, i) => {
+            const y = ((p.y + t * p.sp) % 1160) - 40;
+            const x = ((p.x + t * 22 + Math.sin(t * 1.4 + p.ph) * p.sw) % 2000) - 40;
+            const leaf = autumn > spring;
+            const c = leaf ? ["#d98b2b", "#c2641f", "#e0b04a"][i % 3] : ["#f4b0c4", "#f7c9d6", "#eea0b8"][i % 3];
+            return <ellipse key={i} cx={x} cy={y} rx={p.s * (leaf ? 1.4 : 1)} ry={p.s * 0.5} fill={c} opacity={Math.max(spring, autumn) * 0.9} transform={`rotate(${(t * 90 + i * 37) % 360} ${x} ${y})`} />;
           })}
       </svg>
     </AbsoluteFill>

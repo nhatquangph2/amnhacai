@@ -3,1782 +3,2356 @@
  "language": "vi",
  "segments": [
   {
-   "start": 25.84,
-   "end": 29.98,
-   "text": "Lặng im giữa đất trời tan đi theo dòng nước lạnh",
+   "start": 0.0,
+   "end": 14.9,
+   "text": "Uh Uh Uh Uh Uh Uh Uh Uh Uh Uh Uh Uh Uh Uh Uh Uh Uh Uh Uh Uh Uh Uh Uh Uh Uh",
    "words": [
     {
-     "word": " Lặng",
-     "start": 25.84,
-     "end": 26.62,
-     "p": 0.79
-    },
-    {
-     "word": " im",
-     "start": 26.62,
-     "end": 26.9,
-     "p": 0.99
-    },
-    {
-     "word": " giữa",
-     "start": 26.9,
-     "end": 27.52,
-     "p": 1.0
-    },
-    {
-     "word": " đất",
-     "start": 27.52,
-     "end": 27.94,
-     "p": 1.0
-    },
-    {
-     "word": " trời",
-     "start": 27.94,
-     "end": 28.34,
-     "p": 1.0
-    },
-    {
-     "word": " tan",
-     "start": 28.34,
-     "end": 28.72,
-     "p": 0.95
-    },
-    {
-     "word": " đi",
-     "start": 28.72,
-     "end": 29.06,
-     "p": 1.0
-    },
-    {
-     "word": " theo",
-     "start": 29.06,
-     "end": 29.54,
-     "p": 0.99
-    },
-    {
-     "word": " dòng",
-     "start": 29.54,
-     "end": 29.9,
-     "p": 0.99
-    },
-    {
-     "word": " nước",
-     "start": 29.9,
-     "end": 29.98,
-     "p": 0.0
-    },
-    {
-     "word": " lạnh",
-     "start": 29.98,
-     "end": 29.98,
-     "p": 0.14
-    }
-   ]
-  },
-  {
-   "start": 30.0,
-   "end": 59.98,
-   "text": "Nước lạnh Mong ai sẽ tìm thấy nhưng rồi vạn năm trôi Và thế mài mòn theo năm tháng Cuốn đi bao yếu đuối xa xưa Để rồi giờ đây thật vững chắc Đây là một tảng đá cô đơn Và thế ngày trôi luôn mong được tìm thấy Và thế rồi thôi chẳng mong chờ đợi nữa",
-   "words": [
-    {
-     "word": " Nước",
-     "start": 30.0,
-     "end": 30.0,
-     "p": 0.09
-    },
-    {
-     "word": " lạnh",
-     "start": 30.0,
-     "end": 30.78,
-     "p": 0.63
-    },
-    {
-     "word": " Mong",
-     "start": 30.78,
-     "end": 32.26,
-     "p": 0.2
-    },
-    {
-     "word": " ai",
-     "start": 32.26,
-     "end": 32.72,
-     "p": 0.99
-    },
-    {
-     "word": " sẽ",
-     "start": 32.72,
-     "end": 33.1,
-     "p": 0.99
-    },
-    {
-     "word": " tìm",
-     "start": 33.1,
-     "end": 33.64,
-     "p": 1.0
-    },
-    {
-     "word": " thấy",
-     "start": 33.64,
-     "end": 34.2,
-     "p": 0.99
-    },
-    {
-     "word": " nhưng",
-     "start": 34.2,
-     "end": 34.94,
-     "p": 0.05
-    },
-    {
-     "word": " rồi",
-     "start": 34.94,
-     "end": 35.3,
-     "p": 0.94
-    },
-    {
-     "word": " vạn",
-     "start": 35.3,
-     "end": 35.68,
-     "p": 0.96
-    },
-    {
-     "word": " năm",
-     "start": 35.68,
-     "end": 36.06,
-     "p": 0.96
-    },
-    {
-     "word": " trôi",
-     "start": 36.06,
-     "end": 36.86,
-     "p": 1.0
-    },
-    {
-     "word": " Và",
-     "start": 36.86,
-     "end": 39.28,
-     "p": 0.91
-    },
-    {
-     "word": " thế",
-     "start": 39.28,
-     "end": 39.66,
-     "p": 0.99
-    },
-    {
-     "word": " mài",
-     "start": 39.66,
-     "end": 40.18,
-     "p": 0.77
-    },
-    {
-     "word": " mòn",
-     "start": 40.18,
-     "end": 40.44,
-     "p": 0.98
-    },
-    {
-     "word": " theo",
-     "start": 40.44,
-     "end": 40.74,
-     "p": 0.98
-    },
-    {
-     "word": " năm",
-     "start": 40.74,
-     "end": 41.02,
-     "p": 0.96
-    },
-    {
-     "word": " tháng",
-     "start": 41.02,
-     "end": 41.6,
-     "p": 1.0
-    },
-    {
-     "word": " Cuốn",
-     "start": 41.6,
-     "end": 42.0,
-     "p": 0.41
-    },
-    {
-     "word": " đi",
-     "start": 42.0,
-     "end": 42.32,
-     "p": 1.0
-    },
-    {
-     "word": " bao",
-     "start": 42.32,
-     "end": 42.72,
-     "p": 0.99
-    },
-    {
-     "word": " yếu",
-     "start": 42.72,
-     "end": 43.04,
-     "p": 0.89
-    },
-    {
-     "word": " đuối",
-     "start": 43.04,
-     "end": 43.36,
-     "p": 0.93
-    },
-    {
-     "word": " xa",
-     "start": 43.36,
-     "end": 43.72,
-     "p": 1.0
-    },
-    {
-     "word": " xưa",
-     "start": 43.72,
-     "end": 44.26,
-     "p": 1.0
-    },
-    {
-     "word": " Để",
-     "start": 44.26,
-     "end": 44.78,
-     "p": 0.95
-    },
-    {
-     "word": " rồi",
-     "start": 44.78,
-     "end": 45.04,
-     "p": 1.0
-    },
-    {
-     "word": " giờ",
-     "start": 45.04,
-     "end": 45.32,
-     "p": 0.99
-    },
-    {
-     "word": " đây",
-     "start": 45.32,
-     "end": 45.68,
-     "p": 0.94
-    },
-    {
-     "word": " thật",
-     "start": 45.68,
-     "end": 46.08,
-     "p": 0.99
-    },
-    {
-     "word": " vững",
-     "start": 46.08,
-     "end": 46.38,
-     "p": 0.83
-    },
-    {
-     "word": " chắc",
-     "start": 46.38,
-     "end": 46.96,
-     "p": 0.96
-    },
-    {
-     "word": " Đây",
-     "start": 46.96,
-     "end": 48.02,
-     "p": 0.98
-    },
-    {
-     "word": " là",
-     "start": 48.02,
-     "end": 48.42,
-     "p": 1.0
-    },
-    {
-     "word": " một",
-     "start": 48.42,
-     "end": 48.74,
-     "p": 0.97
-    },
-    {
-     "word": " tảng",
-     "start": 48.74,
-     "end": 49.12,
-     "p": 0.44
-    },
-    {
-     "word": " đá",
-     "start": 49.12,
-     "end": 49.6,
-     "p": 0.75
-    },
-    {
-     "word": " cô",
-     "start": 49.6,
-     "end": 49.94,
-     "p": 0.99
-    },
-    {
-     "word": " đơn",
-     "start": 49.94,
-     "end": 50.5,
-     "p": 0.97
-    },
-    {
-     "word": " Và",
-     "start": 50.5,
-     "end": 51.62,
-     "p": 0.99
-    },
-    {
-     "word": " thế",
-     "start": 51.62,
-     "end": 51.98,
-     "p": 1.0
-    },
-    {
-     "word": " ngày",
-     "start": 51.98,
-     "end": 52.26,
-     "p": 0.99
-    },
-    {
-     "word": " trôi",
-     "start": 52.26,
-     "end": 52.76,
-     "p": 1.0
-    },
-    {
-     "word": " luôn",
-     "start": 52.76,
-     "end": 53.08,
-     "p": 0.99
-    },
-    {
-     "word": " mong",
-     "start": 53.08,
-     "end": 53.52,
-     "p": 1.0
-    },
-    {
-     "word": " được",
-     "start": 53.52,
-     "end": 53.86,
-     "p": 1.0
-    },
-    {
-     "word": " tìm",
-     "start": 53.86,
-     "end": 54.32,
-     "p": 1.0
-    },
-    {
-     "word": " thấy",
-     "start": 54.32,
-     "end": 54.74,
-     "p": 1.0
-    },
-    {
-     "word": " Và",
-     "start": 54.74,
-     "end": 57.76,
-     "p": 0.97
-    },
-    {
-     "word": " thế",
-     "start": 57.76,
-     "end": 58.12,
-     "p": 1.0
-    },
-    {
-     "word": " rồi",
-     "start": 58.12,
-     "end": 58.46,
-     "p": 0.99
-    },
-    {
-     "word": " thôi",
-     "start": 58.46,
-     "end": 58.88,
-     "p": 0.99
-    },
-    {
-     "word": " chẳng",
-     "start": 58.88,
-     "end": 59.32,
-     "p": 0.98
-    },
-    {
-     "word": " mong",
-     "start": 59.32,
-     "end": 59.66,
-     "p": 1.0
-    },
-    {
-     "word": " chờ",
-     "start": 59.66,
-     "end": 59.98,
-     "p": 0.98
-    },
-    {
-     "word": " đợi",
-     "start": 59.98,
-     "end": 59.98,
-     "p": 0.45
-    },
-    {
-     "word": " nữa",
-     "start": 59.98,
-     "end": 59.98,
+     "word": " Uh",
+     "start": 0.0,
+     "end": 0.94,
      "p": 0.02
-    }
-   ]
-  },
-  {
-   "start": 60.0,
-   "end": 60.86,
-   "text": "Đợi nữa",
-   "words": [
+    },
     {
-     "word": " Đợi",
-     "start": 60.0,
-     "end": 60.52,
+     "word": " Uh",
+     "start": 0.94,
+     "end": 1.84,
+     "p": 0.1
+    },
+    {
+     "word": " Uh",
+     "start": 1.84,
+     "end": 5.06,
      "p": 0.7
     },
     {
-     "word": " nữa",
-     "start": 60.52,
-     "end": 60.86,
-     "p": 0.94
-    }
-   ]
-  },
-  {
-   "start": 62.74,
-   "end": 65.24,
-   "text": "Ngày quá lại quá",
-   "words": [
-    {
-     "word": " Ngày",
-     "start": 62.74,
-     "end": 63.9,
-     "p": 0.77
+     "word": " Uh",
+     "start": 5.06,
+     "end": 6.3,
+     "p": 0.79
     },
     {
-     "word": " quá",
-     "start": 63.9,
-     "end": 64.28,
-     "p": 0.69
+     "word": " Uh",
+     "start": 6.3,
+     "end": 9.06,
+     "p": 0.83
     },
     {
-     "word": " lại",
-     "start": 64.28,
-     "end": 64.64,
-     "p": 0.96
+     "word": " Uh",
+     "start": 9.06,
+     "end": 9.68,
+     "p": 0.83
     },
     {
-     "word": " quá",
-     "start": 64.64,
-     "end": 65.24,
-     "p": 0.96
-    }
-   ]
-  },
-  {
-   "start": 66.0,
-   "end": 68.46,
-   "text": "Thời gian lại xa",
-   "words": [
-    {
-     "word": " Thời",
-     "start": 66.0,
-     "end": 66.96,
-     "p": 0.92
+     "word": " Uh",
+     "start": 9.68,
+     "end": 10.24,
+     "p": 0.84
     },
     {
-     "word": " gian",
-     "start": 66.96,
-     "end": 67.38,
-     "p": 1.0
+     "word": " Uh",
+     "start": 10.24,
+     "end": 12.38,
+     "p": 0.84
     },
     {
-     "word": " lại",
-     "start": 67.38,
-     "end": 67.68,
-     "p": 1.0
+     "word": " Uh",
+     "start": 12.38,
+     "end": 12.62,
+     "p": 0.84
     },
     {
-     "word": " xa",
-     "start": 67.68,
-     "end": 68.46,
-     "p": 1.0
-    }
-   ]
-  },
-  {
-   "start": 69.0,
-   "end": 73.58,
-   "text": "Chẳng còn úp mong chì",
-   "words": [
-    {
-     "word": " Chẳng",
-     "start": 69.0,
-     "end": 69.7,
-     "p": 0.98
-    },
-    {
-     "word": " còn",
-     "start": 69.7,
-     "end": 70.1,
-     "p": 1.0
-    },
-    {
-     "word": " úp",
-     "start": 70.1,
-     "end": 71.62,
-     "p": 0.74
-    },
-    {
-     "word": " mong",
-     "start": 71.62,
-     "end": 72.72,
-     "p": 0.99
-    },
-    {
-     "word": " chì",
-     "start": 72.72,
-     "end": 73.58,
-     "p": 0.62
-    }
-   ]
-  },
-  {
-   "start": 99.62,
-   "end": 105.62,
-   "text": "Ôi cuộc đời của tàng đá, tàng đá ấy chính là tôi",
-   "words": [
-    {
-     "word": " Ôi",
-     "start": 99.62,
-     "end": 100.46,
-     "p": 0.56
-    },
-    {
-     "word": " cuộc",
-     "start": 100.46,
-     "end": 100.8,
-     "p": 0.96
-    },
-    {
-     "word": " đời",
-     "start": 100.8,
-     "end": 101.22,
+     "word": " Uh",
+     "start": 12.62,
+     "end": 13.64,
      "p": 0.82
     },
     {
-     "word": " của",
-     "start": 101.22,
-     "end": 101.66,
-     "p": 0.99
-    },
-    {
-     "word": " tàng",
-     "start": 101.66,
-     "end": 101.96,
-     "p": 0.88
-    },
-    {
-     "word": " đá,",
-     "start": 101.96,
-     "end": 102.66,
-     "p": 0.99
-    },
-    {
-     "word": " tàng",
-     "start": 103.04,
-     "end": 103.54,
-     "p": 1.0
-    },
-    {
-     "word": " đá",
-     "start": 103.54,
-     "end": 103.94,
-     "p": 1.0
-    },
-    {
-     "word": " ấy",
-     "start": 103.94,
-     "end": 104.3,
-     "p": 0.99
-    },
-    {
-     "word": " chính",
-     "start": 104.3,
-     "end": 104.58,
-     "p": 0.95
-    },
-    {
-     "word": " là",
-     "start": 104.58,
-     "end": 105.0,
-     "p": 1.0
-    },
-    {
-     "word": " tôi",
-     "start": 105.0,
-     "end": 105.62,
-     "p": 0.99
-    }
-   ]
-  },
-  {
-   "start": 105.62,
-   "end": 111.96,
-   "text": "Qua dòng sông qua lạnh giá, tôi vẫn sáng giữa đời",
-   "words": [
-    {
-     "word": " Qua",
-     "start": 105.62,
-     "end": 106.62,
-     "p": 0.94
-    },
-    {
-     "word": " dòng",
-     "start": 106.62,
-     "end": 106.94,
-     "p": 0.99
-    },
-    {
-     "word": " sông",
-     "start": 106.94,
-     "end": 107.34,
-     "p": 1.0
-    },
-    {
-     "word": " qua",
-     "start": 107.34,
-     "end": 107.72,
-     "p": 0.94
-    },
-    {
-     "word": " lạnh",
-     "start": 107.72,
-     "end": 108.1,
-     "p": 0.99
-    },
-    {
-     "word": " giá,",
-     "start": 108.1,
-     "end": 108.68,
+     "word": " Uh",
+     "start": 13.64,
+     "end": 13.92,
      "p": 0.79
     },
     {
-     "word": " tôi",
-     "start": 109.26,
-     "end": 109.66,
-     "p": 1.0
-    },
-    {
-     "word": " vẫn",
-     "start": 109.66,
-     "end": 110.0,
-     "p": 1.0
-    },
-    {
-     "word": " sáng",
-     "start": 110.0,
-     "end": 110.82,
-     "p": 0.97
-    },
-    {
-     "word": " giữa",
-     "start": 110.82,
-     "end": 111.28,
-     "p": 0.96
-    },
-    {
-     "word": " đời",
-     "start": 111.28,
-     "end": 111.96,
-     "p": 1.0
-    }
-   ]
-  },
-  {
-   "start": 111.96,
-   "end": 117.84,
-   "text": "Rồi một ngày ai tìm thấy, gọi tôi đến nơi xa",
-   "words": [
-    {
-     "word": " Rồi",
-     "start": 111.96,
-     "end": 112.78,
-     "p": 1.0
-    },
-    {
-     "word": " một",
-     "start": 112.78,
-     "end": 113.06,
-     "p": 1.0
-    },
-    {
-     "word": " ngày",
-     "start": 113.06,
-     "end": 113.5,
-     "p": 1.0
-    },
-    {
-     "word": " ai",
-     "start": 113.5,
-     "end": 113.88,
-     "p": 0.96
-    },
-    {
-     "word": " tìm",
-     "start": 113.88,
-     "end": 114.3,
-     "p": 1.0
-    },
-    {
-     "word": " thấy,",
-     "start": 114.3,
-     "end": 114.84,
-     "p": 1.0
-    },
-    {
-     "word": " gọi",
-     "start": 115.7,
-     "end": 116.18,
-     "p": 1.0
-    },
-    {
-     "word": " tôi",
-     "start": 116.18,
-     "end": 116.56,
-     "p": 1.0
-    },
-    {
-     "word": " đến",
-     "start": 116.56,
-     "end": 116.96,
-     "p": 1.0
-    },
-    {
-     "word": " nơi",
-     "start": 116.96,
-     "end": 117.34,
-     "p": 0.99
-    },
-    {
-     "word": " xa",
-     "start": 117.34,
-     "end": 117.84,
-     "p": 1.0
-    }
-   ]
-  },
-  {
-   "start": 117.84,
-   "end": 120.28,
-   "text": "Nơi tôi thuộc về mai",
-   "words": [
-    {
-     "word": " Nơi",
-     "start": 117.84,
-     "end": 118.4,
-     "p": 0.67
-    },
-    {
-     "word": " tôi",
-     "start": 118.4,
-     "end": 118.82,
-     "p": 0.96
-    },
-    {
-     "word": " thuộc",
-     "start": 118.82,
-     "end": 119.2,
-     "p": 1.0
-    },
-    {
-     "word": " về",
-     "start": 119.2,
-     "end": 119.5,
-     "p": 1.0
-    },
-    {
-     "word": " mai",
-     "start": 119.5,
-     "end": 120.28,
-     "p": 0.49
-    }
-   ]
-  },
-  {
-   "start": 120.84,
-   "end": 124.54,
-   "text": "Nơi hạnh phúc chan đầy",
-   "words": [
-    {
-     "word": " Nơi",
-     "start": 120.84,
-     "end": 122.0,
-     "p": 0.77
-    },
-    {
-     "word": " hạnh",
-     "start": 122.0,
-     "end": 122.3,
-     "p": 1.0
-    },
-    {
-     "word": " phúc",
-     "start": 122.3,
-     "end": 122.98,
-     "p": 1.0
-    },
-    {
-     "word": " chan",
-     "start": 122.98,
-     "end": 123.82,
-     "p": 0.54
-    },
-    {
-     "word": " đầy",
-     "start": 123.82,
-     "end": 124.54,
-     "p": 0.94
-    }
-   ]
-  },
-  {
-   "start": 124.54,
-   "end": 128.62,
-   "text": "Và thế ngày trôi luôn mong được tìm thấy",
-   "words": [
-    {
-     "word": " Và",
-     "start": 124.54,
-     "end": 125.42,
-     "p": 0.91
-    },
-    {
-     "word": " thế",
-     "start": 125.42,
-     "end": 125.8,
-     "p": 0.99
-    },
-    {
-     "word": " ngày",
-     "start": 125.8,
-     "end": 126.08,
-     "p": 0.98
-    },
-    {
-     "word": " trôi",
-     "start": 126.08,
-     "end": 126.6,
-     "p": 0.99
-    },
-    {
-     "word": " luôn",
-     "start": 126.6,
-     "end": 126.88,
-     "p": 0.97
-    },
-    {
-     "word": " mong",
-     "start": 126.88,
-     "end": 127.36,
-     "p": 0.99
-    },
-    {
-     "word": " được",
-     "start": 127.36,
-     "end": 127.66,
-     "p": 0.99
-    },
-    {
-     "word": " tìm",
-     "start": 127.66,
-     "end": 128.14,
-     "p": 1.0
-    },
-    {
-     "word": " thấy",
-     "start": 128.14,
-     "end": 128.62,
-     "p": 0.99
-    }
-   ]
-  },
-  {
-   "start": 130.68,
-   "end": 134.8,
-   "text": "Và thế rồi thôi chẳng mong chờ đợi nữa",
-   "words": [
-    {
-     "word": " Và",
-     "start": 130.68,
-     "end": 131.58,
-     "p": 0.99
-    },
-    {
-     "word": " thế",
-     "start": 131.58,
-     "end": 132.0,
-     "p": 1.0
-    },
-    {
-     "word": " rồi",
-     "start": 132.0,
-     "end": 132.32,
-     "p": 0.99
-    },
-    {
-     "word": " thôi",
-     "start": 132.32,
-     "end": 132.74,
-     "p": 0.94
-    },
-    {
-     "word": " chẳng",
-     "start": 132.74,
-     "end": 133.18,
-     "p": 0.99
-    },
-    {
-     "word": " mong",
-     "start": 133.18,
-     "end": 133.5,
-     "p": 1.0
-    },
-    {
-     "word": " chờ",
-     "start": 133.5,
-     "end": 133.98,
-     "p": 1.0
-    },
-    {
-     "word": " đợi",
-     "start": 133.98,
-     "end": 134.38,
-     "p": 1.0
-    },
-    {
-     "word": " nữa",
-     "start": 134.38,
-     "end": 134.8,
-     "p": 0.95
-    }
-   ]
-  },
-  {
-   "start": 136.82,
-   "end": 139.16,
-   "text": "Ngày qua lại qua",
-   "words": [
-    {
-     "word": " Ngày",
-     "start": 136.82,
-     "end": 137.72,
-     "p": 0.97
-    },
-    {
-     "word": " qua",
-     "start": 137.72,
-     "end": 138.14,
-     "p": 0.44
-    },
-    {
-     "word": " lại",
-     "start": 138.14,
-     "end": 138.5,
-     "p": 0.99
-    },
-    {
-     "word": " qua",
-     "start": 138.5,
-     "end": 139.16,
-     "p": 0.81
-    }
-   ]
-  },
-  {
-   "start": 139.16,
-   "end": 142.4,
-   "text": "Thời gian lại xa",
-   "words": [
-    {
-     "word": " Thời",
-     "start": 139.16,
-     "end": 140.78,
-     "p": 0.79
-    },
-    {
-     "word": " gian",
-     "start": 140.78,
-     "end": 141.24,
-     "p": 1.0
-    },
-    {
-     "word": " lại",
-     "start": 141.24,
-     "end": 141.54,
-     "p": 1.0
-    },
-    {
-     "word": " xa",
-     "start": 141.54,
-     "end": 142.4,
-     "p": 0.99
-    }
-   ]
-  },
-  {
-   "start": 142.4,
-   "end": 147.4,
-   "text": "Chẳng còn ước mong chi",
-   "words": [
-    {
-     "word": " Chẳng",
-     "start": 142.4,
-     "end": 143.52,
-     "p": 0.95
-    },
-    {
-     "word": " còn",
-     "start": 143.52,
-     "end": 143.96,
-     "p": 1.0
-    },
-    {
-     "word": " ước",
-     "start": 143.96,
-     "end": 144.8,
+     "word": " Uh",
+     "start": 13.92,
+     "end": 13.92,
      "p": 0.74
     },
     {
-     "word": " mong",
-     "start": 144.8,
-     "end": 146.82,
-     "p": 0.98
+     "word": " Uh",
+     "start": 13.92,
+     "end": 14.9,
+     "p": 0.69
     },
     {
-     "word": " chi",
-     "start": 146.82,
-     "end": 147.4,
+     "word": " Uh",
+     "start": 14.9,
+     "end": 14.9,
+     "p": 0.63
+    },
+    {
+     "word": " Uh",
+     "start": 14.9,
+     "end": 14.9,
+     "p": 0.57
+    },
+    {
+     "word": " Uh",
+     "start": 14.9,
+     "end": 14.9,
+     "p": 0.5
+    },
+    {
+     "word": " Uh",
+     "start": 14.9,
+     "end": 14.9,
+     "p": 0.44
+    },
+    {
+     "word": " Uh",
+     "start": 14.9,
+     "end": 14.9,
+     "p": 0.41
+    },
+    {
+     "word": " Uh",
+     "start": 14.9,
+     "end": 14.9,
+     "p": 0.35
+    },
+    {
+     "word": " Uh",
+     "start": 14.9,
+     "end": 14.9,
+     "p": 0.34
+    },
+    {
+     "word": " Uh",
+     "start": 14.9,
+     "end": 14.9,
+     "p": 0.32
+    },
+    {
+     "word": " Uh",
+     "start": 14.9,
+     "end": 14.9,
+     "p": 0.31
+    },
+    {
+     "word": " Uh",
+     "start": 14.9,
+     "end": 14.9,
+     "p": 0.3
+    },
+    {
+     "word": " Uh",
+     "start": 14.9,
+     "end": 14.9,
+     "p": 0.29
+    },
+    {
+     "word": " Uh",
+     "start": 14.9,
+     "end": 14.9,
      "p": 0.28
     }
    ]
   },
   {
-   "start": 160.44,
-   "end": 164.02,
-   "text": "Tôi từng nằm đi giữa dòng đời cuốn trôi",
+   "start": 16.7,
+   "end": 29.38,
+   "text": "Lặng im giữa đất trời bao nắng trong dòng nước lạnh Mong ai sẽ tìm thấy nhưng rồi sao vạn năm trôi",
    "words": [
     {
-     "word": " Tôi",
-     "start": 160.44,
-     "end": 161.2,
+     "word": " Lặng",
+     "start": 16.7,
+     "end": 17.68,
      "p": 0.76
     },
     {
-     "word": " từng",
-     "start": 161.2,
-     "end": 161.48,
-     "p": 0.98
-    },
-    {
-     "word": " nằm",
-     "start": 161.48,
-     "end": 161.64,
-     "p": 0.79
-    },
-    {
-     "word": " đi",
-     "start": 161.64,
-     "end": 161.82,
-     "p": 0.43
+     "word": " im",
+     "start": 17.68,
+     "end": 17.9,
+     "p": 0.99
     },
     {
      "word": " giữa",
-     "start": 161.82,
-     "end": 162.04,
-     "p": 0.81
+     "start": 17.9,
+     "end": 18.16,
+     "p": 0.94
     },
     {
-     "word": " dòng",
-     "start": 162.04,
-     "end": 162.34,
-     "p": 0.99
-    },
-    {
-     "word": " đời",
-     "start": 162.34,
-     "end": 162.88,
-     "p": 0.99
-    },
-    {
-     "word": " cuốn",
-     "start": 162.88,
-     "end": 163.52,
-     "p": 0.99
-    },
-    {
-     "word": " trôi",
-     "start": 163.52,
-     "end": 164.02,
-     "p": 0.99
-    }
-   ]
-  },
-  {
-   "start": 164.02,
-   "end": 167.04,
-   "text": "Không ai nghe tay tiếng thầm gọi đời tôi",
-   "words": [
-    {
-     "word": " Không",
-     "start": 164.02,
-     "end": 164.32,
-     "p": 0.98
-    },
-    {
-     "word": " ai",
-     "start": 164.32,
-     "end": 164.56,
+     "word": " đất",
+     "start": 18.16,
+     "end": 18.4,
      "p": 1.0
     },
     {
-     "word": " nghe",
-     "start": 164.56,
-     "end": 164.72,
-     "p": 1.0
-    },
-    {
-     "word": " tay",
-     "start": 164.72,
-     "end": 164.92,
-     "p": 0.81
-    },
-    {
-     "word": " tiếng",
-     "start": 164.92,
-     "end": 165.12,
-     "p": 0.66
-    },
-    {
-     "word": " thầm",
-     "start": 165.12,
-     "end": 165.44,
+     "word": " trời",
+     "start": 18.4,
+     "end": 18.66,
      "p": 0.99
     },
     {
-     "word": " gọi",
-     "start": 165.44,
-     "end": 165.96,
-     "p": 0.99
+     "word": " bao",
+     "start": 18.66,
+     "end": 18.98,
+     "p": 0.49
     },
     {
-     "word": " đời",
-     "start": 165.96,
-     "end": 166.6,
-     "p": 0.57
-    },
-    {
-     "word": " tôi",
-     "start": 166.6,
-     "end": 167.04,
-     "p": 0.99
-    }
-   ]
-  },
-  {
-   "start": 167.04,
-   "end": 170.06,
-   "text": "Nước cứ chay, thời gian cứ trôi",
-   "words": [
-    {
-     "word": " Nước",
-     "start": 167.04,
-     "end": 167.78,
-     "p": 0.99
-    },
-    {
-     "word": " cứ",
-     "start": 167.78,
-     "end": 168.08,
-     "p": 0.99
-    },
-    {
-     "word": " chay,",
-     "start": 168.08,
-     "end": 168.5,
-     "p": 0.69
-    },
-    {
-     "word": " thời",
-     "start": 168.68,
-     "end": 168.9,
-     "p": 1.0
-    },
-    {
-     "word": " gian",
-     "start": 168.9,
-     "end": 169.24,
-     "p": 1.0
-    },
-    {
-     "word": " cứ",
-     "start": 169.24,
-     "end": 169.62,
-     "p": 1.0
-    },
-    {
-     "word": " trôi",
-     "start": 169.62,
-     "end": 170.06,
-     "p": 0.99
-    }
-   ]
-  },
-  {
-   "start": 170.06,
-   "end": 173.12,
-   "text": "Người mai đi đau thương, bỏ đi vấn vương",
-   "words": [
-    {
-     "word": " Người",
-     "start": 170.06,
-     "end": 170.1,
-     "p": 0.21
-    },
-    {
-     "word": " mai",
-     "start": 170.1,
-     "end": 170.42,
-     "p": 0.62
-    },
-    {
-     "word": " đi",
-     "start": 170.42,
-     "end": 170.72,
-     "p": 0.95
-    },
-    {
-     "word": " đau",
-     "start": 170.72,
-     "end": 171.04,
+     "word": " nắng",
+     "start": 18.98,
+     "end": 19.48,
      "p": 0.96
-    },
-    {
-     "word": " thương,",
-     "start": 171.04,
-     "end": 171.56,
-     "p": 1.0
-    },
-    {
-     "word": " bỏ",
-     "start": 171.7,
-     "end": 172.0,
-     "p": 0.95
-    },
-    {
-     "word": " đi",
-     "start": 172.0,
-     "end": 172.24,
-     "p": 1.0
-    },
-    {
-     "word": " vấn",
-     "start": 172.24,
-     "end": 172.6,
-     "p": 0.95
-    },
-    {
-     "word": " vương",
-     "start": 172.6,
-     "end": 173.12,
-     "p": 0.98
-    }
-   ]
-  },
-  {
-   "start": 173.12,
-   "end": 175.92,
-   "text": "Tôi từng cô đơn, từng lạnh trong đêm",
-   "words": [
-    {
-     "word": " Tôi",
-     "start": 173.12,
-     "end": 173.52,
-     "p": 0.63
-    },
-    {
-     "word": " từng",
-     "start": 173.52,
-     "end": 173.8,
-     "p": 1.0
-    },
-    {
-     "word": " cô",
-     "start": 173.8,
-     "end": 173.94,
-     "p": 0.97
-    },
-    {
-     "word": " đơn,",
-     "start": 173.94,
-     "end": 174.24,
-     "p": 0.99
-    },
-    {
-     "word": " từng",
-     "start": 174.4,
-     "end": 174.56,
-     "p": 0.99
-    },
-    {
-     "word": " lạnh",
-     "start": 174.56,
-     "end": 174.82,
-     "p": 0.73
     },
     {
      "word": " trong",
-     "start": 174.82,
-     "end": 175.16,
-     "p": 0.87
-    },
-    {
-     "word": " đêm",
-     "start": 175.16,
-     "end": 175.92,
-     "p": 0.99
-    }
-   ]
-  },
-  {
-   "start": 175.92,
-   "end": 178.82,
-   "text": "Ngày qua ngày qua nghỉ đời, mai lại khai kết em",
-   "words": [
-    {
-     "word": " Ngày",
-     "start": 175.92,
-     "end": 176.26,
+     "start": 19.48,
+     "end": 19.9,
      "p": 0.98
     },
     {
-     "word": " qua",
-     "start": 176.26,
-     "end": 176.44,
-     "p": 0.99
+     "word": " dòng",
+     "start": 19.9,
+     "end": 20.44,
+     "p": 0.95
     },
     {
-     "word": " ngày",
-     "start": 176.44,
-     "end": 176.62,
-     "p": 0.86
-    },
-    {
-     "word": " qua",
-     "start": 176.62,
-     "end": 176.84,
-     "p": 0.96
-    },
-    {
-     "word": " nghỉ",
-     "start": 176.84,
-     "end": 177.06,
-     "p": 0.9
-    },
-    {
-     "word": " đời,",
-     "start": 177.06,
-     "end": 177.22,
-     "p": 0.77
-    },
-    {
-     "word": " mai",
-     "start": 177.34,
-     "end": 177.4,
-     "p": 0.29
-    },
-    {
-     "word": " lại",
-     "start": 177.4,
-     "end": 177.64,
-     "p": 0.54
-    },
-    {
-     "word": " khai",
-     "start": 177.64,
-     "end": 177.94,
-     "p": 0.61
-    },
-    {
-     "word": " kết",
-     "start": 177.94,
-     "end": 178.4,
-     "p": 0.79
-    },
-    {
-     "word": " em",
-     "start": 178.4,
-     "end": 178.82,
-     "p": 0.62
-    }
-   ]
-  },
-  {
-   "start": 178.82,
-   "end": 181.4,
-   "text": "Và rồi tiếng gọi mang lên từ nơi đấy",
-   "words": [
-    {
-     "word": " Và",
-     "start": 178.82,
-     "end": 179.14,
-     "p": 0.93
-    },
-    {
-     "word": " rồi",
-     "start": 179.14,
-     "end": 179.3,
-     "p": 0.83
-    },
-    {
-     "word": " tiếng",
-     "start": 179.3,
-     "end": 179.54,
-     "p": 0.99
-    },
-    {
-     "word": " gọi",
-     "start": 179.54,
-     "end": 179.72,
-     "p": 0.64
-    },
-    {
-     "word": " mang",
-     "start": 179.72,
-     "end": 180.04,
-     "p": 0.81
-    },
-    {
-     "word": " lên",
-     "start": 180.04,
-     "end": 180.38,
-     "p": 0.97
-    },
-    {
-     "word": " từ",
-     "start": 180.38,
-     "end": 180.68,
-     "p": 0.9
-    },
-    {
-     "word": " nơi",
-     "start": 180.68,
-     "end": 181.06,
+     "word": " nước",
+     "start": 20.44,
+     "end": 20.88,
      "p": 1.0
     },
     {
-     "word": " đấy",
-     "start": 181.06,
-     "end": 181.4,
-     "p": 0.54
-    }
-   ]
-  },
-  {
-   "start": 181.4,
-   "end": 184.34,
-   "text": "Tôi biết từ đây mình đã được tìm thấy",
-   "words": [
-    {
-     "word": " Tôi",
-     "start": 181.4,
-     "end": 182.02,
-     "p": 0.93
-    },
-    {
-     "word": " biết",
-     "start": 182.02,
-     "end": 182.22,
-     "p": 0.96
-    },
-    {
-     "word": " từ",
-     "start": 182.22,
-     "end": 182.42,
+     "word": " lạnh",
+     "start": 20.88,
+     "end": 21.78,
      "p": 0.99
     },
     {
-     "word": " đây",
-     "start": 182.42,
-     "end": 182.66,
-     "p": 0.92
+     "word": " Mong",
+     "start": 21.78,
+     "end": 25.22,
+     "p": 0.56
     },
     {
-     "word": " mình",
-     "start": 182.66,
-     "end": 182.94,
-     "p": 0.86
-    },
-    {
-     "word": " đã",
-     "start": 182.94,
-     "end": 183.26,
+     "word": " ai",
+     "start": 25.22,
+     "end": 25.5,
      "p": 1.0
     },
     {
-     "word": " được",
-     "start": 183.26,
-     "end": 183.56,
-     "p": 0.98
+     "word": " sẽ",
+     "start": 25.5,
+     "end": 25.7,
+     "p": 0.99
     },
     {
      "word": " tìm",
-     "start": 183.56,
-     "end": 183.9,
+     "start": 25.7,
+     "end": 26.12,
      "p": 1.0
     },
     {
      "word": " thấy",
-     "start": 183.9,
-     "end": 184.34,
-     "p": 0.95
-    }
-   ]
-  },
-  {
-   "start": 185.44,
-   "end": 188.66,
-   "text": "Không còn vô chi, không còn lạng thính",
-   "words": [
-    {
-     "word": " Không",
-     "start": 185.44,
-     "end": 186.04,
-     "p": 0.87
-    },
-    {
-     "word": " còn",
-     "start": 186.04,
-     "end": 186.28,
-     "p": 1.0
-    },
-    {
-     "word": " vô",
-     "start": 186.28,
-     "end": 186.6,
-     "p": 0.98
-    },
-    {
-     "word": " chi,",
-     "start": 186.6,
-     "end": 186.88,
-     "p": 0.68
-    },
-    {
-     "word": " không",
-     "start": 187.08,
-     "end": 187.32,
+     "start": 26.12,
+     "end": 26.5,
      "p": 0.99
     },
     {
-     "word": " còn",
-     "start": 187.32,
-     "end": 187.82,
-     "p": 1.0
+     "word": " nhưng",
+     "start": 26.5,
+     "end": 26.98,
+     "p": 0.06
     },
     {
-     "word": " lạng",
-     "start": 187.82,
-     "end": 188.18,
-     "p": 0.82
+     "word": " rồi",
+     "start": 26.98,
+     "end": 27.34,
+     "p": 0.93
     },
     {
-     "word": " thính",
-     "start": 188.18,
-     "end": 188.66,
-     "p": 0.52
+     "word": " sao",
+     "start": 27.34,
+     "end": 27.76,
+     "p": 0.99
+    },
+    {
+     "word": " vạn",
+     "start": 27.76,
+     "end": 28.24,
+     "p": 0.66
+    },
+    {
+     "word": " năm",
+     "start": 28.24,
+     "end": 28.76,
+     "p": 0.32
+    },
+    {
+     "word": " trôi",
+     "start": 28.76,
+     "end": 29.38,
+     "p": 0.86
     }
    ]
   },
   {
-   "start": 191.62,
-   "end": 196.9,
-   "text": "Tôi là tác phẩm mang dáng hình không cần chứng minh",
+   "start": 31.54,
+   "end": 34.96,
+   "text": "Và thế mai mòn theo năm tháng",
    "words": [
     {
-     "word": " Tôi",
-     "start": 191.62,
-     "end": 192.22,
+     "word": " Và",
+     "start": 31.54,
+     "end": 32.32,
+     "p": 0.78
+    },
+    {
+     "word": " thế",
+     "start": 32.32,
+     "end": 32.64,
+     "p": 0.93
+    },
+    {
+     "word": " mai",
+     "start": 32.64,
+     "end": 32.9,
+     "p": 0.67
+    },
+    {
+     "word": " mòn",
+     "start": 32.9,
+     "end": 33.12,
+     "p": 0.96
+    },
+    {
+     "word": " theo",
+     "start": 33.12,
+     "end": 33.58,
+     "p": 0.99
+    },
+    {
+     "word": " năm",
+     "start": 33.58,
+     "end": 33.94,
+     "p": 0.93
+    },
+    {
+     "word": " tháng",
+     "start": 33.94,
+     "end": 34.96,
+     "p": 1.0
+    }
+   ]
+  },
+  {
+   "start": 35.76,
+   "end": 39.16,
+   "text": "Cuốn đi bao yêu đuối trong tôi để rồi",
+   "words": [
+    {
+     "word": " Cuốn",
+     "start": 35.76,
+     "end": 36.54,
+     "p": 0.85
+    },
+    {
+     "word": " đi",
+     "start": 36.54,
+     "end": 36.7,
+     "p": 0.96
+    },
+    {
+     "word": " bao",
+     "start": 36.7,
+     "end": 36.96,
      "p": 0.94
     },
     {
-     "word": " là",
-     "start": 192.22,
-     "end": 192.4,
-     "p": 1.0
+     "word": " yêu",
+     "start": 36.96,
+     "end": 37.18,
+     "p": 0.87
     },
     {
-     "word": " tác",
-     "start": 192.4,
-     "end": 192.82,
-     "p": 0.99
-    },
-    {
-     "word": " phẩm",
-     "start": 192.82,
-     "end": 193.12,
-     "p": 0.99
-    },
-    {
-     "word": " mang",
-     "start": 193.12,
-     "end": 193.5,
+     "word": " đuối",
+     "start": 37.18,
+     "end": 37.56,
      "p": 0.88
     },
     {
-     "word": " dáng",
-     "start": 193.5,
-     "end": 193.98,
-     "p": 0.8
+     "word": " trong",
+     "start": 37.56,
+     "end": 37.9,
+     "p": 0.92
     },
     {
-     "word": " hình",
-     "start": 193.98,
-     "end": 194.26,
+     "word": " tôi",
+     "start": 37.9,
+     "end": 38.38,
+     "p": 0.75
+    },
+    {
+     "word": " để",
+     "start": 38.38,
+     "end": 38.82,
+     "p": 0.42
+    },
+    {
+     "word": " rồi",
+     "start": 38.82,
+     "end": 39.16,
+     "p": 0.99
+    }
+   ]
+  },
+  {
+   "start": 39.16,
+   "end": 40.94,
+   "text": "Giờ đây thật vững chắc",
+   "words": [
+    {
+     "word": " Giờ",
+     "start": 39.16,
+     "end": 39.56,
+     "p": 0.94
+    },
+    {
+     "word": " đây",
+     "start": 39.56,
+     "end": 39.76,
      "p": 0.99
     },
     {
-     "word": " không",
-     "start": 194.26,
-     "end": 194.62,
-     "p": 0.7
-    },
-    {
-     "word": " cần",
-     "start": 194.62,
-     "end": 195.04,
+     "word": " thật",
+     "start": 39.76,
+     "end": 39.98,
      "p": 1.0
     },
     {
-     "word": " chứng",
-     "start": 195.04,
-     "end": 195.74,
-     "p": 0.99
+     "word": " vững",
+     "start": 39.98,
+     "end": 40.42,
+     "p": 0.83
     },
     {
-     "word": " minh",
-     "start": 195.74,
-     "end": 196.9,
+     "word": " chắc",
+     "start": 40.42,
+     "end": 40.94,
+     "p": 0.99
+    }
+   ]
+  },
+  {
+   "start": 40.94,
+   "end": 45.04,
+   "text": "Đây là một tạng đá cô đơn",
+   "words": [
+    {
+     "word": " Đây",
+     "start": 40.94,
+     "end": 41.66,
+     "p": 0.79
+    },
+    {
+     "word": " là",
+     "start": 41.66,
+     "end": 41.92,
+     "p": 1.0
+    },
+    {
+     "word": " một",
+     "start": 41.92,
+     "end": 42.24,
+     "p": 0.98
+    },
+    {
+     "word": " tạng",
+     "start": 42.24,
+     "end": 42.66,
+     "p": 0.82
+    },
+    {
+     "word": " đá",
+     "start": 42.66,
+     "end": 43.32,
+     "p": 0.93
+    },
+    {
+     "word": " cô",
+     "start": 43.32,
+     "end": 44.32,
+     "p": 0.9
+    },
+    {
+     "word": " đơn",
+     "start": 44.32,
+     "end": 45.04,
      "p": 1.0
     }
    ]
   },
   {
-   "start": 196.9,
-   "end": 203.14,
-   "text": "Dưới ánh nắng tôi ngắm nhìn thế gian",
+   "start": 45.84,
+   "end": 47.94,
+   "text": "Và thế ngày trôi",
    "words": [
     {
-     "word": " Dưới",
-     "start": 196.9,
-     "end": 198.62,
-     "p": 0.91
-    },
-    {
-     "word": " ánh",
-     "start": 198.62,
-     "end": 198.92,
+     "word": " Và",
+     "start": 45.84,
+     "end": 46.62,
      "p": 0.99
     },
     {
-     "word": " nắng",
-     "start": 198.92,
-     "end": 199.52,
+     "word": " thế",
+     "start": 46.62,
+     "end": 47.0,
+     "p": 1.0
+    },
+    {
+     "word": " ngày",
+     "start": 47.0,
+     "end": 47.32,
+     "p": 0.96
+    },
+    {
+     "word": " trôi",
+     "start": 47.32,
+     "end": 47.94,
+     "p": 1.0
+    }
+   ]
+  },
+  {
+   "start": 47.94,
+   "end": 49.86,
+   "text": "Luôn mong được tìm thấy",
+   "words": [
+    {
+     "word": " Luôn",
+     "start": 47.94,
+     "end": 48.54,
+     "p": 0.59
+    },
+    {
+     "word": " mong",
+     "start": 48.54,
+     "end": 48.86,
+     "p": 1.0
+    },
+    {
+     "word": " được",
+     "start": 48.86,
+     "end": 49.02,
+     "p": 0.99
+    },
+    {
+     "word": " tìm",
+     "start": 49.02,
+     "end": 49.5,
+     "p": 1.0
+    },
+    {
+     "word": " thấy",
+     "start": 49.5,
+     "end": 49.86,
+     "p": 1.0
+    }
+   ]
+  },
+  {
+   "start": 49.86,
+   "end": 51.7,
+   "text": "Và thế rồi thôi",
+   "words": [
+    {
+     "word": " Và",
+     "start": 49.86,
+     "end": 50.42,
+     "p": 0.99
+    },
+    {
+     "word": " thế",
+     "start": 50.42,
+     "end": 50.84,
+     "p": 1.0
+    },
+    {
+     "word": " rồi",
+     "start": 50.84,
+     "end": 51.18,
+     "p": 0.99
+    },
+    {
+     "word": " thôi",
+     "start": 51.18,
+     "end": 51.7,
+     "p": 0.99
+    }
+   ]
+  },
+  {
+   "start": 51.7,
+   "end": 53.7,
+   "text": "Chẳng mong chờ đợi nữa",
+   "words": [
+    {
+     "word": " Chẳng",
+     "start": 51.7,
+     "end": 52.3,
+     "p": 0.86
+    },
+    {
+     "word": " mong",
+     "start": 52.3,
+     "end": 52.62,
+     "p": 1.0
+    },
+    {
+     "word": " chờ",
+     "start": 52.62,
+     "end": 52.92,
+     "p": 1.0
+    },
+    {
+     "word": " đợi",
+     "start": 52.92,
+     "end": 53.34,
+     "p": 0.98
+    },
+    {
+     "word": " nữa",
+     "start": 53.34,
+     "end": 53.7,
+     "p": 0.99
+    }
+   ]
+  },
+  {
+   "start": 53.7,
+   "end": 55.38,
+   "text": "Ngày qua lại qua",
+   "words": [
+    {
+     "word": " Ngày",
+     "start": 53.7,
+     "end": 54.26,
+     "p": 0.99
+    },
+    {
+     "word": " qua",
+     "start": 54.26,
+     "end": 54.64,
+     "p": 1.0
+    },
+    {
+     "word": " lại",
+     "start": 54.64,
+     "end": 54.98,
+     "p": 0.98
+    },
+    {
+     "word": " qua",
+     "start": 54.98,
+     "end": 55.38,
+     "p": 1.0
+    }
+   ]
+  },
+  {
+   "start": 55.38,
+   "end": 57.42,
+   "text": "Thời gian lại xa",
+   "words": [
+    {
+     "word": " Thời",
+     "start": 55.38,
+     "end": 56.24,
+     "p": 0.97
+    },
+    {
+     "word": " gian",
+     "start": 56.24,
+     "end": 56.58,
+     "p": 1.0
+    },
+    {
+     "word": " lại",
+     "start": 56.58,
+     "end": 56.86,
+     "p": 1.0
+    },
+    {
+     "word": " xa",
+     "start": 56.86,
+     "end": 57.42,
+     "p": 0.99
+    }
+   ]
+  },
+  {
+   "start": 57.42,
+   "end": 60.26,
+   "text": "Chẳng còn út mong chi",
+   "words": [
+    {
+     "word": " Chẳng",
+     "start": 57.42,
+     "end": 58.82,
+     "p": 0.93
+    },
+    {
+     "word": " còn",
+     "start": 58.82,
+     "end": 59.04,
+     "p": 0.99
+    },
+    {
+     "word": " út",
+     "start": 59.04,
+     "end": 59.58,
+     "p": 0.66
+    },
+    {
+     "word": " mong",
+     "start": 59.58,
+     "end": 59.78,
+     "p": 0.85
+    },
+    {
+     "word": " chi",
+     "start": 59.78,
+     "end": 60.26,
+     "p": 0.84
+    }
+   ]
+  },
+  {
+   "start": 63.54,
+   "end": 66.74,
+   "text": "Ôi cuộc đời của tăng đá",
+   "words": [
+    {
+     "word": " Ôi",
+     "start": 63.54,
+     "end": 64.54,
+     "p": 0.95
+    },
+    {
+     "word": " cuộc",
+     "start": 64.54,
+     "end": 64.74,
+     "p": 0.92
+    },
+    {
+     "word": " đời",
+     "start": 64.74,
+     "end": 65.22,
+     "p": 1.0
+    },
+    {
+     "word": " của",
+     "start": 65.22,
+     "end": 65.66,
+     "p": 0.97
+    },
+    {
+     "word": " tăng",
+     "start": 65.66,
+     "end": 66.2,
+     "p": 0.59
+    },
+    {
+     "word": " đá",
+     "start": 66.2,
+     "end": 66.74,
+     "p": 0.92
+    }
+   ]
+  },
+  {
+   "start": 67.42,
+   "end": 70.42,
+   "text": "Tăng đá ấy chính là tôi",
+   "words": [
+    {
+     "word": " Tăng",
+     "start": 67.42,
+     "end": 68.36,
+     "p": 0.82
+    },
+    {
+     "word": " đá",
+     "start": 68.36,
+     "end": 68.64,
+     "p": 0.99
+    },
+    {
+     "word": " ấy",
+     "start": 68.64,
+     "end": 69.0,
+     "p": 0.98
+    },
+    {
+     "word": " chính",
+     "start": 69.0,
+     "end": 69.32,
+     "p": 0.97
+    },
+    {
+     "word": " là",
+     "start": 69.32,
+     "end": 69.8,
      "p": 1.0
     },
     {
      "word": " tôi",
-     "start": 199.52,
-     "end": 200.02,
+     "start": 69.8,
+     "end": 70.42,
+     "p": 0.98
+    }
+   ]
+  },
+  {
+   "start": 71.42,
+   "end": 74.56,
+   "text": "Qua dòng sông qua lạnh giá",
+   "words": [
+    {
+     "word": " Qua",
+     "start": 71.42,
+     "end": 72.16,
      "p": 0.96
     },
     {
-     "word": " ngắm",
-     "start": 200.02,
-     "end": 200.44,
-     "p": 0.84
+     "word": " dòng",
+     "start": 72.16,
+     "end": 72.36,
+     "p": 0.96
     },
     {
-     "word": " nhìn",
-     "start": 200.44,
-     "end": 201.16,
-     "p": 1.0
+     "word": " sông",
+     "start": 72.36,
+     "end": 72.76,
+     "p": 0.94
     },
     {
-     "word": " thế",
-     "start": 201.16,
-     "end": 201.62,
+     "word": " qua",
+     "start": 72.76,
+     "end": 73.22,
+     "p": 0.52
+    },
+    {
+     "word": " lạnh",
+     "start": 73.22,
+     "end": 73.66,
+     "p": 0.82
+    },
+    {
+     "word": " giá",
+     "start": 73.66,
+     "end": 74.56,
+     "p": 0.77
+    }
+   ]
+  },
+  {
+   "start": 74.56,
+   "end": 78.42,
+   "text": "Tôi vẫn sáng giữa đời",
+   "words": [
+    {
+     "word": " Tôi",
+     "start": 74.56,
+     "end": 75.96,
+     "p": 0.92
+    },
+    {
+     "word": " vẫn",
+     "start": 75.96,
+     "end": 76.16,
+     "p": 0.93
+    },
+    {
+     "word": " sáng",
+     "start": 76.16,
+     "end": 76.86,
+     "p": 0.96
+    },
+    {
+     "word": " giữa",
+     "start": 76.86,
+     "end": 77.54,
+     "p": 0.98
+    },
+    {
+     "word": " đời",
+     "start": 77.54,
+     "end": 78.42,
+     "p": 0.99
+    }
+   ]
+  },
+  {
+   "start": 78.42,
+   "end": 81.98,
+   "text": "Rồi một ngày ai tìm thấy",
+   "words": [
+    {
+     "word": " Rồi",
+     "start": 78.42,
+     "end": 79.78,
      "p": 0.99
     },
     {
-     "word": " gian",
-     "start": 201.62,
-     "end": 203.14,
+     "word": " một",
+     "start": 79.78,
+     "end": 79.98,
+     "p": 0.97
+    },
+    {
+     "word": " ngày",
+     "start": 79.98,
+     "end": 80.38,
+     "p": 1.0
+    },
+    {
+     "word": " ai",
+     "start": 80.38,
+     "end": 80.9,
+     "p": 0.82
+    },
+    {
+     "word": " tìm",
+     "start": 80.9,
+     "end": 81.42,
+     "p": 1.0
+    },
+    {
+     "word": " thấy",
+     "start": 81.42,
+     "end": 81.98,
+     "p": 0.99
+    }
+   ]
+  },
+  {
+   "start": 81.98,
+   "end": 86.26,
+   "text": "Gọi tôi đến nơi xa",
+   "words": [
+    {
+     "word": " Gọi",
+     "start": 81.98,
+     "end": 83.82,
+     "p": 0.82
+    },
+    {
+     "word": " tôi",
+     "start": 83.82,
+     "end": 84.22,
+     "p": 0.99
+    },
+    {
+     "word": " đến",
+     "start": 84.22,
+     "end": 84.92,
+     "p": 1.0
+    },
+    {
+     "word": " nơi",
+     "start": 84.92,
+     "end": 85.5,
+     "p": 0.99
+    },
+    {
+     "word": " xa",
+     "start": 85.5,
+     "end": 86.26,
+     "p": 0.99
+    }
+   ]
+  },
+  {
+   "start": 87.8,
+   "end": 90.46,
+   "text": "Nơi tôi thuộc về mãi",
+   "words": [
+    {
+     "word": " Nơi",
+     "start": 87.8,
+     "end": 89.04,
+     "p": 0.92
+    },
+    {
+     "word": " tôi",
+     "start": 89.04,
+     "end": 89.24,
+     "p": 0.86
+    },
+    {
+     "word": " thuộc",
+     "start": 89.24,
+     "end": 89.54,
+     "p": 1.0
+    },
+    {
+     "word": " về",
+     "start": 89.54,
+     "end": 89.84,
+     "p": 0.98
+    },
+    {
+     "word": " mãi",
+     "start": 89.84,
+     "end": 90.46,
+     "p": 0.85
+    }
+   ]
+  },
+  {
+   "start": 90.46,
+   "end": 93.88,
+   "text": "Nơi hạnh phúc gọi mời",
+   "words": [
+    {
+     "word": " Nơi",
+     "start": 90.46,
+     "end": 91.06,
+     "p": 0.76
+    },
+    {
+     "word": " hạnh",
+     "start": 91.06,
+     "end": 91.38,
+     "p": 0.86
+    },
+    {
+     "word": " phúc",
+     "start": 91.38,
+     "end": 92.2,
+     "p": 1.0
+    },
+    {
+     "word": " gọi",
+     "start": 92.2,
+     "end": 93.06,
+     "p": 0.81
+    },
+    {
+     "word": " mời",
+     "start": 93.06,
+     "end": 93.88,
+     "p": 0.83
+    }
+   ]
+  },
+  {
+   "start": 125.78,
+   "end": 129.9,
+   "text": "Và thế ngày trôi luôn mong được tìm thấy",
+   "words": [
+    {
+     "word": " Và",
+     "start": 125.78,
+     "end": 126.58,
+     "p": 0.86
+    },
+    {
+     "word": " thế",
+     "start": 126.58,
+     "end": 127.0,
+     "p": 0.98
+    },
+    {
+     "word": " ngày",
+     "start": 127.0,
+     "end": 127.32,
+     "p": 0.96
+    },
+    {
+     "word": " trôi",
+     "start": 127.32,
+     "end": 127.88,
+     "p": 1.0
+    },
+    {
+     "word": " luôn",
+     "start": 127.88,
+     "end": 128.44,
+     "p": 0.6
+    },
+    {
+     "word": " mong",
+     "start": 128.44,
+     "end": 128.86,
+     "p": 1.0
+    },
+    {
+     "word": " được",
+     "start": 128.86,
+     "end": 129.04,
+     "p": 0.98
+    },
+    {
+     "word": " tìm",
+     "start": 129.04,
+     "end": 129.5,
+     "p": 1.0
+    },
+    {
+     "word": " thấy",
+     "start": 129.5,
+     "end": 129.9,
      "p": 1.0
     }
    ]
   },
   {
-   "start": 203.14,
-   "end": 211.18,
-   "text": "Với niềm hạnh phúc đến phố vàng",
+   "start": 129.9,
+   "end": 133.7,
+   "text": "Và thế rồi thôi chẳng mong chờ đợi nữa",
    "words": [
     {
-     "word": " Với",
-     "start": 203.14,
-     "end": 203.94,
-     "p": 0.96
+     "word": " Và",
+     "start": 129.9,
+     "end": 130.42,
+     "p": 0.89
     },
     {
-     "word": " niềm",
-     "start": 203.94,
-     "end": 204.36,
-     "p": 0.98
-    },
-    {
-     "word": " hạnh",
-     "start": 204.36,
-     "end": 204.78,
+     "word": " thế",
+     "start": 130.42,
+     "end": 130.82,
      "p": 1.0
     },
     {
-     "word": " phúc",
-     "start": 204.78,
-     "end": 206.48,
+     "word": " rồi",
+     "start": 130.82,
+     "end": 131.16,
+     "p": 0.98
+    },
+    {
+     "word": " thôi",
+     "start": 131.16,
+     "end": 131.68,
+     "p": 0.98
+    },
+    {
+     "word": " chẳng",
+     "start": 131.68,
+     "end": 132.34,
+     "p": 0.94
+    },
+    {
+     "word": " mong",
+     "start": 132.34,
+     "end": 132.64,
+     "p": 1.0
+    },
+    {
+     "word": " chờ",
+     "start": 132.64,
+     "end": 132.92,
+     "p": 1.0
+    },
+    {
+     "word": " đợi",
+     "start": 132.92,
+     "end": 133.34,
+     "p": 1.0
+    },
+    {
+     "word": " nữa",
+     "start": 133.34,
+     "end": 133.7,
+     "p": 0.99
+    }
+   ]
+  },
+  {
+   "start": 133.7,
+   "end": 137.48,
+   "text": "Ngày qua lại qua, thời gian lại xa",
+   "words": [
+    {
+     "word": " Ngày",
+     "start": 133.7,
+     "end": 134.28,
+     "p": 0.9
+    },
+    {
+     "word": " qua",
+     "start": 134.28,
+     "end": 134.64,
+     "p": 0.99
+    },
+    {
+     "word": " lại",
+     "start": 134.64,
+     "end": 135.0,
+     "p": 0.94
+    },
+    {
+     "word": " qua,",
+     "start": 135.0,
+     "end": 135.4,
+     "p": 1.0
+    },
+    {
+     "word": " thời",
+     "start": 135.72,
+     "end": 136.18,
+     "p": 0.97
+    },
+    {
+     "word": " gian",
+     "start": 136.18,
+     "end": 136.58,
+     "p": 1.0
+    },
+    {
+     "word": " lại",
+     "start": 136.58,
+     "end": 136.86,
+     "p": 1.0
+    },
+    {
+     "word": " xa",
+     "start": 136.86,
+     "end": 137.48,
+     "p": 0.99
+    }
+   ]
+  },
+  {
+   "start": 138.42,
+   "end": 140.12,
+   "text": "Chẳng còn út mong chi",
+   "words": [
+    {
+     "word": " Chẳng",
+     "start": 138.42,
+     "end": 138.82,
+     "p": 0.9
+    },
+    {
+     "word": " còn",
+     "start": 138.82,
+     "end": 139.08,
+     "p": 0.99
+    },
+    {
+     "word": " út",
+     "start": 139.08,
+     "end": 139.56,
+     "p": 0.6
+    },
+    {
+     "word": " mong",
+     "start": 139.56,
+     "end": 139.78,
+     "p": 0.96
+    },
+    {
+     "word": " chi",
+     "start": 139.78,
+     "end": 140.12,
+     "p": 0.82
+    }
+   ]
+  },
+  {
+   "start": 142.84,
+   "end": 144.82,
+   "text": "Tôi từng nằm hiếm dạ dòng đường tiếng trôi",
+   "words": [
+    {
+     "word": " Tôi",
+     "start": 142.84,
+     "end": 143.24,
+     "p": 0.27
+    },
+    {
+     "word": " từng",
+     "start": 143.24,
+     "end": 143.42,
+     "p": 0.88
+    },
+    {
+     "word": " nằm",
+     "start": 143.42,
+     "end": 143.64,
+     "p": 0.6
+    },
+    {
+     "word": " hiếm",
+     "start": 143.64,
+     "end": 143.82,
+     "p": 0.68
+    },
+    {
+     "word": " dạ",
+     "start": 143.82,
+     "end": 144.04,
+     "p": 0.35
+    },
+    {
+     "word": " dòng",
+     "start": 144.04,
+     "end": 144.22,
+     "p": 0.79
+    },
+    {
+     "word": " đường",
+     "start": 144.22,
+     "end": 144.34,
+     "p": 0.3
+    },
+    {
+     "word": " tiếng",
+     "start": 144.34,
+     "end": 144.52,
+     "p": 0.74
+    },
+    {
+     "word": " trôi",
+     "start": 144.52,
+     "end": 144.82,
+     "p": 0.99
+    }
+   ]
+  },
+  {
+   "start": 144.82,
+   "end": 146.92,
+   "text": "Không ai nghe thấy tiếng thầm gọi nơi đây",
+   "words": [
+    {
+     "word": " Không",
+     "start": 144.82,
+     "end": 145.18,
+     "p": 0.78
+    },
+    {
+     "word": " ai",
+     "start": 145.18,
+     "end": 145.3,
+     "p": 0.94
+    },
+    {
+     "word": " nghe",
+     "start": 145.3,
+     "end": 145.5,
+     "p": 0.99
+    },
+    {
+     "word": " thấy",
+     "start": 145.5,
+     "end": 145.7,
+     "p": 0.96
+    },
+    {
+     "word": " tiếng",
+     "start": 145.7,
+     "end": 145.98,
+     "p": 0.99
+    },
+    {
+     "word": " thầm",
+     "start": 145.98,
+     "end": 146.2,
+     "p": 0.91
+    },
+    {
+     "word": " gọi",
+     "start": 146.2,
+     "end": 146.44,
+     "p": 0.88
+    },
+    {
+     "word": " nơi",
+     "start": 146.44,
+     "end": 146.7,
+     "p": 0.96
+    },
+    {
+     "word": " đây",
+     "start": 146.7,
+     "end": 146.92,
+     "p": 0.73
+    }
+   ]
+  },
+  {
+   "start": 146.92,
+   "end": 148.5,
+   "text": "Nếu cứ chơi thời gian cứ trôi",
+   "words": [
+    {
+     "word": " Nếu",
+     "start": 146.92,
+     "end": 147.06,
+     "p": 0.53
+    },
+    {
+     "word": " cứ",
+     "start": 147.06,
+     "end": 147.16,
+     "p": 0.99
+    },
+    {
+     "word": " chơi",
+     "start": 147.16,
+     "end": 147.38,
+     "p": 0.83
+    },
+    {
+     "word": " thời",
+     "start": 147.38,
+     "end": 147.58,
+     "p": 0.95
+    },
+    {
+     "word": " gian",
+     "start": 147.58,
+     "end": 147.84,
+     "p": 1.0
+    },
+    {
+     "word": " cứ",
+     "start": 147.84,
+     "end": 148.02,
+     "p": 1.0
+    },
+    {
+     "word": " trôi",
+     "start": 148.02,
+     "end": 148.5,
+     "p": 0.94
+    }
+   ]
+  },
+  {
+   "start": 148.5,
+   "end": 150.38,
+   "text": "Mai đi đâu thương body vấn vương",
+   "words": [
+    {
+     "word": " Mai",
+     "start": 148.5,
+     "end": 148.78,
+     "p": 0.48
+    },
+    {
+     "word": " đi",
+     "start": 148.78,
+     "end": 148.94,
+     "p": 0.99
+    },
+    {
+     "word": " đâu",
+     "start": 148.94,
+     "end": 149.08,
+     "p": 0.66
+    },
+    {
+     "word": " thương",
+     "start": 149.08,
+     "end": 149.3,
+     "p": 0.95
+    },
+    {
+     "word": " body",
+     "start": 149.3,
+     "end": 149.64,
+     "p": 0.86
+    },
+    {
+     "word": " vấn",
+     "start": 149.64,
+     "end": 150.0,
+     "p": 0.86
+    },
+    {
+     "word": " vương",
+     "start": 150.0,
+     "end": 150.38,
+     "p": 1.0
+    }
+   ]
+  },
+  {
+   "start": 150.38,
+   "end": 152.2,
+   "text": "Tôi từng cô đơn từng lạnh trong đêm",
+   "words": [
+    {
+     "word": " Tôi",
+     "start": 150.38,
+     "end": 150.62,
+     "p": 0.97
+    },
+    {
+     "word": " từng",
+     "start": 150.62,
+     "end": 150.86,
+     "p": 1.0
+    },
+    {
+     "word": " cô",
+     "start": 150.86,
+     "end": 150.98,
+     "p": 0.95
+    },
+    {
+     "word": " đơn",
+     "start": 150.98,
+     "end": 151.26,
+     "p": 1.0
+    },
+    {
+     "word": " từng",
+     "start": 151.26,
+     "end": 151.52,
+     "p": 0.9
+    },
+    {
+     "word": " lạnh",
+     "start": 151.52,
+     "end": 151.66,
+     "p": 1.0
+    },
+    {
+     "word": " trong",
+     "start": 151.66,
+     "end": 151.88,
+     "p": 1.0
+    },
+    {
+     "word": " đêm",
+     "start": 151.88,
+     "end": 152.2,
+     "p": 1.0
+    }
+   ]
+  },
+  {
+   "start": 152.2,
+   "end": 154.42,
+   "text": "Ngày qua ngày trôi nghỉ đời sẽ mãi bị lãng quên",
+   "words": [
+    {
+     "word": " Ngày",
+     "start": 152.2,
+     "end": 152.58,
+     "p": 1.0
+    },
+    {
+     "word": " qua",
+     "start": 152.58,
+     "end": 152.72,
+     "p": 1.0
+    },
+    {
+     "word": " ngày",
+     "start": 152.72,
+     "end": 152.86,
+     "p": 1.0
+    },
+    {
+     "word": " trôi",
+     "start": 152.86,
+     "end": 153.06,
+     "p": 1.0
+    },
+    {
+     "word": " nghỉ",
+     "start": 153.06,
+     "end": 153.2,
+     "p": 0.74
+    },
+    {
+     "word": " đời",
+     "start": 153.2,
+     "end": 153.34,
+     "p": 0.94
+    },
+    {
+     "word": " sẽ",
+     "start": 153.34,
+     "end": 153.5,
+     "p": 0.98
+    },
+    {
+     "word": " mãi",
+     "start": 153.5,
+     "end": 153.7,
+     "p": 0.81
+    },
+    {
+     "word": " bị",
+     "start": 153.7,
+     "end": 153.84,
+     "p": 0.99
+    },
+    {
+     "word": " lãng",
+     "start": 153.84,
+     "end": 154.08,
+     "p": 0.9
+    },
+    {
+     "word": " quên",
+     "start": 154.08,
+     "end": 154.42,
+     "p": 1.0
+    }
+   ]
+  },
+  {
+   "start": 154.42,
+   "end": 155.98,
+   "text": "Và rồi tiếng gọi vang lên từ nơi đấy",
+   "words": [
+    {
+     "word": " Và",
+     "start": 154.42,
+     "end": 154.66,
+     "p": 0.53
+    },
+    {
+     "word": " rồi",
+     "start": 154.66,
+     "end": 154.76,
+     "p": 0.78
+    },
+    {
+     "word": " tiếng",
+     "start": 154.76,
+     "end": 154.98,
+     "p": 1.0
+    },
+    {
+     "word": " gọi",
+     "start": 154.98,
+     "end": 155.1,
+     "p": 0.96
+    },
+    {
+     "word": " vang",
+     "start": 155.1,
+     "end": 155.28,
+     "p": 0.83
+    },
+    {
+     "word": " lên",
+     "start": 155.28,
+     "end": 155.44,
+     "p": 0.96
+    },
+    {
+     "word": " từ",
+     "start": 155.44,
+     "end": 155.58,
+     "p": 0.98
+    },
+    {
+     "word": " nơi",
+     "start": 155.58,
+     "end": 155.78,
+     "p": 1.0
+    },
+    {
+     "word": " đấy",
+     "start": 155.78,
+     "end": 155.98,
+     "p": 0.97
+    }
+   ]
+  },
+  {
+   "start": 155.98,
+   "end": 157.92,
+   "text": "Tôi biết từ đây mình đã được tìm thấy",
+   "words": [
+    {
+     "word": " Tôi",
+     "start": 155.98,
+     "end": 156.38,
+     "p": 0.99
+    },
+    {
+     "word": " biết",
+     "start": 156.38,
+     "end": 156.52,
+     "p": 1.0
+    },
+    {
+     "word": " từ",
+     "start": 156.52,
+     "end": 156.68,
+     "p": 0.99
+    },
+    {
+     "word": " đây",
+     "start": 156.68,
+     "end": 156.84,
+     "p": 0.99
+    },
+    {
+     "word": " mình",
+     "start": 156.84,
+     "end": 156.98,
+     "p": 1.0
+    },
+    {
+     "word": " đã",
+     "start": 156.98,
+     "end": 157.18,
+     "p": 1.0
+    },
+    {
+     "word": " được",
+     "start": 157.18,
+     "end": 157.38,
+     "p": 0.98
+    },
+    {
+     "word": " tìm",
+     "start": 157.38,
+     "end": 157.64,
+     "p": 1.0
+    },
+    {
+     "word": " thấy",
+     "start": 157.64,
+     "end": 157.92,
+     "p": 1.0
+    }
+   ]
+  },
+  {
+   "start": 157.92,
+   "end": 159.98,
+   "text": "Không còn vô chi, không còn lặng thinh",
+   "words": [
+    {
+     "word": " Không",
+     "start": 157.92,
+     "end": 158.26,
+     "p": 0.99
+    },
+    {
+     "word": " còn",
+     "start": 158.26,
+     "end": 158.44,
+     "p": 0.99
+    },
+    {
+     "word": " vô",
+     "start": 158.44,
+     "end": 158.6,
+     "p": 0.78
+    },
+    {
+     "word": " chi,",
+     "start": 158.6,
+     "end": 158.8,
+     "p": 0.81
+    },
+    {
+     "word": " không",
+     "start": 159.12,
+     "end": 159.22,
+     "p": 0.99
+    },
+    {
+     "word": " còn",
+     "start": 159.22,
+     "end": 159.4,
+     "p": 1.0
+    },
+    {
+     "word": " lặng",
+     "start": 159.4,
+     "end": 159.56,
+     "p": 0.96
+    },
+    {
+     "word": " thinh",
+     "start": 159.56,
+     "end": 159.98,
+     "p": 0.81
+    }
+   ]
+  },
+  {
+   "start": 159.98,
+   "end": 161.76,
+   "text": "Tôi là tác phẩm mang ra hình của chính mình",
+   "words": [
+    {
+     "word": " Tôi",
+     "start": 159.98,
+     "end": 160.18,
+     "p": 0.99
+    },
+    {
+     "word": " là",
+     "start": 160.18,
+     "end": 160.32,
+     "p": 0.97
+    },
+    {
+     "word": " tác",
+     "start": 160.32,
+     "end": 160.54,
+     "p": 0.98
+    },
+    {
+     "word": " phẩm",
+     "start": 160.54,
+     "end": 160.68,
+     "p": 1.0
+    },
+    {
+     "word": " mang",
+     "start": 160.68,
+     "end": 160.82,
+     "p": 0.99
+    },
+    {
+     "word": " ra",
+     "start": 160.82,
+     "end": 160.96,
+     "p": 0.53
+    },
+    {
+     "word": " hình",
+     "start": 160.96,
+     "end": 161.12,
+     "p": 0.95
+    },
+    {
+     "word": " của",
+     "start": 161.12,
+     "end": 161.28,
+     "p": 1.0
+    },
+    {
+     "word": " chính",
+     "start": 161.28,
+     "end": 161.44,
+     "p": 0.99
+    },
+    {
+     "word": " mình",
+     "start": 161.44,
+     "end": 161.76,
+     "p": 1.0
+    }
+   ]
+  },
+  {
+   "start": 161.76,
+   "end": 163.7,
+   "text": "Giữa ánh nắng tôi ngắm nhìn thế giới",
+   "words": [
+    {
+     "word": " Giữa",
+     "start": 161.76,
+     "end": 162.36,
+     "p": 0.9
+    },
+    {
+     "word": " ánh",
+     "start": 162.36,
+     "end": 162.48,
+     "p": 0.99
+    },
+    {
+     "word": " nắng",
+     "start": 162.48,
+     "end": 162.64,
+     "p": 0.99
+    },
+    {
+     "word": " tôi",
+     "start": 162.64,
+     "end": 162.86,
+     "p": 1.0
+    },
+    {
+     "word": " ngắm",
+     "start": 162.86,
+     "end": 163.12,
+     "p": 0.97
+    },
+    {
+     "word": " nhìn",
+     "start": 163.12,
+     "end": 163.28,
+     "p": 0.92
+    },
+    {
+     "word": " thế",
+     "start": 163.28,
+     "end": 163.4,
+     "p": 0.99
+    },
+    {
+     "word": " giới",
+     "start": 163.4,
+     "end": 163.7,
+     "p": 1.0
+    }
+   ]
+  },
+  {
+   "start": 163.7,
+   "end": 165.84,
+   "text": "Câu chuyện tặng đã kết thúc thật tuyệt vời",
+   "words": [
+    {
+     "word": " Câu",
+     "start": 163.7,
+     "end": 163.98,
+     "p": 0.99
+    },
+    {
+     "word": " chuyện",
+     "start": 163.98,
+     "end": 164.18,
+     "p": 1.0
+    },
+    {
+     "word": " tặng",
+     "start": 164.18,
+     "end": 164.3,
+     "p": 0.86
+    },
+    {
+     "word": " đã",
+     "start": 164.3,
+     "end": 164.5,
+     "p": 0.98
+    },
+    {
+     "word": " kết",
+     "start": 164.5,
+     "end": 164.8,
+     "p": 1.0
+    },
+    {
+     "word": " thúc",
+     "start": 164.8,
+     "end": 164.98,
+     "p": 0.8
+    },
+    {
+     "word": " thật",
+     "start": 164.98,
+     "end": 165.24,
+     "p": 1.0
+    },
+    {
+     "word": " tuyệt",
+     "start": 165.24,
+     "end": 165.5,
+     "p": 1.0
+    },
+    {
+     "word": " vời",
+     "start": 165.5,
+     "end": 165.84,
+     "p": 0.97
+    }
+   ]
+  },
+  {
+   "start": 170.74,
+   "end": 177.18,
+   "text": "Với nơi tăng nắng đang đây chính là tôi",
+   "words": [
+    {
+     "word": " Với",
+     "start": 170.74,
+     "end": 171.9,
+     "p": 0.23
+    },
+    {
+     "word": " nơi",
+     "start": 171.9,
+     "end": 172.34,
+     "p": 0.77
+    },
+    {
+     "word": " tăng",
+     "start": 172.34,
+     "end": 172.86,
+     "p": 0.39
+    },
+    {
+     "word": " nắng",
+     "start": 172.86,
+     "end": 174.66,
+     "p": 0.58
+    },
+    {
+     "word": " đang",
+     "start": 174.66,
+     "end": 174.96,
+     "p": 0.37
+    },
+    {
+     "word": " đây",
+     "start": 174.96,
+     "end": 175.62,
+     "p": 0.72
+    },
+    {
+     "word": " chính",
+     "start": 175.62,
+     "end": 175.94,
+     "p": 0.81
+    },
+    {
+     "word": " là",
+     "start": 175.94,
+     "end": 176.52,
+     "p": 1.0
+    },
+    {
+     "word": " tôi",
+     "start": 176.52,
+     "end": 177.18,
+     "p": 0.99
+    }
+   ]
+  },
+  {
+   "start": 178.0,
+   "end": 181.54,
+   "text": "Qua dòng sông qua lạnh giá",
+   "words": [
+    {
+     "word": " Qua",
+     "start": 178.0,
+     "end": 178.84,
+     "p": 0.85
+    },
+    {
+     "word": " dòng",
+     "start": 178.84,
+     "end": 179.04,
+     "p": 0.85
+    },
+    {
+     "word": " sông",
+     "start": 179.04,
+     "end": 179.46,
+     "p": 0.91
+    },
+    {
+     "word": " qua",
+     "start": 179.46,
+     "end": 179.88,
+     "p": 0.45
+    },
+    {
+     "word": " lạnh",
+     "start": 179.88,
+     "end": 180.32,
+     "p": 0.87
+    },
+    {
+     "word": " giá",
+     "start": 180.32,
+     "end": 181.54,
+     "p": 0.64
+    }
+   ]
+  },
+  {
+   "start": 181.54,
+   "end": 185.06,
+   "text": "Tôi vẫn sáng giữa đời",
+   "words": [
+    {
+     "word": " Tôi",
+     "start": 181.54,
+     "end": 182.6,
+     "p": 0.56
+    },
+    {
+     "word": " vẫn",
+     "start": 182.6,
+     "end": 182.84,
+     "p": 0.99
+    },
+    {
+     "word": " sáng",
+     "start": 182.84,
+     "end": 183.52,
+     "p": 0.94
+    },
+    {
+     "word": " giữa",
+     "start": 183.52,
+     "end": 184.22,
+     "p": 0.93
+    },
+    {
+     "word": " đời",
+     "start": 184.22,
+     "end": 185.06,
+     "p": 0.99
+    }
+   ]
+  },
+  {
+   "start": 185.06,
+   "end": 189.1,
+   "text": "Rồi một ngày ai tìm thấy",
+   "words": [
+    {
+     "word": " Rồi",
+     "start": 185.06,
+     "end": 186.46,
+     "p": 0.96
+    },
+    {
+     "word": " một",
+     "start": 186.46,
+     "end": 186.64,
+     "p": 0.93
+    },
+    {
+     "word": " ngày",
+     "start": 186.64,
+     "end": 187.0,
+     "p": 1.0
+    },
+    {
+     "word": " ai",
+     "start": 187.0,
+     "end": 187.56,
+     "p": 0.97
+    },
+    {
+     "word": " tìm",
+     "start": 187.56,
+     "end": 188.1,
+     "p": 1.0
+    },
+    {
+     "word": " thấy",
+     "start": 188.1,
+     "end": 189.1,
+     "p": 0.99
+    }
+   ]
+  },
+  {
+   "start": 189.1,
+   "end": 192.76,
+   "text": "Rồi tôi đến nơi xa",
+   "words": [
+    {
+     "word": " Rồi",
+     "start": 189.1,
+     "end": 190.5,
+     "p": 0.65
+    },
+    {
+     "word": " tôi",
+     "start": 190.5,
+     "end": 190.92,
      "p": 1.0
     },
     {
      "word": " đến",
-     "start": 206.48,
-     "end": 207.46,
+     "start": 190.92,
+     "end": 191.5,
+     "p": 0.99
+    },
+    {
+     "word": " nơi",
+     "start": 191.5,
+     "end": 192.14,
+     "p": 1.0
+    },
+    {
+     "word": " xa",
+     "start": 192.14,
+     "end": 192.76,
+     "p": 1.0
+    }
+   ]
+  },
+  {
+   "start": 195.0,
+   "end": 200.94,
+   "text": "Nơi tôi thuộc về mãi, nơi hạnh phúc gọi mây",
+   "words": [
+    {
+     "word": " Nơi",
+     "start": 195.0,
+     "end": 195.72,
+     "p": 0.96
+    },
+    {
+     "word": " tôi",
+     "start": 195.72,
+     "end": 195.96,
+     "p": 0.97
+    },
+    {
+     "word": " thuộc",
+     "start": 195.96,
+     "end": 196.24,
      "p": 0.95
     },
     {
-     "word": " phố",
-     "start": 207.46,
-     "end": 209.16,
-     "p": 0.85
+     "word": " về",
+     "start": 196.24,
+     "end": 196.56,
+     "p": 0.99
     },
     {
-     "word": " vàng",
-     "start": 209.16,
-     "end": 211.18,
-     "p": 0.91
+     "word": " mãi,",
+     "start": 196.56,
+     "end": 197.12,
+     "p": 0.98
+    },
+    {
+     "word": " nơi",
+     "start": 197.36,
+     "end": 197.72,
+     "p": 0.99
+    },
+    {
+     "word": " hạnh",
+     "start": 197.72,
+     "end": 198.0,
+     "p": 1.0
+    },
+    {
+     "word": " phúc",
+     "start": 198.0,
+     "end": 198.98,
+     "p": 1.0
+    },
+    {
+     "word": " gọi",
+     "start": 198.98,
+     "end": 199.74,
+     "p": 0.87
+    },
+    {
+     "word": " mây",
+     "start": 199.74,
+     "end": 200.94,
+     "p": 0.76
+    }
+   ]
+  },
+  {
+   "start": 223.78,
+   "end": 225.62,
+   "text": "Hãy subscribe cho kênh Ghiền Mì Gõ Để không bỏ lỡ những video hấp dẫn",
+   "words": [
+    {
+     "word": " Hãy",
+     "start": 223.78,
+     "end": 223.96,
+     "p": 0.56
+    },
+    {
+     "word": " subscribe",
+     "start": 223.96,
+     "end": 224.06,
+     "p": 0.69
+    },
+    {
+     "word": " cho",
+     "start": 224.06,
+     "end": 224.3,
+     "p": 1.0
+    },
+    {
+     "word": " kênh",
+     "start": 224.3,
+     "end": 224.32,
+     "p": 1.0
+    },
+    {
+     "word": " Ghiền",
+     "start": 224.32,
+     "end": 224.32,
+     "p": 0.82
+    },
+    {
+     "word": " Mì",
+     "start": 224.32,
+     "end": 224.32,
+     "p": 1.0
+    },
+    {
+     "word": " Gõ",
+     "start": 224.32,
+     "end": 224.32,
+     "p": 1.0
+    },
+    {
+     "word": " Để",
+     "start": 224.32,
+     "end": 224.34,
+     "p": 1.0
+    },
+    {
+     "word": " không",
+     "start": 224.34,
+     "end": 224.42,
+     "p": 1.0
+    },
+    {
+     "word": " bỏ",
+     "start": 224.42,
+     "end": 225.6,
+     "p": 1.0
+    },
+    {
+     "word": " lỡ",
+     "start": 225.6,
+     "end": 225.6,
+     "p": 1.0
+    },
+    {
+     "word": " những",
+     "start": 225.6,
+     "end": 225.6,
+     "p": 1.0
+    },
+    {
+     "word": " video",
+     "start": 225.6,
+     "end": 225.6,
+     "p": 1.0
+    },
+    {
+     "word": " hấp",
+     "start": 225.6,
+     "end": 225.6,
+     "p": 1.0
+    },
+    {
+     "word": " dẫn",
+     "start": 225.6,
+     "end": 225.62,
+     "p": 1.0
     }
    ]
   }

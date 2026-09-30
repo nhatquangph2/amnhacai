@@ -1,0 +1,36 @@
+{
+  "sheet": {
+    "prompt": "Character model sheet of the girl on a plain white background: three full-body views side by side at the same scale — front view, three-quarter view facing right, and side profile facing right — standing relaxed, hood down. No text, no labels.",
+    "aspect": "16:9",
+    "style": "Classic hand-drawn Japanese 2D cel animation from the late 1980s and 1990s: thin, clean, even-weight dark-brown outlines; flat cel colours with exactly ONE darker shadow tone per colour (hard-edged shadow shapes, light from upper left); no gradients, no painterly texture, no 3D shading, no glow. Natural, gentle proportions: the girl is about 7 years old and about 5 heads tall — not chibi, not big-eyed. Simple warm face: small dark eyes with one white highlight, tiny nose line, small mouth, soft pink cheeks. The same girl in every image: short black bob haircut with a straight fringe, orange-red hooded raincoat (#E0692E) reaching mid-thigh with dark-orange shadow, navy trousers, yellow rain boots.",
+    "tool": "Google Antigravity CLI generate_image (Nano Banana)",
+    "session": "264a6b70-d7ec-40a2-8984-7e7d7e87c40d",
+    "date": "2026-09-29T15:15:43.596Z",
+    "seconds": 62
+  },
+  "cry-a": {
+    "prompt": "The same girl, hood down, crouching on her heels in side profile facing RIGHT, arms hugging her knees, face half hidden against her knees, crying: eyes squeezed shut, tears on the cheek, shoulders raised. Full body.",
+    "refs": [
+      "sheet"
+    ],
+    "aspect": "1:1",
+    "style": "Classic hand-drawn Japanese 2D cel animation from the late 1980s and 1990s: thin, clean, even-weight dark-brown outlines; flat cel colours with exactly ONE darker shadow tone per colour (hard-edged shadow shapes, light from upper left); no gradients, no painterly texture, no 3D shading, no glow. Natural, gentle proportions: the girl is about 7 years old and about 5 heads tall — not chibi, not big-eyed. Simple warm face: small dark eyes with one white highlight, tiny nose line, small mouth, soft pink cheeks. The same girl in every image: short black bob haircut with a straight fringe, orange-red hooded raincoat (#E0692E) reaching mid-thigh with dark-orange shadow, navy trousers, yellow rain boots.",
+    "tool": "Google Antigravity CLI generate_image (Nano Banana)",
+    "session": "35aa58f5-51ad-4199-b55d-61fda9b40fa7",
+    "date": "2026-09-29T15:16:13.947Z",
+    "seconds": 30
+  },
+  "cry-b": {
+    "prompt": "Exactly the same crouching crying pose and framing as the second reference, but mid-sob: shoulders a little lower, head tilted slightly down, mouth trembling. Full body, side profile facing RIGHT.",
+    "refs": [
+      "sheet",
+      "cry-a"
+    ],
+    "aspect": "1:1",
+    "style": "Classic hand-drawn Japanese 2D cel animation from the late 1980s and 1990s: thin, clean, even-weight dark-brown outlines; flat cel colours with exactly ONE darker shadow tone per colour (hard-edged shadow shapes, light from upper left); no gradients, no painterly texture, no 3D shading, no glow. Natural, gentle proportions: the girl is about 7 years old and about 5 heads tall — not chibi, not big-eyed. Simple warm face: small dark eyes with one white highlight, tiny nose line, small mouth, soft pink cheeks. The same girl in every image: short black bob haircut with a straight fringe, orange-red hooded raincoat (#E0692E) reaching mid-thigh with dark-orange shadow, navy trousers, yellow rain boots.",
+    "tool": "Google Antigravity CLI generate_image (Nano Banana)",
+    "session": "f03b3bc9-1f5c-4001-9159-339d47b0411f",
+    "date": "2026-09-29T15:16:48.714Z",
+    "seconds": 35
+  }
+}

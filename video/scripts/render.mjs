@@ -4,6 +4,7 @@
 //   npm run render -- HB-002 --style dark    → thử kiểu khác mà không sửa JSON
 //   npm run render -- HB-002 --short         → out/HB-002_short.mp4 (1080×1920, điệp khúc đầu)
 //   npm run render -- HB-002 --short --from 62 --to 95
+//   npm run render -- HB-001 --clean         → out/HB-001_anim_clean.mp4: không phụ đề, để dựng tiếp trong Resolve (npm run resolve)
 //   npm run render -- HB-002 --still 90      → ảnh 1 khung hình ở giây 90 để duyệt nhanh
 //                                              (với --short: tính từ đầu đoạn cắt)
 import { spawnSync } from "node:child_process";
@@ -29,7 +30,8 @@ if (!song.synced) console.warn("⚠️  Lời CHƯA được căn thời gian (n
 
 const style = opt("style") ?? song.style;
 const short = args.includes("--short");
-const props = { song: { ...song, style } };
+const clean = args.includes("--clean");
+const props = { song: { ...song, style, ...(clean ? { noLyrics: true } : {}) } };
 for (const [flag, key] of [["from", "clipStart"], ["to", "clipEnd"]]) {
   if (opt(flag) === undefined) continue;
   const v = Number(opt(flag));
@@ -43,15 +45,15 @@ const out = path.join(
   "out",
   still
     ? `${id}_${style}_${still}s${short ? "_short" : ""}.png`
-    : `${id}_${short ? "short" : ""}${opt("from") ? `${short ? "-" : "clip-"}${opt("from")}s` : ""}${short || opt("from") ? "_" : ""}${style}.mp4`,
+    : `${id}_${short ? "short" : ""}${opt("from") ? `${short ? "-" : "clip-"}${opt("from")}s` : ""}${short || opt("from") ? "_" : ""}${style}${clean ? "_clean" : ""}.mp4`,
 );
 const propsFile = path.join(VIDEO, "out", `.props-${path.basename(out)}.json`); // riêng từng file → render song song được
 fs.mkdirSync(path.dirname(propsFile), { recursive: true });
 fs.writeFileSync(propsFile, JSON.stringify(props));
 
 const cli = still
-  ? ["remotion", "still", "src/index.ts", comp, out, `--props=${propsFile}`, `--frame=${Math.round(Number(still) * 30)}`]
-  : ["remotion", "render", "src/index.ts", comp, out, `--props=${propsFile}`, "--crf=18"];
+  ? ["remotion", "still", "src/index.ts", comp, out, `--props=${propsFile}`, `--frame=${Math.round(Number(still) * (song.fps ?? 30))}`]
+  : ["remotion", "render", "src/index.ts", comp, out, `--props=${propsFile}`, "--crf=18", ...(opt("concurrency") ? [`--concurrency=${opt("concurrency")}`] : [])];
 const r = spawnSync("npx", cli, { cwd: VIDEO, stdio: "inherit" });
 if (r.status === 0) console.log(`\n✓ ${path.join("video", out)}`);
 process.exit(r.status ?? 1);

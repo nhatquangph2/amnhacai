@@ -1,0 +1,163 @@
+{
+ "style": "Hand-painted 2D animated-film background art: soft painterly brushwork, warm natural light, gentle atmospheric perspective, muted earthy palette (paper beige, sage green, teal-grey water, terracotta roofs), clean readable shapes, cinematic and calm. Rural northern Vietnam. Every image in this set must share exactly this style.",
+ "assets": [
+  {
+   "id": "plate-wild",
+   "prompt": "Wide establishing shot, eye-level, fixed camera, 16:9 framing. A calm wide river crosses the whole frame horizontally through the middle. Far bank: a thin strip of wild grass and a few trees, soft limestone mountains in the haze behind. Near bank (bottom third): packed earth and wild grass. One large smooth grey boulder sits at the water's edge on the near bank, slightly right of center (its center at about 68% from the left and 72% from the top), roughly one-eighth of the frame wide. Open empty ground in front of the boulder for people to walk along. Morning light. No people, no animals, no buildings."
+  },
+  {
+   "id": "plate-town",
+   "edit": "plate-wild",
+   "prompt": "Same place many decades later, early 1990s. On the far bank: a small Vietnamese river town — rows of low houses with terracotta tile roofs and cream walls, a few trees, wooden power poles with sagging wires. On the far left, a simple concrete bridge crosses the river toward the viewer. On the near bank, a worn packed-earth footpath runs left-to-right in front of the boulder. Warm late-afternoon light. Still no people."
+  },
+  {
+   "id": "girl-sheet",
+   "size": "1536x1024",
+   "key": false,
+   "prompt": "Character design sheet on a plain off-white background: a 7-year-old Vietnamese girl with short black bob hair, wearing a bright orange-red raincoat (#D9622B) with the hood down, navy trousers and small brown shoes. Show her full body three times: front view, side view facing right, back view. Simple, readable, same painterly style. No text labels."
+  },
+  {
+   "id": "girl-walk-a",
+   "refs": [
+    "girl-sheet"
+   ],
+   "key": true,
+   "prompt": "The same girl from the reference sheet, full body, side view facing RIGHT, walking briskly: left leg forward, right leg back, arms swinging."
+  },
+  {
+   "id": "girl-walk-b",
+   "refs": [
+    "girl-sheet"
+   ],
+   "key": true,
+   "prompt": "The same girl from the reference sheet, full body, side view facing RIGHT, mid-stride passing pose: legs close together, one knee slightly bent, arms near her sides."
+  },
+  {
+   "id": "girl-crouch",
+   "refs": [
+    "girl-sheet"
+   ],
+   "key": true,
+   "prompt": "The same girl from the reference sheet, crouching down on her heels, side view facing RIGHT, reaching her right hand forward and slightly up as if gently touching a big rock in front of her, curious expression."
+  },
+  {
+   "id": "girl-sit",
+   "refs": [
+    "girl-sheet"
+   ],
+   "key": true,
+   "prompt": "The same girl from the reference sheet, sitting on a ledge seen from the side, facing RIGHT, legs dangling down in front, hands resting on the ledge beside her hips, relaxed and happy, looking out ahead."
+  },
+  {
+   "id": "town-man",
+   "key": true,
+   "prompt": "A Vietnamese man from the early 1990s, full body, side view facing RIGHT, walking: short-sleeved white shirt, grey trousers, sandals, black hair."
+  },
+  {
+   "id": "town-woman",
+   "key": true,
+   "prompt": "A Vietnamese woman from the early 1990s, full body, side view facing RIGHT, walking with a conical hat (nón lá), light brown áo bà ba and dark trousers, carrying a woven basket on one arm."
+  },
+  {
+   "id": "town-bike",
+   "key": true,
+   "prompt": "A Vietnamese young man from the early 1990s riding an old black city bicycle, full body with the whole bicycle, side view facing RIGHT, blue shirt, dark trousers."
+  },
+  {
+   "id": "plate-hut",
+   "edit": "plate-wild",
+   "prompt": "Same place, centuries ago, the first settlers: on the far bank ONE small thatched-roof hut with earthen walls, a small clump of bamboo beside it and a thin wisp of cooking smoke. A faint footpath is beginning to form on the near bank in front of the boulder. Soft morning light. No people."
+  },
+  {
+   "id": "plate-village",
+   "edit": "plate-hut",
+   "prompt": "Same place a few generations later: the far bank is now a traditional northern Vietnamese village — many thatched-roof houses with earthen walls, tall bamboo hedges, a few areca palms, a small communal house (đình) with a curved roof. The near-bank footpath is now well worn packed earth. Warm midday light. No people."
+  },
+  {
+   "id": "plate-abandoned",
+   "edit": "plate-village",
+   "prompt": "Same place years later after the village moved away: the thatched houses on the far bank are abandoned — roofs sagging and collapsed, walls crumbling, overgrown with grass and vines, bamboo grown wild. The near-bank path is fading under grass. Quiet overcast light. No people."
+  },
+  {
+   "id": "plate-city",
+   "edit": "plate-town",
+   "prompt": "Same place in the present day: behind the old tile-roof houses on the far bank rise a few modern mid-rise apartment buildings and a distant city skyline; the bridge is now a wider modern bridge. On the near bank the river edge is reinforced with a low stone embankment and a simple metal railing — the railing stops on both sides of the boulder, leaving a gap so the boulder remains untouched. Two street lamps on the near bank at the left. The footpath is now paved with grey tiles. Soft late-afternoon light. No people."
+  },
+  {
+   "id": "teen-sit",
+   "refs": [
+    "girl-sheet"
+   ],
+   "key": true,
+   "prompt": "The SAME person as the girl in the reference sheet (same face shape, black hair, warm skin), now about 15 years old, taller and slimmer, shoulder-length black hair, wearing a faded orange-red jacket (#D9622B) over a white school shirt and dark trousers, sitting on a ledge seen from the side facing RIGHT, legs dangling, reading a book on her lap."
+  },
+  {
+   "id": "grandma-kid",
+   "refs": [
+    "girl-sheet"
+   ],
+   "key": true,
+   "prompt": "The SAME person as the girl in the reference sheet (same face shape, black hair, warm skin), now an elderly grandmother about 75 years old with silver-white hair in a bun, wearing a muted brick-orange cardigan (#8A5A44) and dark trousers, sitting on a ledge seen from the side facing RIGHT, legs dangling, and beside her on her left sits her 6-year-old granddaughter in a small bright orange-red raincoat (#D9622B), both looking out ahead together, the grandmother's arm around the child."
+  },
+  {
+   "id": "teen-walk-a",
+   "refs": [
+    "teen-sit",
+    "girl-sheet"
+   ],
+   "key": true,
+   "prompt": "The same teenage girl as in the first reference (about 15, shoulder-length black hair, orange-red jacket, dark trousers, brown shoes), full body, side view facing RIGHT, walking: left leg forward, right leg back, arms swinging gently, holding a small book in one hand."
+  },
+  {
+   "id": "teen-walk-b",
+   "refs": [
+    "teen-walk-a"
+   ],
+   "key": true,
+   "prompt": "The exact same teenage girl as the reference, same clothes and proportions, full body, side view facing RIGHT, mid-stride passing pose: legs close together, one knee slightly bent, arms near her sides."
+  },
+  {
+   "id": "momkid-walk-a",
+   "refs": [
+    "grandma-kid",
+    "girl-sheet"
+   ],
+   "key": true,
+   "prompt": "The same woman as the girl in the second reference, now a young mother about 32 years old (black hair tied back, rust-orange jacket #B55A36, dark trousers), full body, side view facing RIGHT, walking while holding the hand of her 6-year-old daughter who walks beside her in a small bright orange-red raincoat (#D9622B) — the child looks like the girl in the second reference. Left legs forward."
+  },
+  {
+   "id": "momkid-walk-b",
+   "refs": [
+    "momkid-walk-a"
+   ],
+   "key": true,
+   "prompt": "The exact same mother and daughter as the reference, same clothes and proportions, full body, side view facing RIGHT, holding hands, mid-stride passing pose: legs close together."
+  },
+  {
+   "id": "village-woman",
+   "key": true,
+   "prompt": "A northern Vietnamese village woman from the 1930s, full body, side view facing RIGHT, walking with a conical hat (nón lá), brown áo tứ thân, black skirt, carrying a bamboo shoulder pole (đòn gánh) with two woven baskets of vegetables."
+  },
+  {
+   "id": "village-man",
+   "key": true,
+   "prompt": "A northern Vietnamese farmer from the 1930s, full body, side view facing RIGHT, walking barefoot, brown peasant clothes with rolled trousers, a conical hat, carrying a hoe over his shoulder."
+  },
+  {
+   "id": "wedding",
+   "key": true,
+   "prompt": "A small traditional northern Vietnamese village wedding procession from the 1930s, side view walking to the RIGHT in a single line: an elder leading holding a red lacquered tray covered with red cloth, the groom in a blue áo dài and khăn xếp, the bride in a red áo dài with a conical hat, two relatives carrying round red gift boxes. Full bodies, all feet on the same ground line."
+  },
+  {
+   "id": "leaving",
+   "key": true,
+   "prompt": "A northern Vietnamese village family leaving their home in the 1950s, side view walking to the LEFT in a line: a man carrying a shoulder pole with bundles, a woman with a conical hat carrying a cloth bundle, a child holding a small chicken basket, an old woman with a walking stick. Tired but hopeful. Full bodies, all feet on the same ground line."
+  },
+  {
+   "id": "boat",
+   "key": true,
+   "aspect": "3:2",
+   "prompt": "A small traditional wooden sampan (thuyền nan / flat wooden boat) on its own, side view facing RIGHT, with one fisherman in a conical hat standing at the back rowing with a long oar, a folded fishing net in the boat. No water drawn."
+  }
+ ]
+}

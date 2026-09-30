@@ -9,7 +9,10 @@
     "align": "node scripts/align.mjs",
     "sync": "node scripts/sync.mjs",
     "render": "node scripts/render.mjs",
-    "typecheck": "tsc --noEmit"
+    "typecheck": "tsc --noEmit",
+    "assets": "node scripts/assets.mjs",
+    "resolve": "node scripts/resolve.mjs",
+    "depth": ".venv-fx/bin/python scripts/depth.py"
   },
   "dependencies": {
     "@remotion/cli": "4.0.529",

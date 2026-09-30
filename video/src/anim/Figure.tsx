@@ -2,7 +2,7 @@
 // Khung xương 2D nhìn nghiêng (mặt hướng +x); dáng = các góc khớp (độ), 0° = thõng thẳng xuống.
 import React from "react";
 
-export type PoseName = "stand" | "walk" | "walkWind" | "sitKnees" | "sitLean" | "desk" | "window" | "reach" | "look" | "crouch" | "sitEdge" | "carry";
+export type PoseName = "stand" | "walk" | "walkWind" | "sitKnees" | "sitLean" | "desk" | "window" | "reach" | "look" | "crouch" | "sitEdge" | "carry" | "cradle";
 
 type Pose = {
   torso: number; // nghiêng thân về trước (+)
@@ -50,6 +50,8 @@ export const poseAt = (name: PoseName, t: number): Pose => {
       const s = Math.sin(t * 5);
       return { torso: 8, head: 4, hipL: 20 * s, kneeL: 8 + 26 * Math.max(0, -s), hipR: -20 * s, kneeR: 8 + 26 * Math.max(0, s), shL: 170, elL: 15, shR: -10 + 12 * s, elR: 15, bob: 0.02 * Math.abs(Math.cos(t * 5)) };
     }
+    case "cradle": // bế đứa trẻ trước ngực, cúi nhìn
+      return { torso: 3, head: 24 + 2 * Math.sin(t * 0.7), hipL: 3, kneeL: 1, hipR: -3, kneeR: 1, shL: 30, elL: 100, shR: 22, elR: 112 };
     case "window":
       return { torso: 2, head: 6, hipL: 3, kneeL: 2, hipR: -4, kneeR: 3, shL: 6, elL: 10, shR: 118, elR: -12 };
     default:

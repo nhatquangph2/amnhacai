@@ -9,7 +9,8 @@ export type FigureSpec = { pose: PoseName; x0: number; x1?: number; H: number; f
 // Một cảnh của MV hoạt hình (kiểu "anim"): cây trên đồi hoặc các cảnh của nhân vật
 export type Shot = {
   at: number; // giây bắt đầu
-  scene: "hill" | "room" | "street" | "desk" | "notebook" | "bank";
+  scene: "hill" | "room" | "street" | "desk" | "notebook" | "bank" | "painted" | "brush" | "genesis" | "deep" | "lift" | "truck" | "ridge" | "nightroad" | "plaza" | "holeview" | "person";
+  tOff?: number; // lệch thời gian cảnh (dùng lại cảnh cũ trong đoạn hồi ức)
   cut?: boolean; // cắt thẳng (mặc định mờ chéo 0.8s)
   // Nhân vật trên đồi: đi từ x0 → x1 trong suốt cảnh
   figure?: FigureSpec;
@@ -57,6 +58,14 @@ export type Song = {
   shots?: Shot[]; // phân cảnh MV hoạt hình (tuyến người + tuyến cây)
   anim?: AnimKey[]; // kịch bản chuyển động cho kiểu "anim" (MV hoạt hình) — xem src/anim/params.ts
   synced: boolean; // false = thời gian đang là ước lượng, chưa tap-sync
+  titleAt?: [number, number]; // thời điểm hiện thẻ tên bài (mặc định đoạn dạo đầu, tối đa 8 s)
+  outroAt?: number; // thời điểm hiện dòng "senore" cuối bài (mặc định ngay sau câu cuối)
+  noBars?: boolean; // không dùng dải đen điện ảnh 2.39:1
+  fps?: number; // khung hình/giây của bài (mặc định 30; 24 cho hoạt hình vẽ trên 2s/3s)
+  brush?: { at: number; src: string }[]; // video màu nước p5.brush (brush/) theo thời gian bài — cảnh "brush"
+  art?: string[]; // tranh đã vẽ trong public/HB-xxx/art (npm run assets tự ghi) — cảnh "painted" bỏ qua tranh chưa có
+  depth?: boolean; // tranh nền dùng video chiều sâu 2.5D (npm run depth) thay ảnh tĩnh — kiểu anim, cảnh "painted"
+  noLyrics?: boolean; // bản "sạch" không phụ đề (npm run render -- --clean) để dựng tiếp trong DaVinci Resolve
   lyricsTop?: boolean; // phụ đề ở phía trên khung (khi hành động diễn ra ở nửa dưới)
   lines: LyricLine[];
 };
