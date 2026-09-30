@@ -84,6 +84,9 @@ python3 scripts/make_cover.py --title "Sau Mùa Giông" --out releases/HB-002_sa
 # Lyric video / Shorts theo bộ nhận diện (Remotion + Whisper) — chi tiết: video/README.md
 cd video && npm run prep -- HB-002 --audio master.wav && npm run whisper -- HB-002 && npm run render -- HB-002
 
+# Cắt MV thành Shorts dọc 1080×1920 (YouTube Shorts / TikTok / Reels) theo releases/<bài>/shorts.json
+python3 scripts/make_shorts.py releases/HB-001_tang-da/shorts.json --mv "~/Downloads/Câu chuyện tảng đá_Senore.mp4"
+
 # Dựng video tuyển tập dài + sinh timestamps (cần ffmpeg)
 python3 scripts/build_mix.py releases/tuyen-tap-01/audio --image bg.jpg --crossfade 3 \
     --titles titles.txt --out releases/tuyen-tap-01/tuyen-tap-01.mp4

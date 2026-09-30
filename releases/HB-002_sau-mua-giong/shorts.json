@@ -1,0 +1,38 @@
+{
+  "id": "HB-002",
+  "title": "Sau Mùa Giông",
+  "artist": "Senore",
+  "cta": "Nghe bản đầy đủ trên kênh",
+  "clips": [
+    {
+      "slug": "hook-bao-lay-re-sau",
+      "start": 86.8, "end": 112.6,
+      "hook": "Bão không quật ngã —\nbão lay… rễ sâu.",
+      "caption": "Có những mùa giông mình không tránh được 🌿 #SauMuaGiong #Senore #nhaccoloi #dongluc #fyp"
+    },
+    {
+      "slug": "pov-van-dung-day",
+      "start": 66.6, "end": 97.3,
+      "hook": "POV: bạn vừa thất bại thêm một lần nữa…\nvà vẫn đứng dậy",
+      "caption": "Cứ giông đi, cứ bão đi. Còn tôi, tôi vẫn đứng lì với tôi 🌳 #SauMuaGiong #Senore #dongluc #nhaccoloi #fyp"
+    },
+    {
+      "slug": "luc-bat",
+      "start": 18.5, "end": 57.2,
+      "hook": "Tôi viết bài này\nbằng thể thơ lục bát",
+      "caption": "Tôi như cây đứng giữa trời… ✍️ Lời lục bát, nhạc tạo cùng AI. #SauMuaGiong #Senore #lucbat #nhaccoloi #fyp"
+    },
+    {
+      "slug": "bridge-mua-giong",
+      "start": 182.2, "end": 220.6,
+      "hook": "Nếu không có một mùa giông,\nlàm sao biết rễ đã lồng vào sâu?",
+      "caption": "Nếu không có những vết đau, làm sao thân gỗ biết đâu phần mình? 🌿 #SauMuaGiong #Senore #nhacynghia #fyp"
+    },
+    {
+      "slug": "gui-nguoi-giua-giong-bao",
+      "start": 220.2, "end": 269.6,
+      "hook": "Gửi người đang đứng\ngiữa giông bão của đời mình",
+      "caption": "Cây lớn là cây qua giông 🌳 Gửi một người bạn đang cần nghe điều này. #SauMuaGiong #Senore #dongluc #fyp"
+    }
+  ]
+}
