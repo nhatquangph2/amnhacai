@@ -73,8 +73,8 @@ Checklist `templates/qc-checklist.md`. **Đọc lời trong khi nghe** — so t�
 | Sản phẩm | Kích thước | Công cụ |
 |---|---|---|
 | Ảnh bìa | 3000×3000 | Midjourney/Ideogram/Firefly + Canva (chữ) |
-| Lyric video | 1920×1080 | CapCut (auto-caption → sửa lại), After Effects, Canva video |
-| Shorts/TikTok | 1080×1920, 15–40s | CapCut |
+| Lyric video | 1920×1080 | `video/`: `npm run whisper` căn lời → `npm run render` (xem `video/README.md`) |
+| Shorts/TikTok | 1080×1920, 15–40s | `npm run render -- HB-xxx --short --from … --to …` |
 | Spotify Canvas | 1080×1920, 3–8s loop | CapCut / Runway |
 
 ## ⑧ Đóng gói

@@ -12,7 +12,7 @@
 | DAW / Hậu kỳ | Reaper (rẻ), Audacity (miễn phí) | FL Studio, Ableton, Logic | |
 | Master | Plugin limiter trong DAW, iZotope Ozone | LANDR, BandLab Mastering | |
 | Tạo ảnh AI | Midjourney | Ideogram, Leonardo, Flux, Firefly | Firefly thiên về an toàn thương mại |
-| Lyric video | CapCut (auto caption → sửa tay) | After Effects, Canva video, Premiere | Kiểm tra dấu tiếng Việt từng chữ |
+| Lyric video / Shorts | `video/` (Remotion + Whisper, miễn phí) — xem `video/README.md` | CapCut, After Effects, Canva video | Chữ lấy từ lời gốc → không sai dấu; Whisper chỉ để căn thời gian |
 | Ảnh → video loop | Runway, Kling | Pika, CapCut | Spotify Canvas, nền lyric video |
 | Viết lời | Google Docs (lịch sử phiên bản = bằng chứng) | Notes điện thoại | Từ điển vần, từ điển đồng nghĩa tiếng Việt |
 | Lời trên Spotify | Distributor / Musixmatch for Artists | | |

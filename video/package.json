@@ -1,0 +1,29 @@
+{
+  "name": "senore-video",
+  "private": true,
+  "description": "Dựng lyric video / MV / Shorts cho Senore bằng Remotion (React → MP4)",
+  "scripts": {
+    "studio": "remotion studio src/index.ts",
+    "prep": "node scripts/prep.mjs",
+    "whisper": "sh -c '.venv/bin/python scripts/transcribe.py \"$@\" && node scripts/align.mjs \"$1\"' --",
+    "align": "node scripts/align.mjs",
+    "sync": "node scripts/sync.mjs",
+    "render": "node scripts/render.mjs",
+    "typecheck": "tsc --noEmit",
+    "assets": "node scripts/assets.mjs",
+    "resolve": "node scripts/resolve.mjs",
+    "depth": ".venv-fx/bin/python scripts/depth.py"
+  },
+  "dependencies": {
+    "@remotion/cli": "4.0.529",
+    "@remotion/media-utils": "4.0.529",
+    "react": "19.2.8",
+    "react-dom": "19.2.8",
+    "remotion": "4.0.529"
+  },
+  "devDependencies": {
+    "@types/react": "^19.2.0",
+    "@types/webpack-env": "^1.18.8",
+    "typescript": "5.9.3"
+  }
+}

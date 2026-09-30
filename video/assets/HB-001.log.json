@@ -1,0 +1,149 @@
+{
+  "plate-wild": {
+    "prompt": "Wide establishing shot, eye-level, fixed camera, 16:9 framing. A calm wide river crosses the whole frame horizontally through the middle. Far bank: a thin strip of wild grass and a few trees, soft limestone mountains in the haze behind. Near bank (bottom third): packed earth and wild grass. One large smooth grey boulder sits at the water's edge on the near bank, slightly right of center (its center at about 68% from the left and 72% from the top), roughly one-eighth of the frame wide. Open empty ground in front of the boulder for people to walk along. Morning light. No people, no animals, no buildings.",
+    "style": "Hand-painted 2D animated-film background art: soft painterly brushwork, warm natural light, gentle atmospheric perspective, muted earthy palette (paper beige, sage green, teal-grey water, terracotta roofs), clean readable shapes, cinematic and calm. Rural northern Vietnam. Every image in this set must share exactly this style.",
+    "tool": "Codex CLI image_generation (gpt-image)",
+    "date": "2026-09-29T06:34:39.900Z",
+    "seconds": 65
+  },
+  "girl-sheet": {
+    "prompt": "Character design sheet on a plain off-white background: a 7-year-old Vietnamese girl with short black bob hair, wearing a bright orange-red raincoat (#D9622B) with the hood down, navy trousers and small brown shoes. Show her full body three times: front view, side view facing right, back view. Simple, readable, same painterly style. No text labels.",
+    "style": "Hand-painted 2D animated-film background art: soft painterly brushwork, warm natural light, gentle atmospheric perspective, muted earthy palette (paper beige, sage green, teal-grey water, terracotta roofs), clean readable shapes, cinematic and calm. Rural northern Vietnam. Every image in this set must share exactly this style.",
+    "tool": "Codex CLI image_generation (gpt-image)",
+    "date": "2026-09-29T06:34:41.752Z",
+    "seconds": 67
+  },
+  "town-man": {
+    "prompt": "A Vietnamese man from the early 1990s, full body, side view facing RIGHT, walking: short-sleeved white shirt, grey trousers, sandals, black hair.",
+    "style": "Hand-painted 2D animated-film background art: soft painterly brushwork, warm natural light, gentle atmospheric perspective, muted earthy palette (paper beige, sage green, teal-grey water, terracotta roofs), clean readable shapes, cinematic and calm. Rural northern Vietnam. Every image in this set must share exactly this style.",
+    "tool": "Codex CLI image_generation (gpt-image)",
+    "date": "2026-09-29T06:35:46.596Z",
+    "seconds": 65
+  },
+  "town-bike": {
+    "prompt": "A Vietnamese young man from the early 1990s riding an old black city bicycle, full body with the whole bicycle, side view facing RIGHT, blue shirt, dark trousers.",
+    "style": "Hand-painted 2D animated-film background art: soft painterly brushwork, warm natural light, gentle atmospheric perspective, muted earthy palette (paper beige, sage green, teal-grey water, terracotta roofs), clean readable shapes, cinematic and calm. Rural northern Vietnam. Every image in this set must share exactly this style.",
+    "tool": "Codex CLI image_generation (gpt-image)",
+    "date": "2026-09-29T06:36:51.675Z",
+    "seconds": 65
+  },
+  "town-woman": {
+    "prompt": "A Vietnamese woman from the early 1990s, full body, side view facing RIGHT, walking with a conical hat (nón lá), light brown áo bà ba and dark trousers, carrying a woven basket on one arm.",
+    "style": "Hand-painted 2D animated-film background art: soft painterly brushwork, warm natural light, gentle atmospheric perspective, muted earthy palette (paper beige, sage green, teal-grey water, terracotta roofs), clean readable shapes, cinematic and calm. Rural northern Vietnam. Every image in this set must share exactly this style.",
+    "tool": "Codex CLI image_generation (gpt-image)",
+    "date": "2026-09-29T06:36:57.804Z",
+    "seconds": 71
+  },
+  "girl-walk-a": {
+    "prompt": "The same girl from the reference sheet, full body, side view facing RIGHT, walking briskly: left leg forward, right leg back, arms swinging.",
+    "refs": [
+      "girl-sheet"
+    ],
+    "style": "Hand-painted 2D animated-film background art: soft painterly brushwork, warm natural light, gentle atmospheric perspective, muted earthy palette (paper beige, sage green, teal-grey water, terracotta roofs), clean readable shapes, cinematic and calm. Rural northern Vietnam. Every image in this set must share exactly this style.",
+    "tool": "Codex CLI image_generation (gpt-image)",
+    "date": "2026-09-29T06:38:18.093Z",
+    "seconds": 66
+  },
+  "plate-town": {
+    "prompt": "Same place many decades later, early 1990s. On the far bank: a small Vietnamese river town — rows of low houses with terracotta tile roofs and cream walls, a few trees, wooden power poles with sagging wires. On the far left, a simple concrete bridge crosses the river toward the viewer. On the near bank, a worn packed-earth footpath runs left-to-right in front of the boulder. Warm late-afternoon light. Still no people.",
+    "edit": "plate-wild",
+    "style": "Hand-painted 2D animated-film background art: soft painterly brushwork, warm natural light, gentle atmospheric perspective, muted earthy palette (paper beige, sage green, teal-grey water, terracotta roofs), clean readable shapes, cinematic and calm. Rural northern Vietnam. Every image in this set must share exactly this style.",
+    "tool": "Codex CLI image_generation (gpt-image)",
+    "date": "2026-09-29T06:39:01.152Z",
+    "seconds": 109
+  },
+  "girl-walk-b": {
+    "prompt": "The same girl from the reference sheet, full body, side view facing RIGHT, mid-stride passing pose: legs close together, one knee slightly bent, arms near her sides.",
+    "refs": [
+      "girl-sheet"
+    ],
+    "style": "Hand-painted 2D animated-film background art: soft painterly brushwork, warm natural light, gentle atmospheric perspective, muted earthy palette (paper beige, sage green, teal-grey water, terracotta roofs), clean readable shapes, cinematic and calm. Rural northern Vietnam. Every image in this set must share exactly this style.",
+    "tool": "Codex CLI image_generation (gpt-image)",
+    "date": "2026-09-29T06:40:07.188Z",
+    "seconds": 66
+  },
+  "girl-crouch": {
+    "prompt": "The same girl from the reference sheet, crouching down on her heels, side view facing RIGHT, reaching her right hand forward and slightly up as if gently touching a big rock in front of her, curious expression.",
+    "refs": [
+      "girl-sheet"
+    ],
+    "style": "Hand-painted 2D animated-film background art: soft painterly brushwork, warm natural light, gentle atmospheric perspective, muted earthy palette (paper beige, sage green, teal-grey water, terracotta roofs), clean readable shapes, cinematic and calm. Rural northern Vietnam. Every image in this set must share exactly this style.",
+    "tool": "Codex CLI image_generation (gpt-image)",
+    "date": "2026-09-29T06:40:17.670Z",
+    "seconds": 77
+  },
+  "girl-sit": {
+    "prompt": "The same girl from the reference sheet, sitting on a ledge seen from the side, facing RIGHT, legs dangling down in front, hands resting on the ledge beside her hips, relaxed and happy, looking out ahead.",
+    "refs": [
+      "girl-sheet"
+    ],
+    "style": "Hand-painted 2D animated-film background art: soft painterly brushwork, warm natural light, gentle atmospheric perspective, muted earthy palette (paper beige, sage green, teal-grey water, terracotta roofs), clean readable shapes, cinematic and calm. Rural northern Vietnam. Every image in this set must share exactly this style.",
+    "tool": "Codex CLI image_generation (gpt-image)",
+    "date": "2026-09-29T06:41:20.872Z",
+    "seconds": 63
+  },
+  "plate-city": {
+    "prompt": "Same place in the present day: behind the old tile-roof houses on the far bank rise a few modern mid-rise apartment buildings and a distant city skyline; the bridge is now a wider modern bridge. On the near bank the river edge is reinforced with a low stone embankment and a simple metal railing — the railing stops on both sides of the boulder, leaving a gap so the boulder remains untouched. Two street lamps on the near bank at the left. The footpath is now paved with grey tiles. Soft late-afternoon light. No people.",
+    "edit": "plate-town",
+    "aspect": "16:9",
+    "style": "Hand-painted 2D animated-film background art: soft painterly brushwork, warm natural light, gentle atmospheric perspective, muted earthy palette (paper beige, sage green, teal-grey water, terracotta roofs), clean readable shapes, cinematic and calm. Rural northern Vietnam. Every image in this set must share exactly this style.",
+    "tool": "Pollinations API — openai/gpt-image-2",
+    "session": "openai/gpt-image-2",
+    "date": "2026-09-29T07:42:56.129Z",
+    "seconds": 55
+  },
+  "plate-hut": {
+    "prompt": "Same place, centuries ago, the first settlers: on the far bank ONE small thatched-roof hut with earthen walls, a small clump of bamboo beside it and a thin wisp of cooking smoke. A faint footpath is beginning to form on the near bank in front of the boulder. Soft morning light. No people.",
+    "edit": "plate-wild",
+    "aspect": "16:9",
+    "style": "Hand-painted 2D animated-film background art: soft painterly brushwork, warm natural light, gentle atmospheric perspective, muted earthy palette (paper beige, sage green, teal-grey water, terracotta roofs), clean readable shapes, cinematic and calm. Rural northern Vietnam. Every image in this set must share exactly this style.",
+    "tool": "Pollinations API — openai/gpt-image-2",
+    "session": "openai/gpt-image-2",
+    "date": "2026-09-29T07:40:55.314Z",
+    "seconds": 60
+  },
+  "teen-sit": {
+    "prompt": "The SAME person as the girl in the reference sheet (same face shape, black hair, warm skin), now about 15 years old, taller and slimmer, shoulder-length black hair, wearing a faded orange-red jacket (#D9622B) over a white school shirt and dark trousers, sitting on a ledge seen from the side facing RIGHT, legs dangling, reading a book on her lap.",
+    "refs": [
+      "girl-sheet"
+    ],
+    "aspect": "2:3",
+    "style": "Hand-painted 2D animated-film background art: soft painterly brushwork, warm natural light, gentle atmospheric perspective, muted earthy palette (paper beige, sage green, teal-grey water, terracotta roofs), clean readable shapes, cinematic and calm. Rural northern Vietnam. Every image in this set must share exactly this style.",
+    "tool": "Pollinations API — openai/gpt-image-2",
+    "session": "openai/gpt-image-2",
+    "date": "2026-09-29T07:41:42.213Z",
+    "seconds": 47
+  },
+  "plate-village": {
+    "prompt": "Same place a few generations later: the far bank is now a traditional northern Vietnamese village — many thatched-roof houses with earthen walls, tall bamboo hedges, a few areca palms, a small communal house (đình) with a curved roof. The near-bank footpath is now well worn packed earth. Warm midday light. No people.",
+    "edit": "plate-hut",
+    "aspect": "16:9",
+    "style": "Hand-painted 2D animated-film background art: soft painterly brushwork, warm natural light, gentle atmospheric perspective, muted earthy palette (paper beige, sage green, teal-grey water, terracotta roofs), clean readable shapes, cinematic and calm. Rural northern Vietnam. Every image in this set must share exactly this style.",
+    "tool": "Pollinations API — openai/gpt-image-2",
+    "session": "openai/gpt-image-2",
+    "date": "2026-09-29T07:42:55.426Z",
+    "seconds": 54
+  },
+  "plate-abandoned": {
+    "prompt": "Same place years later after the village moved away: the thatched houses on the far bank are abandoned — roofs sagging and collapsed, walls crumbling, overgrown with grass and vines, bamboo grown wild. The near-bank path is fading under grass. Quiet overcast light. No people.",
+    "edit": "plate-village",
+    "aspect": "16:9",
+    "style": "Hand-painted 2D animated-film background art: soft painterly brushwork, warm natural light, gentle atmospheric perspective, muted earthy palette (paper beige, sage green, teal-grey water, terracotta roofs), clean readable shapes, cinematic and calm. Rural northern Vietnam. Every image in this set must share exactly this style.",
+    "tool": "Pollinations API — openai/gpt-image-2",
+    "session": "openai/gpt-image-2",
+    "date": "2026-09-29T07:43:46.643Z",
+    "seconds": 51
+  },
+  "grandma-kid": {
+    "prompt": "The SAME person as the girl in the reference sheet (same face shape, black hair, warm skin), now an elderly grandmother about 75 years old with silver-white hair in a bun, wearing a muted brick-orange cardigan (#8A5A44) and dark trousers, sitting on a ledge seen from the side facing RIGHT, legs dangling, and beside her on her left sits her 6-year-old granddaughter in a small bright orange-red raincoat (#D9622B), both looking out ahead together, the grandmother's arm around the child.",
+    "refs": [
+      "girl-sheet"
+    ],
+    "aspect": "2:3",
+    "style": "Hand-painted 2D animated-film background art: soft painterly brushwork, warm natural light, gentle atmospheric perspective, muted earthy palette (paper beige, sage green, teal-grey water, terracotta roofs), clean readable shapes, cinematic and calm. Rural northern Vietnam. Every image in this set must share exactly this style.",
+    "tool": "Pollinations API — openai/gpt-image-2",
+    "session": "openai/gpt-image-2",
+    "date": "2026-09-29T07:43:46.427Z",
+    "seconds": 50
+  }
+}
