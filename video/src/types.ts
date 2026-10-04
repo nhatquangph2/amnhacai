@@ -73,6 +73,7 @@ export type Song = {
   anim?: AnimKey[]; // kịch bản chuyển động cho kiểu "anim" (MV hoạt hình) — xem src/anim/params.ts
   synced: boolean; // false = thời gian đang là ước lượng, chưa tap-sync
   titleAt?: [number, number]; // thời điểm hiện thẻ tên bài (mặc định đoạn dạo đầu, tối đa 8 s)
+  logoAt?: [number, number]; // logo Senore mở đầu (giây bắt đầu, kết thúc)
   outroAt?: number; // thời điểm hiện dòng "senore" cuối bài (mặc định ngay sau câu cuối)
   noBars?: boolean; // không dùng dải đen điện ảnh 2.39:1
   fps?: number; // khung hình/giây của bài (mặc định 30; 24 cho hoạt hình vẽ trên 2s/3s)

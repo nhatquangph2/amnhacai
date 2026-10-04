@@ -48,6 +48,7 @@ const copy = (src, destRel) => {
 // 1. Font
 copy(path.join(ROOT, "brand/fonts/Lora[wght].ttf"), "fonts/Lora.ttf");
 copy(path.join(ROOT, "brand/fonts/BeVietnamPro-Medium.ttf"), "fonts/BeVietnamPro-Medium.ttf");
+copy(path.join(ROOT, "brand/logo/senore-logo.png"), "brand/senore-logo.png");
 
 // 2. Ảnh bìa
 const cover = path.join(releaseDir, "cover.jpg");
