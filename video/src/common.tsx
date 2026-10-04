@@ -4,6 +4,7 @@ import {
   cancelRender,
   continueRender,
   delayRender,
+  Img,
   interpolate,
   random,
   staticFile,
@@ -131,7 +132,10 @@ export const TitleCards: React.FC<{
           extrapolateRight: "clamp",
         })
       : 0;
-  if (intro <= 0 && outro <= 0) return null;
+  const logo = song.logoAt
+    ? interpolate(t, [song.logoAt[0], song.logoAt[0] + 0.6, song.logoAt[1] - 0.5, song.logoAt[1]], [0, 1, 1, 0], { extrapolateLeft: "clamp", extrapolateRight: "clamp" })
+    : 0;
+  if (intro <= 0 && outro <= 0 && logo <= 0) return null;
   return (
     <AbsoluteFill style={{ justifyContent: "center", alignItems: "center", textAlign: "center", color }}>
       {intro > 0 && (
@@ -145,12 +149,15 @@ export const TitleCards: React.FC<{
           </div>
         </div>
       )}
+      {logo > 0 && (
+        <div style={{ position: "absolute", opacity: logo, transform: `scale(${0.92 + 0.08 * logo})` }}>
+          <Img src={staticFile("brand/senore-logo.png")} style={{ height: vertical ? 560 : 500, filter: "drop-shadow(0 0 40px rgba(255,200,120,0.35))" }} />
+        </div>
+      )}
       {outro > 0 && (
-        <div style={{ opacity: outro }}>
-          <div style={{ fontFamily: SERIF, fontSize: 84, letterSpacing: 6 }}>senore</div>
-          <div style={{ fontFamily: SANS, fontSize: 30, marginTop: 24, opacity: 0.75 }}>
-            những bài hát về cuộc sống
-          </div>
+        <div style={{ opacity: outro, transform: `scale(${0.92 + 0.08 * outro})` }}>
+          {/* logo Senore (tách nền từ brand/logo, npm run prep chép vào public/brand) */}
+          <Img src={staticFile("brand/senore-logo.png")} style={{ height: vertical ? 560 : 500, filter: "drop-shadow(0 0 40px rgba(255,200,120,0.35))" }} />
         </div>
       )}
     </AbsoluteFill>

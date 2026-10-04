@@ -8,7 +8,7 @@
 import React from "react";
 import { AbsoluteFill } from "remotion";
 import type { SceneProps } from "./Scenes";
-import { Figure, PoseName } from "./Figure";
+import { Figure, FigurePalette, PoseName } from "./Figure";
 import { stonePath } from "./StoneJourney";
 
 const clamp = (x: number, a = 0, b = 1) => Math.min(Math.max(x, a), b);
@@ -27,6 +27,17 @@ const palAt = (keys: [number, ...string[]][], t: number) => {
   const a = keys[i], b = keys[i + 1], k = ease(seg(t, a[0], b[0]));
   return a.slice(1).map((c, j) => mix(c as string, b[j + 1] as string, k));
 };
+
+// ------------------------------------------------------------------ màu người: mỗi người một bộ; nhân vật chính áo đỏ gạch xuyên suốt
+const COATS = ["#3f7cac", "#d8a03d", "#5b8c5a", "#b04a5a", "#e07b39", "#6a5acd", "#2e8b8b", "#c9c2b0", "#8b5e3c", "#4a6fa5", "#a0527a", "#7a9a3a"];
+const PANTS = ["#2d3142", "#3b3a36", "#4f4a45", "#23395b", "#5a4632", "#3a4a3a"];
+const SKINS = ["#f1c9a5", "#e0ac82", "#c68c63", "#9c6b4a", "#7a4f35"];
+const HAIRS = ["#1b1512", "#3a2a1e", "#5b3b24", "#2b2b2b", "#8a8580"];
+const palOf = (i: number): FigurePalette => ({ coat: COATS[i % COATS.length], pants: PANTS[(i * 5 + 1) % PANTS.length], skin: SKINS[(i * 3 + 2) % SKINS.length], hair: HAIRS[(i * 7 + 1) % HAIRS.length], shoe: "#1a1716" });
+const HERO: FigurePalette = { coat: "#c4553a", pants: "#2b2f3a", skin: "#e2b48c", hair: "#241913", shoe: "#1a1716" };
+const PARENT: FigurePalette = { coat: "#7a5c8e", pants: "#3b3346", skin: "#d9a67e", hair: "#2a1d17", shoe: "#1a1716" };
+/** Nhuộm bộ màu theo ánh sáng cảnh: k = độ chìm vào bóng (0 sáng rõ … 1 hoà hẳn vào màu bóng). */
+const lit = (p: FigurePalette, shade: string, k: number): FigurePalette => ({ coat: mix(p.coat, shade, k), pants: mix(p.pants, shade, k), skin: mix(p.skin, shade, k), hair: mix(p.hair, shade, k), shoe: mix(p.shoe ?? p.pants, shade, k) });
 
 // Dãy núi mềm (sin chồng + nhiễu)
 function ridge(seed: number, y0: number, amp: number, w0 = -600, w1 = 2520, n = 70) {
@@ -321,6 +332,7 @@ export const NightRoad: React.FC<SceneProps> = ({ t, vertical }) => {
 // ------------------------------------------------------------------ QUẢNG TRƯỜNG GIỮA NÚI (154.3–171.2, 190–225.8)
 const PEAKS_FAR: Peak[] = [[-200, 360, 520], [320, 440, 520], [700, 330, 380], [1180, 360, 400], [1560, 470, 520], [2060, 380, 520]];
 const PEAKS_NEAR: Peak[] = [[-100, 260, 460], [420, 210, 380], [1450, 240, 420], [1980, 290, 480]];
+const FATHER = { x: 1260, y: 905, H: 300 };
 const CROWD: { x: number; y: number; H: number; pose: PoseName; flip?: boolean; from?: number }[] = [
   { x: 430, y: 880, H: 150, pose: "look", from: -500 }, { x: 520, y: 930, H: 170, pose: "stand", from: -400 }, { x: 330, y: 960, H: 190, pose: "look", flip: false, from: -600 },
   { x: 610, y: 870, H: 140, pose: "look" }, { x: 1380, y: 880, H: 150, pose: "look", flip: true, from: 2300 }, { x: 1500, y: 940, H: 175, pose: "stand", flip: true, from: 2400 },
@@ -345,9 +357,11 @@ export const PlazaScene: React.FC<SceneProps> = ({ t, vertical }) => {
   // máy quay: toàn cảnh cao → hạ xuống; 161.6 lao vào lỗ thủng; 215 ngửa lên trời, lùi xa
   let zoom = 1, fx = 960, fy = 600, tilt = 0;
   if (t < 157.8) { zoom = lerp(0.8, 1, ease(seg(t, 154.3, 157.8))); }
-  else if (t < 175) { zoom = lerp(1, 16, Math.pow(seg(t, 161.6, 163.3), 2.2)); fx = hole[0]; fy = hole[1]; }
+  let cx = -1, cy = -1;
+  if (t >= 157.8 && t < 163.4) { const p = seg(t, 161.6, 163.3); zoom = lerp(1, 8, Math.pow(p, 2)); fx = hole[0]; fy = hole[1]; const e = ease(p); cx = lerp(hole[0], 960, e); cy = lerp(hole[1], 540, e); }
+  else if (t >= 163.4 && t < 175) { zoom = lerp(1.0, 1.06, ease(seg(t, 167, 171.2))); fx = 960; fy = 640; }
   else { zoom = lerp(1.08, 1, ease(seg(t, 190, 196))); tilt = 1500 * ease(seg(t, 214, 221)); }
-  const white = t < 175 ? seg(t, 162.6, 163.3) : 0;
+  const crowd = t >= 163.4 && t < 175;
   const starK = seg(t, 208, 214);
   const conv = ease(seg(t, 219.5, 223.5)), fade = seg(t, 224.3, 225.8);
   const floor = mix("#2a2a2c", "#0c0d12", night);
@@ -368,7 +382,7 @@ export const PlazaScene: React.FC<SceneProps> = ({ t, vertical }) => {
             const cx = lerp(sx, 960, conv), cy = lerp(sy, 540 - tilt, conv);
             return <circle key={i} cx={cx} cy={cy} r={0.8 + 1.8 * hash(i * 5)} fill={`rgba(240,244,255,${starK * (0.3 + 0.6 * hash(i * 7)) * (1 - 0.5 * conv)})`} />;
           })}
-          <g transform={`translate(${fx} ${fy}) scale(${zoom}) translate(${-fx} ${-fy})`}>
+          <g transform={`translate(${cx >= 0 ? cx : fx} ${cy >= 0 ? cy : fy}) scale(${zoom}) translate(${-fx} ${-fy})`}>
             {sunA > 0 && <circle cx={sun[0]} cy={sun[1]} r={t < 175 ? 520 : 420} fill="url(#p-sun)" opacity={sunA} />}
             <path d={range(4, 640, PEAKS_FAR)} fill={mix("#56607a", "#0a0d18", night)} opacity={0.95} />
             {snow(PEAKS_FAR, 640, mix("#e9e4dc", "#1c2236", night))}
@@ -405,58 +419,71 @@ export const PlazaScene: React.FC<SceneProps> = ({ t, vertical }) => {
             {t < 175 && CROWD.map((c, i) => {
               const k = c.from !== undefined ? ease(seg(t, 154.3 + i * 0.2, 158.5 + i * 0.2)) : 1;
               const x = c.from !== undefined ? lerp(c.from, c.x, k) : c.x;
-              return <Figure key={i} pose={k < 1 ? "walk" : c.pose} t={t + i} x={x} y={c.y} H={c.H} flip={c.flip} scarf="none" color="#0c0c0e" rim="rgba(255,215,165,0.4)" rimDir={[-1, -1]} />;
+              return <Figure key={i} pose={k < 1 ? "walk" : c.pose} t={t + i} x={x} y={c.y} H={c.H} flip={c.flip} scarf="none" color="#0c0c0e" palette={lit(palOf(i), "#2a2530", t < 157.8 ? 0.35 : 0.15)} rim="rgba(255,215,165,0.4)" rimDir={[-1, -1]} />;
             })}
+            {/* bố cõng con trên vai, con chỉ tay vào lỗ thủng; nắng xuyên lỗ rọi lên hai bố con */}
+            {crowd && (
+              <g>
+                <polygon points={`${hole[0] - 26},${hole[1] - 40} ${hole[0] + 26},${hole[1] + 40} ${FATHER.x + 130},${FATHER.y + 20} ${FATHER.x - 110},${FATHER.y + 20}`} fill="url(#p-beam)" opacity={0.55} />
+                <ellipse cx={FATHER.x} cy={FATHER.y + 6} rx={140} ry={20} fill="rgba(255,225,170,0.3)" />
+                <Figure pose="holdLegs" t={t} x={FATHER.x} y={FATHER.y} H={FATHER.H} flip scarf="none" palette={lit({ coat: "#3f7cac", pants: "#2d3142", skin: "#c68c63", hair: "#1b1512", shoe: "#1a1716" }, "#ffe0b0", 0.12)} rim="rgba(255,230,185,0.8)" rimDir={[-1, -1]} />
+                <Figure pose="shoulderPoint" t={t} x={FATHER.x + 4} y={FATHER.y - 0.84 * FATHER.H} H={FATHER.H * 0.5} flip scarf="none" palette={lit({ coat: "#e0b43a", pants: "#b04a5a", skin: "#d49a70", hair: "#2a1d17", shoe: "#b04a5a" }, "#ffe0b0", 0.1)} rim="rgba(255,235,195,0.85)" rimDir={[-1, -1]} />
+              </g>
+            )}
             {/* người ấy đứng cạnh tảng đá */}
-            {person && <Figure pose="look" t={t} x={1370} y={825} H={250} flip scarf="none" color="#09090b" rim={`rgba(255,205,150,${0.6 * (1 - night) + 0.15})`} rimDir={[-1, -1]} />}
+            {person && <Figure pose="look" t={t} x={1370} y={825} H={250} flip scarf="none" color="#09090b" palette={lit(HERO, night > 0 ? "#0a0d18" : "#2a1e2a", 0.25 + 0.55 * night)} rim={`rgba(255,205,150,${0.6 * (1 - night) + 0.15})`} rimDir={[-1, -1]} />}
           </g>
         </g>
         {/* điểm sáng cuối (khép vòng với ánh sáng đầu tiên) */}
         {conv > 0 && <circle cx={960} cy={540} r={40 + 120 * conv} fill="url(#p-pt)" opacity={conv * (1 - fade)} />}
-        {white > 0 && <rect x={0} y={0} width={1920} height={1080} fill="#fff6e4" opacity={white} />}
         {fade > 0 && <rect x={0} y={0} width={1920} height={1080} fill="#000" opacity={fade} />}
       </svg>
     </AbsoluteFill>
   );
 };
 
-// ------------------------------------------------------------------ 163.3–171.2 GÓC CỦA ĐÁ: nhìn qua lỗ thủng ra thế giới
+// ------------------------------------------------------------------ 163.3–167 QUA LỖ ĐÁ: máy quay xuyên qua lỗ thủng, thấy bình minh trên dãy núi
+// Mép lỗ lởm chởm (khớp với cảnh lao vào lỗ ở PlazaScene: lỗ ~352×496 px giữa khung), phóng to dần cho tới khi vách đá trôi ra khỏi khung.
+const RIM_PEAKS: Peak[] = [[180, 330, 480], [620, 420, 460], [960, 300, 300], [1320, 460, 480], [1760, 360, 460]];
 export const HoleView: React.FC<SceneProps> = ({ t, vertical }) => {
-  const k = seg(t, 163.3, 171.2);
-  const white = 1 - seg(t, 163.3, 164.2);
-  const zoom = lerp(1.0, 1.08, ease(k));
+  const through = ease(seg(t, 163.3, 166.6));
+  const s = lerp(1, 7, Math.pow(through, 1.6));
+  const sunY = lerp(640, 560, seg(t, 163.3, 167.2));
+  const rough = Array.from({ length: 72 }, (_, i) => {
+    const a = (i / 72) * Math.PI * 2, r = 1 + 0.07 * (hash(i * 1.3) - 0.5) + 0.05 * Math.sin(a * 5 + 1.3);
+    return `${f1(960 + Math.cos(a) * 352 * r * s)},${f1(540 + Math.sin(a) * 496 * r * s)}`;
+  });
+  const holeD = `M${rough.join(" L")} Z`;
+  const view = lerp(1.18, 1.0, through);
   return (
     <AbsoluteFill style={{ background: "#050507" }}>
       <svg viewBox={VB(vertical)} width="100%" height="100%" preserveAspectRatio="xMidYMid slice">
         <defs>
-          <linearGradient id="h-sky" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stopColor="#4d7ba0" /><stop offset="100%" stopColor="#f1dcb2" /></linearGradient>
-          <mask id="h-hole"><rect x={0} y={0} width={1920} height={1080} fill="#000" /><ellipse cx={960} cy={520} rx={620} ry={440} fill="#fff" /></mask>
-          <radialGradient id="h-edge"><stop offset="80%" stopColor="rgba(0,0,0,0)" /><stop offset="100%" stopColor="rgba(0,0,0,0.75)" /></radialGradient>
+          <linearGradient id="h-sky" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stopColor="#3d5f86" /><stop offset="55%" stopColor="#c99a86" /><stop offset="100%" stopColor="#f6cf98" /></linearGradient>
+          <radialGradient id="h-sun"><stop offset="0%" stopColor="rgba(255,250,230,1)" /><stop offset="14%" stopColor="rgba(255,225,165,0.9)" /><stop offset="100%" stopColor="rgba(255,190,120,0)" /></radialGradient>
+          <radialGradient id="h-rock" cx="50%" cy="50%" r="60%"><stop offset="40%" stopColor="#16140f" /><stop offset="100%" stopColor="#050505" /></radialGradient>
         </defs>
-        <g mask="url(#h-hole)">
-          <g transform={`translate(960 540) scale(${zoom}) translate(-960 -540)`}>
-            <rect x={0} y={0} width={1920} height={1080} fill="url(#h-sky)" />
-            <path d={range(2, 560, [[300, 300, 460], [900, 380, 500], [1500, 330, 460]])} fill="#6c7890" />
-            {snow([[300, 300, 460], [900, 380, 500], [1500, 330, 460]], 560, "#eee8de")}
-            <rect x={0} y={560} width={1920} height={600} fill="#3a3836" />
-            {Array.from({ length: 21 }, (_, i) => <line key={i} x1={960 + (i - 10) * 50} y1={560} x2={960 + (i - 10) * 300} y2={1100} stroke="rgba(0,0,0,0.2)" strokeWidth={2} />)}
-            {/* mọi người đứng ngắm, bóng đổ về phía máy quay */}
-            {Array.from({ length: 13 }, (_, i) => {
-              const x = 440 + i * 85 + 30 * hash(i), H = 170 + 110 * hash(i * 3), y = 720 + 120 * hash(i * 5);
-              return (
-                <g key={i}>
-                  <ellipse cx={x} cy={y + 60} rx={18} ry={70} fill="rgba(0,0,0,0.25)" />
-                  <Figure pose={i % 3 ? "look" : "stand"} t={t + i} x={x} y={y} H={H} flip={i % 2 === 0} scarf="none" color="#141313" rim="rgba(255,225,180,0.55)" rimDir={[0, -1]} />
-                </g>
-              );
-            })}
-            {/* hạt bụi nắng */}
-            {Array.from({ length: 30 }, (_, i) => <circle key={i} cx={hash(i) * 1920} cy={(hash(i * 3) * 1080 - (t - 163) * 20 * (0.5 + hash(i))) % 1080} r={1.5 + 2 * hash(i * 5)} fill="rgba(255,240,210,0.5)" />)}
-          </g>
+        {/* thế giới bên ngoài */}
+        <g transform={`translate(960 600) scale(${view}) translate(-960 -600)`}>
+          <rect x={-200} y={-200} width={2320} height={1500} fill="url(#h-sky)" />
+          <circle cx={960} cy={sunY} r={560} fill="url(#h-sun)" />
+          <path d={range(7, 700, RIM_PEAKS)} fill="#6f6a86" />
+          {snow(RIM_PEAKS, 700, "#f2e2cc")}
+          <path d={ridge(19, 800, 120)} fill="#3a3448" />
+          <path d={ridge(23, 880, 80)} fill="#1f1b28" />
+          {Array.from({ length: 6 }, (_, i) => { const k = seg(t, 164 + i * 0.2, 167.2), bx = lerp(700 + i * 40, 1500 + i * 60, k), by = lerp(560, 300 + i * 30, k), fl = 9 * Math.sin(t * 11 + i); return <path key={i} d={`M${bx - 12},${by - fl} Q${bx - 5},${by - 3} ${bx},${by} Q${bx + 5},${by - 3} ${bx + 12},${by - fl}`} stroke="#241e26" strokeWidth={3} fill="none" />; })}
         </g>
-        <ellipse cx={960} cy={520} rx={620} ry={440} fill="url(#h-edge)" />
-        <ellipse cx={960} cy={520} rx={620} ry={440} fill="none" stroke="rgba(255,220,170,0.35)" strokeWidth={4} />
-        {white > 0 && <rect x={0} y={0} width={1920} height={1080} fill="#fff6e4" opacity={white} />}
+        {/* vách đá quanh lỗ thủng (trôi ra ngoài khi máy quay đi xuyên qua) */}
+        {s < 6.9 && (
+          <g>
+            <path d={`M-2000,-2000 L3920,-2000 L3920,3080 L-2000,3080 Z ${holeD}`} fill="url(#h-rock)" fillRule="evenodd" />
+            {Array.from({ length: 14 }, (_, i) => {
+              const a = (i / 14) * Math.PI * 2 + hash(i) * 0.3, r0 = 1.05, r1 = 1.4 + 0.5 * hash(i * 3);
+              return <path key={i} d={`M${960 + Math.cos(a) * 352 * r0 * s},${540 + Math.sin(a) * 496 * r0 * s} L${960 + Math.cos(a + 0.05) * 352 * r1 * s},${540 + Math.sin(a + 0.05) * 496 * r1 * s}`} stroke="rgba(120,100,80,0.35)" strokeWidth={2 * s} fill="none" />;
+            })}
+            <path d={holeD} fill="none" stroke="rgba(255,215,160,0.7)" strokeWidth={4 + 2 * s} />
+          </g>
+        )}
       </svg>
     </AbsoluteFill>
   );
@@ -491,8 +518,8 @@ export const PersonScene: React.FC<SceneProps> = ({ t, vertical }) => {
           <line x1={cx - r} y1={top + r + 60} x2={cx + r} y2={top + r + 60} stroke="#050506" strokeWidth={14} />
           <rect x={0} y={cy + Hh / 2 - 6} width={1920} height={300} fill="#050506" />
           {/* người cha/mẹ nâng đứa trẻ về phía ánh sáng */}
-          <Figure pose="cradle" t={t} x={820} y={1150} H={760} scarf="none" color="#060607" rim="rgba(255,210,160,0.55)" rimDir={[1, -1]} />
-          <g transform="rotate(-8 955 560)"><ellipse cx={945} cy={562} rx={74} ry={36} fill="#0a0a0b" stroke="rgba(255,225,180,0.7)" strokeWidth={3} /><circle cx={1012} cy={548} r={27} fill="#0a0a0b" stroke="rgba(255,225,180,0.8)" strokeWidth={3} /></g>
+          <Figure pose="cradle" t={t} x={820} y={1150} H={760} scarf="none" color="#060607" palette={lit(PARENT, "#1a1418", 0.3)} rim="rgba(255,210,160,0.55)" rimDir={[1, -1]} />
+          <g transform="rotate(-8 955 560)"><ellipse cx={945} cy={562} rx={74} ry={36} fill="#e9dcc2" stroke="rgba(255,225,180,0.7)" strokeWidth={3} /><circle cx={1012} cy={548} r={27} fill="#e2b48c" stroke="rgba(255,225,180,0.8)" strokeWidth={3} /></g>
           <circle cx={955} cy={556} r={110} fill="url(#w-sun)" opacity={0.35 * glow} />
         </svg>
       </AbsoluteFill>
@@ -526,7 +553,7 @@ export const PersonScene: React.FC<SceneProps> = ({ t, vertical }) => {
         {Array.from({ length: 10 }, (_, i) => <rect key={i} x={((i * 260 + d) % 2400) - 240} y={880 + (i % 3) * 40} width={120} height={3} fill="rgba(150,170,200,0.2)" />)}
         {beam > 0 && <polygon points={`${px - 60},0 ${px + 60},0 ${px + 280},1080 ${px - 260},1080`} fill="url(#q-beam)" opacity={beam * 0.8} />}
         {beam > 0 && <ellipse cx={px} cy={py + 6} rx={260} ry={34} fill="rgba(255,230,190,0.35)" opacity={beam} />}
-        <Figure pose={pose} t={t} x={px} y={sit ? py - 0.05 * H : py} H={H} wind={walk ? 0.8 : 0} scarf="none" color="#050608" flip rim={beam > 0 ? `rgba(255,230,190,${0.3 + 0.6 * beam})` : "rgba(140,160,200,0.35)"} rimDir={[0, -1]} />
+        <Figure pose={pose} t={t} x={px} y={sit ? py - 0.05 * H : py} H={H} wind={walk ? 0.8 : 0} scarf="none" color="#050608" palette={lit(HERO, beam > 0.3 ? "#6a5a50" : "#0c1220", beam > 0.3 ? 0.08 : 0.5)} flip rim={beam > 0 ? `rgba(255,230,190,${0.3 + 0.6 * beam})` : "rgba(140,160,200,0.35)"} rimDir={[0, -1]} />
         <circle cx={glowP[0]} cy={glowP[1]} r={40 + 50 * glow + 6 * Math.sin(t * 3)} fill="url(#q-glow)" opacity={glow} />
         {/* mưa xiên */}
         {rain > 0 && Array.from({ length: 220 }, (_, i) => {
