@@ -1,0 +1,50 @@
+# Hồ sơ bài hát — HB-003
+id: HB-003
+title: "Hẹn Ngày Nở Hoa"
+title_en: "When the Flowers Bloom"
+artist: "Senore"
+series: hen-ngay-no-hoa
+mood: "hùng tráng, hy vọng, gắn kết"
+bpm: null
+key: ""
+status: storyboard        # idea → lyrics/storyboard → generating → selected → mastered → packaged → scheduled → released
+
+# --- Bằng chứng sáng tác (bắt buộc, xem docs/05) ---
+creation:
+  ai_tool: "Orchestral Instrumental"
+  ai_plan: ""
+  created_date: 2026-10-01
+  source_link: ""
+  prompt: "The King's Coronation"
+
+  lyrics_file: ""
+  lyrics_author: ""
+  human_contribution:
+    - "Viết kịch bản hoạt hình 5 nhân vật 9 phân đoạn khớp cấu trúc giao hưởng"
+
+# --- Tài nguyên bên thứ ba ---
+third_party_assets:
+  - type: "audio"
+    source: "The King's Coronation.wav (RIN)"
+    license: ""
+
+# --- Kỹ thuật ---
+audio:
+  master: "audio/The_Kings_Coronation_master.wav"
+  loudness_lufs: null
+  true_peak_dbtp: null
+  duration_sec: 202.88
+
+# --- Phát hành ---
+release:
+  date: ""
+  distributor: ""
+  isrc: ""
+  content_id: false      # khuyến nghị tắt (docs/04 mục 5)
+  spotify_url: ""
+  youtube_url: ""
+
+qc:
+  reviewed_by: ""
+  reviewed_date: ""
+  result: ""             # pass / fix / reject

@@ -14,14 +14,14 @@ import { fileURLToPath } from "node:url";
 
 const VIDEO = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 const args = process.argv.slice(2);
-const id = args[0];
+const id = args.find((a) => !a.startsWith("--"));
 const opt = (n) => {
   const i = args.indexOf(`--${n}`);
-  return i > 0 ? args[i + 1] : undefined;
+  return i >= 0 && i < args.length - 1 ? args[i + 1] : undefined;
 };
 const songFile = path.join(VIDEO, "src/songs", `${id}.json`);
 if (!id || !fs.existsSync(songFile)) {
-  console.error("Dùng: npm run render -- HB-002 [--style paper|film|dark] [--short [--from s --to s]] [--still giây]");
+  console.error("Dùng: npm run render -- HB-004 [--animatic] [--style paper|film|dark] [--short [--from s --to s]] [--still giây]");
   process.exit(1);
 }
 const song = JSON.parse(fs.readFileSync(songFile, "utf8"));
@@ -30,6 +30,7 @@ if (!song.synced) console.warn("⚠️  Lời CHƯA được căn thời gian (n
 
 const style = opt("style") ?? song.style;
 const short = args.includes("--short");
+const animatic = args.includes("--animatic");
 const clean = args.includes("--clean");
 const props = { song: { ...song, style, ...(clean ? { noLyrics: true } : {}) } };
 for (const [flag, key] of [["from", "clipStart"], ["to", "clipEnd"]]) {
@@ -39,13 +40,15 @@ for (const [flag, key] of [["from", "clipStart"], ["to", "clipEnd"]]) {
   props[key] = v;
 }
 
-const comp = short ? `${id}-short` : id;
+const comp = animatic ? `${id}-animatic` : (short ? `${id}-short` : id);
 const still = opt("still");
 const out = path.join(
   "out",
   still
-    ? `${id}_${style}_${still}s${short ? "_short" : ""}.png`
-    : `${id}_${short ? "short" : ""}${opt("from") ? `${short ? "-" : "clip-"}${opt("from")}s` : ""}${short || opt("from") ? "_" : ""}${style}${clean ? "_clean" : ""}.mp4`,
+    ? `${id}_${animatic ? "animatic" : style}_${still}s${short ? "_short" : ""}.png`
+    : animatic
+      ? `${id}_animatic${opt("from") ? `_clip-${opt("from")}s` : ""}.mp4`
+      : `${id}_${short ? "short" : ""}${opt("from") ? `${short ? "-" : "clip-"}${opt("from")}s` : ""}${short || opt("from") ? "_" : ""}${style}${clean ? "_clean" : ""}.mp4`,
 );
 const propsFile = path.join(VIDEO, "out", `.props-${path.basename(out)}.json`); // riêng từng file → render song song được
 fs.mkdirSync(path.dirname(propsFile), { recursive: true });
@@ -53,7 +56,7 @@ fs.writeFileSync(propsFile, JSON.stringify(props));
 
 const cli = still
   ? ["remotion", "still", "src/index.ts", comp, out, `--props=${propsFile}`, `--frame=${Math.round(Number(still) * (song.fps ?? 30))}`]
-  : ["remotion", "render", "src/index.ts", comp, out, `--props=${propsFile}`, "--crf=18", ...(opt("concurrency") ? [`--concurrency=${opt("concurrency")}`] : [])];
+  : ["remotion", "render", "src/index.ts", comp, out, `--props=${propsFile}`, "--crf=18", "--timeout=120000", ...(opt("concurrency") ? [`--concurrency=${opt("concurrency")}`] : ["--concurrency=4"])];
 const r = spawnSync("npx", cli, { cwd: VIDEO, stdio: "inherit" });
 if (r.status === 0) console.log(`\n✓ ${path.join("video", out)}`);
 process.exit(r.status ?? 1);

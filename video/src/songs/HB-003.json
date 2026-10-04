@@ -1,0 +1,60 @@
+{
+  "id": "HB-003",
+  "title": "Hẹn ngày nở hoa",
+  "artist": "Senore",
+  "style": "anim",
+  "paper": true,
+  "accent": "#E6C15C",
+  "audio": "HB-003/audio.mp3",
+  "titleAt": [0.8, 8.5],
+  "outroAt": 182.0,
+  "synced": true,
+  "lines": [],
+  "shots": [
+    {
+      "at": 0,
+      "scene": "garden",
+      "cut": true
+    },
+    {
+      "at": 12.0,
+      "scene": "garden",
+      "cut": true
+    },
+    {
+      "at": 32.0,
+      "scene": "garden",
+      "cut": true
+    },
+    {
+      "at": 55.0,
+      "scene": "garden",
+      "cut": true
+    },
+    {
+      "at": 75.0,
+      "scene": "garden",
+      "cut": true
+    },
+    {
+      "at": 102.0,
+      "scene": "garden",
+      "cut": true
+    },
+    {
+      "at": 125.0,
+      "scene": "garden",
+      "cut": true
+    },
+    {
+      "at": 155.0,
+      "scene": "garden",
+      "cut": true
+    },
+    {
+      "at": 178.0,
+      "scene": "garden",
+      "cut": true
+    }
+  ]
+}

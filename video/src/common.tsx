@@ -114,8 +114,8 @@ export const TitleCards: React.FC<{
   accent: string;
   vertical: boolean;
 }> = ({ song, t, duration, color, accent, vertical }) => {
-  const first = song.lines[0]?.start ?? 0;
-  const last = song.lines[song.lines.length - 1]?.end ?? duration;
+  const first = song.lines[0]?.start ?? (song.titleAt ? song.titleAt[1] : 8);
+  const last = song.lines[song.lines.length - 1]?.end ?? (song.outroAt ?? duration - 15);
   const [introStart, introEnd] = song.titleAt ?? [0.3, Math.min(first - 0.3, 8)];
   const intro =
     introEnd - introStart > 1.2
@@ -124,9 +124,10 @@ export const TitleCards: React.FC<{
           extrapolateRight: "clamp",
         })
       : 0;
+  const outroStart = song.outroAt ?? (last + 0.6);
   const outro =
-    duration - last > 2
-      ? interpolate(t, [song.outroAt ?? last + 0.6, (song.outroAt ?? last + 0.6) + 1.2, duration - 0.6, duration], [0, 1, 1, 0], {
+    duration - outroStart > 2
+      ? interpolate(t, [outroStart, outroStart + 1.2, duration - 0.6, duration], [0, 1, 1, 0], {
           extrapolateLeft: "clamp",
           extrapolateRight: "clamp",
         })

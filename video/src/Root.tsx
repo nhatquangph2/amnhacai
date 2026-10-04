@@ -2,6 +2,7 @@ import React from "react";
 import { CalculateMetadataFunction, Composition, staticFile } from "remotion";
 import { getAudioDurationInSeconds } from "@remotion/media-utils";
 import { LyricVideo } from "./LyricVideo";
+import { AnimaticPlayer } from "./anim/AnimaticPlayer";
 import type { LyricVideoProps, Song } from "./types";
 
 const FPS = 30;
@@ -61,6 +62,16 @@ export const Root: React.FC = () => (
           durationInFrames={FPS * 10}
           defaultProps={{ song, ...firstChorus(song) } as LyricVideoProps}
           calculateMetadata={clipLength}
+        />
+        <Composition
+          id={`${song.id}-animatic`}
+          component={AnimaticPlayer}
+          width={1920}
+          height={1080}
+          fps={fpsOf(song)}
+          durationInFrames={FPS * 10}
+          defaultProps={{ song } as LyricVideoProps}
+          calculateMetadata={fullLength}
         />
       </React.Fragment>
     ))}

@@ -168,11 +168,18 @@ export const Figure: React.FC<FigureProps> = ({ pose, t, x, y, H, color = "#0d0c
       <ellipse cx={k.footL[0] + H * 0.025} cy={k.footL[1] + H * 0.008} rx={H * 0.042} ry={H * 0.018} fill={shoe} />
       {limb(k.sh, k.head, H * 0.045, H * 0.04, pal.skin, "neck")}
       <ellipse cx={k.head[0]} cy={k.head[1]} rx={H * 0.052} ry={H * 0.062} fill={pal.skin} transform={`rotate(${p.torso + p.head} ${k.head[0]} ${k.head[1]})`} />
-      {/* tóc: phủ sau gáy */}
-      <path
-        d={`M${k.head[0] - H * 0.058},${k.head[1] + H * 0.02} Q${k.head[0] - H * 0.07},${k.head[1] - H * 0.07} ${k.head[0] + H * 0.01},${k.head[1] - H * 0.068} Q${k.head[0] + H * 0.05},${k.head[1] - H * 0.06} ${k.head[0] + H * 0.045},${k.head[1] - H * 0.03} L${k.head[0] - H * 0.02},${k.head[1] - H * 0.02} Z`}
-        fill={pal.hair}
-      />
+      {/* tóc: ôm trọn vòm sọ và phủ nhẹ sau gáy */}
+      {pal.hair !== pal.skin && (
+        <path
+          d={`M${k.head[0] + H * 0.035},${k.head[1] - H * 0.025}
+              C${k.head[0] + H * 0.025},${k.head[1] - H * 0.065} ${k.head[0] - H * 0.01},${k.head[1] - H * 0.072} ${k.head[0] - H * 0.02},${k.head[1] - H * 0.072}
+              C${k.head[0] - H * 0.065},${k.head[1] - H * 0.072} ${k.head[0] - H * 0.075},${k.head[1] - H * 0.03} ${k.head[0] - H * 0.065},${k.head[1] + H * 0.015}
+              C${k.head[0] - H * 0.055},${k.head[1] + H * 0.045} ${k.head[0] - H * 0.035},${k.head[1] + H * 0.055} ${k.head[0] - H * 0.025},${k.head[1] + H * 0.055}
+              C${k.head[0] - H * 0.025},${k.head[1] + H * 0.02} ${k.head[0] - H * 0.035},${k.head[1] - H * 0.01} ${k.head[0] - H * 0.01},${k.head[1] - H * 0.03}
+              Z`}
+          fill={pal.hair}
+        />
+      )}
       {hat === "non" && (
         <path d={`M${k.head[0] - H * 0.11},${k.head[1] - H * 0.02} L${k.head[0] + H * 0.005},${k.head[1] - H * 0.13} L${k.head[0] + H * 0.12},${k.head[1] - H * 0.02} Z`} fill={withScarf ? "#d8c79a" : c} />
       )}

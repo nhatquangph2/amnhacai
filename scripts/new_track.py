@@ -20,6 +20,7 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parent.parent
 CATALOG = ROOT / "catalog" / "tracks.csv"
 RELEASES = ROOT / "releases"
+TEMPLATES = ROOT / "templates"
 
 SERIES = [
     "dung-day",     # Đứng Dậy — động lực & kiên cường
@@ -167,6 +168,19 @@ def main() -> int:
         "[Verse 1]\n\n[Pre-Chorus]\n\n[Chorus]\n\n[Verse 2]\n\n[Chorus]\n\n[Bridge]\n\n[Final Chorus]\n",
         encoding="utf-8",
     )
+
+    # Tự động tạo hồ sơ tiền kỳ chuẩn studio
+    char_template = TEMPLATES / "character-sheet-spec.md"
+    if char_template.exists():
+        content = char_template.read_text(encoding="utf-8")
+        content = content.replace("HB-xxx", track_id).replace("HB-004", track_id)
+        (folder / "CHARACTER_SHEET.md").write_text(content, encoding="utf-8")
+
+    color_template = TEMPLATES / "color-script-spec.md"
+    if color_template.exists():
+        content = color_template.read_text(encoding="utf-8")
+        content = content.replace("HB-xxx", track_id).replace("HB-004", track_id)
+        (folder / "COLOR_SCRIPT.md").write_text(content, encoding="utf-8")
 
     write_header = not CATALOG.exists() or CATALOG.stat().st_size == 0
     CATALOG.parent.mkdir(parents=True, exist_ok=True)

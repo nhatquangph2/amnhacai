@@ -1,3 +1,5 @@
 id,title,title_en,series,mood,bpm,key,duration_sec,status,ai_tool,ai_plan,created_date,release_date,spotify_url,youtube_url,notes
 HB-001,Tảng Đá,The Stone,doi-nguoi,"cô đơn → được tìm thấy, hy vọng",,,217,selected,Suno,Trả phí,2026-06-22,,,,Đoạn rap hợp hướng mới; cần WAV; sửa chính tả lời
 HB-002,Sau Mùa Giông,After the Storm,dung-day,"kiên cường, tự chữa lành",,,275,selected,Suno,Trả phí,2026-09-01,,,,Bị clip +0.1dBFS → master lại từ WAV; ứng viên single đầu tiên
+HB-003,Hẹn Ngày Nở Hoa,When the Flowers Bloom,hen-ngay-no-hoa,"hùng tráng, hy vọng, gắn kết",,,203,storyboard,Orchestral Instrumental,,2026-10-01,,,,The King's Coronation.wav (RIN); 5 nhân vật 9 phân đoạn
+HB-004,Dòng Chảy Cuộc Sống,The Flow of Life,dong-chay-cuoc-song,"chiêm nghiệm, tự do, an yên",,,198,storyboard,Acoustic & Lo-fi Pop,,2026-10-02,,,,DÒNG CHẢY CUỘC SỐNG_final.wav (RIN); hành trình chiếc thuyền giấy

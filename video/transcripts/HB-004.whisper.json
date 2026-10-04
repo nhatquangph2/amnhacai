@@ -1,0 +1,1556 @@
+{
+ "text": " Hãy subscribe cho kênh Ghiền Mì Gõ Để không bỏ lỡ những video hấp dẫn Hãy subscribe cho kênh Ghiền Mì Gõ Để không bỏ lỡ những video hấp dẫn Hãy subscribe cho kênh Ghiền Mì Gõ Để không bỏ lỡ những video hấp dẫn Hãy subscribe cho kênh Ghiền Mì Gõ Để không bỏ lỡ những video hấp dẫn Hãy subscribe cho kênh Ghiền Mì Gõ Để không bỏ lỡ những video hấp dẫn Hãy subscribe cho kênh Ghiền Mì Gõ Để không bỏ lỡ những video hấp dẫn Hãy subscribe cho kênh Ghiền Mì Gõ Để không bỏ lỡ những video hấp dẫn Hãy subscribe cho kênh Ghiền Mì Gõ Để không bỏ lỡ những video hấp dẫn Hãy subscribe cho kênh Ghiền Mì Gõ Để không bỏ lỡ những video hấp dẫn Hãy subscribe cho kênh Ghiền Mì Gõ Để không bỏ lỡ những video hấp dẫn Hãy subscribe cho kênh Ghiền Mì Gõ Để không bỏ lỡ những video hấp dẫn",
+ "segments": [
+  {
+   "id": 0,
+   "seek": 0,
+   "start": 14.140000000000002,
+   "end": 27.18,
+   "text": " Hãy subscribe cho kênh Ghiền Mì Gõ Để không bỏ lỡ những video hấp dẫn",
+   "tokens": [
+    50365,
+    389,
+    49205,
+    3022,
+    1586,
+    350,
+    5050,
+    71,
+    460,
+    4954,
+    26871,
+    376,
+    4749,
+    460,
+    5536,
+    13055,
+    9571,
+    11415,
+    272,
+    21920,
+    287,
+    1297,
+    94,
+    20136,
+    960,
+    276,
+    47176,
+    274,
+    35400,
+    51864
+   ],
+   "temperature": 0.0,
+   "avg_logprob": -0.0642114185517834,
+   "compression_ratio": 0.89,
+   "no_speech_prob": 1.743307408152983e-11,
+   "words": [
+    {
+     "word": " Hãy",
+     "start": 14.140000000000002,
+     "end": 14.6,
+     "probability": 0.60107421875
+    },
+    {
+     "word": " subscribe",
+     "start": 14.6,
+     "end": 14.62,
+     "probability": 0.96875
+    },
+    {
+     "word": " cho",
+     "start": 14.62,
+     "end": 14.62,
+     "probability": 0.9951171875
+    },
+    {
+     "word": " kênh",
+     "start": 14.62,
+     "end": 14.62,
+     "probability": 0.99853515625
+    },
+    {
+     "word": " Ghiền",
+     "start": 14.62,
+     "end": 14.64,
+     "probability": 0.98193359375
+    },
+    {
+     "word": " Mì",
+     "start": 14.64,
+     "end": 14.68,
+     "probability": 0.998046875
+    },
+    {
+     "word": " Gõ",
+     "start": 14.68,
+     "end": 14.7,
+     "probability": 0.998046875
+    },
+    {
+     "word": " Để",
+     "start": 14.7,
+     "end": 14.7,
+     "probability": 0.998046875
+    },
+    {
+     "word": " không",
+     "start": 14.7,
+     "end": 14.76,
+     "probability": 0.99755859375
+    },
+    {
+     "word": " bỏ",
+     "start": 14.76,
+     "end": 18.3,
+     "probability": 0.9990234375
+    },
+    {
+     "word": " lỡ",
+     "start": 18.3,
+     "end": 18.56,
+     "probability": 0.9990234375
+    },
+    {
+     "word": " những",
+     "start": 18.56,
+     "end": 23.26,
+     "probability": 0.998046875
+    },
+    {
+     "word": " video",
+     "start": 23.26,
+     "end": 24.54,
+     "probability": 0.99365234375
+    },
+    {
+     "word": " hấp",
+     "start": 24.54,
+     "end": 24.74,
+     "probability": 0.998046875
+    },
+    {
+     "word": " dẫn",
+     "start": 24.74,
+     "end": 27.18,
+     "probability": 0.9990234375
+    }
+   ]
+  },
+  {
+   "id": 1,
+   "seek": 3000,
+   "start": 40.14,
+   "end": 44.82,
+   "text": " Hãy subscribe cho kênh Ghiền Mì Gõ Để không bỏ lỡ những video hấp dẫn",
+   "tokens": [
+    50365,
+    389,
+    49205,
+    3022,
+    1586,
+    350,
+    5050,
+    71,
+    460,
+    4954,
+    26871,
+    376,
+    4749,
+    460,
+    5536,
+    13055,
+    9571,
+    11415,
+    272,
+    21920,
+    287,
+    1297,
+    94,
+    20136,
+    960,
+    276,
+    47176,
+    274,
+    35400,
+    51864
+   ],
+   "temperature": 0.0,
+   "avg_logprob": -0.02699606264791181,
+   "compression_ratio": 0.89,
+   "no_speech_prob": 2.2880570701988567e-11,
+   "words": [
+    {
+     "word": " Hãy",
+     "start": 40.14,
+     "end": 41.54,
+     "probability": 0.463134765625
+    },
+    {
+     "word": " subscribe",
+     "start": 41.54,
+     "end": 42.72,
+     "probability": 0.98828125
+    },
+    {
+     "word": " cho",
+     "start": 42.72,
+     "end": 42.72,
+     "probability": 0.9951171875
+    },
+    {
+     "word": " kênh",
+     "start": 42.72,
+     "end": 42.72,
+     "probability": 0.998046875
+    },
+    {
+     "word": " Ghiền",
+     "start": 42.72,
+     "end": 42.72,
+     "probability": 0.98486328125
+    },
+    {
+     "word": " Mì",
+     "start": 42.72,
+     "end": 42.72,
+     "probability": 0.9970703125
+    },
+    {
+     "word": " Gõ",
+     "start": 42.72,
+     "end": 42.72,
+     "probability": 0.99755859375
+    },
+    {
+     "word": " Để",
+     "start": 42.72,
+     "end": 42.72,
+     "probability": 0.9970703125
+    },
+    {
+     "word": " không",
+     "start": 42.72,
+     "end": 42.72,
+     "probability": 0.99658203125
+    },
+    {
+     "word": " bỏ",
+     "start": 42.72,
+     "end": 42.72,
+     "probability": 0.998046875
+    },
+    {
+     "word": " lỡ",
+     "start": 42.72,
+     "end": 43.8,
+     "probability": 0.998046875
+    },
+    {
+     "word": " những",
+     "start": 43.8,
+     "end": 43.94,
+     "probability": 0.998046875
+    },
+    {
+     "word": " video",
+     "start": 43.94,
+     "end": 44.38,
+     "probability": 0.98779296875
+    },
+    {
+     "word": " hấp",
+     "start": 44.38,
+     "end": 44.38,
+     "probability": 0.9931640625
+    },
+    {
+     "word": " dẫn",
+     "start": 44.38,
+     "end": 44.82,
+     "probability": 0.998046875
+    }
+   ]
+  },
+  {
+   "id": 2,
+   "seek": 6000,
+   "start": 70.39999999999999,
+   "end": 86.64,
+   "text": " Hãy subscribe cho kênh Ghiền Mì Gõ Để không bỏ lỡ những video hấp dẫn",
+   "tokens": [
+    50365,
+    389,
+    49205,
+    3022,
+    1586,
+    350,
+    5050,
+    71,
+    460,
+    4954,
+    26871,
+    376,
+    4749,
+    460,
+    5536,
+    13055,
+    9571,
+    11415,
+    272,
+    21920,
+    287,
+    1297,
+    94,
+    20136,
+    960,
+    276,
+    47176,
+    274,
+    35400,
+    51864
+   ],
+   "temperature": 0.0,
+   "avg_logprob": -0.03791523352265358,
+   "compression_ratio": 0.89,
+   "no_speech_prob": 2.4697691808350797e-11,
+   "words": [
+    {
+     "word": " Hãy",
+     "start": 70.39999999999999,
+     "end": 71.8,
+     "probability": 0.5673828125
+    },
+    {
+     "word": " subscribe",
+     "start": 71.8,
+     "end": 71.82,
+     "probability": 0.9853515625
+    },
+    {
+     "word": " cho",
+     "start": 71.82,
+     "end": 71.82,
+     "probability": 0.99560546875
+    },
+    {
+     "word": " kênh",
+     "start": 71.82,
+     "end": 71.82,
+     "probability": 0.99853515625
+    },
+    {
+     "word": " Ghiền",
+     "start": 71.82,
+     "end": 71.82,
+     "probability": 0.98583984375
+    },
+    {
+     "word": " Mì",
+     "start": 71.82,
+     "end": 71.82,
+     "probability": 0.998046875
+    },
+    {
+     "word": " Gõ",
+     "start": 71.82,
+     "end": 71.84,
+     "probability": 0.998046875
+    },
+    {
+     "word": " Để",
+     "start": 71.84,
+     "end": 71.84,
+     "probability": 0.998046875
+    },
+    {
+     "word": " không",
+     "start": 71.84,
+     "end": 71.84,
+     "probability": 0.99755859375
+    },
+    {
+     "word": " bỏ",
+     "start": 71.84,
+     "end": 80.22,
+     "probability": 0.9990234375
+    },
+    {
+     "word": " lỡ",
+     "start": 80.22,
+     "end": 82.28,
+     "probability": 0.9990234375
+    },
+    {
+     "word": " những",
+     "start": 82.28,
+     "end": 83.84,
+     "probability": 0.9990234375
+    },
+    {
+     "word": " video",
+     "start": 83.84,
+     "end": 85.88,
+     "probability": 0.99462890625
+    },
+    {
+     "word": " hấp",
+     "start": 85.88,
+     "end": 86.6,
+     "probability": 0.9970703125
+    },
+    {
+     "word": " dẫn",
+     "start": 86.6,
+     "end": 86.64,
+     "probability": 0.998046875
+    }
+   ]
+  },
+  {
+   "id": 3,
+   "seek": 8664,
+   "start": 97.13999999999999,
+   "end": 116.4,
+   "text": " Hãy subscribe cho kênh Ghiền Mì Gõ Để không bỏ lỡ những video hấp dẫn",
+   "tokens": [
+    50365,
+    389,
+    49205,
+    3022,
+    1586,
+    350,
+    5050,
+    71,
+    460,
+    4954,
+    26871,
+    376,
+    4749,
+    460,
+    5536,
+    13055,
+    9571,
+    11415,
+    272,
+    21920,
+    287,
+    1297,
+    94,
+    20136,
+    960,
+    276,
+    47176,
+    274,
+    35400,
+    51864
+   ],
+   "temperature": 0.0,
+   "avg_logprob": -0.04860582947731018,
+   "compression_ratio": 0.89,
+   "no_speech_prob": 2.774033953933941e-11,
+   "words": [
+    {
+     "word": " Hãy",
+     "start": 97.13999999999999,
+     "end": 98.53999999999999,
+     "probability": 0.52734375
+    },
+    {
+     "word": " subscribe",
+     "start": 98.53999999999999,
+     "end": 99.94,
+     "probability": 0.98583984375
+    },
+    {
+     "word": " cho",
+     "start": 99.94,
+     "end": 99.94,
+     "probability": 0.99462890625
+    },
+    {
+     "word": " kênh",
+     "start": 99.94,
+     "end": 99.94,
+     "probability": 0.99853515625
+    },
+    {
+     "word": " Ghiền",
+     "start": 99.94,
+     "end": 99.94,
+     "probability": 0.9873046875
+    },
+    {
+     "word": " Mì",
+     "start": 99.94,
+     "end": 99.94,
+     "probability": 0.998046875
+    },
+    {
+     "word": " Gõ",
+     "start": 99.94,
+     "end": 100.08,
+     "probability": 0.998046875
+    },
+    {
+     "word": " Để",
+     "start": 100.08,
+     "end": 100.08,
+     "probability": 0.9970703125
+    },
+    {
+     "word": " không",
+     "start": 100.08,
+     "end": 100.08,
+     "probability": 0.99755859375
+    },
+    {
+     "word": " bỏ",
+     "start": 100.08,
+     "end": 109.48,
+     "probability": 0.99853515625
+    },
+    {
+     "word": " lỡ",
+     "start": 109.48,
+     "end": 115.52,
+     "probability": 0.9990234375
+    },
+    {
+     "word": " những",
+     "start": 115.52,
+     "end": 116.4,
+     "probability": 0.99853515625
+    },
+    {
+     "word": " video",
+     "start": 116.4,
+     "end": 116.4,
+     "probability": 0.99560546875
+    },
+    {
+     "word": " hấp",
+     "start": 116.4,
+     "end": 116.4,
+     "probability": 0.9970703125
+    },
+    {
+     "word": " dẫn",
+     "start": 116.4,
+     "end": 116.4,
+     "probability": 0.998046875
+    }
+   ]
+  },
+  {
+   "id": 4,
+   "seek": 11640,
+   "start": 120.02,
+   "end": 122.58,
+   "text": " Hãy subscribe cho kênh Ghiền Mì Gõ Để không bỏ lỡ những video hấp dẫn",
+   "tokens": [
+    50365,
+    389,
+    49205,
+    3022,
+    1586,
+    350,
+    5050,
+    71,
+    460,
+    4954,
+    26871,
+    376,
+    4749,
+    460,
+    5536,
+    13055,
+    9571,
+    11415,
+    272,
+    21920,
+    287,
+    1297,
+    94,
+    20136,
+    960,
+    276,
+    47176,
+    274,
+    35400,
+    51864
+   ],
+   "temperature": 0.0,
+   "avg_logprob": -0.09326930199899981,
+   "compression_ratio": 0.89,
+   "no_speech_prob": 2.7551655401580888e-11,
+   "words": [
+    {
+     "word": " Hãy",
+     "start": 120.02,
+     "end": 120.14,
+     "probability": 0.494140625
+    },
+    {
+     "word": " subscribe",
+     "start": 120.14,
+     "end": 120.26,
+     "probability": 0.9921875
+    },
+    {
+     "word": " cho",
+     "start": 120.26,
+     "end": 120.28,
+     "probability": 0.9912109375
+    },
+    {
+     "word": " kênh",
+     "start": 120.28,
+     "end": 120.34,
+     "probability": 0.998046875
+    },
+    {
+     "word": " Ghiền",
+     "start": 120.34,
+     "end": 120.4,
+     "probability": 0.98681640625
+    },
+    {
+     "word": " Mì",
+     "start": 120.4,
+     "end": 120.44,
+     "probability": 0.998046875
+    },
+    {
+     "word": " Gõ",
+     "start": 120.44,
+     "end": 120.82,
+     "probability": 0.9970703125
+    },
+    {
+     "word": " Để",
+     "start": 120.82,
+     "end": 120.86,
+     "probability": 0.99658203125
+    },
+    {
+     "word": " không",
+     "start": 120.86,
+     "end": 120.88,
+     "probability": 0.99658203125
+    },
+    {
+     "word": " bỏ",
+     "start": 120.88,
+     "end": 122.14,
+     "probability": 0.998046875
+    },
+    {
+     "word": " lỡ",
+     "start": 122.14,
+     "end": 122.2,
+     "probability": 0.998046875
+    },
+    {
+     "word": " những",
+     "start": 122.2,
+     "end": 122.2,
+     "probability": 0.99755859375
+    },
+    {
+     "word": " video",
+     "start": 122.2,
+     "end": 122.58,
+     "probability": 0.99560546875
+    },
+    {
+     "word": " hấp",
+     "start": 122.58,
+     "end": 122.58,
+     "probability": 0.994140625
+    },
+    {
+     "word": " dẫn",
+     "start": 122.58,
+     "end": 122.58,
+     "probability": 0.998046875
+    }
+   ]
+  },
+  {
+   "id": 5,
+   "seek": 14640,
+   "start": 153.78,
+   "end": 160.38,
+   "text": " Hãy subscribe cho kênh Ghiền Mì Gõ Để không bỏ lỡ những video hấp dẫn",
+   "tokens": [
+    50365,
+    389,
+    49205,
+    3022,
+    1586,
+    350,
+    5050,
+    71,
+    460,
+    4954,
+    26871,
+    376,
+    4749,
+    460,
+    5536,
+    13055,
+    9571,
+    11415,
+    272,
+    21920,
+    287,
+    1297,
+    94,
+    20136,
+    960,
+    276,
+    47176,
+    274,
+    35400,
+    50465
+   ],
+   "temperature": 0.0,
+   "avg_logprob": -0.0680900389148343,
+   "compression_ratio": 1.7211538461538463,
+   "no_speech_prob": 4.114951435152392e-11,
+   "words": [
+    {
+     "word": " Hãy",
+     "start": 153.78,
+     "end": 155.18,
+     "probability": 0.7275390625
+    },
+    {
+     "word": " subscribe",
+     "start": 155.18,
+     "end": 155.18,
+     "probability": 0.9853515625
+    },
+    {
+     "word": " cho",
+     "start": 155.18,
+     "end": 155.18,
+     "probability": 0.9951171875
+    },
+    {
+     "word": " kênh",
+     "start": 155.18,
+     "end": 155.18,
+     "probability": 0.99853515625
+    },
+    {
+     "word": " Ghiền",
+     "start": 155.18,
+     "end": 155.18,
+     "probability": 0.98974609375
+    },
+    {
+     "word": " Mì",
+     "start": 155.18,
+     "end": 155.18,
+     "probability": 0.99853515625
+    },
+    {
+     "word": " Gõ",
+     "start": 155.18,
+     "end": 155.18,
+     "probability": 0.99853515625
+    },
+    {
+     "word": " Để",
+     "start": 155.18,
+     "end": 155.2,
+     "probability": 0.99853515625
+    },
+    {
+     "word": " không",
+     "start": 155.2,
+     "end": 155.84,
+     "probability": 0.998046875
+    },
+    {
+     "word": " bỏ",
+     "start": 155.84,
+     "end": 158.46,
+     "probability": 0.9990234375
+    },
+    {
+     "word": " lỡ",
+     "start": 158.46,
+     "end": 160.02,
+     "probability": 0.9990234375
+    },
+    {
+     "word": " những",
+     "start": 160.02,
+     "end": 160.38,
+     "probability": 0.99853515625
+    },
+    {
+     "word": " video",
+     "start": 160.38,
+     "end": 160.38,
+     "probability": 0.99365234375
+    },
+    {
+     "word": " hấp",
+     "start": 160.38,
+     "end": 160.38,
+     "probability": 0.998046875
+    },
+    {
+     "word": " dẫn",
+     "start": 160.38,
+     "end": 160.38,
+     "probability": 0.99853515625
+    }
+   ]
+  },
+  {
+   "id": 6,
+   "seek": 14640,
+   "start": 160.38,
+   "end": 175.08,
+   "text": " Hãy subscribe cho kênh Ghiền Mì Gõ Để không bỏ lỡ những video hấp dẫn",
+   "tokens": [
+    50465,
+    389,
+    49205,
+    3022,
+    1586,
+    350,
+    5050,
+    71,
+    460,
+    4954,
+    26871,
+    376,
+    4749,
+    460,
+    5536,
+    13055,
+    9571,
+    11415,
+    272,
+    21920,
+    287,
+    1297,
+    94,
+    20136,
+    960,
+    276,
+    47176,
+    274,
+    35400,
+    50465
+   ],
+   "temperature": 0.0,
+   "avg_logprob": -0.0680900389148343,
+   "compression_ratio": 1.7211538461538463,
+   "no_speech_prob": 4.114951435152392e-11,
+   "words": [
+    {
+     "word": " Hãy",
+     "start": 160.38,
+     "end": 161.62,
+     "probability": 0.91943359375
+    },
+    {
+     "word": " subscribe",
+     "start": 161.62,
+     "end": 162.34,
+     "probability": 0.99755859375
+    },
+    {
+     "word": " cho",
+     "start": 162.34,
+     "end": 162.42,
+     "probability": 0.9990234375
+    },
+    {
+     "word": " kênh",
+     "start": 162.42,
+     "end": 162.76,
+     "probability": 0.99951171875
+    },
+    {
+     "word": " Ghiền",
+     "start": 162.76,
+     "end": 162.8,
+     "probability": 0.99658203125
+    },
+    {
+     "word": " Mì",
+     "start": 162.8,
+     "end": 162.8,
+     "probability": 0.9990234375
+    },
+    {
+     "word": " Gõ",
+     "start": 162.8,
+     "end": 163.7,
+     "probability": 1.0
+    },
+    {
+     "word": " Để",
+     "start": 163.7,
+     "end": 168.38,
+     "probability": 1.0
+    },
+    {
+     "word": " không",
+     "start": 168.38,
+     "end": 169.08,
+     "probability": 0.9990234375
+    },
+    {
+     "word": " bỏ",
+     "start": 169.08,
+     "end": 169.46,
+     "probability": 0.99951171875
+    },
+    {
+     "word": " lỡ",
+     "start": 169.46,
+     "end": 173.74,
+     "probability": 1.0
+    },
+    {
+     "word": " những",
+     "start": 173.74,
+     "end": 175.08,
+     "probability": 1.0
+    },
+    {
+     "word": " video",
+     "start": 175.08,
+     "end": 175.08,
+     "probability": 0.99853515625
+    },
+    {
+     "word": " hấp",
+     "start": 175.08,
+     "end": 175.08,
+     "probability": 1.0
+    },
+    {
+     "word": " dẫn",
+     "start": 175.08,
+     "end": 175.08,
+     "probability": 0.9990234375
+    }
+   ]
+  },
+  {
+   "id": 7,
+   "seek": 17508,
+   "start": 175.08,
+   "end": 178.08,
+   "text": " Hãy subscribe cho kênh Ghiền Mì Gõ Để không bỏ lỡ những video hấp dẫn",
+   "tokens": [
+    50365,
+    389,
+    49205,
+    3022,
+    1586,
+    350,
+    5050,
+    71,
+    460,
+    4954,
+    26871,
+    376,
+    4749,
+    460,
+    5536,
+    13055,
+    9571,
+    11415,
+    272,
+    21920,
+    287,
+    1297,
+    94,
+    20136,
+    960,
+    276,
+    47176,
+    274,
+    35400,
+    50465
+   ],
+   "temperature": 0.0,
+   "avg_logprob": -0.04392965378299836,
+   "compression_ratio": 1.7211538461538463,
+   "no_speech_prob": 7.279699759665803e-11,
+   "words": [
+    {
+     "word": " Hãy",
+     "start": 175.08,
+     "end": 176.28,
+     "probability": 0.298095703125
+    },
+    {
+     "word": " subscribe",
+     "start": 176.28,
+     "end": 176.38,
+     "probability": 0.95849609375
+    },
+    {
+     "word": " cho",
+     "start": 176.38,
+     "end": 176.38,
+     "probability": 0.99658203125
+    },
+    {
+     "word": " kênh",
+     "start": 176.38,
+     "end": 176.38,
+     "probability": 0.998046875
+    },
+    {
+     "word": " Ghiền",
+     "start": 176.38,
+     "end": 176.38,
+     "probability": 0.9794921875
+    },
+    {
+     "word": " Mì",
+     "start": 176.38,
+     "end": 176.38,
+     "probability": 0.99072265625
+    },
+    {
+     "word": " Gõ",
+     "start": 176.38,
+     "end": 176.38,
+     "probability": 0.9970703125
+    },
+    {
+     "word": " Để",
+     "start": 176.38,
+     "end": 176.38,
+     "probability": 0.99609375
+    },
+    {
+     "word": " không",
+     "start": 176.38,
+     "end": 176.38,
+     "probability": 0.9970703125
+    },
+    {
+     "word": " bỏ",
+     "start": 176.38,
+     "end": 176.56,
+     "probability": 0.99853515625
+    },
+    {
+     "word": " lỡ",
+     "start": 176.56,
+     "end": 176.86,
+     "probability": 0.99853515625
+    },
+    {
+     "word": " những",
+     "start": 176.86,
+     "end": 178.08,
+     "probability": 0.99853515625
+    },
+    {
+     "word": " video",
+     "start": 178.08,
+     "end": 178.08,
+     "probability": 0.994140625
+    },
+    {
+     "word": " hấp",
+     "start": 178.08,
+     "end": 178.08,
+     "probability": 0.998046875
+    },
+    {
+     "word": " dẫn",
+     "start": 178.08,
+     "end": 178.08,
+     "probability": 0.998046875
+    }
+   ]
+  },
+  {
+   "id": 8,
+   "seek": 17508,
+   "start": 186.34,
+   "end": 204.88,
+   "text": " Hãy subscribe cho kênh Ghiền Mì Gõ Để không bỏ lỡ những video hấp dẫn",
+   "tokens": [
+    50465,
+    389,
+    49205,
+    3022,
+    1586,
+    350,
+    5050,
+    71,
+    460,
+    4954,
+    26871,
+    376,
+    4749,
+    460,
+    5536,
+    13055,
+    9571,
+    11415,
+    272,
+    21920,
+    287,
+    1297,
+    94,
+    20136,
+    960,
+    276,
+    47176,
+    274,
+    35400,
+    50465
+   ],
+   "temperature": 0.0,
+   "avg_logprob": -0.04392965378299836,
+   "compression_ratio": 1.7211538461538463,
+   "no_speech_prob": 7.279699759665803e-11,
+   "words": [
+    {
+     "word": " Hãy",
+     "start": 186.34,
+     "end": 187.74,
+     "probability": 0.7841796875
+    },
+    {
+     "word": " subscribe",
+     "start": 187.74,
+     "end": 188.56,
+     "probability": 0.99755859375
+    },
+    {
+     "word": " cho",
+     "start": 188.56,
+     "end": 188.56,
+     "probability": 0.99951171875
+    },
+    {
+     "word": " kênh",
+     "start": 188.56,
+     "end": 188.56,
+     "probability": 1.0
+    },
+    {
+     "word": " Ghiền",
+     "start": 188.56,
+     "end": 188.56,
+     "probability": 0.99658203125
+    },
+    {
+     "word": " Mì",
+     "start": 188.56,
+     "end": 188.56,
+     "probability": 0.9990234375
+    },
+    {
+     "word": " Gõ",
+     "start": 188.56,
+     "end": 188.56,
+     "probability": 1.0
+    },
+    {
+     "word": " Để",
+     "start": 188.56,
+     "end": 188.58,
+     "probability": 1.0
+    },
+    {
+     "word": " không",
+     "start": 188.58,
+     "end": 204.88,
+     "probability": 0.9990234375
+    },
+    {
+     "word": " bỏ",
+     "start": 204.88,
+     "end": 204.88,
+     "probability": 0.99951171875
+    },
+    {
+     "word": " lỡ",
+     "start": 204.88,
+     "end": 204.88,
+     "probability": 1.0
+    },
+    {
+     "word": " những",
+     "start": 204.88,
+     "end": 204.88,
+     "probability": 1.0
+    },
+    {
+     "word": " video",
+     "start": 204.88,
+     "end": 204.88,
+     "probability": 0.9990234375
+    },
+    {
+     "word": " hấp",
+     "start": 204.88,
+     "end": 204.88,
+     "probability": 1.0
+    },
+    {
+     "word": " dẫn",
+     "start": 204.88,
+     "end": 204.88,
+     "probability": 0.99951171875
+    }
+   ]
+  },
+  {
+   "id": 9,
+   "seek": 20488,
+   "start": 205.29999999999998,
+   "end": 206.38,
+   "text": " Hãy subscribe cho kênh Ghiền Mì Gõ Để không bỏ lỡ những video hấp dẫn",
+   "tokens": [
+    50365,
+    389,
+    49205,
+    3022,
+    1586,
+    350,
+    5050,
+    71,
+    460,
+    4954,
+    26871,
+    376,
+    4749,
+    460,
+    5536,
+    13055,
+    9571,
+    11415,
+    272,
+    21920,
+    287,
+    1297,
+    94,
+    20136,
+    960,
+    276,
+    47176,
+    274,
+    35400,
+    50465
+   ],
+   "temperature": 1.0,
+   "avg_logprob": -0.03515903242341765,
+   "compression_ratio": 5.084905660377358,
+   "no_speech_prob": 3.924465197258087e-09,
+   "words": [
+    {
+     "word": " Hãy",
+     "start": 205.29999999999998,
+     "end": 205.7,
+     "probability": 0.74169921875
+    },
+    {
+     "word": " subscribe",
+     "start": 205.7,
+     "end": 205.7,
+     "probability": 0.81689453125
+    },
+    {
+     "word": " cho",
+     "start": 205.7,
+     "end": 205.7,
+     "probability": 0.9970703125
+    },
+    {
+     "word": " kênh",
+     "start": 205.7,
+     "end": 205.7,
+     "probability": 0.9990234375
+    },
+    {
+     "word": " Ghiền",
+     "start": 205.7,
+     "end": 205.7,
+     "probability": 0.83154296875
+    },
+    {
+     "word": " Mì",
+     "start": 205.7,
+     "end": 205.7,
+     "probability": 0.998046875
+    },
+    {
+     "word": " Gõ",
+     "start": 205.7,
+     "end": 205.72,
+     "probability": 0.99853515625
+    },
+    {
+     "word": " Để",
+     "start": 205.72,
+     "end": 205.72,
+     "probability": 0.99853515625
+    },
+    {
+     "word": " không",
+     "start": 205.72,
+     "end": 205.72,
+     "probability": 0.9970703125
+    },
+    {
+     "word": " bỏ",
+     "start": 205.72,
+     "end": 205.72,
+     "probability": 0.9990234375
+    },
+    {
+     "word": " lỡ",
+     "start": 205.72,
+     "end": 205.8,
+     "probability": 0.9990234375
+    },
+    {
+     "word": " những",
+     "start": 205.8,
+     "end": 206.1,
+     "probability": 0.9990234375
+    },
+    {
+     "word": " video",
+     "start": 206.1,
+     "end": 206.1,
+     "probability": 0.99853515625
+    },
+    {
+     "word": " hấp",
+     "start": 206.1,
+     "end": 206.3,
+     "probability": 0.99853515625
+    },
+    {
+     "word": " dẫn",
+     "start": 206.3,
+     "end": 206.38,
+     "probability": 0.9990234375
+    }
+   ]
+  },
+  {
+   "id": 10,
+   "seek": 20488,
+   "start": 206.38,
+   "end": 206.88,
+   "text": " Hãy subscribe cho kênh Ghiền Mì Gõ Để không bỏ lỡ những video hấp dẫn",
+   "tokens": [
+    50465,
+    389,
+    49205,
+    3022,
+    1586,
+    350,
+    5050,
+    71,
+    460,
+    4954,
+    26871,
+    376,
+    4749,
+    460,
+    5536,
+    13055,
+    9571,
+    11415,
+    272,
+    21920,
+    287,
+    1297,
+    94,
+    20136,
+    960,
+    276,
+    47176,
+    274,
+    35400,
+    50465
+   ],
+   "temperature": 1.0,
+   "avg_logprob": -0.03515903242341765,
+   "compression_ratio": 5.084905660377358,
+   "no_speech_prob": 3.924465197258087e-09,
+   "words": [
+    {
+     "word": " Hãy",
+     "start": 206.38,
+     "end": 206.88,
+     "probability": 0.771484375
+    },
+    {
+     "word": " subscribe",
+     "start": 206.88,
+     "end": 206.88,
+     "probability": 0.9873046875
+    },
+    {
+     "word": " cho",
+     "start": 206.88,
+     "end": 206.88,
+     "probability": 0.9990234375
+    },
+    {
+     "word": " kênh",
+     "start": 206.88,
+     "end": 206.88,
+     "probability": 1.0
+    },
+    {
+     "word": " Ghiền",
+     "start": 206.88,
+     "end": 206.88,
+     "probability": 0.99853515625
+    },
+    {
+     "word": " Mì",
+     "start": 206.88,
+     "end": 206.88,
+     "probability": 0.99951171875
+    },
+    {
+     "word": " Gõ",
+     "start": 206.88,
+     "end": 206.88,
+     "probability": 0.9990234375
+    },
+    {
+     "word": " Để",
+     "start": 206.88,
+     "end": 206.88,
+     "probability": 1.0
+    },
+    {
+     "word": " không",
+     "start": 206.88,
+     "end": 206.88,
+     "probability": 0.9990234375
+    },
+    {
+     "word": " bỏ",
+     "start": 206.88,
+     "end": 206.88,
+     "probability": 0.99951171875
+    },
+    {
+     "word": " lỡ",
+     "start": 206.88,
+     "end": 206.88,
+     "probability": 1.0
+    },
+    {
+     "word": " những",
+     "start": 206.88,
+     "end": 206.88,
+     "probability": 1.0
+    },
+    {
+     "word": " video",
+     "start": 206.88,
+     "end": 206.88,
+     "probability": 0.99951171875
+    },
+    {
+     "word": " hấp",
+     "start": 206.88,
+     "end": 206.88,
+     "probability": 1.0
+    },
+    {
+     "word": " dẫn",
+     "start": 206.88,
+     "end": 206.88,
+     "probability": 1.0
+    }
+   ]
+  },
+  {
+   "id": 11,
+   "seek": 20488,
+   "start": 206.88,
+   "end": 206.88,
+   "text": "",
+   "tokens": [],
+   "temperature": 1.0,
+   "avg_logprob": -0.03515903242341765,
+   "compression_ratio": 5.084905660377358,
+   "no_speech_prob": 3.924465197258087e-09,
+   "words": []
+  },
+  {
+   "id": 12,
+   "seek": 20488,
+   "start": 206.88,
+   "end": 206.88,
+   "text": "",
+   "tokens": [],
+   "temperature": 1.0,
+   "avg_logprob": -0.03515903242341765,
+   "compression_ratio": 5.084905660377358,
+   "no_speech_prob": 3.924465197258087e-09,
+   "words": []
+  },
+  {
+   "id": 13,
+   "seek": 20488,
+   "start": 206.88,
+   "end": 206.88,
+   "text": "",
+   "tokens": [],
+   "temperature": 1.0,
+   "avg_logprob": -0.03515903242341765,
+   "compression_ratio": 5.084905660377358,
+   "no_speech_prob": 3.924465197258087e-09,
+   "words": []
+  },
+  {
+   "id": 14,
+   "seek": 20488,
+   "start": 206.88,
+   "end": 206.88,
+   "text": "",
+   "tokens": [],
+   "temperature": 1.0,
+   "avg_logprob": -0.03515903242341765,
+   "compression_ratio": 5.084905660377358,
+   "no_speech_prob": 3.924465197258087e-09,
+   "words": []
+  },
+  {
+   "id": 15,
+   "seek": 20688,
+   "start": 206.86,
+   "end": 206.86,
+   "text": "",
+   "tokens": [],
+   "temperature": 0.0,
+   "avg_logprob": -0.1795199712117513,
+   "compression_ratio": 0.8787878787878788,
+   "no_speech_prob": 6.808414942938157e-11,
+   "words": []
+  }
+ ],
+ "language": "vi"
+}

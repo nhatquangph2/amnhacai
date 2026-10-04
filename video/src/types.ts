@@ -9,7 +9,7 @@ export type FigureSpec = { pose: PoseName; x0: number; x1?: number; H: number; f
 // Một cảnh của MV hoạt hình (kiểu "anim"): cây trên đồi hoặc các cảnh của nhân vật
 export type Shot = {
   at: number; // giây bắt đầu
-  scene: "hill" | "room" | "street" | "desk" | "notebook" | "bank" | "painted" | "brush" | "genesis" | "deep" | "lift" | "truck" | "ridge" | "nightroad" | "plaza" | "holeview" | "person";
+  scene: "hill" | "room" | "street" | "desk" | "notebook" | "bank" | "painted" | "brush" | "genesis" | "deep" | "lift" | "truck" | "ridge" | "nightroad" | "plaza" | "holeview" | "person" | "garden" | "riverjourney";
   tOff?: number; // lệch thời gian cảnh (dùng lại cảnh cũ trong đoạn hồi ức)
   cut?: boolean; // cắt thẳng (mặc định mờ chéo 0.8s)
   // Nhân vật trên đồi: đi từ x0 → x1 trong suốt cảnh
@@ -34,6 +34,19 @@ export type LyricLine = {
   hook?: boolean; // câu hook: phóng lớn giữa màn hình (kiểu film)
 };
 
+// Phân cảnh Storyboard / Animatic chuẩn tiền kỳ điện ảnh
+export type StoryboardBeat = {
+  id: string; // "SH-01", "SH-02"...
+  start: number; // giây bắt đầu
+  end: number; // giây kết thúc
+  framing?: string; // "ECU", "Wide", "MCU", "Over-the-Shoulder"...
+  camera?: string; // "Static Frame", "Slow Drone Zoom-out", "Tracking"...
+  action?: string; // Mô tả hành động và nhân vật
+  mood?: string; // Cảm xúc / nhiệt độ màu (Kelvin)
+  palette?: string[]; // Bảng mã màu Color Script (4 - 5 màu hex)
+  image?: string; // Ảnh phác thảo / sketch trong public/ nếu có
+};
+
 // Một cảnh MV (kiểu film): clip AI / ảnh trong public/, hoặc "black" để cắt đen
 export type Scene = {
   id?: string; // S01... theo kịch bản
@@ -56,6 +69,7 @@ export type Song = {
   emphasis?: string[]; // từ khóa tô màu nhấn, vd ["giông", "rễ"]
   scenes?: Scene[]; // phân cảnh MV — thiếu file thì cảnh đó tự dùng nền mặc định
   shots?: Shot[]; // phân cảnh MV hoạt hình (tuyến người + tuyến cây)
+  storyboard?: StoryboardBeat[]; // phân cảnh Storyboard / Animatic tiền kỳ
   anim?: AnimKey[]; // kịch bản chuyển động cho kiểu "anim" (MV hoạt hình) — xem src/anim/params.ts
   synced: boolean; // false = thời gian đang là ước lượng, chưa tap-sync
   titleAt?: [number, number]; // thời điểm hiện thẻ tên bài (mặc định đoạn dạo đầu, tối đa 8 s)
@@ -67,7 +81,21 @@ export type Song = {
   depth?: boolean; // tranh nền dùng video chiều sâu 2.5D (npm run depth) thay ảnh tĩnh — kiểu anim, cảnh "painted"
   noLyrics?: boolean; // bản "sạch" không phụ đề (npm run render -- --clean) để dựng tiếp trong DaVinci Resolve
   lyricsTop?: boolean; // phụ đề ở phía trên khung (khi hành động diễn ra ở nửa dưới)
+  paper?: boolean; // phủ chất liệu giấy dó + thớ giấy (kiểu anim) — chỉ bật cho bài cần, không đổi MV đã duyệt
+  foley?: FoleyTrack[]; // Các rãnh âm thanh môi trường & hiệu ứng đời sống
   lines: LyricLine[];
+};
+
+// Cấu hình một rãnh âm thanh Foley / Ambience môi trường có Audio Ducking thông minh
+export type FoleyTrack = {
+  id: string; // "clock", "water", "wind", "rain", "page", "sigh"
+  src: string; // "foley/clock_tick.wav"
+  start?: number; // thời điểm bắt đầu (giây), mặc định 0
+  end?: number; // thời điểm kết thúc (giây), mặc định cả bài
+  loop?: boolean; // lặp lại trong suốt khoảng thời gian
+  baseVolume?: number; // âm lượng gốc lúc không có lời (0.0 - 1.0, mặc định 0.5)
+  duckVolume?: number; // âm lượng khi có lời hát (0.0 - 1.0, mặc định 0.12 = 12%)
+  duckFade?: number; // thời gian fade ducking (giây, mặc định 0.4s)
 };
 
 export type LyricVideoProps = {

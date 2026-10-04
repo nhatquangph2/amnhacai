@@ -11,6 +11,9 @@
 *.psd
 *.aep
 releases/**/audio/stems/
+# Ảnh/video render thử và ảnh kiểm tra — tạo lại được
+releases/**/out/
+video/review/
 
 # Hệ thống
 .DS_Store

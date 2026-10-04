@@ -9,14 +9,18 @@
     "align": "node scripts/align.mjs",
     "sync": "node scripts/sync.mjs",
     "render": "node scripts/render.mjs",
+    "animatic": "node scripts/render.mjs --animatic",
     "typecheck": "tsc --noEmit",
     "assets": "node scripts/assets.mjs",
     "resolve": "node scripts/resolve.mjs",
     "depth": ".venv-fx/bin/python scripts/depth.py"
   },
   "dependencies": {
+    "@remotion/captions": "^4.0.529",
     "@remotion/cli": "4.0.529",
     "@remotion/media-utils": "4.0.529",
+    "@remotion/paths": "^4.0.529",
+    "@remotion/transitions": "^4.0.529",
     "react": "19.2.8",
     "react-dom": "19.2.8",
     "remotion": "4.0.529"
