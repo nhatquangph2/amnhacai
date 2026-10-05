@@ -777,11 +777,6 @@ const RiverJourneyFrame: React.FC<SceneProps> = ({ t }) => {
             stroke="#a93232"
             strokeWidth="3"
           />
-
-          <Parallax depth={1.35}>
-            <StreetLamp x={240} y={420} scale={1.15} color="#151b22" rim="#dbe5ed" />
-            <StreetLamp x={1680} y={440} scale={1.1} color="#151b22" rim="#dbe5ed" />
-          </Parallax>
         </>
       )}
 
@@ -792,10 +787,6 @@ const RiverJourneyFrame: React.FC<SceneProps> = ({ t }) => {
           <HazePlane color="#c8d2db" opacity={0.28} />
           <Town opacity={1} />
           <Crowd t={t} />
-          <Parallax depth={1.35}>
-            <StreetLamp x={180} y={400} scale={1.2} color="#141a22" rim="#f2dfce" glow />
-            <StreetLamp x={1740} y={420} scale={1.15} color="#141a22" rim="#f2dfce" />
-          </Parallax>
         </>
       )}
 
@@ -823,10 +814,7 @@ const RiverJourneyFrame: React.FC<SceneProps> = ({ t }) => {
             opacity=".12"
           />
 
-          <Parallax depth={1.35}>
-            <BridgeRailing x={450} y={760} w={950} color="#10151c" rim="#f2dfce" />
-            <StreetLamp x={1260} y={340} scale={0.95} color="#141a22" rim="#f2dfce" glow />
-          </Parallax>
+          <BridgeRailing x={450} y={780} w={950} color="#10151c" rim="#f2dfce" />
         </>
       )}
 
@@ -843,10 +831,6 @@ const RiverJourneyFrame: React.FC<SceneProps> = ({ t }) => {
           <Adult x={lerp(610, 700, ease(clamp(p/.55)))} y={712} scale={1}
             pose={p < .55 ? "walk" : "still"} t={t} ground />
           <ellipse cx="704" cy="750" rx="29" ry="6" fill="#343b35" opacity=".3" />
-          <Parallax depth={1.35}>
-            <Reeds x={1440} y={1020} w={280} t={t} color="#0d141c" rim="#f5e2cb" />
-            <Posts x={340} y={1010} rim="#f5e2cb" />
-          </Parallax>
         </>
       )}
 
@@ -870,10 +854,6 @@ const RiverJourneyFrame: React.FC<SceneProps> = ({ t }) => {
           <StudioFishSchool x={1180} y={885} t={t} count={5} scale={0.75} />
           <Boat x={lerp(1320, 1050, ease(p))} y={795} scale={1.1} t={t}
             child={<Child x={-70} y={-20} scale={1} pose="reach" t={t} />} />
-          <Parallax depth={1.4}>
-            <Reeds x={360} y={1010} w={240} t={t} color="#10161a" rim="#ffcf9a" />
-            <Posts x={1560} y={1010} rim="#ffcf9a" />
-          </Parallax>
         </>
       )}
 
@@ -894,10 +874,6 @@ const RiverJourneyFrame: React.FC<SceneProps> = ({ t }) => {
           <Adult x={lerp(700, 995, ease(clamp((p-.2)/.7)))}
             y={lerp(712, 772, ease(clamp((p-.2)/.7)))} scale={.82}
             pose={p < .2 ? "reach" : p < .9 ? "walk" : "still"} t={t} ground />
-          <Parallax depth={1.4}>
-            <Reeds x={560} y={1000} w={260} t={t} color="#10161a" rim="#ffcf9a" />
-            <Posts x={1500} y={1010} rim="#ffcf9a" />
-          </Parallax>
         </>
       )}
 
@@ -990,11 +966,6 @@ const RiverJourneyFrame: React.FC<SceneProps> = ({ t }) => {
               />
             </g>
           )}
-
-          <Parallax depth={1.45}>
-            <Reeds x={1480} y={1020} w={300} t={t} color="#10171d" rim="#ffcf9a" />
-            <Posts x={260} y={1030} rim="#ffcf9a" />
-          </Parallax>
         </>
       )}
 
@@ -1092,11 +1063,6 @@ const RiverJourneyFrame: React.FC<SceneProps> = ({ t }) => {
               t={t}
             />
           )}
-
-          <Parallax depth={1.4}>
-            <Branch x={260} y={320} t={t} />
-            <Reeds x={1520} y={1010} w={260} t={t} color="#0f161b" rim="#ffd49e" />
-          </Parallax>
         </>
       )}
 
@@ -1173,11 +1139,6 @@ const RiverJourneyFrame: React.FC<SceneProps> = ({ t }) => {
               />
             }
           />
-
-          <Parallax depth={1.4}>
-            <Branch x={180} y={350} t={t} />
-            <Reeds x={1550} y={1020} w={240} t={t} color="#0c1618" rim="#ffe699" />
-          </Parallax>
         </>
       )}
 
@@ -1261,11 +1222,6 @@ const RiverJourneyFrame: React.FC<SceneProps> = ({ t }) => {
               />
             </g>
           )}
-
-          <Parallax depth={1.4}>
-            <Branch x={1650} y={360} t={t + 0.5} flip />
-            <Reeds x={300} y={1010} w={280} t={t} color="#0d1819" rim="#ffd280" />
-          </Parallax>
         </>
       )}
 
@@ -1339,11 +1295,6 @@ const RiverJourneyFrame: React.FC<SceneProps> = ({ t }) => {
               </g>
             );
           })}
-
-          <Parallax depth={1.35}>
-            <StreetLamp x={180} y={420} scale={1.1} color="#181520" rim="#ffd78a" />
-            <Reeds x={1520} y={1020} w={260} t={t} color="#14121a" rim="#ffd78a" />
-          </Parallax>
         </>
       )}
 
@@ -1429,10 +1380,6 @@ const RiverJourneyFrame: React.FC<SceneProps> = ({ t }) => {
               fill="#C89447"
             />
           </g>
-
-          <Parallax depth={1.35}>
-            <StreetLamp x={1720} y={400} scale={1.15} color="#181520" rim="#ffe094" glow />
-          </Parallax>
         </>
       )}
 
@@ -1450,11 +1397,6 @@ const RiverJourneyFrame: React.FC<SceneProps> = ({ t }) => {
             rotation={lerp(0,-5,ease(clamp((p-.35)/.65)))} t={t}
             adult={<Adult x={-65} y={-22} scale={.74} pose={p < .2 ? "row" : p < .45 ? "still" : "row"} t={t} />}
             child={<Child x={78} y={-22} scale={.92} pose={p < .2 ? "still" : "point"} t={t} />} />
-
-          <Parallax depth={1.4}>
-            <Branch x={320} y={350} t={t} />
-            <Reeds x={1480} y={1010} w={300} t={t} color="#1c1018" rim="#ffad66" />
-          </Parallax>
         </>
       )}
 
@@ -1524,11 +1466,6 @@ const RiverJourneyFrame: React.FC<SceneProps> = ({ t }) => {
               />
             );
           })}
-          <Parallax depth={1.5}>
-            <Branch x={420} y={400} t={t} />
-            <Branch x={1680} y={400} t={t + 1} flip />
-            <Reeds x={380} y={1010} w={320} t={t} color="#020507" />
-          </Parallax>
         </>
       )}
 
@@ -1568,10 +1505,6 @@ const RiverJourneyFrame: React.FC<SceneProps> = ({ t }) => {
                   />
                 }
               />
-              <Parallax depth={1.45}>
-                <Branch x={250} y={320} t={t} />
-                <Reeds x={1450} y={1010} w={320} t={t} color="#04080e" rim="#a8c8ea" />
-              </Parallax>
             </>
           )}
 
@@ -1605,9 +1538,6 @@ const RiverJourneyFrame: React.FC<SceneProps> = ({ t }) => {
                 }
               />
               <RememberedChildhood t={t} p={p} />
-              <Parallax depth={1.4}>
-                <Reeds x={300} y={1015} w={260} t={t} color="#04080d" rim="#38efd8" />
-              </Parallax>
             </>
           )}
 
@@ -1617,10 +1547,6 @@ const RiverJourneyFrame: React.FC<SceneProps> = ({ t }) => {
               <HazePlane color="#0d282e" opacity={0.28} />
               <MirrorLake />
               <AcceptanceOnLake t={t} p={p} />
-              <Parallax depth={1.4}>
-                <Reeds x={1520} y={1010} w={280} t={t} color="#04080d" rim="#52ffd9" />
-                <Branch x={1700} y={340} t={t} flip />
-              </Parallax>
             </>
           )}
         </>
@@ -1631,18 +1557,12 @@ const RiverJourneyFrame: React.FC<SceneProps> = ({ t }) => {
           <SunDisc light={VILLAGE_WARM} r={55} core="#fff1d6" glow={1.1} />
           <HazePlane color="#ebd4b0" opacity={0.26} />
           <Village t={t} p={p} />
-          <Parallax depth={1.35}>
-            <WindowFrame color="#1c120c" />
-          </Parallax>
         </>
       )}
 
       {id === 19 && (
         <>
           <SharedMeal t={t} />
-          <Parallax depth={1.3}>
-            <WindowFrame color="#140c08" />
-          </Parallax>
         </>
       )}
 
@@ -1720,12 +1640,6 @@ const RiverJourneyFrame: React.FC<SceneProps> = ({ t }) => {
                 : 1
             }
           />
-
-          <Parallax depth={1.4}>
-            <StormRocks x={120} y={780} scale={1.15} />
-            <StormRocks x={1750} y={800} scale={1.25} flip />
-            <RainStreaks t={t} count={42} color="rgba(190, 225, 245, 0.45)" />
-          </Parallax>
         </>
       )}
 
@@ -1747,11 +1661,6 @@ const RiverJourneyFrame: React.FC<SceneProps> = ({ t }) => {
           {/* Chó vàng mừng rỡ đón ở bến */}
           <StudioDog x={655} y={710} scale={0.68} t={t} pose="sit" facing={1} />
           <StudioBird species="swallow" x={lerp(700, 1300, (p * 1.2) % 1)} y={480 + Math.sin(t * 2.5) * 14} scale={0.6} t={t} />
-
-          <Parallax depth={1.4}>
-            <Posts x={360} y={1040} rim="#ffba70" />
-            <Reeds x={1520} y={1025} w={280} t={t} color="#180e14" rim="#ffba70" />
-          </Parallax>
         </>
       )}
 
@@ -1796,11 +1705,6 @@ const RiverJourneyFrame: React.FC<SceneProps> = ({ t }) => {
 
           {/* Chim hạc bay về phía vầng thái dương hoàng hôn */}
           <StudioBird species="crane" x={lerp(1050, 1550, (p * 0.7) % 1)} y={430 + Math.sin(t * 1.2) * 10} scale={0.68} t={t} facing={1} />
-
-          <Parallax depth={1.4}>
-            <Posts x={420} y={1040} rim="#ffc27a" />
-            <Reeds x={1560} y={1030} w={300} t={t} color="#1a0f14" rim="#ffc27a" />
-          </Parallax>
         </>
       )}
 
@@ -2794,27 +2698,6 @@ const WindToShore = ({t}: {t:number}) => {
       strokeWidth="2" opacity={1-clamp((t-throwAt-1)/1.2)} />}
     <WindLines t={t*.13} opacity={thrown ? .13+.1*motion : .08} />
     <CinematicRain t={t} intensity={motion*.85} />
-
-    {/* Tiền cảnh giông bão */}
-    {motion > 0.08 && (
-      <g opacity={motion}>
-        <Parallax depth={1.4}>
-          <StormRocks x={100} y={780} scale={1.15} />
-          <StormRocks x={1760} y={800} scale={1.25} flip />
-          <RainStreaks t={t} count={Math.round(36 * motion)} color="rgba(190, 225, 245, 0.4)" />
-        </Parallax>
-      </g>
-    )}
-
-    {/* Tiền cảnh bến sông */}
-    {dock > 0.08 && (
-      <g opacity={dock}>
-        <Parallax depth={1.4}>
-          <Posts x={320} y={1040} rim="#ffd485" />
-          <Reeds x={1520} y={1025} w={300} t={t} color="#181014" rim="#ffd485" />
-        </Parallax>
-      </g>
-    )}
   </>;
 };
 
@@ -2873,11 +2756,6 @@ const FarewellAtDock = ({t}: {t:number}) => {
     {launch > 0 && launch < 1 && <ellipse cx={bx-160} cy="826" rx={20+launch*60} ry="9"
       stroke="#c0d8df" strokeWidth="2" fill="none" opacity={1-launch} />}
 
-    <Parallax depth={1.4}>
-      <Posts x={380} y={1040} rim="#ffa866" />
-      <Reeds x={1550} y={1030} w={320} t={t} color="#180e14" rim="#ffa866" />
-    </Parallax>
-
     <rect width="1920" height="1080" fill="#080b10" opacity={clamp((t-204)/2.9)} />
   </>;
 };
@@ -2909,11 +2787,6 @@ const EndingJourney = ({t}: {t:number}) => {
     <CastShadow x={runnerX} y={758} h={130} light={TWILIGHT_WALK} opacity={0.42} />
     <Adult x={runnerX} y={729-Math.abs(Math.sin(t*10))*4} scale={1}
       pose={t < 203.5 ? "run" : "still"} t={t} />
-
-    <Parallax depth={1.35}>
-      <StreetLamp x={120} y={380} scale={1.1} color="#151018" rim="#f0886c" glow />
-      <StreetLamp x={1860} y={350} scale={1.15} color="#151018" rim="#f0886c" glow />
-    </Parallax>
 
     <rect width="1920" height="1080" fill="#080b10" opacity={clamp((t-204)/2.9)} />
   </>;
