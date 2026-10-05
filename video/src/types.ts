@@ -72,6 +72,7 @@ export type Song = {
   storyboard?: StoryboardBeat[]; // phân cảnh Storyboard / Animatic tiền kỳ
   anim?: AnimKey[]; // kịch bản chuyển động cho kiểu "anim" (MV hoạt hình) — xem src/anim/params.ts
   synced: boolean; // false = thời gian đang là ước lượng, chưa tap-sync
+  audioStart?: number; // bỏ qua n giây đầu của file nhạc (mọi mốc thời gian trong bài tính sau khi bỏ)
   titleAt?: [number, number]; // thời điểm hiện thẻ tên bài (mặc định đoạn dạo đầu, tối đa 8 s)
   logoAt?: [number, number]; // logo Senore mở đầu (giây bắt đầu, kết thúc)
   outroAt?: number; // thời điểm hiện dòng "senore" cuối bài (mặc định ngay sau câu cuối)
@@ -82,6 +83,7 @@ export type Song = {
   depth?: boolean; // tranh nền dùng video chiều sâu 2.5D (npm run depth) thay ảnh tĩnh — kiểu anim, cảnh "painted"
   noLyrics?: boolean; // bản "sạch" không phụ đề (npm run render -- --clean) để dựng tiếp trong DaVinci Resolve
   lyricsTop?: boolean; // phụ đề ở phía trên khung (khi hành động diễn ra ở nửa dưới)
+  grade?: GradeKey[]; // chỉnh màu & ánh sáng theo thời gian (src/anim/Grade.tsx)
   paper?: boolean; // phủ chất liệu giấy dó + thớ giấy (kiểu anim) — chỉ bật cho bài cần, không đổi MV đã duyệt
   foley?: FoleyTrack[]; // Các rãnh âm thanh môi trường & hiệu ứng đời sống
   lines: LyricLine[];
@@ -97,6 +99,16 @@ export type FoleyTrack = {
   baseVolume?: number; // âm lượng gốc lúc không có lời (0.0 - 1.0, mặc định 0.5)
   duckVolume?: number; // âm lượng khi có lời hát (0.0 - 1.0, mặc định 0.12 = 12%)
   duckFade?: number; // thời gian fade ducking (giây, mặc định 0.4s)
+};
+
+// Một mốc chỉnh màu & ánh sáng (kiểu anim): giữ tới mốc sau, chuyển mượt trước mốc sau
+export type GradeKey = {
+  t: number;
+  wash?: string; washOpacity?: number; // ám màu chủ đạo (soft-light)
+  haze?: string; hazeOpacity?: number; horizon?: number; // sương chân trời (screen), horizon = vị trí 0–1 theo chiều cao
+  shadow?: string; shadowOpacity?: number; // tiền cảnh tối dần (multiply)
+  key?: string; keyX?: number; keyY?: number; keyStrength?: number; // quầng nguồn sáng chính (screen)
+  vignette?: number; contrast?: number; saturate?: number;
 };
 
 export type LyricVideoProps = {

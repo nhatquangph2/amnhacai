@@ -31,7 +31,8 @@ const VIDEO = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 const CODEX = process.env.CODEX_BIN ?? "/Applications/ChatGPT.app/Contents/Resources/codex-cli/bin/codex";
 const AGY = process.env.AGY_BIN ?? path.join(os.homedir(), ".local/bin/agy");
 const AGY_BRAIN = path.join(os.homedir(), ".gemini/antigravity-cli/brain");
-const PY = path.join(VIDEO, ".venv/bin/python");
+// Python có Pillow: .venv của dự án, thiếu thì dùng python3 của hệ thống
+const PY = fs.existsSync(path.join(VIDEO, ".venv/bin/python")) ? path.join(VIDEO, ".venv/bin/python") : "python3";
 
 const args = process.argv.slice(2);
 const id = args[0];

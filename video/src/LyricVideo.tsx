@@ -17,7 +17,7 @@ export const LyricVideo: React.FC<LyricVideoProps> = ({ song, clipStart = 0, son
   return (
     <AbsoluteFill>
       <Style song={song} t={t} duration={duration} vertical={height > width} fps={fps} />
-      <Audio src={staticFile(song.audio)} trimBefore={Math.round(clipStart * fps)} />
+      <Audio src={staticFile(song.audio)} trimBefore={Math.round((clipStart + (song.audioStart ?? 0)) * fps)} />
       <FoleyMixer song={song} songDuration={duration} clipStart={clipStart} />
     </AbsoluteFill>
   );

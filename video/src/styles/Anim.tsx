@@ -15,6 +15,7 @@ import { HoleView, LiftScene, NightRoad, PersonScene, PlazaScene, RidgeScene, Tr
 import { GardenScene } from "../anim/Garden";
 import { RiverJourneyScene } from "../anim/RiverJourney";
 import { worldAt } from "../anim/params";
+import { Graded } from "../anim/Grade";
 import { flashAt, useStorm } from "../anim/storm";
 import type { Shot } from "../types";
 import { FilmText } from "./FilmText";
@@ -52,11 +53,13 @@ export const Anim: React.FC<StyleProps> = (props) => {
 
   return (
     <AbsoluteFill>
-      {layers.map(({ shot, end, opacity }) => (
-        <AbsoluteFill key={shot.at} style={{ opacity }} from={3}>
-          {render(shot, end)}
-        </AbsoluteFill>
-      ))}
+      <Graded keys={song.grade} t={t}>
+        {layers.map(({ shot, end, opacity }) => (
+          <AbsoluteFill key={shot.at} style={{ opacity }} from={3}>
+            {render(shot, end)}
+          </AbsoluteFill>
+        ))}
+      </Graded>
       {w.rings > 0 && <Rings w={w} t={t} />}
       {w.bud > 0 && <Bud w={w} t={t} />}
       {w.black > 0 && <AbsoluteFill style={{ background: "#000", opacity: w.black }} />}

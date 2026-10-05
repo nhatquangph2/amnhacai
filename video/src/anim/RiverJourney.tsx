@@ -1,5 +1,7 @@
 import React from "react";
 import type { SceneProps } from "./Scenes";
+import { Figure, FigurePalette, PoseName } from "./Figure";
+import { Branch, CamCtx, CastShadow, DepthDefs, Glitter, HazePlane, Light, Parallax, Posts, Reeds, SceneLight, SunDisc, toLight, useLight } from "./DepthLight";
 import { StudioBird, StudioDog, StudioFishSchool, StudioWaterfowl } from "../library/animals";
 
 
@@ -125,8 +127,10 @@ const Defs = () => (
     </linearGradient>
 
     <linearGradient id="river" x1="0" y1="0" x2="0" y2="1">
-      <stop offset="0%" stopColor="#5b9bc8" />
-      <stop offset="100%" stopColor="#183c61" />
+      <stop offset="0%" stopColor="#5f93b3" />
+      <stop offset="22%" stopColor="#386f96" />
+      <stop offset="65%" stopColor="#1d4769" />
+      <stop offset="100%" stopColor="#0c2236" />
     </linearGradient>
 
     <filter id="soft-shadow">
@@ -159,265 +163,46 @@ const Defs = () => (
    Silhouette phải đọc được tư thế ngay cả ở wide shot.
    ============================================================ */
 
+// Hai nhân vật dùng chung bộ nhân vật vẽ bằng code (Figure, chế độ có màu): tóc, áo hai tông, bàn tay, giày, khăn quàng Ember.
+// Toạ độ cũ giữ nguyên: người lớn đứng cao ~113 đơn vị (đỉnh đầu -85, gót +28, hông -10); trẻ ~75 (đỉnh -58, gót +17, hông -7).
+const ADULT_PAL: FigurePalette = { coat: "#315e89", pants: "#1c2333", skin: "#d9a67e", hair: "#1b1512", shoe: "#141822", hairStyle: "short", garment: "jacket", accent: "#efe6d6" };
+const CHILD_PAL: FigurePalette = { coat: "#2a9d8f", pants: "#264653", skin: "#e0ac82", hair: "#3a2a20", shoe: "#e9dcc4", hairStyle: "mushroom", garment: "hoodie", bottom: "shorts", accent: "#efe6d6" };
+const SHADE = "#1b2333";
+const hx2 = (c: string) => [1, 3, 5].map((i) => parseInt(c.slice(i, i + 2), 16));
+const mixHex = (a: string, b: string, k: number) => { const A = hx2(a), B = hx2(b); return `rgb(${A.map((v, i) => Math.round(v + (B[i] - v) * k)).join(",")})`; };
+const lit = (p: FigurePalette, shade: string, k: number): FigurePalette => ({ ...p, coat: mixHex(p.coat, shade, k), pants: mixHex(p.pants, shade, k), skin: mixHex(p.skin, shade, k), hair: mixHex(p.hair, shade, k), shoe: mixHex(p.shoe ?? p.pants, shade, k) });
+const ADULT_POSE: Record<string, PoseName> = { walk: "walk", run: "run", still: "stand", row: "row", reach: "reach", sit: "sitEdge", float: "openArms", wave: "wave", openArms: "openArms", heart: "heart", push: "push", lookDown: "lookDown" };
+const CHILD_POSE: Record<string, PoseName> = { still: "stand", point: "point", reach: "reach", wave: "wave", heart: "heart", shore: "reach" };
+const SEATED = new Set<PoseName>(["sitEdge", "row"]);
+
 const Adult: React.FC<{
   x: number;
   y: number;
   scale?: number;
   facing?: 1 | -1;
-  pose?:
-    | "walk"
-    | "run"
-    | "still"
-    | "row"
-    | "reach"
-    | "sit"
-    | "float"
-    | "wave"
-    | "openArms"
-    | "heart"
-    | "push"
-    | "lookDown";
+  pose?: "walk" | "run" | "still" | "row" | "reach" | "sit" | "float" | "wave" | "openArms" | "heart" | "push" | "lookDown";
   t: number;
   opacity?: number;
-}> = ({
-  x,
-  y,
-  scale = 1,
-  facing = 1,
-  pose = "still",
-  t,
-  opacity = 1,
-}) => {
-  const walk = Math.sin(t * (pose === "run" ? 10 : 5));
-
+  ground?: boolean; // đứng trên đất/bến (có bóng đổ); trên thuyền thì không
+}> = ({ x, y, scale = 1, facing = 1, pose = "still", t, opacity = 1, ground }) => {
+  const fp = ADULT_POSE[pose] ?? "stand", H = 113 * scale * 1.15; // người lớn cao hơn hẳn em bé
+  const light = useLight();
+  const rimDir = rimFrom(light, facing === -1);
+  const feetY = y + 28 * scale;
   return (
-    <g
-      transform={`translate(${x} ${y}) scale(${scale * facing} ${scale})`}
-      opacity={opacity}
-    >
-      {/* Đầu & Khuôn mặt hình bóng điện ảnh Senore (Chuẩn phong cách HB-001 & HB-002) */}
-      <g>
-        {/* Dáng đầu thanh thoát: vòm sọ -> trán -> sống mũi mềm -> cằm -> hàm */}
-        <path
-          d="M -2 -85 C 4 -85 9 -82 10 -77 C 10.5 -75 13 -73 14 -71.5 C 13 -70.5 11.5 -70 12 -68.5 C 12.5 -67 12.5 -65.5 11 -64 C 8 -62 2 -61 -3 -63 C -8 -65 -13 -72 -13 -77 C -13 -83 -8 -85 -2 -85 Z"
-          fill="#0f172a"
-        />
-        {/* Cổ áo kết nối tự nhiên với khăn */}
-        <path d="M -4 -63 L 2 -63 L 3 -56 L -4 -56 Z" fill="#0f172a" />
-
-        {/* Viền sáng điện ảnh (Rim Light) tôn vinh đường cong đỉnh đầu, trán, sống mũi và gáy */}
-        <path
-          d="M -2 -85 C 4 -85 9 -82 10 -77 C 10.5 -75 13 -73 14 -71.5"
-          fill="none"
-          stroke="rgba(255,225,185,0.75)"
-          strokeWidth="1.5"
-          strokeLinecap="round"
-        />
-        <path
-          d="M -2 -85 C -8 -85 -13 -81 -13 -74 C -13 -66 -9 -61 -4 -60"
-          fill="none"
-          stroke="rgba(255,225,185,0.6)"
-          strokeWidth="1.4"
-          strokeLinecap="round"
-        />
-      </g>
-
-      {/* Áo khoác lam có vạt rủ tự nhiên và nếp bóng đổ */}
-      <path
-        d={`M -15 -54 Q 0 -62 16 -52 L 20 -10 Q 4 (-2 + Math.sin(t * 6.5) * 4) (-20 - Math.sin(t * 6.5) * 4) -10 Z`}
-        fill="#315e89"
-      />
-      <path
-        d="M -6 -50 Q 2 -25 8 -10"
-        stroke="#24476a"
-        strokeWidth="2.5"
-        strokeLinecap="round"
-        fill="none"
-      />
-      {/* Viền sáng vai áo */}
-      <path
-        d="M -15 -54 Q 0 -62 16 -52"
-        stroke="rgba(255,225,185,0.4)"
-        strokeWidth="1.2"
-        fill="none"
-      />
-
-      {/* Khăn quàng Ember: vòng cổ và đuôi khăn bay lượn 5 đốt sóng trong gió */}
-      <ellipse cx="0" cy="-55" rx="10" ry="5.5" fill="#d9622b" />
-      <path
-        d={`M -8 -55 Q -18 -50 -26 -44 Q -32 -38 -40 -34 Q -32 -28 -20 -38 Z`}
-        fill="#d9622b"
-      />
-
-      {(pose === "walk" || pose === "run") && (() => {
-        const legSwing = walk * (pose === "run" ? 18 : 10);
-        return (
-          <>
-            {/* Chân sau */}
-            <g transform={`rotate(${-legSwing} -6 -10)`}>
-              <path d="M -8 -10 L -10 10 L -12 25 L -7 25 L -5 10 L -3 -10 Z" fill="#131722" />
-              <path d="M -16 23 L -6 23 C -4 23 -3 25 -3 28 L -16 28 Z" fill="#0d1017" />
-            </g>
-            {/* Chân trước */}
-            <g transform={`rotate(${legSwing} 6 -10)`}>
-              <path d="M 4 -10 L 6 10 L 8 25 L 13 25 L 11 10 L 9 -10 Z" fill="#172033" />
-              <path d="M 4 23 L 15 23 C 17 23 18 25 18 28 L 4 28 Z" fill="#111622" />
-            </g>
-          </>
-        );
-      })()}
-
-      {(pose === "still" || pose === "reach" || pose === "wave" || pose === "float" || pose === "heart" || pose === "push" || pose === "lookDown") && (
-        <>
-          {/* Chân sau (xa, bóng đổ tối) */}
-          <path d="M -8 -10 L -9 8 L -11 25 L -6 25 L -4 8 L -3 -10 Z" fill="#131722" />
-          <path d="M -15 23 L -5 23 C -3 23 -3 25 -3 28 L -15 28 Z" fill="#0d1017" />
-          {/* Chân trước (gần) */}
-          <path d="M 4 -10 L 6 8 L 7 25 L 12 25 L 11 8 L 9 -10 Z" fill="#172033" />
-          <path d="M 4 23 L 15 23 C 17 23 17 25 17 28 L 4 28 Z" fill="#111622" />
-        </>
-      )}
-
-      {pose === "row" && (
-        <>
-          {/* Dáng chân chùng vững chãi khi chèo thuyền */}
-          <path d="M -8 -10 L -12 6 L -16 23 L -11 23 L -7 6 L -3 -10 Z" fill="#131722" />
-          <path d="M -19 21 L -10 21 C -8 21 -8 23 -8 26 L -19 26 Z" fill="#0d1017" />
-          <path d="M 4 -10 L 9 6 L 14 23 L 19 23 L 14 6 L 9 -10 Z" fill="#172033" />
-          <path d="M 11 21 L 22 21 C 24 21 24 23 24 26 L 11 26 Z" fill="#111622" />
-
-          <g
-            transform={`rotate(${18 + Math.sin(t * 4.5) * 15})`}
-          >
-            <line
-              x1="-10"
-              y1="-42"
-              x2="60"
-              y2="30"
-              stroke="#7b4a26"
-              strokeWidth="6"
-              strokeLinecap="round"
-            />
-            <path
-              d="M 55 22 L 72 38 L 58 42 Z"
-              fill="#7b4a26"
-            />
-          </g>
-        </>
-      )}
-
-      {pose === "reach" && (
-        <line
-          x1="12"
-          y1="-45"
-          x2="48"
-          y2="-68"
-          stroke="#315e89"
-          strokeWidth="7"
-          strokeLinecap="round"
-        />
-      )}
-
-      {pose === "run" && <>
-        <path d={`M-12 -47 L${-24-walk*12} -29 L${-12-walk*18} -19 M12 -47 L${23+walk*12} -35 L${12+walk*18} -55`}
-          fill="none" stroke="#315e89" strokeWidth="7" strokeLinecap="round" />
-      </>}
-      {pose === "lookDown" && <>
-        <circle cx="8" cy="-67" r="2" fill="#d8c5a8" />
-        <path d="M12 -45 Q28 -25 20 -8" stroke="#315e89" strokeWidth="7" strokeLinecap="round" fill="none" />
-      </>}
-      {pose === "heart" && <>
-        <path d="M14 -47 Q30 -29 2 -39" stroke="#315e89" strokeWidth="7" strokeLinecap="round" fill="none" />
-        <circle cx="2" cy="-39" r="4" fill="#d5b596" />
-      </>}
-      {pose === "push" && <>
-        <path d="M12 -44 L35 -8 L55 20 M-12 -43 L20 -5 L50 20" stroke="#315e89" strokeWidth="7" strokeLinecap="round" fill="none" />
-        <circle cx="55" cy="20" r="4" fill="#d5b596" />
-      </>}
-      {pose === "wave" && (
-        <line
-          x1="12"
-          y1="-47"
-          x2={30 + Math.sin(t * 5) * 6}
-          y2="-82"
-          stroke="#315e89"
-          strokeWidth="7"
-          strokeLinecap="round"
-        />
-      )}
-
-      {pose === "sit" && (
-        <>
-          {/* Đùi gập về trước, cẳng chân buông xuống tự nhiên */}
-          <path d="M -5 -10 L 18 2 L 17 20 L 12 20 L 12 6 L -5 -6 Z" fill="#131722" />
-          <path d="M 10 18 L 20 18 C 22 18 22 20 22 23 L 10 23 Z" fill="#0d1017" />
-          <path d="M 2 -10 L 25 2 L 24 20 L 19 20 L 19 6 L 2 -6 Z" fill="#172033" />
-          <path d="M 17 18 L 27 18 C 29 18 29 20 29 23 L 17 23 Z" fill="#111622" />
-        </>
-      )}
-
-      {pose === "float" && (
-        <>
-          <line
-            x1="-10"
-            y1="-44"
-            x2="-42"
-            y2="-60"
-            stroke="#315e89"
-            strokeWidth="6"
-          />
-          <line
-            x1="10"
-            y1="-44"
-            x2="42"
-            y2="-60"
-            stroke="#315e89"
-            strokeWidth="6"
-          />
-        </>
-      )}
-
-      {pose === "openArms" && (
-        <>
-          <line
-            x1="-10"
-            y1="-45"
-            x2="-45"
-            y2="-55"
-            stroke="#315e89"
-            strokeWidth="7"
-            strokeLinecap="round"
-          />
-          <line
-            x1="10"
-            y1="-45"
-            x2="45"
-            y2="-55"
-            stroke="#315e89"
-            strokeWidth="7"
-            strokeLinecap="round"
-          />
-          <line
-            x1="-6"
-            y1="-10"
-            x2="-9"
-            y2="28"
-            stroke="#172033"
-            strokeWidth="6"
-          />
-          <line
-            x1="6"
-            y1="-10"
-            x2="9"
-            y2="28"
-            stroke="#172033"
-            strokeWidth="6"
-          />
-        </>
-      )}
+    <g opacity={opacity}>
+      {light && ground && !SEATED.has(fp) && <CastShadow x={x} y={feetY} h={H} light={light} />}
+      <Figure pose={fp} t={t} x={x} y={SEATED.has(fp) ? y - 10 * scale : feetY} H={H} flip={facing === -1} scarf="#d9622b" wind={0.35} palette={lit(ADULT_PAL, light?.ambient ?? SHADE, light ? 0.22 : 0.16)} rim={light ? rimColor(light) : "rgba(255,225,185,0.55)"} rimDir={rimDir} />
     </g>
   );
 };
+// Viền sáng nằm ở phía hướng về nguồn sáng (đảo trục x khi nhân vật quay mặt trái)
+const rimFrom = (light: Light | null, flipped: boolean): [number, number] => {
+  if (!light) return [-1, -1];
+  const [dx, dy] = toLight(light, 960, 640);
+  return [dx * (flipped ? -1 : 1) * 1.2, dy * 1.2];
+};
+const rimColor = (l: Light) => l.color;
 
 const Child: React.FC<{
   x: number;
@@ -426,113 +211,21 @@ const Child: React.FC<{
   pose?: "still" | "point" | "reach" | "wave" | "heart" | "shore";
   t: number;
   opacity?: number;
-}> = ({
-  x,
-  y,
-  scale = 1,
-  pose = "still",
-  t,
-  opacity = 1,
-}) => (
-  <g
-    transform={`translate(${x} ${y}) scale(${scale})`}
-    opacity={opacity}
-  >
-    {/* Đầu & Khuôn mặt hình bóng điện ảnh Senore (Chuẩn phong cách HB-001 & HB-002) */}
-    <g>
-      <path
-        d="M -1 -58 C 3 -58 6 -54 7 -50 C 8 -48 10 -47 9 -45 C 8 -44 8 -42 7 -40 C 4 -38 -1 -38 -4 -40 C -8 -42 -10 -48 -9 -53 C -8 -57 -4 -58 -1 -58 Z"
-        fill="#0f172a"
-      />
-      {/* Cổ áo nhỏ nối đầu với áo */}
-      <path d="M -2 -42 L 2 -42 L 3 -38 L -2 -38 Z" fill="#0f172a" />
-      {/* Viền sáng điện ảnh ôm trọn vòm đầu và trán trẻ nhỏ */}
-      <path
-        d="M -1 -58 C 3 -58 6 -54 7 -50 C 8 -48 10 -47 9 -45"
-        fill="none"
-        stroke="rgba(255,225,185,0.75)"
-        strokeWidth="1.3"
-        strokeLinecap="round"
-      />
-      <path
-        d="M -1 -58 C -6 -58 -10 -54 -10 -48 C -10 -42 -7 -38 -4 -38"
-        fill="none"
-        stroke="rgba(255,225,185,0.6)"
-        strokeWidth="1.2"
-        strokeLinecap="round"
-      />
-    </g>
-
-    {/* Áo khoác xanh ngọc rủ tự nhiên */}
-    <path
-      d={`M -10 -38 Q 0 -44 10 -37 L 12 -7 Q 2 (0 + Math.sin(t * 7.2) * 3) (-13 - Math.sin(t * 7.2) * 3) -7 Z`}
-      fill="#2a9d8f"
-    />
-    <path d="M -3 -35 Q 2 -18 6 -7" stroke="#21867a" strokeWidth="2" strokeLinecap="round" fill="none" />
-
-    {/* Khăn quàng đỏ cam */}
-    <ellipse cx="0" cy="-38" rx="7.5" ry="4" fill="#e76f51" />
-    <path
-      d="M -5 -38 Q -16 -32 -24 -22 Q -12 -24 -2 -31 Z"
-      fill="#e76f51"
-    />
-
-    {/* Chân & Ủng ấm áp của trẻ */}
-    <g>
-      <path d="M -6 -7 L -7 5 L -8 15 L -3 15 L -2 5 L -2 -7 Z" fill="#172033" />
-      <path d="M -11 13 L -2 13 C 0 13 0 15 0 17 L -11 17 Z" fill="#0f172a" />
-    </g>
-    <g>
-      <path d="M 2 -7 L 3 5 L 4 15 L 9 15 L 8 5 L 7 -7 Z" fill="#1d273d" />
-      <path d="M 2 13 L 11 13 C 13 13 13 15 13 17 L 2 17 Z" fill="#141b2a" />
-    </g>
-
-    {pose === "heart" && <>
-      <path d="M8 -31 Q21 -18 0 -27" stroke="#3e9b8d" strokeWidth="5" strokeLinecap="round" fill="none" />
-      <circle cx="0" cy="-27" r="3" fill="#d5b596" />
-    </>}
-    {pose === "shore" && <path d="M-7 -30 L-40 -39" stroke="#3e9b8d" strokeWidth="5" strokeLinecap="round" fill="none" />}
-    {pose === "point" && (
-      <line
-        x1="7"
-        y1="-30"
-        x2="33"
-        y2="-39"
-        stroke="#3e9b8d"
-        strokeWidth="5"
-        strokeLinecap="round"
-      />
-    )}
-
-    {pose === "reach" && (
-      <line
-        x1="-6"
-        y1="-30"
-        x2="-38"
-        y2="-50"
-        stroke="#3e9b8d"
-        strokeWidth="5"
-        strokeLinecap="round"
-      />
-    )}
-
-    {pose === "wave" && (
-      <line
-        x1="7"
-        y1="-30"
-        x2={27 + Math.sin(t * 6) * 6}
-        y2="-54"
-        stroke="#3e9b8d"
-        strokeWidth="5"
-        strokeLinecap="round"
-      />
-    )}
+  facing?: 1 | -1;
+}> = ({ x, y, scale = 1, pose = "still", t, opacity = 1, facing }) => (
+  <g opacity={opacity}>
+    {/* Em bé thường đứng mũi thuyền / bên phải người lớn: với tay, đặt tay lên ngực, vẫy là hướng về người lớn (bên trái);
+        đứng yên hay chỉ đường là nhìn về phía trước (bên phải) */}
+    <ChildFigure pose={pose} t={t} x={x} y={y} scale={scale} facing={facing} />
   </g>
 );
-
-/* ============================================================
-   BOAT
-   ============================================================ */
+const ChildFigure: React.FC<{ pose: string; t: number; x: number; y: number; scale: number; facing?: 1 | -1 }> = ({ pose, t, x, y, scale, facing }) => {
+  const light = useLight();
+  const flipped = (facing ?? (pose === "reach" || pose === "heart" || pose === "wave" || pose === "shore" ? -1 : 1)) === -1;
+  return (
+    <Figure pose={CHILD_POSE[pose] ?? "stand"} t={t} x={x} y={y + 17 * scale} H={75 * scale * 0.78} age="child" flip={flipped} scarf="#e76f51" wind={0.35} palette={lit(CHILD_PAL, light?.ambient ?? SHADE, light ? 0.2 : 0.14)} rim={light ? rimColor(light) : "rgba(255,225,185,0.55)"} rimDir={rimFrom(light, flipped)} />
+  );
+};
 
 const Boat: React.FC<{
   x: number;
@@ -559,6 +252,8 @@ const Boat: React.FC<{
     transform={`translate(${x} ${y}) scale(${scale}) rotate(${rotation})`}
     filter="url(#soft-shadow)"
   >
+    {/* bóng thuyền & cột buồm in xuống mặt nước */}
+    <ellipse cx={0} cy={60} rx={160} ry={10} fill="rgba(5,15,28,0.22)" />
     <path
       d="
         M -150 -8
@@ -887,6 +582,26 @@ function cameraFor(id: number, p: number): Camera {
    MAIN SCENE
    ============================================================ */
 
+// Nguồn sáng chính của từng cảnh (vị trí trong khung 1920×1080, màu, độ cao so với chân trời, màu bóng/ánh sáng môi trường)
+const MORNING: Light = { x: 1480, y: 520, color: "#ffd9a0", elev: 14, ambient: "#24384f" };
+const MOON: Light = { x: 1418, y: 300, color: "#cfe0ff", elev: 32, ambient: "#0a1424" };
+const SUNSET: Light = { x: 1490, y: 430, color: "#ffc27a", elev: 7, ambient: "#3a2236" };
+const lightFor = (id: number): Light | null => (id === 6 ? MORNING : id === 14 ? MOON : id === 27 ? SUNSET : null);
+
+// Bờ xa: hàng cây bụi thấp sát mép nước (lớp giữa)
+const FarBank = ({ tone }: { tone: string }) => (
+  <g fill={tone}>
+    {Array.from({ length: 30 }, (_, i) => <ellipse key={i} cx={i * 68 + (i % 3) * 9} cy={706 - (i % 4) * 6} rx={46 + (i % 5) * 9} ry={24 + (i % 3) * 8} />)}
+    <rect x={0} y={700} width={1920} height={20} />
+  </g>
+);
+// Thân cây gần (lớp giữa–gần của rừng đêm)
+const NearTrunks = () => (
+  <g fill="#020608">
+    {[470, 1230, 1760].map((x, i) => <path key={i} d={`M${x},-50 L${x + 46},-50 L${x + 60 + i * 6},760 L${x - 14},760 Z`} />)}
+  </g>
+);
+
 const RiverJourneyFrame: React.FC<SceneProps> = ({ t }) => {
   const shot = resolveShot(t);
   const { p } = shot;
@@ -914,6 +629,9 @@ const RiverJourneyFrame: React.FC<SceneProps> = ({ t }) => {
       }}
     >
       <Defs />
+      <DepthDefs />
+      <CamCtx.Provider value={{ x, y, w: camera.w, h: camera.h }}>
+      <SceneLight.Provider value={lightFor(id)}>
 
       <rect
         width="1920"
@@ -1045,8 +763,13 @@ const RiverJourneyFrame: React.FC<SceneProps> = ({ t }) => {
 
       {id === 6 && (
         <>
-          <Town opacity={.3} />
+          <SunDisc light={MORNING} r={46} core="#fff3d6" />
+          <Parallax depth={0.7}><Town opacity={.3} /></Parallax>
+          <HazePlane color="#f3d9b5" opacity={0.26} />
+          <Parallax depth={0.85}><FarBank tone="#6c7c68" /></Parallax>
+          <HazePlane color="#f3d9b5" opacity={0.1} y0={600} y1={740} />
           <Water t={t} />
+          <Glitter x={MORNING.x} horizon={712} t={t} color="#ffe2b0" strength={0.9} />
           <Landing />
           {/* A visible gangway makes the decision to board a continuous action. */}
           <path d="M 710 732 L 915 781 L 908 797 L 705 747 Z" fill="#bd986c" />
@@ -1054,7 +777,11 @@ const RiverJourneyFrame: React.FC<SceneProps> = ({ t }) => {
             child={<Child x={-70} y={-20} scale={1} pose="reach" t={t} />} />
           <Adult x={lerp(700, 995, ease(clamp((p-.2)/.7)))}
             y={lerp(712, 772, ease(clamp((p-.2)/.7)))} scale={.82}
-            pose={p < .2 ? "reach" : p < .9 ? "walk" : "still"} t={t} />
+            pose={p < .2 ? "reach" : p < .9 ? "walk" : "still"} t={t} ground />
+          <Parallax depth={1.4}>
+            <Reeds x={560} y={1000} w={260} t={t} color="#10161a" rim="#ffcf9a" />
+            <Posts x={1500} y={1010} rim="#ffcf9a" />
+          </Parallax>
         </>
       )}
 
@@ -1564,8 +1291,12 @@ const RiverJourneyFrame: React.FC<SceneProps> = ({ t }) => {
           */}
 
           <ForestScene t={t} p={p} />
+          <SunDisc light={MOON} r={26} core="#eef3ff" glow={0.8} />
+          <HazePlane color="#22364f" opacity={0.24} />
+          <Parallax depth={1.15}><NearTrunks /></Parallax>
 
           <Water t={t} dark />
+          <Glitter x={MOON.x} horizon={715} t={t} color="#cfe0ff" strength={0.6} spread={0.6} />
 
           <Boat
             x={lerp(1080, 770, ease(p))}
@@ -1616,6 +1347,11 @@ const RiverJourneyFrame: React.FC<SceneProps> = ({ t }) => {
               />
             );
           })}
+          <Parallax depth={1.5}>
+            <Branch x={420} y={400} t={t} />
+            <Branch x={1680} y={400} t={t + 1} flip />
+            <Reeds x={380} y={1010} w={320} t={t} color="#020507" />
+          </Parallax>
         </>
       )}
 
@@ -1765,8 +1501,13 @@ const RiverJourneyFrame: React.FC<SceneProps> = ({ t }) => {
 
       {id === 27 && (
         <>
-          <Town warm />
+          <SunDisc light={SUNSET} r={70} core="#ffe2a6" />
+          <Parallax depth={0.6}><g transform="translate(240 120) scale(0.75)"><Town warm opacity={0.9} /></g></Parallax>
+          <HazePlane color="#f4b98a" opacity={0.36} />
+          <Parallax depth={0.8}><Town warm /></Parallax>
+          <HazePlane color="#f4b98a" opacity={0.12} />
           <Water t={t} />
+          <Glitter x={SUNSET.x} horizon={712} t={t} color="#ffcf7a" strength={1} />
           <Landing />
 
           {/* Chú chó vàng trung thành đứng kề bên Adult nhìn con thuyền trôi về phía hoàng hôn */}
@@ -1778,6 +1519,7 @@ const RiverJourneyFrame: React.FC<SceneProps> = ({ t }) => {
             scale={.7}
             pose="still"
             t={t}
+            ground
           />
 
           <Boat
@@ -1799,19 +1541,17 @@ const RiverJourneyFrame: React.FC<SceneProps> = ({ t }) => {
           {/* Chim hạc bay về phía vầng thái dương hoàng hôn */}
           <StudioBird species="crane" x={lerp(1050, 1550, (p * 0.7) % 1)} y={430 + Math.sin(t * 1.2) * 10} scale={0.68} t={t} facing={1} />
 
-          <circle
-            cx="1490"
-            cy="420"
-            r="120"
-            fill="#eab75d"
-            opacity=".65"
-            filter="url(#glow)"
-          />
+          <Parallax depth={1.4}>
+            <Posts x={420} y={1040} rim="#ffc27a" />
+            <Reeds x={1560} y={1030} w={300} t={t} color="#1a0f14" rim="#ffc27a" />
+          </Parallax>
         </>
       )}
 
       {t >= 163 && <EndingJourney t={t} />}
 
+      </SceneLight.Provider>
+      </CamCtx.Provider>
       <Vignette />
     </svg>
   );

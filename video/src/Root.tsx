@@ -3,6 +3,7 @@ import { CalculateMetadataFunction, Composition, staticFile } from "remotion";
 import { getAudioDurationInSeconds } from "@remotion/media-utils";
 import { LyricVideo } from "./LyricVideo";
 import { AnimaticPlayer } from "./anim/AnimaticPlayer";
+import { CharacterSheet } from "./CharacterSheet";
 import type { LyricVideoProps, Song } from "./types";
 
 const FPS = 30;
@@ -13,8 +14,11 @@ const fpsOf = (song: Song) => song.fps ?? FPS;
 const ctx = require.context("./songs", false, /\.json$/);
 const songs: Song[] = ctx.keys().map((k) => ctx(k) as Song);
 
+// song.audioStart: bỏ qua đoạn đầu file nhạc (vd phần dạo đầu ghép thêm quá dài) — thời gian bài tính từ điểm này
+const audioLen = async (song: Song) => (await getAudioDurationInSeconds(staticFile(song.audio))) - (song.audioStart ?? 0);
+
 const fullLength: CalculateMetadataFunction<LyricVideoProps> = async ({ props }) => {
-  const songDuration = await getAudioDurationInSeconds(staticFile(props.song.audio));
+  const songDuration = await audioLen(props.song);
   // --from/--to: xuất một đoạn (vd video mẫu), mặc định cả bài
   const len = Math.min(props.clipEnd ?? songDuration, songDuration) - (props.clipStart ?? 0);
   const fps = fpsOf(props.song);
@@ -22,7 +26,7 @@ const fullLength: CalculateMetadataFunction<LyricVideoProps> = async ({ props })
 };
 
 const clipLength: CalculateMetadataFunction<LyricVideoProps> = async ({ props }) => {
-  const songDuration = await getAudioDurationInSeconds(staticFile(props.song.audio));
+  const songDuration = await audioLen(props.song);
   const start = props.clipStart ?? 0;
   const end = Math.min(props.clipEnd ?? start + 30, songDuration);
   const fps = fpsOf(props.song);
@@ -41,6 +45,8 @@ const firstChorus = (song: Song) => {
 
 export const Root: React.FC = () => (
   <>
+    {/* bảng xem trước nhân vật code (kiểu tóc, độ tuổi) */}
+    <Composition id="CharacterSheet" component={CharacterSheet} width={1920} height={1080} fps={30} durationInFrames={90} defaultProps={{ page: 1 }} />
     {songs.map((song) => (
       <React.Fragment key={song.id}>
         <Composition

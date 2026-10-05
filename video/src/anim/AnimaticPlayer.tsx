@@ -406,7 +406,7 @@ export const AnimaticPlayer: React.FC<LyricVideoProps> = ({
       </div>
 
       {/* 4. ÂM THANH ĐỒNG BỘ NGUYÊN BẢN */}
-      <Audio src={staticFile(song.audio)} trimBefore={Math.round(clipStart * fps)} />
+      <Audio src={staticFile(song.audio)} trimBefore={Math.round((clipStart + (song.audioStart ?? 0)) * fps)} />
     </AbsoluteFill>
   );
 };

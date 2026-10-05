@@ -33,11 +33,13 @@ const COATS = ["#3f7cac", "#d8a03d", "#5b8c5a", "#b04a5a", "#e07b39", "#6a5acd",
 const PANTS = ["#2d3142", "#3b3a36", "#4f4a45", "#23395b", "#5a4632", "#3a4a3a"];
 const SKINS = ["#f1c9a5", "#e0ac82", "#c68c63", "#9c6b4a", "#7a4f35"];
 const HAIRS = ["#1b1512", "#3a2a1e", "#5b3b24", "#2b2b2b", "#8a8580"];
-const palOf = (i: number): FigurePalette => ({ coat: COATS[i % COATS.length], pants: PANTS[(i * 5 + 1) % PANTS.length], skin: SKINS[(i * 3 + 2) % SKINS.length], hair: HAIRS[(i * 7 + 1) % HAIRS.length], shoe: "#1a1716" });
-const HERO: FigurePalette = { coat: "#c4553a", pants: "#2b2f3a", skin: "#e2b48c", hair: "#241913", shoe: "#1a1716" };
-const PARENT: FigurePalette = { coat: "#7a5c8e", pants: "#3b3346", skin: "#d9a67e", hair: "#2a1d17", shoe: "#1a1716" };
+const STYLES: FigurePalette["hairStyle"][] = ["twoBlock", "curtain", "comma", "wavy", "pompadour", "ponytail", "perm", "bobBangs", "frenchCrop", "messyBun", "mullet", "wolf", "short", "halfUp", "buzz", "long", "manBun", "pixieLayer", "spaceBuns", "bunLow"];
+const GARMENTS: FigurePalette["garment"][] = ["coat", "jacket", "dress", "coat", "jacket"];
+const palOf = (i: number): FigurePalette => ({ coat: COATS[i % COATS.length], pants: PANTS[(i * 5 + 1) % PANTS.length], skin: SKINS[(i * 3 + 2) % SKINS.length], hair: HAIRS[(i * 7 + 1) % HAIRS.length], shoe: "#1a1716", hairStyle: STYLES[(i * 7) % STYLES.length], garment: GARMENTS[(i * 2 + 1) % GARMENTS.length], accent: ["#efe6d6", "#c9a24a", "#3a3a44"][i % 3] });
+const HERO: FigurePalette = { coat: "#c4553a", pants: "#2b2f3a", skin: "#e2b48c", hair: "#241913", shoe: "#1a1716", hairStyle: "short", garment: "coat", accent: "#efe6d6" };
+const PARENT: FigurePalette = { coat: "#7a5c8e", pants: "#3b3346", skin: "#d9a67e", hair: "#2a1d17", shoe: "#1a1716", hairStyle: "long", garment: "coat", accent: "#efe6d6" };
 /** Nhuộm bộ màu theo ánh sáng cảnh: k = độ chìm vào bóng (0 sáng rõ … 1 hoà hẳn vào màu bóng). */
-const lit = (p: FigurePalette, shade: string, k: number): FigurePalette => ({ coat: mix(p.coat, shade, k), pants: mix(p.pants, shade, k), skin: mix(p.skin, shade, k), hair: mix(p.hair, shade, k), shoe: mix(p.shoe ?? p.pants, shade, k) });
+const lit = (p: FigurePalette, shade: string, k: number): FigurePalette => ({ ...p, coat: mix(p.coat, shade, k), pants: mix(p.pants, shade, k), skin: mix(p.skin, shade, k), hair: mix(p.hair, shade, k), shoe: mix(p.shoe ?? p.pants, shade, k), accent: p.accent ? mix(p.accent, shade, k) : undefined });
 
 // Dãy núi mềm (sin chồng + nhiễu)
 function ridge(seed: number, y0: number, amp: number, w0 = -600, w1 = 2520, n = 70) {
@@ -426,8 +428,8 @@ export const PlazaScene: React.FC<SceneProps> = ({ t, vertical }) => {
               <g>
                 <polygon points={`${hole[0] - 26},${hole[1] - 40} ${hole[0] + 26},${hole[1] + 40} ${FATHER.x + 130},${FATHER.y + 20} ${FATHER.x - 110},${FATHER.y + 20}`} fill="url(#p-beam)" opacity={0.55} />
                 <ellipse cx={FATHER.x} cy={FATHER.y + 6} rx={140} ry={20} fill="rgba(255,225,170,0.3)" />
-                <Figure pose="holdLegs" t={t} x={FATHER.x} y={FATHER.y} H={FATHER.H} flip scarf="none" palette={lit({ coat: "#3f7cac", pants: "#2d3142", skin: "#c68c63", hair: "#1b1512", shoe: "#1a1716" }, "#ffe0b0", 0.12)} rim="rgba(255,230,185,0.8)" rimDir={[-1, -1]} />
-                <Figure pose="shoulderPoint" t={t} x={FATHER.x + 4} y={FATHER.y - 0.84 * FATHER.H} H={FATHER.H * 0.5} flip scarf="none" palette={lit({ coat: "#e0b43a", pants: "#b04a5a", skin: "#d49a70", hair: "#2a1d17", shoe: "#b04a5a" }, "#ffe0b0", 0.1)} rim="rgba(255,235,195,0.85)" rimDir={[-1, -1]} />
+                <Figure pose="holdLegs" t={t} x={FATHER.x} y={FATHER.y} H={FATHER.H} flip scarf="none" palette={lit({ coat: "#3f7cac", pants: "#2d3142", skin: "#c68c63", hair: "#1b1512", shoe: "#1a1716", hairStyle: "short", garment: "jacket", accent: "#efe6d6" }, "#ffe0b0", 0.12)} rim="rgba(255,230,185,0.8)" rimDir={[-1, -1]} />
+                <Figure pose="shoulderPoint" t={t} x={FATHER.x + 4} y={FATHER.y - 0.84 * FATHER.H} H={FATHER.H * 0.62} age="child" flip scarf="none" palette={lit({ coat: "#e0b43a", pants: "#b04a5a", skin: "#d49a70", hair: "#2a1d17", shoe: "#b04a5a", hairStyle: "twinBuns", garment: "dress", accent: "#b04a5a" }, "#ffe0b0", 0.1)} rim="rgba(255,235,195,0.85)" rimDir={[-1, -1]} />
               </g>
             )}
             {/* người ấy đứng cạnh tảng đá */}
