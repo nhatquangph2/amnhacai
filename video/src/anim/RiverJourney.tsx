@@ -1,7 +1,7 @@
 import React from "react";
 import type { SceneProps } from "./Scenes";
 import { Figure, FigurePalette, PoseName } from "./Figure";
-import { Branch, CamCtx, CastShadow, DepthDefs, Glitter, HazePlane, Light, Parallax, Posts, Reeds, SceneLight, SunDisc, toLight, useLight } from "./DepthLight";
+import { Branch, BridgeRailing, CamCtx, CastShadow, DepthDefs, Glitter, HazePlane, Light, Parallax, Posts, RainStreaks, Reeds, SceneLight, StormRocks, StreetLamp, SunDisc, WindowFrame, toLight, useLight } from "./DepthLight";
 import { StudioBird, StudioDog, StudioFishSchool, StudioWaterfowl } from "../library/animals";
 
 
@@ -583,10 +583,81 @@ function cameraFor(id: number, p: number): Camera {
    ============================================================ */
 
 // Nguồn sáng chính của từng cảnh (vị trí trong khung 1920×1080, màu, độ cao so với chân trời, màu bóng/ánh sáng môi trường)
+// --- HỒI 1: Sương sớm, phố thị, bến sông đón thuyền (Shots 1 - 8) ---
+const DAWN_MIST: Light = { x: 960, y: 280, color: "#dbe5ed", elev: 22, ambient: "#212930" };
+const DAWN_STREET: Light = { x: 1550, y: 460, color: "#ede2d5", elev: 18, ambient: "#222a34" };
+const DAWN_RIVER: Light = { x: 1480, y: 500, color: "#f5e2cb", elev: 15, ambient: "#243444" };
 const MORNING: Light = { x: 1480, y: 520, color: "#ffd9a0", elev: 14, ambient: "#24384f" };
+const MORNING_DEPART: Light = { x: 1520, y: 490, color: "#ffd9a0", elev: 16, ambient: "#24384f" };
+const MORNING_GATE: Light = { x: 1450, y: 470, color: "#ffe0b2", elev: 18, ambient: "#26384a" };
+
+// --- HỒI 2: Thung lũng mộng tưởng, bánh răng, rừng đêm (Shots 9 - 14) ---
+const VALLEY_GOLD: Light = { x: 1420, y: 440, color: "#ffe699", elev: 22, ambient: "#20342b" };
+const GEAR_TOWN: Light = { x: 1460, y: 400, color: "#ffd280", elev: 20, ambient: "#2d2235" };
+const VALLEY_SUN: Light = { x: 1400, y: 420, color: "#ffd78a", elev: 20, ambient: "#22332a" };
+const VALLEY_BLOOM: Light = { x: 1440, y: 430, color: "#ffe094", elev: 18, ambient: "#223228" };
+const DUSK_FALL: Light = { x: 1500, y: 460, color: "#ffad66", elev: 12, ambient: "#221626" };
 const MOON: Light = { x: 1418, y: 300, color: "#cfe0ff", elev: 32, ambient: "#0a1424" };
+
+// --- HỒI 3: Hồ ký ức sâu thẳm & Làng quê an bình (Shots 15 - 19) ---
+const LAKE_NIGHT: Light = { x: 960, y: 260, color: "#a8c8ea", elev: 35, ambient: "#09101d" };
+const LAKE_TEAR: Light = { x: 960, y: 640, color: "#38efd8", elev: 12, ambient: "#08101a" };
+const LAKE_GLOW: Light = { x: 960, y: 580, color: "#52ffd9", elev: 25, ambient: "#081520" };
+const VILLAGE_WARM: Light = { x: 1380, y: 450, color: "#f8b878", elev: 16, ambient: "#362216" };
+const HEARTH_LIGHT: Light = { x: 1050, y: 460, color: "#ffa852", elev: 20, ambient: "#2a1810" };
+
+// --- HỒI 4: Thác lũ bão dông & Buông bỏ (Shots 20 - 24) ---
+const STORM_APPROACH: Light = { x: 1300, y: 320, color: "#9ac0dd", elev: 28, ambient: "#121a28" };
+const STORM_FLASH: Light = { x: 980, y: 200, color: "#b0f2ff", elev: 45, ambient: "#0e1824" };
+const STORM_WAVE: Light = { x: 1100, y: 220, color: "#a5e5ff", elev: 40, ambient: "#0c1522" };
+const STORM_RELEASE: Light = { x: 1200, y: 280, color: "#b8dcf2", elev: 35, ambient: "#0f1826" };
+const STORM_CALM: Light = { x: 1350, y: 380, color: "#d0e4f0", elev: 25, ambient: "#141e2a" };
+
+// --- HỒI 5: Đại hòa ca — Hoàng hôn quê hương & Chia tay (Shots 25 - 31) ---
+const SUN_BREAK: Light = { x: 1450, y: 450, color: "#ffd485", elev: 16, ambient: "#2e2232" };
+const SUNSET_RIVER: Light = { x: 1480, y: 440, color: "#ffba70", elev: 12, ambient: "#341e2e" };
 const SUNSET: Light = { x: 1490, y: 430, color: "#ffc27a", elev: 7, ambient: "#3a2236" };
-const lightFor = (id: number): Light | null => (id === 6 ? MORNING : id === 14 ? MOON : id === 27 ? SUNSET : null);
+const SUNSET_DOCK: Light = { x: 1510, y: 450, color: "#ffa866", elev: 6, ambient: "#381e2a" };
+const SUNSET_FAREWELL: Light = { x: 1520, y: 460, color: "#ff9955", elev: 5, ambient: "#341a24" };
+const TWILIGHT_WALK: Light = { x: 1540, y: 480, color: "#f0886c", elev: 4, ambient: "#2c1620" };
+const HORIZON_DAWN: Light = { x: 1560, y: 500, color: "#e8806a", elev: 3, ambient: "#26121c" };
+
+const lightFor = (id: number): Light => {
+  switch (id) {
+    case 1: return DAWN_MIST;
+    case 2:
+    case 3: return DAWN_STREET;
+    case 4: return DAWN_RIVER;
+    case 5:
+    case 6: return MORNING;
+    case 7: return MORNING_DEPART;
+    case 8: return MORNING_GATE;
+    case 9: return VALLEY_GOLD;
+    case 10: return GEAR_TOWN;
+    case 11: return VALLEY_SUN;
+    case 12: return VALLEY_BLOOM;
+    case 13: return DUSK_FALL;
+    case 14: return MOON;
+    case 15: return LAKE_NIGHT;
+    case 16: return LAKE_TEAR;
+    case 17: return LAKE_GLOW;
+    case 18: return VILLAGE_WARM;
+    case 19: return HEARTH_LIGHT;
+    case 20: return STORM_APPROACH;
+    case 21: return STORM_FLASH;
+    case 22: return STORM_WAVE;
+    case 23: return STORM_RELEASE;
+    case 24: return STORM_CALM;
+    case 25: return SUN_BREAK;
+    case 26: return SUNSET_RIVER;
+    case 27: return SUNSET;
+    case 28: return SUNSET_DOCK;
+    case 29: return SUNSET_FAREWELL;
+    case 30: return TWILIGHT_WALK;
+    case 31: return HORIZON_DAWN;
+    default: return MORNING;
+  }
+};
 
 // Bờ xa: hàng cây bụi thấp sát mép nước (lớp giữa)
 const FarBank = ({ tone }: { tone: string }) => (
@@ -605,7 +676,7 @@ const NearTrunks = () => (
 const RiverJourneyFrame: React.FC<SceneProps> = ({ t }) => {
   const shot = resolveShot(t);
   const { p } = shot;
-  const id = t >= 163 ? 28 : shot.id;
+  const id = shot.id;
 
   const camera = t >= 163
     ? endingCamera(t)
@@ -657,6 +728,12 @@ const RiverJourneyFrame: React.FC<SceneProps> = ({ t }) => {
 
       {id === 1 && (
         <>
+          <SunDisc light={DAWN_MIST} r={65} core="#f0f5fa" glow={0.6} />
+          <Parallax depth={0.6}>
+            <Town opacity={0.25} />
+          </Parallax>
+          <HazePlane color="#b8c5d0" opacity={0.36} />
+
           <rect
             x="650"
             y="405"
@@ -700,18 +777,33 @@ const RiverJourneyFrame: React.FC<SceneProps> = ({ t }) => {
             stroke="#a93232"
             strokeWidth="3"
           />
+
+          <Parallax depth={1.35}>
+            <StreetLamp x={240} y={420} scale={1.15} color="#151b22" rim="#dbe5ed" />
+            <StreetLamp x={1680} y={440} scale={1.1} color="#151b22" rim="#dbe5ed" />
+          </Parallax>
         </>
       )}
 
       {id === 2 && (
         <>
+          <SunDisc light={DAWN_STREET} r={48} core="#fff1e0" glow={0.8} />
+          <Parallax depth={0.6}><Town opacity={0.45} /></Parallax>
+          <HazePlane color="#c8d2db" opacity={0.28} />
           <Town opacity={1} />
           <Crowd t={t} />
+          <Parallax depth={1.35}>
+            <StreetLamp x={180} y={400} scale={1.2} color="#141a22" rim="#f2dfce" glow />
+            <StreetLamp x={1740} y={420} scale={1.15} color="#141a22" rim="#f2dfce" />
+          </Parallax>
         </>
       )}
 
       {id === 3 && (
         <>
+          <SunDisc light={DAWN_STREET} r={52} core="#fff1e0" glow={0.8} />
+          <Parallax depth={0.55}><Town opacity={0.35} /></Parallax>
+          <HazePlane color="#c8d2db" opacity={0.24} />
           <Town opacity={0.75} />
           <Crowd t={t} />
 
@@ -721,6 +813,7 @@ const RiverJourneyFrame: React.FC<SceneProps> = ({ t }) => {
             scale={1.65}
             pose="walk"
             t={t}
+            ground
           />
 
           <rect
@@ -729,35 +822,58 @@ const RiverJourneyFrame: React.FC<SceneProps> = ({ t }) => {
             fill="#26313b"
             opacity=".12"
           />
+
+          <Parallax depth={1.35}>
+            <BridgeRailing x={450} y={760} w={950} color="#10151c" rim="#f2dfce" />
+            <StreetLamp x={1260} y={340} scale={0.95} color="#141a22" rim="#f2dfce" glow />
+          </Parallax>
         </>
       )}
 
       {id === 4 && (
         <>
-          <Town opacity={.4} />
+          <SunDisc light={DAWN_RIVER} r={46} core="#fff2db" glow={0.85} />
+          <Parallax depth={0.65}><Town opacity={.4} /></Parallax>
+          <HazePlane color="#cbd7df" opacity={0.25} />
+          <Parallax depth={0.85}><FarBank tone="#5c6e7a" /></Parallax>
+          <HazePlane color="#cbd7df" opacity={0.1} y0={600} y1={740} />
           <Water t={t} />
+          <Glitter x={DAWN_RIVER.x} horizon={712} t={t} color="#f5e2cb" strength={0.8} />
           <Landing />
           <Adult x={lerp(610, 700, ease(clamp(p/.55)))} y={712} scale={1}
-            pose={p < .55 ? "walk" : "still"} t={t} />
+            pose={p < .55 ? "walk" : "still"} t={t} ground />
           <ellipse cx="704" cy="750" rx="29" ry="6" fill="#343b35" opacity=".3" />
+          <Parallax depth={1.35}>
+            <Reeds x={1440} y={1020} w={280} t={t} color="#0d141c" rim="#f5e2cb" />
+            <Posts x={340} y={1010} rim="#f5e2cb" />
+          </Parallax>
         </>
       )}
 
       {id === 5 && (
         <>
-          <Town opacity={.3} />
+          <SunDisc light={MORNING} r={46} core="#fff3d6" glow={0.9} />
+          <Parallax depth={0.7}><Town opacity={.3} /></Parallax>
+          <HazePlane color="#f3d9b5" opacity={0.25} />
+          <Parallax depth={0.85}><FarBank tone="#6c7c68" /></Parallax>
+          <HazePlane color="#f3d9b5" opacity={0.1} y0={600} y1={740} />
           {/* Đàn chim én chao liệng trên bầu trời ban mai */}
           <StudioBird species="swallow" x={lerp(650, 1400, (p * 1.3) % 1)} y={515 + Math.sin(t * 2.8) * 16} scale={0.75} t={t} />
           <StudioBird species="swallow" x={lerp(550, 1300, ((p * 1.3) + 0.35) % 1)} y={550 + Math.cos(t * 2.2) * 14} scale={0.62} t={t} />
           <Water t={t} />
+          <Glitter x={MORNING.x} horizon={712} t={t} color="#ffe2b0" strength={0.85} />
           <Landing />
           {/* Chú chó vàng ngồi đợi cùng Người Tìm Kiếm trên bến cầu đá */}
-          <Adult x={700} y={712} scale={.82} pose="still" t={t} />
+          <Adult x={700} y={712} scale={.82} pose="still" t={t} ground />
           <StudioDog x={625} y={726} scale={0.72} t={t} pose="sit" facing={1} />
           {/* Đàn cá bơi lội dưới làn nước trong gần mạn thuyền */}
           <StudioFishSchool x={1180} y={885} t={t} count={5} scale={0.75} />
           <Boat x={lerp(1320, 1050, ease(p))} y={795} scale={1.1} t={t}
             child={<Child x={-70} y={-20} scale={1} pose="reach" t={t} />} />
+          <Parallax depth={1.4}>
+            <Reeds x={360} y={1010} w={240} t={t} color="#10161a" rim="#ffcf9a" />
+            <Posts x={1560} y={1010} rim="#ffcf9a" />
+          </Parallax>
         </>
       )}
 
@@ -793,8 +909,13 @@ const RiverJourneyFrame: React.FC<SceneProps> = ({ t }) => {
 
       {id === 7 && (
         <>
-          <Mountains />
+          <SunDisc light={MORNING_DEPART} r={48} core="#fff4d9" glow={0.9} />
+          <Parallax depth={0.65}><Mountains /></Parallax>
+          <HazePlane color="#f3d9b5" opacity={0.22} />
+          <Parallax depth={0.85}><FarBank tone="#627560" /></Parallax>
+          <HazePlane color="#f3d9b5" opacity={0.1} y0={600} y1={740} />
           <Water t={t} />
+          <Glitter x={MORNING_DEPART.x} horizon={712} t={t} color="#ffe2b0" strength={0.85} />
 
           {/* SH07:
               Adult vừa bước lên nên thuyền chao mạnh.
@@ -858,7 +979,7 @@ const RiverJourneyFrame: React.FC<SceneProps> = ({ t }) => {
           {/* Adult quay đầu nhìn lại thị trấn */}
           {p > 0.55 && (
             <g opacity={clamp((p - 0.55) / 0.2)}>
-              <Town opacity={0.24} />
+              <Parallax depth={0.7}><Town opacity={0.24} /></Parallax>
 
               <path
                 d="M 1060 690 Q 1010 675 965 690"
@@ -869,13 +990,23 @@ const RiverJourneyFrame: React.FC<SceneProps> = ({ t }) => {
               />
             </g>
           )}
+
+          <Parallax depth={1.45}>
+            <Reeds x={1480} y={1020} w={300} t={t} color="#10171d" rim="#ffcf9a" />
+            <Posts x={260} y={1030} rim="#ffcf9a" />
+          </Parallax>
         </>
       )}
 
       {id === 8 && (
         <>
-          <Mountains />
+          <SunDisc light={MORNING_GATE} r={48} core="#fff7e0" glow={0.95} />
+          <Parallax depth={0.65}><Mountains /></Parallax>
+          <HazePlane color="#f0d5b2" opacity={0.2} />
+          <Parallax depth={0.85}><FarBank tone="#687864" /></Parallax>
+          <HazePlane color="#f0d5b2" opacity={0.1} y0={600} y1={740} />
           <Water t={t} />
+          <Glitter x={MORNING_GATE.x} horizon={712} t={t} color="#ffe2b0" strength={0.9} />
 
           {/* Động vật bơi lội & bay lượn trong Shot 8 */}
           <StudioWaterfowl species="mallard" x={480} y={740} scale={0.7} t={t} facing={1} />
@@ -961,6 +1092,11 @@ const RiverJourneyFrame: React.FC<SceneProps> = ({ t }) => {
               t={t}
             />
           )}
+
+          <Parallax depth={1.4}>
+            <Branch x={260} y={320} t={t} />
+            <Reeds x={1520} y={1010} w={260} t={t} color="#0f161b" rim="#ffd49e" />
+          </Parallax>
         </>
       )}
 
@@ -970,6 +1106,7 @@ const RiverJourneyFrame: React.FC<SceneProps> = ({ t }) => {
               Không reveal fantasy ngay.
               Thuyền chui qua một khe tối → ánh sáng tràn vào.
           */}
+          <SunDisc light={VALLEY_GOLD} r={55} core="#fff8e7" glow={1.1} />
 
           <rect
             width="1920"
@@ -1010,6 +1147,7 @@ const RiverJourneyFrame: React.FC<SceneProps> = ({ t }) => {
           />
 
           <Water t={t} />
+          <Glitter x={VALLEY_GOLD.x} horizon={712} t={t} color="#ffe699" strength={0.9} />
 
           <Boat
             x={lerp(760, 1020, p)}
@@ -1035,13 +1173,23 @@ const RiverJourneyFrame: React.FC<SceneProps> = ({ t }) => {
               />
             }
           />
+
+          <Parallax depth={1.4}>
+            <Branch x={180} y={350} t={t} />
+            <Reeds x={1550} y={1020} w={240} t={t} color="#0c1618" rim="#ffe699" />
+          </Parallax>
         </>
       )}
 
       {id === 10 && (
         <>
-          <Mountains wonder />
+          <SunDisc light={GEAR_TOWN} r={50} core="#fff3db" glow={1} />
+          <Parallax depth={0.65}><Mountains wonder /></Parallax>
+          <HazePlane color="#c7e6ea" opacity={0.22} />
+          <Parallax depth={0.85}><FarBank tone="#4a6e68" /></Parallax>
+          <HazePlane color="#c7e6ea" opacity={0.1} y0={600} y1={740} />
           <Water t={t} />
+          <Glitter x={GEAR_TOWN.x} horizon={712} t={t} color="#ffd280" strength={0.9} />
 
           {/* SH10:
               Adult ban đầu đang nhìn xuống nước,
@@ -1113,6 +1261,11 @@ const RiverJourneyFrame: React.FC<SceneProps> = ({ t }) => {
               />
             </g>
           )}
+
+          <Parallax depth={1.4}>
+            <Branch x={1650} y={360} t={t + 0.5} flip />
+            <Reeds x={300} y={1010} w={280} t={t} color="#0d1819" rim="#ffd280" />
+          </Parallax>
         </>
       )}
 
@@ -1122,10 +1275,12 @@ const RiverJourneyFrame: React.FC<SceneProps> = ({ t }) => {
               Fantasy đột ngột bị thay bằng một nơi cực kỳ bận rộn.
               Adult nhận ra đây giống thế giới mình vừa rời đi.
           */}
-
-          <ClockTownCinematic t={t} />
+          <SunDisc light={VALLEY_SUN} r={50} core="#fff5e0" glow={0.9} />
+          <Parallax depth={0.6}><ClockTownCinematic t={t} /></Parallax>
+          <HazePlane color="#d8cce0" opacity={0.2} />
 
           <Water t={t} />
+          <Glitter x={VALLEY_SUN.x} horizon={712} t={t} color="#ffd78a" strength={0.85} />
 
           <Boat
             x={lerp(1180, 820, p)}
@@ -1184,12 +1339,19 @@ const RiverJourneyFrame: React.FC<SceneProps> = ({ t }) => {
               </g>
             );
           })}
+
+          <Parallax depth={1.35}>
+            <StreetLamp x={180} y={420} scale={1.1} color="#181520" rim="#ffd78a" />
+            <Reeds x={1520} y={1020} w={260} t={t} color="#14121a" rim="#ffd78a" />
+          </Parallax>
         </>
       )}
 
       {id === 12 && (
         <>
-          <ClockTownCinematic t={t} />
+          <SunDisc light={VALLEY_BLOOM} r={46} core="#fff3d6" glow={0.85} />
+          <Parallax depth={0.6}><ClockTownCinematic t={t} /></Parallax>
+          <HazePlane color="#dacde0" opacity={0.2} />
 
           {/* SH12:
               Thuyền đi ngang một tủ kính.
@@ -1197,6 +1359,7 @@ const RiverJourneyFrame: React.FC<SceneProps> = ({ t }) => {
           */}
 
           <Water t={t} />
+          <Glitter x={VALLEY_BLOOM.x} horizon={712} t={t} color="#ffe094" strength={0.8} />
 
           <Boat
             x={lerp(1150, 800, p)}
@@ -1227,6 +1390,7 @@ const RiverJourneyFrame: React.FC<SceneProps> = ({ t }) => {
           <g
             transform={`translate(${lerp(1360, 520, p)} 520)`}
             opacity=".92"
+            filter="url(#dl-blur-s)"
           >
             <rect
               x="-170"
@@ -1265,12 +1429,20 @@ const RiverJourneyFrame: React.FC<SceneProps> = ({ t }) => {
               fill="#C89447"
             />
           </g>
+
+          <Parallax depth={1.35}>
+            <StreetLamp x={1720} y={400} scale={1.15} color="#181520" rim="#ffe094" glow />
+          </Parallax>
         </>
       )}
 
       {id === 13 && (
         <>
+          <SunDisc light={DUSK_FALL} r={52} core="#ffe0b8" glow={1} />
+          <Parallax depth={0.65}><Mountains /></Parallax>
+          <HazePlane color="#f0b890" opacity={0.24} />
           <RiverFork t={t} />
+          <Glitter x={DUSK_FALL.x} horizon={712} t={t} color="#ffad66" strength={0.85} />
           {/* Pause at the fork, then follow the child's pointing hand into the forest. */}
           <Boat x={lerp(940, 1400, ease(clamp((p-.35)/.65)))}
             y={lerp(805, 650, ease(clamp((p-.35)/.65)))}
@@ -1278,6 +1450,11 @@ const RiverJourneyFrame: React.FC<SceneProps> = ({ t }) => {
             rotation={lerp(0,-5,ease(clamp((p-.35)/.65)))} t={t}
             adult={<Adult x={-65} y={-22} scale={.74} pose={p < .2 ? "row" : p < .45 ? "still" : "row"} t={t} />}
             child={<Child x={78} y={-22} scale={.92} pose={p < .2 ? "still" : "point"} t={t} />} />
+
+          <Parallax depth={1.4}>
+            <Branch x={320} y={350} t={t} />
+            <Reeds x={1480} y={1010} w={300} t={t} color="#1c1018" rim="#ffad66" />
+          </Parallax>
         </>
       )}
 
@@ -1361,49 +1538,112 @@ const RiverJourneyFrame: React.FC<SceneProps> = ({ t }) => {
 
       {id >= 15 && id <= 17 && (
         <>
-          <MirrorLake />
-
-          {id !== 17 && (
-            <Boat
-              x={960}
-              y={755}
-              scale={1}
-              t={t}
-              adult={
-                <Adult
-                  x={-52}
-                  y={-20}
-                  scale={.72}
-                  pose={id === 16 ? "lookDown" : "sit"}
-                  t={t}
-                />
-              }
-              child={
-                <Child
-                  x={55}
-                  y={-20}
-                  scale={.9}
-                  pose={id === 16 && p > .35 ? "reach" : "still"}
-                  t={t}
-                />
-              }
-            />
+          {id === 15 && (
+            <>
+              <SunDisc light={LAKE_NIGHT} r={32} core="#d5e8ff" glow={0.7} />
+              <HazePlane color="#132438" opacity={0.3} />
+              <MirrorLake />
+              <Glitter x={960} horizon={650} bottom={950} t={t} color="#a8c8ea" strength={0.5} spread={0.7} />
+              <Boat
+                x={960}
+                y={755}
+                scale={1}
+                t={t}
+                adult={
+                  <Adult
+                    x={-52}
+                    y={-20}
+                    scale={.72}
+                    pose="sit"
+                    t={t}
+                  />
+                }
+                child={
+                  <Child
+                    x={55}
+                    y={-20}
+                    scale={.9}
+                    pose="still"
+                    t={t}
+                  />
+                }
+              />
+              <Parallax depth={1.45}>
+                <Branch x={250} y={320} t={t} />
+                <Reeds x={1450} y={1010} w={320} t={t} color="#04080e" rim="#a8c8ea" />
+              </Parallax>
+            </>
           )}
 
-          {id === 16 && <RememberedChildhood t={t} p={p} />}
+          {id === 16 && (
+            <>
+              <HazePlane color="#0e1f2c" opacity={0.25} />
+              <MirrorLake />
+              <circle cx="960" cy="740" r={40 + p * 120} fill="#38efd8" opacity={0.35 * (1 - p * 0.5)} filter="url(#dl-blur-m)" />
+              <Boat
+                x={960}
+                y={755}
+                scale={1}
+                t={t}
+                adult={
+                  <Adult
+                    x={-52}
+                    y={-20}
+                    scale={.72}
+                    pose="lookDown"
+                    t={t}
+                  />
+                }
+                child={
+                  <Child
+                    x={55}
+                    y={-20}
+                    scale={.9}
+                    pose={p > .35 ? "reach" : "still"}
+                    t={t}
+                  />
+                }
+              />
+              <RememberedChildhood t={t} p={p} />
+              <Parallax depth={1.4}>
+                <Reeds x={300} y={1015} w={260} t={t} color="#04080d" rim="#38efd8" />
+              </Parallax>
+            </>
+          )}
 
           {id === 17 && (
-            <AcceptanceOnLake t={t} p={p} />
+            <>
+              <SunDisc light={LAKE_GLOW} r={70} core="#d0fff4" glow={1.2} />
+              <HazePlane color="#0d282e" opacity={0.28} />
+              <MirrorLake />
+              <AcceptanceOnLake t={t} p={p} />
+              <Parallax depth={1.4}>
+                <Reeds x={1520} y={1010} w={280} t={t} color="#04080d" rim="#52ffd9" />
+                <Branch x={1700} y={340} t={t} flip />
+              </Parallax>
+            </>
           )}
         </>
       )}
 
       {id === 18 && (
-        <Village t={t} p={p} />
+        <>
+          <SunDisc light={VILLAGE_WARM} r={55} core="#fff1d6" glow={1.1} />
+          <HazePlane color="#ebd4b0" opacity={0.26} />
+          <Village t={t} p={p} />
+          <Parallax depth={1.35}>
+            <WindowFrame color="#1c120c" />
+          </Parallax>
+        </>
       )}
 
       {id === 19 && (
-        <SharedMeal t={t} />
+        <>
+          <SharedMeal t={t} />
+          <Parallax depth={1.3}>
+            <WindowFrame color="#140c08" />
+          </Parallax>
+        </>
       )}
 
       {/* =====================================================
@@ -1412,25 +1652,37 @@ const RiverJourneyFrame: React.FC<SceneProps> = ({ t }) => {
 
       {id >= 20 && id <= 21 && (
         <>
-          <StormSky t={t} />
-          <Water t={t} dark violent />
+          {id === 20 && (
+            <>
+              <SunDisc light={STORM_APPROACH} r={36} core="#d5e8f5" glow={0.6} />
+              <Parallax depth={0.65}><StormSky t={t} /></Parallax>
+              <HazePlane color="#152232" opacity={0.28} />
+              <Water t={t} dark violent />
+              <Glitter x={STORM_APPROACH.x} horizon={715} t={t} color="#9ac0dd" strength={0.5} spread={0.7} />
+            </>
+          )}
+
+          {id === 21 && (
+            <>
+              <SunDisc light={STORM_FLASH} r={46} core="#dffbff" glow={1.2} />
+              <Parallax depth={0.65}><StormSky t={t} /></Parallax>
+              <HazePlane color="#101d2a" opacity={0.32} />
+              {/* Tia chớp lóe sáng */}
+              {pulse(t * 4.2) > 0.65 && (
+                <g opacity={0.65}>
+                  <path d="M 980 160 L 960 270 L 990 310 L 965 410 L 980 440" stroke="#e0f8ff" strokeWidth="3" fill="none" filter="url(#glow)" />
+                  <rect x={-400} y={-200} width={2720} height={1500} fill="#b0f2ff" opacity={0.12} />
+                </g>
+              )}
+              <Water t={t} dark violent />
+              <Glitter x={STORM_FLASH.x} horizon={715} t={t} color="#b0f2ff" strength={0.8} spread={0.9} />
+            </>
+          )}
 
           <Boat
-            x={
-              id === 22
-                ? 960 + Math.sin(p * Math.PI * 5) * 70
-                : 930 + Math.sin(t * 6) * 24
-            }
-            y={
-              id === 22
-                ? lerp(745, 970, ease(p))
-                : 760 + Math.cos(t * 5) * 16
-            }
-            rotation={
-              id === 22
-                ? lerp(-8, 42, ease(p))
-                : Math.sin(t * 7) * 5
-            }
+            x={930 + Math.sin(t * 6) * 24}
+            y={760 + Math.cos(t * 5) * 16}
+            rotation={Math.sin(t * 7) * 5}
             scale={1.05}
             t={t}
             adult={
@@ -1438,7 +1690,7 @@ const RiverJourneyFrame: React.FC<SceneProps> = ({ t }) => {
                 x={-62}
                 y={-20}
                 scale={.74}
-                pose={id === 22 && p > 0.5 ? "reach" : "row"}
+                pose="row"
                 t={t}
               />
             }
@@ -1447,25 +1699,17 @@ const RiverJourneyFrame: React.FC<SceneProps> = ({ t }) => {
                 x={78}
                 y={-20}
                 scale={.9}
-                pose={id === 22 ? "reach" : "still"}
+                pose="still"
                 t={t}
               />
             }
           />
 
           <BowSplash
-            x={
-              (id === 22
-                ? 960 + Math.sin(p * Math.PI * 5) * 70
-                : 930 + Math.sin(t * 6) * 24) + 140
-            }
-            y={
-              (id === 22
-                ? lerp(745, 970, ease(p))
-                : 760 + Math.cos(t * 5) * 16) + 10
-            }
+            x={930 + Math.sin(t * 6) * 24 + 140}
+            y={760 + Math.cos(t * 5) * 16 + 10}
             t={t}
-            strength={id === 21 ? 1.5 : id === 22 ? lerp(1.2, 0.4, p) : 1}
+            strength={id === 21 ? 1.5 : 1}
           />
 
           <CinematicRain
@@ -1473,11 +1717,15 @@ const RiverJourneyFrame: React.FC<SceneProps> = ({ t }) => {
             intensity={
               id === 20
                 ? lerp(0.4, 0.9, p)
-                : id === 21
-                  ? 1
-                  : lerp(1, 0.5, p)
+                : 1
             }
           />
+
+          <Parallax depth={1.4}>
+            <StormRocks x={120} y={780} scale={1.15} />
+            <StormRocks x={1750} y={800} scale={1.25} flip />
+            <RainStreaks t={t} count={42} color="rgba(190, 225, 245, 0.45)" />
+          </Parallax>
         </>
       )}
 
@@ -1485,21 +1733,29 @@ const RiverJourneyFrame: React.FC<SceneProps> = ({ t }) => {
 
       {id === 26 && (
         <>
-          <Town warm />
+          <SunDisc light={SUNSET_RIVER} r={62} core="#fff0d6" glow={1.1} />
+          <Parallax depth={0.65}><Town warm opacity={0.88} /></Parallax>
+          <HazePlane color="#f4bfa0" opacity={0.26} />
           <Water t={t} />
+          <Glitter x={SUNSET_RIVER.x} horizon={712} t={t} color="#ffba70" strength={0.9} />
           <Landing />
           <path d="M 710 732 L 915 781 L 908 797 L 705 747 Z" fill="#bd986c" />
           <Boat x={1050} y={795} scale={1.1} t={t}
             child={<Child x={70} y={-20} scale={1} pose="still" t={t} />} />
           <Adult x={lerp(995, 700, ease(p))} y={lerp(772, 712, ease(p))}
-            scale={.82} facing={-1} pose={p < .85 ? "walk" : "still"} t={t} />
+            scale={.82} facing={-1} pose={p < .85 ? "walk" : "still"} t={t} ground />
           {/* Chó vàng mừng rỡ đón ở bến */}
           <StudioDog x={655} y={710} scale={0.68} t={t} pose="sit" facing={1} />
           <StudioBird species="swallow" x={lerp(700, 1300, (p * 1.2) % 1)} y={480 + Math.sin(t * 2.5) * 14} scale={0.6} t={t} />
+
+          <Parallax depth={1.4}>
+            <Posts x={360} y={1040} rim="#ffba70" />
+            <Reeds x={1520} y={1025} w={280} t={t} color="#180e14" rim="#ffba70" />
+          </Parallax>
         </>
       )}
 
-      {id === 27 && (
+      {id === 27 && t < 163 && (
         <>
           <SunDisc light={SUNSET} r={70} core="#ffe2a6" />
           <Parallax depth={0.6}><g transform="translate(240 120) scale(0.75)"><Town warm opacity={0.9} /></g></Parallax>
@@ -2480,16 +2736,46 @@ const WindToShore = ({t}: {t:number}) => {
   return <>
     <rect width="1920" height="1080" fill="url(#sky-home)" />
     <rect width="1920" height="1080" fill="#172333" opacity={1-settle} />
-    <g opacity={motion}><StormSky t={t} /></g>
-    <g opacity={dock}><Town warm /></g>
+
+    {/* Bầu trời giông bão khi còn sóng gió */}
+    {motion > 0.02 && (
+      <g opacity={motion}>
+        <Parallax depth={0.65}>
+          <StormSky t={t} />
+        </Parallax>
+        <HazePlane color="#152232" opacity={0.28} />
+      </g>
+    )}
+
+    {/* Ánh bình minh / hửng nắng khi cập bến */}
+    {dock > 0.02 && (
+      <g opacity={dock}>
+        <SunDisc light={SUN_BREAK} r={55} core="#fff1d0" glow={1.1} />
+        <Parallax depth={0.65}>
+          <Town warm opacity={0.9} />
+        </Parallax>
+        <HazePlane color="#f4c898" opacity={0.22} />
+      </g>
+    )}
+
     <path d="M0 700 Q480 695 960 700 T1920 700 L1920 1080 L0 1080Z" fill="url(#river)" />
     <rect y="710" width="1920" height="370" fill="#10253c" opacity={motion*.8} />
+
+    {/* Phản chiếu nước */}
+    {motion > 0.05 && (
+      <Glitter x={1150} horizon={712} t={t} color="#a5e5ff" strength={0.45 * motion} spread={0.8} />
+    )}
+    {dock > 0.05 && (
+      <Glitter x={SUN_BREAK.x} horizon={712} t={t} color="#ffd485" strength={0.85 * dock} />
+    )}
+
     {Array.from({length:9}).map((_,i)=>{
       const y=730+i*35;
       const a=Math.sin(t*(2+motion*3)+i)*(2+motion*30);
       return <path key={i} d={`M0 ${y} Q320 ${y+a} 640 ${y-a} T1280 ${y} T1920 ${y}`}
         stroke="#a3c8d8" strokeWidth={lerp(4,1.5,settle)} opacity={lerp(.55,.24,settle)} fill="none" />;
     })}
+
     <g opacity={dock}><Landing /></g>
     {dock > .65 && <path d="M710 732 L915 781 L908 797 L705 747Z" fill="#bd986c" opacity={clamp((dock-.65)/.35)} />}
     <Boat x={bx} y={by} scale={lerp(1.05,1.1,dock)} rotation={angle} t={t} sailWind={thrown ? 1 : .3}
@@ -2508,6 +2794,27 @@ const WindToShore = ({t}: {t:number}) => {
       strokeWidth="2" opacity={1-clamp((t-throwAt-1)/1.2)} />}
     <WindLines t={t*.13} opacity={thrown ? .13+.1*motion : .08} />
     <CinematicRain t={t} intensity={motion*.85} />
+
+    {/* Tiền cảnh giông bão */}
+    {motion > 0.08 && (
+      <g opacity={motion}>
+        <Parallax depth={1.4}>
+          <StormRocks x={100} y={780} scale={1.15} />
+          <StormRocks x={1760} y={800} scale={1.25} flip />
+          <RainStreaks t={t} count={Math.round(36 * motion)} color="rgba(190, 225, 245, 0.4)" />
+        </Parallax>
+      </g>
+    )}
+
+    {/* Tiền cảnh bến sông */}
+    {dock > 0.08 && (
+      <g opacity={dock}>
+        <Parallax depth={1.4}>
+          <Posts x={320} y={1040} rim="#ffd485" />
+          <Reeds x={1520} y={1025} w={300} t={t} color="#181014" rim="#ffd485" />
+        </Parallax>
+      </g>
+    )}
   </>;
 };
 
@@ -2538,13 +2845,18 @@ const FarewellAtDock = ({t}: {t:number}) => {
   const ax=t < 180 ? lerp(700,720,ease(pause)) : t < 183.3 ? lerp(720,750,descend) : t < 193 ? lerp(750,700,returnUp) : lerp(700,320,future);
   const ay=t < 180 ? 712 : t < 183.3 ? lerp(712,755,descend) : t < 193 ? lerp(755,712,returnUp) : lerp(712,625,future);
   return <>
-    <Town warm />
+    <SunDisc light={SUNSET_DOCK} r={72} core="#ffe3ae" glow={1.25} />
+    <Parallax depth={0.6}><g transform="translate(200 100) scale(0.8)"><Town warm opacity={0.88} /></g></Parallax>
+    <HazePlane color="#f4b584" opacity={0.32} />
+    <Parallax depth={0.8}><Town warm opacity={0.96} /></Parallax>
+    <HazePlane color="#f4b584" opacity={0.12} />
+
     <Water t={t*.25} />
+    <Glitter x={SUNSET_DOCK.x} horizon={712} t={t} color="#ffa866" strength={1.05} />
     <Landing />
     {/* A path leads back to the familiar town, rather than an empty horizon. */}
     <path d="M690 722 Q520 710 330 645 L290 617" stroke="#cebb94" strokeWidth="28" fill="none" />
     <path d="M715 735 H742 V752 H766 V778 H790 V798 H740 V766 H715Z" fill="#a99b80" />
-    <circle cx="1580" cy="425" r="130" fill="#efba62" opacity=".65" filter="url(#glow)" />
     <Boat x={bx} y={t < 193 ? 795 : lerp(795,735,future)} scale={boatScale} t={t} sailWind={.5}
       text={t >= 180 ? "HÃY ĐI TIẾP NÀO" : undefined}
       child={<Child x={70} y={-20} scale={1}
@@ -2552,7 +2864,7 @@ const FarewellAtDock = ({t}: {t:number}) => {
     <Adult x={ax} y={ay} scale={t < 193 ? .95 : lerp(.95,.8,future)}
       facing={t >= 193 ? -1 : 1}
       pose={t >= 193 ? "walk" : t >= 192 ? "heart" : pushing ? "push" : adultHeart ? "heart" : t >= 185 ? "wave" : t < 165 ? "walk" : "still"}
-      t={t*.48} />
+      t={t*.48} ground />
     {/* Chú chó vàng trung thành kề bên Adult trên bến cảng */}
     <StudioDog x={ax - 55} y={ay + 2} scale={0.7} t={t} pose="sit" facing={1} />
     {/* Chim hạc bay về phía hoàng hôn */}
@@ -2560,6 +2872,12 @@ const FarewellAtDock = ({t}: {t:number}) => {
     {/* A final quiet touch to the chest before walking towards his adult life. */}
     {launch > 0 && launch < 1 && <ellipse cx={bx-160} cy="826" rx={20+launch*60} ry="9"
       stroke="#c0d8df" strokeWidth="2" fill="none" opacity={1-launch} />}
+
+    <Parallax depth={1.4}>
+      <Posts x={380} y={1040} rim="#ffa866" />
+      <Reeds x={1550} y={1030} w={320} t={t} color="#180e14" rim="#ffa866" />
+    </Parallax>
+
     <rect width="1920" height="1080" fill="#080b10" opacity={clamp((t-204)/2.9)} />
   </>;
 };
@@ -2573,7 +2891,12 @@ const EndingJourney = ({t}: {t:number}) => {
     {/* Repeat the opening street, with a changed purpose and a living ray of light. */}
     <rect width="1920" height="1080" fill="url(#sky-grey)" />
     <rect width="1920" height="1080" fill="url(#sky-home)" opacity={ease(p)*.75} />
-    <Town opacity={.85} />
+
+    <SunDisc light={TWILIGHT_WALK} r={56} core="#ffd499" glow={1.25} />
+    <Parallax depth={0.6}><Town opacity={0.35} /></Parallax>
+    <HazePlane color="#e2c8b8" opacity={0.22} />
+    <Parallax depth={0.8}><Town opacity={0.8} warm /></Parallax>
+
     <path d="M0 680 Q960 650 1920 680 L1920 1080 L0 1080Z" fill="#727b7c" />
     <path d="M0 775 Q960 740 1920 775" fill="none" stroke="#a9a8a0" strokeWidth="5" opacity=".5" />
     <Crowd t={t} />
@@ -2583,9 +2906,15 @@ const EndingJourney = ({t}: {t:number}) => {
       stroke="#fff0b3" strokeWidth="3" fill="none" opacity=".9" />
     <ellipse cx={lightX} cy={704+Math.sin(t*1.6)*10} rx="14" ry="7" fill="#ffe7a0" filter="url(#glow)" />
     <path d={`M${lightX} 720 L${lightX+135} 300 L${lightX+250} 300Z`} fill="#f7d28e" opacity=".09" />
-    <ellipse cx={runnerX} cy="759" rx="24" ry="5" fill="#34454a" opacity=".3" />
+    <CastShadow x={runnerX} y={758} h={130} light={TWILIGHT_WALK} opacity={0.42} />
     <Adult x={runnerX} y={729-Math.abs(Math.sin(t*10))*4} scale={1}
       pose={t < 203.5 ? "run" : "still"} t={t} />
+
+    <Parallax depth={1.35}>
+      <StreetLamp x={120} y={380} scale={1.1} color="#151018" rim="#f0886c" glow />
+      <StreetLamp x={1860} y={350} scale={1.15} color="#151018" rim="#f0886c" glow />
+    </Parallax>
+
     <rect width="1920" height="1080" fill="#080b10" opacity={clamp((t-204)/2.9)} />
   </>;
 };

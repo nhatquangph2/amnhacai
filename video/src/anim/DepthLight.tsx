@@ -133,3 +133,76 @@ export const Posts: React.FC<{ x: number; y: number; n?: number; gap?: number; c
     <path d={`M${x + 20},${y - 200} Q${x + gap / 2 + 20},${y - 120} ${x + gap + 20},${y - 225}`} stroke={color} strokeWidth={7} fill="none" />
   </g>
 );
+
+/** Cột đèn đường phố tiền cảnh — silhouette tối, nhoè nhẹ ngoài vùng nét */
+export const StreetLamp: React.FC<{ x: number; y: number; scale?: number; color?: string; rim?: string; glow?: boolean }> = ({ x, y, scale = 1, color = "#0d131a", rim, glow = false }) => (
+  <g transform={`translate(${x} ${y}) scale(${scale})`} filter="url(#dl-blur-s)">
+    <rect x="-14" y="0" width="28" height="650" rx="4" fill={color} />
+    {rim && <rect x="10" y="0" width="3" height="650" fill={rim} opacity={0.4} />}
+    <path d="M-28,650 L28,650 L20,550 L-20,550 Z" fill={color} />
+    <path d="M-36,-40 L36,-40 L26,40 L-26,40 Z" fill={color} />
+    <path d="M-22,-40 L22,-40 L16,-70 L-16,-70 Z" fill={color} />
+    {glow && <circle cx="0" cy="0" r="28" fill="#ffd9a0" opacity={0.65} filter="url(#dl-blur-m)" />}
+    <ellipse cx="0" cy="0" rx="14" ry="24" fill={glow ? "#fff2d6" : "#2a3440"} opacity={glow ? 0.9 : 0.4} />
+  </g>
+);
+
+/** Lan can cầu đá / lan can sắt tiền cảnh */
+export const BridgeRailing: React.FC<{ x: number; y: number; w?: number; color?: string; rim?: string }> = ({ x, y, w = 1920, color = "#0a1016", rim }) => (
+  <g filter="url(#dl-blur-s)">
+    <rect x={x - 40} y={y} width={w + 80} height={28} rx={6} fill={color} />
+    {rim && <rect x={x - 40} y={y} width={w + 80} height={3} fill={rim} opacity={0.5} />}
+    <rect x={x - 40} y={y + 110} width={w + 80} height={18} rx={4} fill={color} />
+    {Array.from({ length: Math.round(w / 110) + 2 }, (_, i) => {
+      const px = x + i * 110;
+      return (
+        <g key={i}>
+          <rect x={px - 8} y={y + 24} width={16} height={90} rx={3} fill={color} />
+          {i % 3 === 0 && <rect x={px - 14} y={y - 8} width={28} height={140} rx={4} fill={color} />}
+        </g>
+      );
+    })}
+    <rect x={x - 40} y={y + 125} width={w + 80} height={400} fill={color} />
+  </g>
+);
+
+/** Khung cửa sổ / vách phòng tiền cảnh (góc nhìn ấm cúng từ trong phòng nhìn ra) */
+export const WindowFrame: React.FC<{ color?: string }> = ({ color = "#100b08" }) => (
+  <g filter="url(#dl-blur-s)">
+    <rect x="0" y="0" width="180" height="1080" fill={color} />
+    <rect x="1740" y="0" width="180" height="1080" fill={color} />
+    <rect x="0" y="0" width="1920" height="140" fill={color} />
+    <rect x="0" y="940" width="1920" height="140" fill={color} />
+  </g>
+);
+
+/** Mỏm đá đen ven bờ thác ghềnh tiền cảnh (nhoè nhẹ, sẫm tối) */
+export const StormRocks: React.FC<{ x: number; y: number; scale?: number; color?: string; flip?: boolean }> = ({ x, y, scale = 1, color = "#080c10", flip = false }) => (
+  <g transform={`translate(${x} ${y}) scale(${flip ? -scale : scale} ${scale})`} filter="url(#dl-blur-s)">
+    <path d="M-120,400 L-80,120 Q-40,40 20,70 Q80,100 140,20 L220,180 Q280,260 360,400 Z" fill={color} />
+  </g>
+);
+
+/** Vệt mưa xiên tiền cảnh cho cảnh giông bão */
+export const RainStreaks: React.FC<{ t: number; count?: number; color?: string }> = ({ t, count = 35, color = "rgba(180,220,240,0.35)" }) => (
+  <g filter="url(#dl-blur-s)">
+    {Array.from({ length: count }, (_, i) => {
+      const s = hash(i * 19 + 7);
+      const px = (((s * 2400 - t * 1400) % 2200) + 2200) % 2200 - 100;
+      const py = (((i * 37 + t * 2200) % 1200) + 1200) % 1200 - 100;
+      return (
+        <line
+          key={i}
+          x1={px}
+          y1={py}
+          x2={px - 35}
+          y2={py + 110}
+          stroke={color}
+          strokeWidth={2 + s * 2.5}
+          strokeLinecap="round"
+        />
+      );
+    })}
+  </g>
+);
+
