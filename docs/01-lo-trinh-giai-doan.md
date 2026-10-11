@@ -141,9 +141,9 @@ GĐ0 Nền tảng ──► GĐ1 Bản sắc & kho bài ──► GĐ2 Ra mắt 
 | Ngày | Việc |
 |---|---|
 | **Thứ 2** | Đọc số liệu → báo cáo tuần · chọn đề tài bài tiếp theo |
-| **Thứ 3** | ✍️ **Viết lời** (chỉ viết, không làm gì khác) |
+| **Thứ 3** | ✍️ **Viết lời** · **20:00 đăng bài mới** (đã lên lịch trước) |
 | **Thứ 4** | Sửa lời → tạo nhạc trên Suno (20–40 bản) |
 | **Thứ 5** | Chọn bản, hậu kỳ, master · ảnh bìa |
-| **Thứ 6** | Lyric video, Shorts, metadata · lên lịch (đi trước 2 tuần) · **ngày phát hành** |
+| **Thứ 6** | Lyric video, Shorts, metadata · lên lịch (đi trước 2 tuần) · **20:00 đăng bài mới** · ngày phát hành |
 | **Thứ 7** | Tương tác bình luận, đăng Shorts, đọc tin nhắn người nghe |
 | **Chủ nhật** | Đọc sách, xem phim, sống — **nạp nguyên liệu để viết** |

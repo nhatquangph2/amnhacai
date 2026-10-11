@@ -79,7 +79,7 @@ TikTok `@senoremusic` có vẻ còn trống (`@senore` đã có chủ) · không
 
 | Nền tảng | Bio (copy) | ✍️ Xong |
 |---|---|---|
-| TikTok `@senoremusic` | `Senore — những bài hát về cuộc sống ✍️ Lời tự viết · bài mới mỗi Thứ 6` | ☐ |
+| TikTok `@senoremusic` | `Senore — những bài hát về cuộc sống ✍️ Lời tự viết · bài mới mỗi Thứ 3 & Thứ 6` | ☐ |
 | Instagram `@senoremusic` (+ Threads) | như trên | ☐ |
 | Facebook Page "Senore" (`/senoremusic`) | Mô tả kênh ngắn | ☐ |
 
@@ -97,7 +97,7 @@ Tôi viết những bài hát về cuộc sống — về giông bão, về nh�
 về câu hỏi "mình sống để làm gì".
 
 ✍️ Lời do tôi viết. Nhạc và giọng hát được tạo cùng công cụ AI, rồi được tôi chọn lọc và hoàn thiện.
-🎵 Bài mới mỗi Thứ 6.
+🎵 Bài mới mỗi Thứ 3 & Thứ 6.
 📩 Hợp tác / đặt bài hát: [email]
 
 Nếu một câu hát nào đó ở lại với bạn, vậy là đủ.

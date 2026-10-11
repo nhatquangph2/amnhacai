@@ -26,7 +26,7 @@
 
 ### A2. TikTok `@senoremusic` (10 phút)
 1. Cài TikTok → Đăng ký bằng **email kênh** → username `senoremusic`, tên hiển thị `Senore`.
-2. Hồ sơ → Bio: `Senore — những bài hát về cuộc sống ✍️ Lời tự viết · bài mới mỗi Thứ 6`
+2. Hồ sơ → Bio: `Senore — những bài hát về cuộc sống ✍️ Lời tự viết · bài mới mỗi Thứ 3 & Thứ 6`
 3. Để **tài khoản cá nhân (Personal/Creator)** — *không* chuyển sang Business (tài khoản Business bị giới hạn thư viện nhạc).
    Sau khi bài đầu tiên lên TikTok qua distributor → đăng ký **Artist account** (mục B4).
 4. Đăng 1–2 video "giữ chỗ" (ảnh bìa + câu hook) để tài khoản không trống.
@@ -139,7 +139,7 @@ Claim hồ sơ "Senore" — ít quan trọng hơn, làm cho đủ bộ.
 | Tên | `Senore` |
 | Handle | `@senoremusic` |
 | Ảnh đại diện | ✍️ (một ảnh duy nhất, dùng mọi nơi) |
-| Bio ngắn (≤ 80 ký tự) | `Senore — những bài hát về cuộc sống ✍️ Bài mới mỗi Thứ 6` |
+| Bio ngắn (≤ 80 ký tự) | `Senore — những bài hát về cuộc sống ✍️ Bài mới mỗi Thứ 3 & Thứ 6` |
 | Bio dài | Xem `docs/02` mục 8 |
 | Link chung | ✍️ Linktree / smart link |
 | Email liên hệ | `senoremusic7@gmail.com` |

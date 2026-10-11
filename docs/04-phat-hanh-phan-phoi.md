@@ -28,7 +28,8 @@ Bài hoàn thiện ──────┤                    Amazon, Deezer, Tida
 ## 2. Chiến lược "single-first"
 
 Với nhạc có lời, **mỗi bài là một sự kiện**:
-- Phát hành **1 single mỗi 2 tuần** (GĐ2) → **mỗi tuần** (GĐ3+), luôn vào **Thứ 6**.
+- **Nhịp đăng trên kênh (từ 12/10/2026): 2 bài/tuần — Thứ 3 và Thứ 6, 20:00** (MV/lyric video YouTube + Shorts/Reels/TikTok đi kèm).
+- Phát hành lên nền tảng nghe nhạc qua distributor: ưu tiên **Thứ 6** (ngày Spotify/Apple cập nhật playlist).
 - Nộp distributor **trước ≥ 3 tuần**, **pitch editorial** Spotify for Artists **≥ 7 ngày** trước.
 - Sau 3–4 single → gom thành **EP** (single cũ + 1–2 bài mới) — "waterfall" giúp dồn lượt nghe.
 - Mỗi quý một **concept EP/album** xoay quanh một chủ đề.

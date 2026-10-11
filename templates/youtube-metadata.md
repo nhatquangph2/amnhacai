@@ -65,5 +65,5 @@ Mục **Đường liên kết**: TikTok, Instagram, Facebook. **Email liên hệ
 - [ ] Playlist: chủ đề + "Tất cả bài hát"
 - [ ] End screen: bài tiếp theo + subscribe
 - [ ] Phụ đề: tải lời lên dạng phụ đề (.srt) nếu lyric video không có sẵn chữ
-- [ ] Lên lịch: Thứ 6 ___:___ (trùng giờ phát hành Spotify)
+- [ ] Lên lịch: Thứ 3 hoặc Thứ 6, 20:00 (nhịp 2 bài/tuần)
 - [ ] Ghim bình luận **lời bài hát** (ưu tiên hơn câu hỏi tương tác); câu hỏi "Câu nào trong bài ở lại với bạn?" đăng ngay dưới

@@ -69,7 +69,7 @@ Vì lời là linh hồn, **typography là nhận diện quan trọng nhất** (
 > Tôi viết những bài hát về cuộc sống — về giông bão, về những tảng đá lặng im, về câu hỏi "mình sống để làm gì".
 > Lời do tôi viết. Nhạc và giọng hát được tạo cùng công cụ AI, rồi được tôi chọn lọc và hoàn thiện.
 > Nếu một câu hát nào đó ở lại với bạn, vậy là đủ.
-> ✍️ Bài mới mỗi Thứ 6 · 📩 Hợp tác: [email]
+> ✍️ Bài mới mỗi Thứ 3 & Thứ 6 · 📩 Hợp tác: [email]
 
 **English**
 > Songs about life — storms, silent stones, and the question of what we live for.
