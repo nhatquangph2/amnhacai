@@ -11,6 +11,25 @@ Học từ MrBeast & các kênh top: thumbnail là **một bức ảnh được 
 - **Chữ 1–3 từ**, vàng/kem viền tối dày, nói *cảm xúc/câu hỏi* — tiêu đề video mới nói tên bài.
 - Nhân vật lấy từ chính MV (render từ code ở độ phân giải cao), giữ đúng tạo hình đã duyệt.
 
+## Chữ: tên bài là trung tâm — dàn chữ kiểu poster phim
+Quyết định 12/10/2026: chữ trên thumbnail **luôn là tên bài** (không dùng câu hook tự đặt). Đẹp hay không nằm ở cách dàn chữ.
+- **Kiểu chữ**: chữ không chân, đậm **ExtraBold/Black** — chữ mảnh & chữ có chân bị “mất nét” khi thu nhỏ & nén ảnh.
+  Dùng **Be Vietnam Pro** (thiết kế riêng cho tiếng Việt, dấu thích ứng, có tới Black 900). Tránh Playfair cho tiêu đề đậm (lỗi canh dấu chồng).
+  Tối đa **2 kiểu chữ**: tên bài (Black) + tên nghệ sĩ nhỏ (Medium, giãn 0.05–0.1em).
+- **Khối tiêu đề (title lockup)** như poster phim: tên bài là một khối thống nhất, ngắt theo nghĩa, các dòng **cùng độ rộng hoặc có chủ–phụ rõ**
+  (vd. `ĐỪNG OÁN TRÁCH` to · `THÊM CHI` nhỏ hơn); chữ **lồng vào cảnh** — nhân vật đứng *trước* một phần chữ, ánh sáng của cảnh hắt lên chữ.
+- **Màu chữ lấy từ ánh sáng trong cảnh** (kem ấm / vàng đom đóm) thay vì màu dán lên; tương phản ≥ 4,5:1 nhờ nền tối cục bộ/bóng mềm,
+  **viền tối mảnh 2–4 px** chỉ khi cần — không viền dày.
+- **Thử ở cỡ 320 px** (cỡ thật trên điện thoại) — không đọc được ngay thì sửa.
+- Chữ ≥ 64 px trên khung 1280×720; tránh góc dưới phải.
+
+Nguồn bổ sung: [ThumbnailCreator — Visual hierarchy](https://www.thumbnailcreator.com/blog/visual-hierarchy-rules-thumbnails) ·
+[1of10 — Best thumbnail fonts](https://1of10.com/blog/best-youtube-thumbnail-fonts/) ·
+[ThumbnailCreator — Music video thumbnails](https://www.thumbnailcreator.com/blog/music-video-thumbnails-tips) ·
+[Mervin Praison — CTR of 3,200 song thumbnails](https://mer.vin/2026/09/youtube-thumbnail-ctr-for-song-videos-what-3200-thumbnails-teach-us/) ·
+[Google Fonts — Be Vietnam Pro](https://fonts.google.com/specimen/Be+Vietnam+Pro) ·
+[google/fonts #10101 — lỗi dấu Playfair](https://github.com/google/fonts/issues/10101)
+
 ## Thumbnail — 8 quy tắc
 
 1. **Một điểm nhìn chính.** Nhân vật cận cảnh chiếm ~⅓ khung, nét mặt có cảm xúc *đúng với bài* (không giật gân).
