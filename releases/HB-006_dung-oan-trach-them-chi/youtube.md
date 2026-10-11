@@ -2,7 +2,7 @@
 
 File: `.claude/worktrees/mv-video-generation-system-114fa9/video/out/HB-006_anim_fianl.mp4`
 Lịch: **Thứ 3, 13/10/2026 · 20:00** (nhịp 2 bài/tuần: Thứ 3 & Thứ 6) — ✅ đã lên lịch · https://youtu.be/K4ttCrObOBc
-Ảnh thu nhỏ: **D** (`thumbnails/HB-006_thumb_D_ket.jpg`) · Lời bài hát **không** đưa vào mô tả (ghim ở bình luận)
+Ảnh thu nhỏ: **E** (`thumbnails/HB-006_thumb_E_poster.jpg`, đổi 12/10 thay cho D) · Lời bài hát **không** đưa vào mô tả (ghim ở bình luận)
 
 ## Tiêu đề
 ```
